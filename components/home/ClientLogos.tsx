@@ -7,7 +7,7 @@ import { clientLogos } from "@/lib/constants";
 
 export function ClientLogos() {
   return (
-    <Section className="py-16 md:py-20 bg-[#e5e5e5]">
+    <Section className="py-16 md:py-20 bg-white">
       <div className="text-center mb-12">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -32,8 +32,8 @@ export function ClientLogos() {
       {/* Infinite scroll container */}
       <div className="relative overflow-hidden">
         {/* Gradient masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#e5e5e5] to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#e5e5e5] to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10" />
 
         {/* Scrolling track */}
         <div className="flex animate-scroll">

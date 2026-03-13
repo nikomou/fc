@@ -86,7 +86,6 @@ export default function HomePage() {
     <>
       <Hero />
       <ClientLogos />
-      <StatsBar />
 
       {/* Services Preview */}
       <Section background="alt">
@@ -220,6 +219,8 @@ export default function HomePage() {
       <Section background="dark" className="!py-0 overflow-hidden">
         <PartnerMarquee />
       </Section>
+
+      <StatsBar />
 
       <CTASection />
     </>

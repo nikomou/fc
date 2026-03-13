@@ -142,10 +142,8 @@ export function MigrationSelector() {
               <animate attributeName="opacity" from={0.5} to={0} dur="2.4s" begin={`${delay}s`} repeatCount="indefinite" />
             </circle>
           ))}
-          <circle cx={SHOPIFY_CX} cy={SHOPIFY_CY} r={SHOPIFY_SIZE / 2 + 5}
-            fill="none" stroke="#96bf48" strokeWidth={2.5} opacity={0.4} />
           <circle cx={SHOPIFY_CX} cy={SHOPIFY_CY} r={SHOPIFY_SIZE / 2}
-            fill="#2a2a2a" stroke="#3a3a3a" strokeWidth={1} />
+            fill="#fff" stroke="#3a3a3a" strokeWidth={1} />
           <image href="/images/platforms/shopify.svg"
             x={SHOPIFY_CX - 26} y={SHOPIFY_CY - 26} width={52} height={52} />
         </svg>
