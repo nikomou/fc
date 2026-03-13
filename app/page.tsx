@@ -1,65 +1,183 @@
 import Image from "next/image";
+import { Hero } from "@/components/home/Hero";
+import { ClientLogos } from "@/components/home/ClientLogos";
+import { StatsBar } from "@/components/home/StatsBar";
+import { ValueProps } from "@/components/home/ValueProps";
+import { CTASection } from "@/components/home/CTASection";
+import { MigrationSelector } from "@/components/home/MigrationSelector";
+import { Section } from "@/components/ui/Section";
+import { Button } from "@/components/ui/Button";
+import { services, locations, partnerLogos } from "@/lib/constants";
+import {
+  Zap,
+  Search,
+  Palette,
+  Code,
+  Gauge,
+  Headphones,
+  MapPin,
+  LucideIcon,
+} from "lucide-react";
 
-export default function Home() {
+const iconMap: Record<string, LucideIcon> = {
+  Zap,
+  Search,
+  Palette,
+  Code,
+  Gauge,
+  Headphones,
+};
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <Hero />
+      <ClientLogos />
+      <StatsBar />
+      <ValueProps />
+
+      {/* Services Preview */}
+      <Section background="alt">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
+            Our Services
+          </h2>
+          <p className="text-lg text-foreground max-w-2xl mx-auto">
+            End-to-end Shopify solutions to help your business succeed in ecommerce.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service) => {
+            const Icon = iconMap[service.icon] || Zap;
+            return (
+              <a
+                key={service.title}
+                href={service.href}
+                className="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
+              >
+                <div
+                  className="w-12 h-12 rounded-lg border-2 flex items-center justify-center mb-4 transition-colors"
+                  style={{ borderColor: service.color, backgroundColor: `${service.color}10` }}
+                >
+                  <Icon className="w-6 h-6" style={{ color: service.color }} />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground-dark mb-2 group-hover:text-black transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-foreground text-sm">{service.description}</p>
+              </a>
+            );
+          })}
         </div>
-      </main>
-    </div>
+
+        <div className="text-center mt-10">
+          <Button href="/shopify-services" variant="outline">
+            View All Services
+          </Button>
+        </div>
+      </Section>
+
+      {/* Migration Selector */}
+      <Section>
+        <MigrationSelector />
+      </Section>
+
+      {/* Partners Section */}
+      <Section background="dark">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Technology Partners
+          </h2>
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-2">
+            We are proud to collaborate with some of the most respected names in the industry.
+          </p>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Our partnerships are built on a foundation of mutual trust and shared values, enabling us to deliver unparalleled ecommerce solutions.
+          </p>
+        </div>
+        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+          {partnerLogos.map((partner) => (
+            <div
+              key={partner.name}
+              className="bg-white rounded-lg px-3 py-2 hover:shadow-lg transition-shadow"
+            >
+              <Image
+                src={partner.logo}
+                alt={partner.alt}
+                width={180}
+                height={90}
+                className="h-14 md:h-20 w-auto object-contain"
+              />
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Locations */}
+      <Section>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
+            Our Locations
+          </h2>
+          <p className="text-lg text-foreground max-w-2xl mx-auto">
+            With offices in Manchester and Liverpool, we&apos;re perfectly positioned
+            to serve brands across the UK. Whether you&apos;re local or nationwide, our team delivers
+            the same exceptional service and results.
+          </p>
+        </div>
+
+        {/* Main Office Locations */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-10">
+          {locations
+            .filter((location) => location.id === "manchester" || location.id === "liverpool")
+            .map((location) => (
+              <a
+                key={location.id}
+                href={`/${location.slug}`}
+                className="group bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-200 text-center"
+              >
+                <div className="w-16 h-16 rounded-full bg-black/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-black/10 transition-colors">
+                  <MapPin className="w-8 h-8 text-black" />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground-dark mb-2 group-hover:text-black transition-colors">
+                  {location.name}
+                </h3>
+                <p className="text-foreground text-sm">
+                  {location.streetAddress}, {location.addressLocality}
+                </p>
+              </a>
+            ))}
+        </div>
+
+        {/* Other Service Areas */}
+        <div className="text-center">
+          <p className="text-sm text-foreground mb-4">We also serve clients in</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              { name: "London", href: "/shopify-agency-london" },
+              { name: "Edinburgh", href: "/shopify-agency-edinburgh" },
+              { name: "Bristol", href: "/shopify-agency-bristol" },
+              { name: "Leeds", href: "/shopify-agency-leeds" },
+              { name: "Cambridge", href: "/shopify-agency-cambridge" },
+              { name: "Birmingham", href: "/shopify-agency-birmingham" },
+              { name: "Glasgow", href: "/shopify-agency-glasgow" },
+              { name: "Newcastle", href: "/shopify-agency-newcastle" },
+            ].map((city) => (
+              <a
+                key={city.name}
+                href={city.href}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-gray-200 text-foreground-dark text-sm font-medium hover:border-gray-300 hover:shadow-sm transition-all"
+              >
+                <MapPin className="w-4 h-4" />
+                {city.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      <CTASection />
+    </>
   );
 }

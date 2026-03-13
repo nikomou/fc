@@ -1,0 +1,14 @@
+services:
+  fc:
+    build: .
+    container_name: fc
+    ports:
+      - "3030:3030"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - PORT=3030
+    command: npm run dev -- -p 3030

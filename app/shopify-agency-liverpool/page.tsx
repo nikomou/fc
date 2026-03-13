@@ -1,0 +1,592 @@
+import { Metadata } from "next";
+import Link from "next/link";
+import { Section } from "@/components/ui/Section";
+import { Button } from "@/components/ui/Button";
+import { CTASection } from "@/components/home/CTASection";
+import { siteConfig, locations } from "@/lib/constants";
+import { TrustBadge } from "@/components/ui/TrustBadge";
+import { ValueCard } from "@/components/ui/ValueCard";
+import { TestimonialCard } from "@/components/ui/TestimonialCard";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Zap,
+  Palette,
+  ArrowRightLeft,
+  Code,
+  Gauge,
+  Headphones,
+} from "lucide-react";
+
+const whyChooseCards = [
+  {
+    title: "Shopify Partners",
+    description: "Official Shopify & Shopify Plus partners with certified developers ready to scale your store.",
+    circle: "/images/circles/circle-green.svg",
+    color: "#5fcf80",
+    icon: "Shield",
+  },
+  {
+    title: "Liverpool Based",
+    description: "A dedicated team at Basecamp Liverpool who understand the Merseyside business landscape.",
+    circle: "/images/circles/circle-blue.svg",
+    color: "#5b8fb9",
+    icon: "Users",
+  },
+  {
+    title: "Proven Results",
+    description: "£30M+ revenue generated for Liverpool and Merseyside brands with measurable growth.",
+    circle: "/images/circles/circle-pink.svg",
+    color: "#ef436b",
+    icon: "TrendingUp",
+  },
+  {
+    title: "Fast Turnaround",
+    description: "Agile development with quick response times and efficient project delivery.",
+    circle: "/images/circles/circle-yellow.svg",
+    color: "#f5d76e",
+    icon: "Zap",
+  },
+];
+
+const liverpoolLocation = locations.find((l) => l.id === "liverpool")!;
+
+// SEO-optimized metadata with canonical, OpenGraph, and Twitter
+export const metadata: Metadata = {
+  title: "Liverpool Shopify Agency | Shopify Plus Experts | Merseyside",
+  description:
+    "Leading Shopify & Shopify Plus agency in Liverpool. Custom development, theme design & migrations for Merseyside brands. Free quote.",
+  alternates: {
+    canonical: "/shopify-agency-liverpool",
+  },
+  openGraph: {
+    title: "Liverpool Shopify Agency | Shopify Plus Experts",
+    description:
+      "Leading Shopify & Shopify Plus agency in Liverpool city centre. Custom development, theme design & migrations for Merseyside brands.",
+    url: "/shopify-agency-liverpool",
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: "/images/og-liverpool.png",
+        width: 1200,
+        height: 630,
+        alt: `Shopify Plus Agency Liverpool - ${siteConfig.name}`,
+      },
+    ],
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Liverpool Shopify Agency | Shopify Plus Experts",
+    description:
+      "Leading Shopify & Shopify Plus agency in Liverpool city centre. Custom development, theme design & migrations for Merseyside brands.",
+    images: ["/images/og-liverpool.png"],
+  },
+};
+
+const services = [
+  {
+    title: "Shopify Plus",
+    description:
+      "Enterprise ecommerce solutions for high-growth Liverpool brands.",
+    href: "/shopify-plus",
+    icon: Zap,
+    color: "#f59e0b",
+  },
+  {
+    title: "Theme Development",
+    description:
+      "Bespoke Shopify themes designed to convert visitors into customers.",
+    href: "/shopify-theme-development",
+    icon: Palette,
+    color: "#ef436b",
+  },
+  {
+    title: "Migrations",
+    description:
+      "Seamless migration to Shopify from WooCommerce, Magento & more.",
+    href: "/shopify-migration",
+    icon: ArrowRightLeft,
+    color: "#8b5cf6",
+  },
+  {
+    title: "App Development",
+    description: "Custom Shopify apps and integrations for your unique needs.",
+    href: "/shopify-app-development",
+    icon: Code,
+    color: "#10b981",
+  },
+  {
+    title: "Speed Optimisation",
+    description: "Speed up your store and improve Core Web Vitals scores.",
+    href: "/shopify-speed-optimisation",
+    icon: Gauge,
+    color: "#0ea5e9",
+  },
+  {
+    title: "Ongoing Support",
+    description: "Dedicated support packages for Liverpool businesses.",
+    href: "/shopify-support",
+    icon: Headphones,
+    color: "#64748b",
+  },
+];
+
+const liverpoolBrands = [
+  "Liverpool FC",
+  "Everton FC",
+  "Matalan",
+  "Very",
+  "Shop Direct",
+  "Littlewoods",
+];
+
+const faqs = [
+  {
+    question: "Why choose a Liverpool-based Shopify agency?",
+    answer:
+      "Working with a local Liverpool agency means face-to-face meetings, same timezone collaboration, and a team that understands the Merseyside business landscape. Our office at Basecamp Liverpool is just minutes from Lime Street station.",
+  },
+  {
+    question: "Do you work with businesses outside Liverpool?",
+    answer:
+      "Absolutely! While we're based in Liverpool, we work with clients across Merseyside, the North West, and the UK. Our Liverpool office complements our Manchester headquarters.",
+  },
+  {
+    question: "What size businesses do you work with?",
+    answer:
+      "We work with businesses of all sizes, from startups launching their first Shopify store to enterprise brands on Shopify Plus generating millions in revenue.",
+  },
+  {
+    question: "How long does a typical Shopify project take?",
+    answer:
+      "Project timelines vary based on scope. A theme customisation might take 2-3 weeks, while a full custom build could take 8-12 weeks. We'll provide a detailed timeline during our initial consultation.",
+  },
+  {
+    question: "Can you help with Shopify Plus migrations?",
+    answer:
+      "Yes, we're Shopify Plus partners and have extensive experience migrating brands from platforms like Magento, WooCommerce, and BigCommerce to Shopify Plus.",
+  },
+];
+
+const serviceAreas = [
+  "Liverpool",
+  "Wirral",
+  "Southport",
+  "St Helens",
+  "Knowsley",
+  "Sefton",
+  "Birkenhead",
+  "Bootle",
+  "Crosby",
+  "Formby",
+  "Huyton",
+  "Prescot",
+  "Widnes",
+  "Runcorn",
+];
+
+// JSON-LD Structured Data
+const liverpoolSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": `${siteConfig.url}/shopify-agency-liverpool#localbusiness`,
+      name: `${siteConfig.name} Liverpool`,
+      description: "Leading Shopify and Shopify Plus agency serving Liverpool and Merseyside with custom theme development, migrations, and ongoing support.",
+      image: `${siteConfig.url}/images/flex-logo.svg`,
+      url: `${siteConfig.url}/shopify-agency-liverpool`,
+      telephone: `+44-${liverpoolLocation.phone.replace(/\s/g, "-").replace(/^0/, "")}`,
+      email: siteConfig.email,
+      priceRange: "£££",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: liverpoolLocation.streetAddress,
+        addressLocality: liverpoolLocation.addressLocality,
+        addressRegion: "Merseyside",
+        postalCode: liverpoolLocation.postalCode,
+        addressCountry: "GB",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: liverpoolLocation.geo.latitude,
+        longitude: liverpoolLocation.geo.longitude,
+      },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "17:30",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5.0",
+        reviewCount: "50",
+        bestRating: "5",
+        worstRating: "1",
+      },
+      areaServed: serviceAreas.map((area) => ({
+        "@type": "City",
+        name: area,
+      })),
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: siteConfig.url,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Shopify Agency Liverpool",
+          item: `${siteConfig.url}/shopify-agency-liverpool`,
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
+    {
+      "@type": "Review",
+      itemReviewed: {
+        "@type": "LocalBusiness",
+        name: `${siteConfig.name} Liverpool`,
+        "@id": `${siteConfig.url}/shopify-agency-liverpool#localbusiness`,
+      },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: "5",
+        bestRating: "5",
+      },
+      author: {
+        "@type": "Person",
+        name: "Michael Hughes",
+      },
+      reviewBody:
+        "Having a Shopify agency in Liverpool made collaboration so much easier. The team at Flex understood our vision from day one and delivered a store that exceeded our expectations. Sales are up 67% year-on-year.",
+      datePublished: "2024-10-20",
+    },
+  ],
+};
+
+export default function LiverpoolPage() {
+  return (
+    <>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(liverpoolSchema) }}
+      />
+
+      {/* Hero */}
+      <section className="pt-32 pb-16 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+            <div className="lg:col-span-2">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black text-white text-xs font-medium mb-4">
+                <MapPin className="w-3 h-3" />
+                Liverpool City Centre
+              </span>
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground-dark mb-6">
+                Shopify Agency Liverpool
+              </h1>
+              <p className="text-xl text-foreground mb-4">
+                We&apos;re a leading Shopify and{" "}
+                <Link
+                  href="/shopify-plus"
+                  className="text-[#ef436b] hover:underline"
+                >
+                  Shopify Plus
+                </Link>{" "}
+                agency based in the heart of Liverpool. Helping Merseyside brands build
+                ecommerce experiences that convert.
+              </p>
+              <p className="text-foreground mb-6">
+                From custom theme development to platform migrations and ongoing support,
+                our Liverpool team delivers end-to-end Shopify solutions. We&apos;ve helped
+                30+ local brands increase their online revenue and streamline their operations.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <Button href="/quote" size="lg" variant="cta">
+                  Get a Free Quote
+                </Button>
+                <Button href="/work" variant="outline" size="lg">
+                  Our Work
+                </Button>
+              </div>
+              <TrustBadge align="left" showRating={false} />
+            </div>
+            <div className="bg-black rounded-2xl p-8 text-white">
+              <h3 className="text-lg font-semibold mb-6">Liverpool Office</h3>
+              <address className="not-italic space-y-4">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 mt-0.5 text-gray-400" />
+                  <div>
+                    <p className="font-medium">Address</p>
+                    <p className="text-gray-300">
+                      {liverpoolLocation.streetAddress},{" "}
+                      {liverpoolLocation.addressLocality},{" "}
+                      {liverpoolLocation.postalCode}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Phone className="w-5 h-5 mt-0.5 text-gray-400" />
+                  <div>
+                    <p className="font-medium">Phone</p>
+                    <a
+                      href={`tel:${siteConfig.phone}`}
+                      className="text-gray-300 hover:text-white"
+                    >
+                      {siteConfig.phone}
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Mail className="w-5 h-5 mt-0.5 text-gray-400" />
+                  <div>
+                    <p className="font-medium">Email</p>
+                    <a
+                      href={`mailto:${siteConfig.email}`}
+                      className="text-gray-300 hover:text-white"
+                    >
+                      {siteConfig.email}
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Clock className="w-5 h-5 mt-0.5 text-gray-400" />
+                  <div>
+                    <p className="font-medium">Hours</p>
+                    <p className="text-gray-300">Mon-Fri: 9am - 5:30pm</p>
+                  </div>
+                </div>
+              </address>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Liverpool */}
+      <Section background="alt">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
+            Why Choose Our Liverpool Shopify Agency?
+          </h2>
+          <p className="text-lg text-foreground max-w-3xl mx-auto">
+            Liverpool has a rich retail heritage and a thriving digital scene. We&apos;re proud
+            to be part of the city&apos;s growing tech community at Basecamp Liverpool.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {whyChooseCards.map((card, index) => (
+            <ValueCard key={card.title} {...card} index={index} />
+          ))}
+        </div>
+      </Section>
+
+      {/* CTA Strip */}
+      <Section background="dark">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+              Ready to grow your ecommerce business?
+            </h2>
+            <p className="text-lg text-gray-300">
+              Let&apos;s discuss how we can help your Liverpool brand succeed online.
+            </p>
+          </div>
+          <Button href="/quote" variant="cta" size="lg">
+            Get a Free Quote
+          </Button>
+        </div>
+      </Section>
+
+      {/* Services */}
+      <Section background="alt">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
+            Shopify Services in Liverpool
+          </h2>
+          <p className="text-lg text-foreground max-w-2xl mx-auto">
+            Full-service Shopify development for Liverpool and Merseyside businesses.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service) => {
+            const Icon = service.icon;
+            return (
+              <Link
+                key={service.title}
+                href={service.href}
+                className="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
+              >
+                <div
+                  className="w-12 h-12 rounded-lg border-2 flex items-center justify-center mb-4 transition-colors"
+                  style={{ borderColor: service.color, backgroundColor: `${service.color}10` }}
+                >
+                  <Icon className="w-6 h-6" style={{ color: service.color }} />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground-dark mb-2 group-hover:text-black transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-foreground text-sm">{service.description}</p>
+              </Link>
+            );
+          })}
+        </div>
+
+        <div className="text-center mt-10">
+          <Button href="/shopify-services" variant="outline">
+            View All Services
+          </Button>
+        </div>
+      </Section>
+
+      {/* Why Liverpool Brands Choose Shopify */}
+      <Section>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
+            Why Liverpool Brands Choose Shopify
+          </h2>
+          <p className="text-lg text-foreground max-w-2xl mx-auto">
+            Liverpool is home to major retail brands and a growing ecommerce scene.
+            From sports to fashion, Merseyside brands trust Shopify to power their growth.
+          </p>
+        </div>
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+          {liverpoolBrands.map((brand) => (
+            <div
+              key={brand}
+              className="text-xl md:text-2xl font-bold text-gray-300"
+            >
+              {brand}
+            </div>
+          ))}
+        </div>
+        <div className="text-center mt-10">
+          <Button href="/shopify-plus" variant="outline">
+            Learn About Shopify Plus
+          </Button>
+        </div>
+      </Section>
+
+      {/* Testimonial */}
+      <TestimonialCard
+        quote="Having a Shopify agency in Liverpool made collaboration so much easier. The team at Flex understood our vision from day one and delivered a store that exceeded our expectations. Sales are up 67% year-on-year."
+        author="Michael Hughes"
+        role="Founder, Liverpool Sports Brand"
+      />
+
+      {/* Service Areas */}
+      <Section>
+        <div className="text-center max-w-3xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground-dark mb-4">
+            Serving Merseyside & Beyond
+          </h2>
+          <p className="text-foreground mb-6">
+            While our office is in Liverpool city centre, we serve businesses
+            across Merseyside and throughout the North West. With easy
+            access from Lime Street station and excellent transport links,
+            we&apos;re perfectly positioned to support your ecommerce growth.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 text-sm">
+            {serviceAreas.map((area) => (
+              <span
+                key={area}
+                className="px-4 py-2 bg-gray-100 rounded-full text-foreground-dark"
+              >
+                {area}
+              </span>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* FAQs */}
+      <Section background="alt">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div className="max-w-3xl mx-auto space-y-6">
+          {faqs.map((faq, index) => (
+            <div
+              key={faq.question}
+              className="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
+            >
+              <h3 className="font-semibold text-foreground-dark mb-2">
+                {faq.question}
+              </h3>
+              <p className="text-foreground">
+                {index === 1 ? (
+                  <>
+                    Absolutely! While we&apos;re based in Liverpool, we work
+                    with clients across Merseyside, the North West, and the UK. Our
+                    Liverpool office complements our{" "}
+                    <Link
+                      href="/shopify-agency-manchester"
+                      className="text-[#ef436b] hover:underline"
+                    >
+                      Manchester headquarters
+                    </Link>
+                    .
+                  </>
+                ) : (
+                  faq.answer
+                )}
+              </p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Map */}
+      <section className="relative">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-2.9900%2C53.3970%2C-2.9700%2C53.4040&amp;layer=mapnik&amp;marker=53.4007%2C-2.9802"
+          className="w-full h-80 md:h-96 border-0"
+          title="Map showing Flex Commerce Liverpool office location"
+          loading="lazy"
+        />
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Basecamp+Liverpool+49+Jamaica+Street+Liverpool+L1+0AH"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute bottom-6 left-6 bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow"
+        >
+          <div className="flex items-start gap-3">
+            <MapPin className="w-5 h-5 text-[#ef436b] mt-0.5 flex-shrink-0" />
+            <div>
+              <p className="font-semibold text-foreground-dark">Liverpool Office</p>
+              <p className="text-sm text-foreground">Basecamp Liverpool, 49 Jamaica Street, L1 0AH</p>
+              <p className="text-xs text-gray-400 mt-1">Open in Google Maps</p>
+            </div>
+          </div>
+        </a>
+      </section>
+
+      <CTASection />
+    </>
+  );
+}
