@@ -5,6 +5,7 @@ import { StatsBar } from "@/components/home/StatsBar";
 import { ValueProps } from "@/components/home/ValueProps";
 import { CTASection } from "@/components/home/CTASection";
 import { MigrationSelector } from "@/components/home/MigrationSelector";
+import { LocationCards } from "@/components/home/LocationCards";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { services, locations, partnerLogos } from "@/lib/constants";
@@ -183,27 +184,9 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Main Office Locations */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-10">
-          {locations
-            .filter((location) => location.id === "manchester" || location.id === "liverpool")
-            .map((location) => (
-              <a
-                key={location.id}
-                href={`/${location.slug}`}
-                className="group bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-200 text-center"
-              >
-                <div className="w-16 h-16 rounded-full bg-black/5 flex items-center justify-center mx-auto mb-4 group-hover:bg-black/10 transition-colors">
-                  <MapPin className="w-8 h-8 text-black" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground-dark mb-2 group-hover:text-black transition-colors">
-                  {location.name}
-                </h3>
-                <p className="text-foreground text-sm">
-                  {location.streetAddress}, {location.addressLocality}
-                </p>
-              </a>
-            ))}
+        {/* Office Location Cards */}
+        <div className="mb-10">
+          <LocationCards />
         </div>
 
         {/* Other Service Areas */}
