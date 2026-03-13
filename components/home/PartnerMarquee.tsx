@@ -10,13 +10,9 @@ const col2 = [...partnerLogos, ...partnerLogos, ...partnerLogos];
 function LogoCard({ partner }: { partner: typeof partnerLogos[0] }) {
   return (
     <div className="bg-white rounded-xl mb-4 flex-shrink-0 w-44 h-24 flex items-center justify-center p-4">
-      <Image
-        src={partner.logo}
-        alt={partner.alt}
-        width={140}
-        height={80}
-        className="h-16 w-full object-contain"
-      />
+      <div className="relative w-28 h-7">
+        <Image src={partner.logo} alt={partner.alt} fill className="object-contain" />
+      </div>
     </div>
   );
 }

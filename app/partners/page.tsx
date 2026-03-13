@@ -45,14 +45,8 @@ export default function PartnersPage() {
                 key={partner.name}
                 className="bg-white rounded-2xl p-8 flex flex-col gap-4 shadow-sm border border-gray-100"
               >
-                <div className="h-12 flex items-center">
-                  <Image
-                    src={partner.logo}
-                    alt={partner.alt}
-                    width={140}
-                    height={48}
-                    className="h-10 w-auto object-contain"
-                  />
+                <div className="relative w-32 h-9">
+                  <Image src={partner.logo} alt={partner.alt} fill className="object-contain object-left" />
                 </div>
                 {detail && (
                   <>
