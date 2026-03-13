@@ -138,7 +138,7 @@ export default function SEOPage() {
         primaryCta={{ text: "Get SEO Audit", href: "/quote" }}
         secondaryCta={{ text: "View Our Work", href: "/work" }}
         showTrustBadge
-        shapeColors={{ topRight: "green", bottomLeft: "pink" }}
+        shapeColors={{ topRight: "green", bottomLeft: "green" }}
       />
 
       {/* Services */}

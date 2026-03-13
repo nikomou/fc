@@ -154,7 +154,7 @@ export default function AppDevelopmentPage() {
         primaryCta={{ text: "Discuss Your Project", href: "/quote" }}
         secondaryCta={{ text: "View Our Work", href: "/work" }}
         showTrustBadge
-        shapeColors={{ topRight: "blue", bottomLeft: "yellow" }}
+        shapeColors={{ topRight: "purple", bottomLeft: "purple" }}
       />
 
       {/* Features */}

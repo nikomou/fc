@@ -524,8 +524,8 @@ export default function GoogleMerchantCenterGuidePage() {
                 <div className="bg-accent/5 border border-accent/20 rounded-xl p-6">
                   <h4 className="font-semibold text-foreground-dark mb-2">Pro Tip</h4>
                   <p className="text-foreground">
-                    Use the most specific Google category possible. "Apparel & Accessories > Clothing > Dresses"
-                    is better than just "Apparel & Accessories". The Shopify app assigns categories
+                    Use the most specific Google category possible. &quot;Apparel &amp; Accessories &gt; Clothing &gt; Dresses&quot;
+                    is better than just &quot;Apparel &amp; Accessories&quot;. The Shopify app assigns categories
                     automatically, but you can override them for better accuracy.
                   </p>
                 </div>

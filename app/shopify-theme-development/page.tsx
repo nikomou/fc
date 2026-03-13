@@ -139,7 +139,7 @@ export default function ThemeDevelopmentPage() {
         primaryCta={{ text: "Get a Quote", href: "/quote" }}
         secondaryCta={{ text: "View Our Work", href: "/work" }}
         showTrustBadge
-        shapeColors={{ topRight: "blue", bottomLeft: "pink" }}
+        shapeColors={{ topRight: "pink", bottomLeft: "pink" }}
       />
 
       {/* Features */}

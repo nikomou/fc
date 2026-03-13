@@ -78,7 +78,7 @@ export default function ShopifyPlusPage() {
         description="Enterprise-grade Shopify solutions for high-growth brands. Unlock the full potential of Shopify Plus with our expert team."
         primaryCta={{ text: "Get Started", href: "/quote" }}
         secondaryCta={{ text: "View Our Work", href: "/work" }}
-        shapeColors={{ topRight: "yellow", bottomLeft: "blue" }}
+        shapeColors={{ topRight: "yellow", bottomLeft: "yellow" }}
       />
 
       {/* Features */}

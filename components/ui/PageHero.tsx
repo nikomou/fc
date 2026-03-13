@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { TrustBadge } from "@/components/ui/TrustBadge";
 import Image from "next/image";
 
-type WaveColor = "pink" | "blue" | "yellow" | "green";
+type WaveColor = "pink" | "blue" | "yellow" | "green" | "purple" | "black";
 
 interface PageHeroProps {
   badge?: {
@@ -45,15 +45,26 @@ export function PageHero({
     <section className="pt-32 pb-16 bg-white relative overflow-hidden">
       {/* Background shapes - wavy gradients */}
       {shapeColors && (
-        <div className="absolute top-0 right-0 w-[350px] h-[350px] hidden sm:block">
-          <Image
-            src={`/images/wave-${shapeColors.topRight}-corner.svg`}
-            alt=""
-            fill
-            className="object-contain object-right-top"
-            aria-hidden="true"
-          />
-        </div>
+        <>
+          <div className="absolute top-0 right-0 w-[300px] h-[300px] hidden sm:block">
+            <Image
+              src={`/images/wave-${shapeColors.topRight}-corner.svg`}
+              alt=""
+              fill
+              className="object-contain object-right-top"
+              aria-hidden="true"
+            />
+          </div>
+          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] hidden sm:block">
+            <Image
+              src={`/images/wave-${shapeColors.bottomLeft}-corner-bl.svg`}
+              alt=""
+              fill
+              className="object-contain object-left-bottom"
+              aria-hidden="true"
+            />
+          </div>
+        </>
       )}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center">

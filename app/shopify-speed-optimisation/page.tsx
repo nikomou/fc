@@ -133,7 +133,7 @@ export default function SpeedOptimisationPage() {
         primaryCta={{ text: "Get Speed Audit", href: "/quote" }}
         secondaryCta={{ text: "View Our Work", href: "/work" }}
         showTrustBadge
-        shapeColors={{ topRight: "pink", bottomLeft: "green" }}
+        shapeColors={{ topRight: "black", bottomLeft: "black" }}
       />
 
       {/* Stats */}

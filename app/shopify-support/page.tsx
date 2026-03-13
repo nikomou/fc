@@ -145,7 +145,7 @@ export default function SupportPage() {
         primaryCta={{ text: "View Packages", href: "#packages" }}
         secondaryCta={{ text: "Book a Call", href: "/contact" }}
         showTrustBadge
-        shapeColors={{ topRight: "blue", bottomLeft: "yellow" }}
+        shapeColors={{ topRight: "blue", bottomLeft: "blue" }}
       />
 
       {/* Features */}
