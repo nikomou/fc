@@ -7,13 +7,13 @@ import { MapPin } from "lucide-react";
 import { locations } from "@/lib/constants";
 
 const sideLeft = [
-  { id: "edinburgh", name: "Edinburgh", href: "/shopify-agency-edinburgh" },
-  { id: "bristol",   name: "Bristol",   href: "/shopify-agency-bristol" },
+  { id: "edinburgh", name: "Edinburgh", href: "/shopify-agency-edinburgh" }, // outer
+  { id: "bristol",   name: "Bristol",   href: "/shopify-agency-bristol" },   // inner
 ];
 
 const sideRight = [
-  { id: "london", name: "London", href: "/shopify-agency-london" },
-  { id: "leeds",  name: "Leeds",  href: "/shopify-agency-leeds" },
+  { id: "london", name: "London", href: "/shopify-agency-london" }, // inner
+  { id: "leeds",  name: "Leeds",  href: "/shopify-agency-leeds" },  // outer
 ];
 
 const mainLocations = [
@@ -26,44 +26,46 @@ export function LocationCards() {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"],
+    offset: ["end end", "end start"],
   });
 
-  const leftX  = useTransform(scrollYProgress, [0, 1], [60, -220]);
-  const rightX = useTransform(scrollYProgress, [0, 1], [-60, 220]);
+  // Outer cards lead, inner cards lag
+  const leftOuterX  = useTransform(scrollYProgress, [0, 0.7], [0, -320]);
+  const leftInnerX  = useTransform(scrollYProgress, [0.1, 1], [0, -220]);
+  const rightInnerX = useTransform(scrollYProgress, [0.1, 1], [0,  220]);
+  const rightOuterX = useTransform(scrollYProgress, [0, 0.7], [0,  320]);
 
   const mainData = locations.filter(l =>
     mainLocations.some(m => m.id === l.id)
   );
 
+  const sideCardClass = "relative w-52 rounded-2xl overflow-hidden flex-shrink-0 opacity-50 blur-[2px] hover:opacity-60 transition-opacity self-stretch";
+
   return (
-    <div ref={ref} className="overflow-hidden">
+    <div
+      ref={ref}
+      className="overflow-hidden"
+      style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}
+    >
       <div className="flex items-stretch justify-center gap-4 md:gap-6">
 
-        {/* Left blurred cards */}
-        <motion.div
-          style={{ x: leftX }}
-          className="hidden lg:flex gap-4 flex-shrink-0 self-stretch"
-        >
-          {sideLeft.map((loc) => (
-            <a
-              key={loc.id}
-              href={loc.href}
-              className="relative w-44 rounded-2xl overflow-hidden flex-shrink-0 opacity-50 blur-[2px] hover:opacity-60 transition-opacity"
-            >
-              <Image
-                src={`/images/cities/${loc.id}.jpg`}
-                alt={loc.name}
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-3">
-                <p className="text-white font-semibold text-sm">{loc.name}</p>
-              </div>
-            </a>
-          ))}
-        </motion.div>
+        {/* Left cards — outer (Edinburgh) leads, inner (Bristol) lags */}
+        <div className="hidden lg:flex gap-4 flex-shrink-0 self-stretch">
+          <motion.a href={sideLeft[0].href} style={{ x: leftOuterX }} className={sideCardClass}>
+            <Image src={`/images/cities/${sideLeft[0].id}.jpg`} alt={sideLeft[0].name} fill className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-3">
+              <p className="text-white font-semibold text-sm">{sideLeft[0].name}</p>
+            </div>
+          </motion.a>
+          <motion.a href={sideLeft[1].href} style={{ x: leftInnerX }} className={sideCardClass}>
+            <Image src={`/images/cities/${sideLeft[1].id}.jpg`} alt={sideLeft[1].name} fill className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-3">
+              <p className="text-white font-semibold text-sm">{sideLeft[1].name}</p>
+            </div>
+          </motion.a>
+        </div>
 
         {/* Main office cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full flex-shrink-0">
@@ -92,30 +94,23 @@ export function LocationCards() {
           ))}
         </div>
 
-        {/* Right blurred cards */}
-        <motion.div
-          style={{ x: rightX }}
-          className="hidden lg:flex gap-4 flex-shrink-0 self-stretch"
-        >
-          {sideRight.map((loc) => (
-            <a
-              key={loc.id}
-              href={loc.href}
-              className="relative w-44 rounded-2xl overflow-hidden flex-shrink-0 opacity-50 blur-[2px] hover:opacity-60 transition-opacity"
-            >
-              <Image
-                src={`/images/cities/${loc.id}.jpg`}
-                alt={loc.name}
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-3">
-                <p className="text-white font-semibold text-sm">{loc.name}</p>
-              </div>
-            </a>
-          ))}
-        </motion.div>
+        {/* Right cards — inner (London) lags, outer (Leeds) leads */}
+        <div className="hidden lg:flex gap-4 flex-shrink-0 self-stretch">
+          <motion.a href={sideRight[0].href} style={{ x: rightInnerX }} className={sideCardClass}>
+            <Image src={`/images/cities/${sideRight[0].id}.jpg`} alt={sideRight[0].name} fill className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-3">
+              <p className="text-white font-semibold text-sm">{sideRight[0].name}</p>
+            </div>
+          </motion.a>
+          <motion.a href={sideRight[1].href} style={{ x: rightOuterX }} className={sideCardClass}>
+            <Image src={`/images/cities/${sideRight[1].id}.jpg`} alt={sideRight[1].name} fill className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-3">
+              <p className="text-white font-semibold text-sm">{sideRight[1].name}</p>
+            </div>
+          </motion.a>
+        </div>
 
       </div>
     </div>
