@@ -32,12 +32,18 @@ export function ContactForm() {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log("Form submitted:", data);
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    reset();
+    try {
+      const res = await fetch("https://formspree.io/f/xvzwqqrw", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Submission failed");
+      setIsSubmitted(true);
+      reset();
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
