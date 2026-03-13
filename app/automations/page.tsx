@@ -11,6 +11,7 @@ import {
   Check,
   ArrowRight,
 } from "lucide-react";
+import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Automations & Integrations",
@@ -84,33 +85,14 @@ const benefits = [
 export default function AutomationsPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-background-alt via-white to-blue-50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6">
-              <Cog className="w-4 h-4" />
-              Efficiency at Scale
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground-dark mb-6">
-              Automations & Integrations
-            </h1>
-            <p className="text-xl text-foreground mb-8">
-              Streamline your operations with powerful automations and seamless
-              integrations. Work smarter, not harder.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button href="/quote" size="lg" variant="cta">
-                Get Started
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <Button href="/contact" variant="outline" size="lg">
-                Book a Consultation
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        badge={{ icon: Cog, text: "Efficiency at Scale" }}
+        title="Automations & Integrations"
+        description="Streamline your operations with powerful automations and seamless integrations. Work smarter, not harder."
+        primaryCta={{ text: "Get Started", href: "/quote" }}
+        secondaryCta={{ text: "Book a Consultation", href: "/contact" }}
+        shapeColors={{ topRight: "green" }}
+      />
 
       {/* Automations */}
       <Section>

@@ -4,6 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowRight, BookOpen, Users, RefreshCw, CheckCircle, Sparkles, Target } from "lucide-react";
+import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Shopify Guides: Expert How-To Articles",
@@ -178,31 +179,27 @@ const totalGuides = guideCategories.reduce((acc, cat) => acc + cat.guides.length
 export default function GuidesPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground-dark mb-6">
-            Shopify Guides
-          </h1>
-          <p className="text-xl text-foreground max-w-2xl mx-auto mb-8">
-            In-depth tutorials from Shopify Plus experts covering setup, optimisation, marketing, and growth.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center items-center">
-            <span className="px-4 py-2 bg-accent/10 text-accent rounded-full font-medium">
-              <BookOpen className="w-4 h-4 inline mr-2" />
-              {totalGuides} guides
-            </span>
-            <span className="px-4 py-2 bg-accent/10 text-accent rounded-full font-medium">
-              <Users className="w-4 h-4 inline mr-2" />
-              14 categories
-            </span>
-            <span className="px-4 py-2 bg-accent/10 text-accent rounded-full font-medium">
-              <RefreshCw className="w-4 h-4 inline mr-2" />
-              Updated monthly
-            </span>
-          </div>
+      <PageHero
+        badge={{ icon: BookOpen, text: "Expert Guides" }}
+        title="Shopify Guides"
+        description="In-depth tutorials from Shopify Plus experts covering setup, optimisation, marketing, and growth."
+        shapeColors={{ topRight: "blue" }}
+      >
+        <div className="flex flex-wrap gap-4 justify-center items-center mt-6">
+          <span className="px-4 py-2 bg-accent/10 text-accent rounded-full font-medium text-sm">
+            <BookOpen className="w-4 h-4 inline mr-2" />
+            {totalGuides} guides
+          </span>
+          <span className="px-4 py-2 bg-accent/10 text-accent rounded-full font-medium text-sm">
+            <Users className="w-4 h-4 inline mr-2" />
+            14 categories
+          </span>
+          <span className="px-4 py-2 bg-accent/10 text-accent rounded-full font-medium text-sm">
+            <RefreshCw className="w-4 h-4 inline mr-2" />
+            Updated monthly
+          </span>
         </div>
-      </section>
+      </PageHero>
 
       {/* Guides by Category */}
       {guideCategories.map((category, index) => (

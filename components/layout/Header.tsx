@@ -100,6 +100,7 @@ const locationsMenu = [
 
 // Pages that should have transparent header over the hero
 const transparentDarkPages = [
+  // Service & migration pages
   "/shopify-services",
   "/shopify-plus",
   "/shopify-theme-development",
@@ -117,6 +118,21 @@ const transparentDarkPages = [
   "/squarespace-to-shopify-migration",
   "/webflow-to-shopify-migration",
   "/salesforce-to-shopify-migration",
+  // General pages
+  "/about",
+  "/work",
+  "/articles",
+  "/resources",
+  "/contact",
+  "/checklists",
+  "/guides",
+  "/pricing",
+  "/quote",
+  "/partners",
+  "/automations",
+  "/ecommerce-agency",
+  "/privacy",
+  "/terms",
 ];
 
 export function Header() {

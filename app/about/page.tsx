@@ -3,6 +3,7 @@ import { Section } from "@/components/ui/Section";
 import { Team } from "@/components/about/Team";
 import { teamValues } from "@/lib/constants";
 import { Users, Target, Award, Heart } from "lucide-react";
+import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -27,23 +28,12 @@ const valueIcons = {
 export default function AboutPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-gray-50 via-white to-gray-50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <span className="inline-flex items-center px-3 py-1 text-xs font-medium bg-black text-white rounded-full mb-4">
-              Established 2016
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground-dark mb-6">
-              About Flex Commerce
-            </h1>
-            <p className="text-xl text-foreground">
-              We&apos;re a team of Shopify experts passionate about helping brands
-              create exceptional ecommerce experiences.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        badge={{ icon: Users, text: "Established 2016" }}
+        title="About Flex Commerce"
+        description="We're a team of Shopify experts passionate about helping brands create exceptional ecommerce experiences."
+        shapeColors={{ topRight: "blue" }}
+      />
 
       {/* Our Story */}
       <Section>

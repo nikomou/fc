@@ -19,14 +19,14 @@ export function LatestPosts() {
       <div className="flex items-end justify-between mb-10">
         <div>
           <p className="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-2">
-            Ecommerce Blog
+            Ecommerce Articles
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark">
-            Latest from the blog
+            Latest Articles
           </h2>
         </div>
         <div className="hidden sm:block">
-          <Button href="/blog" variant="outline">
+          <Button href="/articles" variant="outline">
             View all posts
           </Button>
         </div>
@@ -38,7 +38,7 @@ export function LatestPosts() {
           return (
             <Link
               key={post.slug}
-              href={`/blog/${post.slug}`}
+              href={`/articles/${post.slug}`}
               className="group relative rounded-2xl overflow-hidden flex flex-col justify-end hover:-translate-y-1 transition-transform duration-300"
               style={{ minHeight: i === 1 ? "340px" : "300px" }}
             >
@@ -73,7 +73,7 @@ export function LatestPosts() {
       </div>
 
       <div className="text-center mt-8 sm:hidden">
-        <Button href="/blog" variant="outline">
+        <Button href="/articles" variant="outline">
           View all posts
         </Button>
       </div>

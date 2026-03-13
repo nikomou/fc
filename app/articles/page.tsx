@@ -1,20 +1,21 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, PenLine } from "lucide-react";
+import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
 import { blogPosts, formatDate } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Ecommerce Blog | Shopify Tips, Guides & Case Studies",
+  title: "Ecommerce Articles | Shopify Tips, Guides & Case Studies",
   description:
     "Expert ecommerce insights from the Flex Commerce team. Shopify guides, conversion optimisation tips, case studies, and platform news to help you grow your store.",
-  alternates: { canonical: "https://flexcommerce.co.uk/blog" },
+  alternates: { canonical: "https://flexcommerce.co.uk/articles" },
   openGraph: {
-    title: "Ecommerce Blog | Flex Commerce",
+    title: "Ecommerce Articles | Flex Commerce",
     description:
       "Expert ecommerce insights from the Flex Commerce team. Shopify guides, conversion optimisation tips, case studies, and platform news.",
-    url: "https://flexcommerce.co.uk/blog",
+    url: "https://flexcommerce.co.uk/articles",
     type: "website",
   },
 };
@@ -30,31 +31,20 @@ const sorted = [...blogPosts].sort(
 );
 const [featured, ...rest] = sorted;
 
-export default function BlogPage() {
+export default function ArticlesPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-16 bg-[#1a1a1a]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-4">
-              Ecommerce Blog
-            </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Insights to help your store grow
-            </h1>
-            <p className="text-lg text-gray-300">
-              Shopify guides, conversion tips, case studies, and ecommerce news
-              from the Flex Commerce team.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        badge={{ icon: PenLine, text: "Ecommerce Articles" }}
+        title="Insights to help your store grow"
+        description="Shopify guides, conversion tips, case studies, and ecommerce news from the Flex Commerce team."
+        shapeColors={{ topRight: "purple" }}
+      />
 
       <Section>
         {/* Featured post */}
         <Link
-          href={`/blog/${featured.slug}`}
+          href={`/articles/${featured.slug}`}
           className="group relative rounded-2xl overflow-hidden flex flex-col justify-end mb-10 hover:-translate-y-1 transition-transform duration-300"
           style={{ minHeight: "420px" }}
         >
@@ -107,7 +97,7 @@ export default function BlogPage() {
             return (
               <Link
                 key={post.slug}
-                href={`/blog/${post.slug}`}
+                href={`/articles/${post.slug}`}
                 className="group relative rounded-2xl overflow-hidden flex flex-col justify-end hover:-translate-y-1 transition-transform duration-300"
                 style={{ minHeight: "280px" }}
               >

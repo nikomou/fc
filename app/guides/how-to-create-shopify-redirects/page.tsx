@@ -334,7 +334,7 @@ export default function ShopifyRedirectsGuidePage() {
 /old-product-url,/products/new-product-url
 /category/summer,/collections/summer-collection
 /about-us.html,/pages/about
-/blog/old-post,/blogs/news/new-post`}
+/articles/old-post,/blogs/news/new-post`}
                   </pre>
                 </div>
 

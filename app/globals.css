@@ -28,10 +28,6 @@ body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
 
 /* Focus styles */
 *:focus-visible {
@@ -57,6 +53,55 @@ html {
 
 .animate-scroll {
   animation: scroll 25s linear infinite;
+}
+
+/* Prose content — legal pages, blog posts etc */
+.prose-content {
+  color: var(--foreground);
+  line-height: 1.75;
+}
+.prose-content h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground-dark);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.prose-content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--foreground-dark);
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.prose-content p {
+  margin-bottom: 1rem;
+}
+.prose-content ul,
+.prose-content ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.prose-content ul {
+  list-style-type: disc;
+}
+.prose-content ol {
+  list-style-type: decimal;
+}
+.prose-content li {
+  margin-bottom: 0.35rem;
+}
+.prose-content a {
+  color: #ef436b;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-content a:hover {
+  color: #c9304f;
+}
+.prose-content strong {
+  font-weight: 600;
+  color: var(--foreground-dark);
 }
 
 /* Rotating CTA */

@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
 import { PricingGrid } from "@/components/pricing/PricingGrid";
-import { Check, HelpCircle } from "lucide-react";
+import { Check, HelpCircle, Tag } from "lucide-react";
+import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -45,20 +46,12 @@ const faqs = [
 export default function PricingPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-background-alt via-white to-blue-50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground-dark mb-6">
-              Transparent Pricing
-            </h1>
-            <p className="text-xl text-foreground">
-              Clear, upfront pricing with no hidden costs. Choose the package
-              that fits your needs, or contact us for a custom quote.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        badge={{ icon: Tag, text: "No Hidden Costs" }}
+        title="Transparent Pricing"
+        description="Clear, upfront pricing with no hidden costs. Choose the package that fits your needs, or contact us for a custom quote."
+        shapeColors={{ topRight: "pink" }}
+      />
 
       {/* Pricing Cards */}
       <Section>

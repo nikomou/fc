@@ -9,7 +9,9 @@ import { ArrowUpRight, Target,
   Headphones,
   MapPin,
   CheckCircle,
+  Store,
 } from "lucide-react";
+import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Ecommerce Agency | Flex Commerce",
@@ -68,27 +70,14 @@ const benefits = [
 export default function EcommerceAgencyPage() {
   return (
     <>
-      {/* Hero */}
-      <Section className="pt-32 md:pt-40">
-        <div className="max-w-4xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground-dark mb-6">
-            Ecommerce Agency: Elevate Your Online Business
-          </h1>
-          <p className="text-xl text-foreground mb-8 max-w-2xl">
-            Unlock the full potential of your digital store with tailored
-            strategies, cutting-edge technology, and unparalleled industry
-            insight from the leading ecommerce experts.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button href="/quote" size="lg" variant="cta">
-              Get A Quote
-            </Button>
-            <Button href="/contact" size="lg" variant="outline" icon={false}>
-              Contact Us
-            </Button>
-          </div>
-        </div>
-      </Section>
+      <PageHero
+        badge={{ icon: Store, text: "Ecommerce Agency" }}
+        title="Elevate Your Online Business"
+        description="Unlock the full potential of your digital store with tailored strategies, cutting-edge technology, and unparalleled industry insight."
+        primaryCta={{ text: "Get A Quote", href: "/quote" }}
+        secondaryCta={{ text: "Contact Us", href: "/contact" }}
+        shapeColors={{ topRight: "yellow" }}
+      />
 
       {/* Services */}
       <Section background="alt">

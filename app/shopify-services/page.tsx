@@ -278,7 +278,7 @@ export default function ServicesPage() {
         primaryCta={{ text: "Get a Free Quote", href: "/quote" }}
         secondaryCta={{ text: "View Our Work", href: "/work" }}
         showTrustBadge
-        shapeColors={{ topRight: "pink", bottomLeft: "blue" }}
+        shapeColors={{ topRight: "pink", bottomLeft: "orange" }}
       />
 
       {/* Main Services */}

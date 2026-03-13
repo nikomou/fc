@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { CheckSquare } from "lucide-react";
+import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Shopify Checklists: Launch, SEO, CRO & More",
@@ -73,19 +74,12 @@ const checklistCategories = [
 export default function ChecklistsPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-background-alt via-white to-blue-50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground-dark mb-6">
-              Shopify Checklists
-            </h1>
-            <p className="text-xl text-foreground">
-              Actionable checklists covering launches, migrations, SEO, and conversions. Tick off items as you go and your progress saves automatically.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        badge={{ icon: CheckSquare, text: "Free Checklists" }}
+        title="Shopify Checklists"
+        description="Actionable checklists covering launches, migrations, SEO, and conversions. Tick off items as you go and your progress saves automatically."
+        shapeColors={{ topRight: "green" }}
+      />
 
       {/* Checklists */}
       <Section>

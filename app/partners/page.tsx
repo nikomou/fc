@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
+import { Handshake } from "lucide-react";
+import { PageHero } from "@/components/ui/PageHero";
 import { partnerLogos } from "@/lib/constants";
 import type { Metadata } from "next";
 
@@ -22,18 +24,12 @@ const partnerDetails: Record<string, { description: string; category: string }> 
 export default function PartnersPage() {
   return (
     <>
-      {/* Hero */}
-      <Section background="dark" className="pt-32 pb-20 md:pt-40 md:pb-28">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-4">Partners</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Technology Partners
-          </h1>
-          <p className="text-xl text-gray-300">
-            We work with best-in-class technology providers to deliver complete ecommerce solutions for our clients.
-          </p>
-        </div>
-      </Section>
+      <PageHero
+        badge={{ icon: Handshake, text: "Our Partners" }}
+        title="Technology Partners"
+        description="We work with best-in-class technology providers to deliver complete ecommerce solutions for our clients."
+        shapeColors={{ topRight: "purple" }}
+      />
 
       {/* Partner grid */}
       <Section background="alt">

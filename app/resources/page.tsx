@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
-import { ArrowRight, BookOpen, Video, FileText, CheckSquare } from "lucide-react";
+import { ArrowRight, BookOpen, Video, FileText, CheckSquare, Library } from "lucide-react";
+import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Resources",
@@ -77,18 +78,12 @@ export default function ResourcesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-background-alt via-white to-blue-50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground-dark mb-6">
-              Resources
-            </h1>
-            <p className="text-xl text-foreground">
-              Guides, tutorials, and insights to help you succeed with Shopify.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        badge={{ icon: Library, text: "Free Resources" }}
+        title="Resources"
+        description="Guides, tutorials, and insights to help you succeed with Shopify."
+        shapeColors={{ topRight: "green" }}
+      />
 
       {/* Resources Grid */}
       <Section>

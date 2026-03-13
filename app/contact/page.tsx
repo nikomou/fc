@@ -3,6 +3,7 @@ import { Section } from "@/components/ui/Section";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { siteConfig, locations } from "@/lib/constants";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -13,20 +14,12 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-background-alt via-white to-blue-50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground-dark mb-6">
-              Get in Touch
-            </h1>
-            <p className="text-xl text-foreground">
-              Have a project in mind? We&apos;d love to hear from you. Send us a
-              message and we&apos;ll respond as soon as possible.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        badge={{ icon: Phone, text: "Let's Talk" }}
+        title="Get in Touch"
+        description="Have a project in mind? We'd love to hear from you. Send us a message and we'll respond as soon as possible."
+        shapeColors={{ topRight: "pink" }}
+      />
 
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">

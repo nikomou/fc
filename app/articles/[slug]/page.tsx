@@ -19,13 +19,13 @@ export async function generateMetadata({
   const post = getBlogPost(slug);
   if (!post) return {};
   return {
-    title: `${post.title} | Flex Commerce Blog`,
+    title: `${post.title} | Flex Commerce Articles`,
     description: post.description,
-    alternates: { canonical: `https://flexcommerce.co.uk/blog/${post.slug}` },
+    alternates: { canonical: `https://flexcommerce.co.uk/articles/${post.slug}` },
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `https://flexcommerce.co.uk/blog/${post.slug}`,
+      url: `https://flexcommerce.co.uk/articles/${post.slug}`,
       type: "article",
       publishedTime: post.date,
     },
@@ -108,7 +108,7 @@ const categoryColors: Record<string, { bg: string; text: string }> = {
   "Case Studies":   { bg: "#ede9fe", text: "#5b21b6" },
 };
 
-export default async function BlogPostPage({
+export default async function ArticlePostPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -139,11 +139,11 @@ export default async function BlogPostPage({
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
         <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 w-full">
           <Link
-            href="/blog"
+            href="/articles"
             className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to blog
+            Back to Articles
           </Link>
           <div className="flex flex-wrap items-center gap-3 mb-5">
             <span
@@ -206,9 +206,9 @@ export default async function BlogPostPage({
       {related.length > 0 && (
         <Section background="alt">
           <div className="flex items-end justify-between mb-8">
-            <h2 className="text-2xl font-bold text-[#1a1a1a]">More from the blog</h2>
+            <h2 className="text-2xl font-bold text-[#1a1a1a]">More Articles</h2>
             <Link
-              href="/blog"
+              href="/articles"
               className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-[#1a1a1a] transition-colors"
             >
               View all posts
@@ -221,7 +221,7 @@ export default async function BlogPostPage({
               return (
                 <Link
                   key={rp.slug}
-                  href={`/blog/${rp.slug}`}
+                  href={`/articles/${rp.slug}`}
                   className="group relative rounded-2xl overflow-hidden flex flex-col justify-end hover:-translate-y-1 transition-transform duration-300"
                   style={{ minHeight: "240px" }}
                 >
