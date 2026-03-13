@@ -4,8 +4,11 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { partnerLogos } from "@/lib/constants";
 
-const col1 = [...partnerLogos, ...partnerLogos, ...partnerLogos];
-const col2 = [...partnerLogos, ...partnerLogos, ...partnerLogos];
+const half = Math.ceil(partnerLogos.length / 2);
+const col1logos = [...partnerLogos.slice(0, half), ...partnerLogos.slice(half)];
+const col2logos = [...partnerLogos.slice(half), ...partnerLogos.slice(0, half)];
+const col1 = [...col1logos, ...col1logos, ...col1logos];
+const col2 = [...col2logos, ...col2logos, ...col2logos];
 
 function LogoCard({ partner }: { partner: typeof partnerLogos[0] }) {
   return (
