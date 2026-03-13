@@ -14,9 +14,14 @@ export function Hero() {
       <AnimatedBackground theme="blue" />
 
       {/* Rotating CTA — bottom-right accent */}
-      <div className="absolute bottom-8 right-8 hidden lg:block">
+      <motion.div
+        className="absolute bottom-8 right-8 hidden lg:block"
+        initial={{ opacity: 0, x: 60 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 1.8, ease: "easeOut" }}
+      >
         <RotatingCTA variant="light" size={140} label="GET A QUOTE" href="/quote" />
-      </div>
+      </motion.div>
 
       <Container>
         <div className="max-w-4xl mx-auto text-center">

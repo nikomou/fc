@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useMemo, useCallback } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 type ColorTheme = "blue" | "pink" | "yellow" | "green";
 
@@ -130,54 +130,41 @@ function BlobRing({
 }) {
   const transformOrigin = position === "top-right" ? "100% 0%" : "0% 100%";
 
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const run = async () => {
+      await controls.start({
+        opacity: 0.85,
+        scale: 1,
+        x: 0,
+        y: 0,
+        rotate: 0,
+        transition: { duration: 0.7, delay: layerIndex * 0.18, ease: "easeOut" },
+      });
+      controls.start({
+        scale: [1, 1 + animation.scalePulse, 1, 1 - animation.scalePulse * 0.5, 1],
+        opacity: [0.85, 1, 0.9, 0.95, 0.85],
+        x: [0, animation.driftX, animation.driftX * 0.3, -animation.driftX * 0.5, 0],
+        y: [0, animation.driftY * 0.5, animation.driftY, animation.driftY * 0.2, 0],
+        rotate: [0, animation.rotationAmount, 0, -animation.rotationAmount * 0.5, 0],
+        transition: {
+          duration: animation.driftDuration,
+          repeat: Infinity,
+          ease: "easeInOut",
+          times: [0, 0.25, 0.5, 0.75, 1],
+        },
+      });
+    };
+    run();
+  }, []);
+
   return (
     <motion.path
       d={path}
       fill={`url(#${gradientId})`}
-      initial={{
-        scale: 1,
-        opacity: 0.9,
-        x: 0,
-        y: 0,
-        rotate: 0,
-      }}
-      animate={{
-        scale: [
-          1,
-          1 + animation.scalePulse,
-          1,
-          1 - animation.scalePulse * 0.5,
-          1
-        ],
-        opacity: [0.85, 1, 0.9, 0.95, 0.85],
-        x: [
-          0,
-          animation.driftX,
-          animation.driftX * 0.3,
-          -animation.driftX * 0.5,
-          0
-        ],
-        y: [
-          0,
-          animation.driftY * 0.5,
-          animation.driftY,
-          animation.driftY * 0.2,
-          0
-        ],
-        rotate: [
-          0,
-          animation.rotationAmount,
-          0,
-          -animation.rotationAmount * 0.5,
-          0
-        ],
-      }}
-      transition={{
-        duration: animation.driftDuration,
-        repeat: Infinity,
-        ease: "easeInOut",
-        times: [0, 0.25, 0.5, 0.75, 1],
-      }}
+      initial={{ scale: 1.4, opacity: 0, x: 0, y: 0, rotate: 0 }}
+      animate={controls}
       style={{
         transformOrigin,
         filter: `drop-shadow(0 0 ${20 + layerIndex * 5}px rgba(0,0,0,0.1))`,

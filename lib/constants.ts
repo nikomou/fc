@@ -249,11 +249,11 @@ export const pricingTiers = [
       "Shopify Training",
     ],
     popular: false,
-    cta: "Get Started",
+    cta: "Get a Quote",
   },
   {
     name: "Flex Grow",
-    price: "£4,500",
+    price: "£7,500",
     priceNote: "+ VAT",
     description: "Expand your market reach and optimise your store performance for growth.",
     features: [
@@ -264,11 +264,11 @@ export const pricingTiers = [
       "30 Days Support",
     ],
     popular: true,
-    cta: "Most Popular",
+    cta: "Get a Quote",
   },
   {
     name: "Flex Prime",
-    price: "£9,500",
+    price: "£13,500",
     priceNote: "+ VAT",
     description: "Bespoke design, aggressive marketing, and sophisticated SEO to maximise your sales impact.",
     features: [
@@ -279,7 +279,7 @@ export const pricingTiers = [
       "Strategic Consultations",
     ],
     popular: false,
-    cta: "Contact Us",
+    cta: "Get a Quote",
   },
 ];
 

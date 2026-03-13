@@ -282,7 +282,7 @@ export function QuoteForm() {
         )}
       </div>
 
-      <Button type="submit" size="lg" disabled={isSubmitting} className="w-full">
+      <Button type="submit" size="lg" icon={false} disabled={isSubmitting} className="w-full">
         {isSubmitting ? (
           <>
             <Loader2 className="w-5 h-5 mr-2 animate-spin" />

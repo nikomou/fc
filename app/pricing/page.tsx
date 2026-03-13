@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
-import { PricingCard } from "@/components/pricing/PricingCard";
-import { pricingTiers } from "@/lib/constants";
+import { PricingGrid } from "@/components/pricing/PricingGrid";
 import { Check, HelpCircle } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -63,21 +62,8 @@ export default function PricingPage() {
 
       {/* Pricing Cards */}
       <Section>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-          {pricingTiers.map((tier, index) => (
-            <PricingCard key={tier.name} {...tier} index={index} />
-          ))}
-        </div>
+        <PricingGrid />
 
-        <div className="mt-12 text-center">
-          <p className="text-foreground">
-            Need something custom?{" "}
-            <a href="/quote" className="text-accent hover:underline font-medium">
-              Get a free quote
-            </a>{" "}
-            tailored to your specific requirements.
-          </p>
-        </div>
       </Section>
 
       {/* What's Included */}
