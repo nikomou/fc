@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { CTASection } from "@/components/home/CTASection";
 import { siteConfig, locations } from "@/lib/constants";
 import { TrustBadge } from "@/components/ui/TrustBadge";
 import { ValueCard } from "@/components/ui/ValueCard";
@@ -638,8 +637,6 @@ export default function LondonPage() {
           </div>
         </div>
       </Section>
-
-      <CTASection />
     </>
   );
 }

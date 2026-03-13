@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { CTASection } from "@/components/home/CTASection";
 import { TableOfContents } from "@/components/ui/TableOfContents";
 import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowLeft, User } from "lucide-react";
@@ -681,8 +680,6 @@ Large:    /products/blue-bag_1200x.jpg`}
           </div>
         </div>
       </Section>
-
-      <CTASection />
     </>
   );
 }

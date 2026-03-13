@@ -1,8 +1,7 @@
 import { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import {
-  Target,
+import { ArrowUpRight, Target,
   TrendingUp,
   Palette,
   ArrowLeftRight,

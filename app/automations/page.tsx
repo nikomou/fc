@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { CTASection } from "@/components/home/CTASection";
 import {
   Cog,
   Workflow,
@@ -231,8 +230,6 @@ export default function AutomationsPage() {
           </div>
         </div>
       </Section>
-
-      <CTASection />
     </>
   );
 }

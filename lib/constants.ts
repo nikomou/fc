@@ -152,6 +152,7 @@ export const navigation = [
   { name: "Pricing", href: "/pricing" },
   { name: "Work", href: "/work" },
   { name: "About", href: "/about" },
+  { name: "Blog", href: "/blog" },
   { name: "Resources", href: "/resources" },
   { name: "Contact", href: "/contact" },
 ];
@@ -292,12 +293,16 @@ export const clientLogos = [
 ];
 
 export const partnerLogos = [
-  { name: "Yotpo", logo: "/images/partners/yotpo.svg", alt: "Yotpo - Shopify reviews and UGC integration partner" },
-  { name: "Nosto", logo: "/images/partners/nosto.svg", alt: "Nosto - Shopify personalisation integration partner" },
-  { name: "Klaviyo", logo: "/images/partners/klaviyo.svg", alt: "Klaviyo - Email marketing integration partner" },
-  { name: "Mollie", logo: "/images/partners/mollie.svg", alt: "Mollie - Shopify payments integration partner" },
-  { name: "Reviews.io", logo: "/images/partners/reviewsio.svg", alt: "Reviews.io - Customer reviews integration partner" },
-  { name: "Trustpilot", logo: "/images/partners/trustpilot.svg", alt: "Trustpilot - Trust and reviews integration partner" },
+  { name: "Yotpo",       logo: "/images/partners/yotpo.svg",        alt: "Yotpo - Shopify reviews and UGC integration partner" },
+  { name: "Nosto",       logo: "/images/partners/nosto.svg",        alt: "Nosto - Shopify personalisation integration partner" },
+  { name: "Klaviyo",     logo: "/images/partners/klaviyo.svg",      alt: "Klaviyo - Email marketing integration partner" },
+  { name: "Mollie",      logo: "/images/partners/mollie.svg",       alt: "Mollie - Shopify payments integration partner" },
+  { name: "Reviews.io",  logo: "/images/partners/reviewsio.svg",    alt: "Reviews.io - Customer reviews integration partner" },
+  { name: "Trustpilot",  logo: "/images/partners/trustpilot.svg",   alt: "Trustpilot - Trust and reviews integration partner" },
+  { name: "Gorgias",     logo: "/images/partners/gorgias.svg",      alt: "Gorgias - Shopify customer support integration partner" },
+  { name: "Klevu",       logo: "/images/partners/klevu.svg",        alt: "Klevu - AI-powered search integration partner" },
+  { name: "Brightpearl", logo: "/images/partners/brightpearl.svg",  alt: "Brightpearl - Retail operations integration partner" },
+  { name: "Patchworks",  logo: "/images/partners/patchworks.svg",   alt: "Patchworks - iPaaS integration partner" },
 ];
 
 export const testimonials = [

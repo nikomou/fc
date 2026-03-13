@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { CTASection } from "@/components/home/CTASection";
 import { Checklist, ChecklistProgress } from "@/components/ui/Checklist";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { siteConfig } from "@/lib/constants";
@@ -447,8 +446,6 @@ export default function ShopifyFacebookAdsChecklistPage() {
           </div>
         </div>
       </Section>
-
-      <CTASection />
     </>
   );
 }

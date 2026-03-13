@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
 import { PricingCard } from "@/components/pricing/PricingCard";
-import { CTASection } from "@/components/home/CTASection";
 import { pricingTiers } from "@/lib/constants";
 import { Check, HelpCircle } from "lucide-react";
 
@@ -140,8 +139,6 @@ export default function PricingPage() {
           ))}
         </div>
       </Section>
-
-      <CTASection />
     </>
   );
 }

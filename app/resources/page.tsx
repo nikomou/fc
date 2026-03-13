@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
-import { CTASection } from "@/components/home/CTASection";
 import { ArrowRight, BookOpen, Video, FileText, CheckSquare } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -163,9 +162,6 @@ export default function ResourcesPage() {
           </Link>
         </div>
       </Section>
-
-
-      <CTASection />
     </>
   );
 }

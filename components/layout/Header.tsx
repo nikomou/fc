@@ -23,6 +23,7 @@ import {
   BookOpen,
   CheckSquare,
   FileText,
+  ArrowUpRight,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -127,17 +128,27 @@ export function Header() {
   const [ecommerceOpen, setEcommerceOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [margin, setMargin] = useState(12);
 
   useEffect(() => {
     if (!isHomepage && !isServicePage) return;
 
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 150);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHomepage, isServicePage]);
+
+  useEffect(() => {
+    const calcMargin = () => {
+      setMargin(scrolled ? Math.max(12, (window.innerWidth - 1256) / 2) : 12);
+    };
+    calcMargin();
+    window.addEventListener("resize", calcMargin);
+    return () => window.removeEventListener("resize", calcMargin);
+  }, [scrolled]);
 
   // Homepage: transparent with white text
   // Service pages: transparent with dark text
@@ -145,15 +156,17 @@ export function Header() {
   const useWhiteText = isHomepage && isTransparent;
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <motion.header
+      initial={false}
+      animate={{ left: margin, right: margin }}
+      transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+      className={`fixed top-3 z-50 rounded-full transition-colors duration-300 ${
         isTransparent
-          ? "bg-transparent border-transparent"
-          : "bg-white/95 backdrop-blur-sm border-b border-gray-100"
+          ? "bg-transparent"
+          : "bg-white/50 backdrop-blur-2xl backdrop-saturate-150 shadow-[0_4px_24px_rgba(0,0,0,0.08)]"
       }`}
     >
-      <Container>
-        <nav className="flex items-center justify-between h-20">
+      <nav className="flex items-center justify-between h-16 px-5">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
@@ -375,19 +388,18 @@ export function Header() {
               <Menu className="w-6 h-6" />
             )}
           </button>
-        </nav>
-      </Container>
+      </nav>
 
-      {/* Mobile Navigation */}
+        {/* Mobile Navigation */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-gray-100"
+            className="lg:hidden bg-white/50 backdrop-blur-2xl border-t border-white/40 rounded-b-3xl"
           >
-            <Container className="py-4">
+            <div className="px-5 py-4">
               <div className="flex flex-col gap-2">
                 {/* Development Services */}
                 <div className="py-2">
@@ -496,14 +508,14 @@ export function Header() {
 
                 <hr className="my-2" />
 
-                <Button href="/quote" variant="cta" className="mt-2">
+                <Button href="/quote" variant="cta" className="mt-2" iconComponent={ArrowUpRight}>
                   Get a Quote
                 </Button>
               </div>
-            </Container>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   );
 }

@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { CTASection } from "@/components/home/CTASection";
+import { RelatedServices } from "@/components/ui/RelatedServices";
+import { ServiceCapabilities } from "@/components/ui/ServiceCapabilities";
 import { PageHero } from "@/components/ui/PageHero";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import { siteConfig } from "@/lib/constants";
@@ -74,6 +75,12 @@ const integrationTypes = [
     color: "#64748b",
   },
 ];
+const capabilityTheme = {
+  wave: "/images/wave-orange-corner.svg",
+  circle: "/images/circles/circle-orange.svg",
+  cardBg: "#fff9f0",
+};
+
 
 const benefits = [
   "Eliminate manual data entry",
@@ -138,45 +145,17 @@ export default function IntegrationsPage() {
         primaryCta={{ text: "Discuss Integration", href: "/quote" }}
         secondaryCta={{ text: "View Our Work", href: "/work" }}
         showTrustBadge
-        shapeColors={{ topRight: "green", bottomLeft: "blue" }}
+        shapeColors={{ topRight: "orange", bottomLeft: "orange" }}
       />
 
       {/* Integration Types */}
       <Section background="alt">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
-            Systems We Integrate
-          </h2>
-          <p className="text-lg text-foreground max-w-2xl mx-auto">
-            We connect Shopify to virtually any system with an API.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {integrationTypes.map((type) => {
-            const Icon = type.icon;
-            return (
-              <div
-                key={type.title}
-                className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300"
-              >
-                <div
-                  className="w-12 h-12 rounded-lg border-2 flex items-center justify-center mb-4"
-                  style={{
-                    borderColor: type.color,
-                    backgroundColor: `${type.color}10`,
-                  }}
-                >
-                  <Icon className="w-6 h-6" style={{ color: type.color }} />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground-dark mb-2">
-                  {type.title}
-                </h3>
-                <p className="text-foreground text-sm">{type.description}</p>
-              </div>
-            );
-          })}
-        </div>
+          <ServiceCapabilities
+            heading="Systems We Integrate"
+            subheading="We connect Shopify to virtually any system with an API."
+            items={integrationTypes}
+            theme={capabilityTheme}
+          />
       </Section>
 
       {/* Benefits */}
@@ -289,7 +268,7 @@ export default function IntegrationsPage() {
         </div>
       </Section>
 
-      <CTASection />
+      <RelatedServices />
     </>
   );
 }

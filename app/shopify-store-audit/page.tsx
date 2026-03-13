@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { CTASection } from "@/components/home/CTASection";
+import { RelatedServices } from "@/components/ui/RelatedServices";
+import { ServiceCapabilities } from "@/components/ui/ServiceCapabilities";
 import { PageHero } from "@/components/ui/PageHero";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import { siteConfig } from "@/lib/constants";
@@ -74,6 +75,12 @@ const auditAreas = [
     color: "#64748b",
   },
 ];
+const capabilityTheme = {
+  wave: "/images/wave-indigo-corner.svg",
+  circle: "/images/circles/circle-indigo.svg",
+  cardBg: "#eef2ff",
+};
+
 
 const deliverables = [
   "Comprehensive written report",
@@ -138,45 +145,17 @@ export default function StoreAuditPage() {
         primaryCta={{ text: "Get Store Audit", href: "/quote" }}
         secondaryCta={{ text: "View Our Work", href: "/work" }}
         showTrustBadge
-        shapeColors={{ topRight: "blue", bottomLeft: "green" }}
+        shapeColors={{ topRight: "indigo", bottomLeft: "indigo" }}
       />
 
       {/* Audit Areas */}
       <Section background="alt">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
-            What We Audit
-          </h2>
-          <p className="text-lg text-foreground max-w-2xl mx-auto">
-            A 360-degree review of your store covering every aspect that impacts success.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {auditAreas.map((area) => {
-            const Icon = area.icon;
-            return (
-              <div
-                key={area.title}
-                className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300"
-              >
-                <div
-                  className="w-12 h-12 rounded-lg border-2 flex items-center justify-center mb-4"
-                  style={{
-                    borderColor: area.color,
-                    backgroundColor: `${area.color}10`,
-                  }}
-                >
-                  <Icon className="w-6 h-6" style={{ color: area.color }} />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground-dark mb-2">
-                  {area.title}
-                </h3>
-                <p className="text-foreground text-sm">{area.description}</p>
-              </div>
-            );
-          })}
-        </div>
+          <ServiceCapabilities
+            heading="What We Audit"
+            subheading="A 360-degree review of your store covering every aspect that impacts success."
+            items={auditAreas}
+            theme={capabilityTheme}
+          />
       </Section>
 
       {/* Deliverables */}
@@ -292,7 +271,7 @@ export default function StoreAuditPage() {
         </div>
       </Section>
 
-      <CTASection />
+      <RelatedServices />
     </>
   );
 }

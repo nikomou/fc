@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { CTASection } from "@/components/home/CTASection";
+import { RelatedServices } from "@/components/ui/RelatedServices";
 import { PageHero } from "@/components/ui/PageHero";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import { siteConfig } from "@/lib/constants";
@@ -151,7 +151,7 @@ export default function MigrationPage() {
         primaryCta={{ text: "Get Migration Quote", href: "/quote" }}
         secondaryCta={{ text: "View Our Work", href: "/work" }}
         showTrustBadge
-        shapeColors={{ topRight: "yellow", bottomLeft: "green" }}
+        shapeColors={{ topRight: "teal", bottomLeft: "teal" }}
       />
 
       {/* Platforms */}
@@ -397,7 +397,7 @@ export default function MigrationPage() {
         </div>
       </Section>
 
-      <CTASection />
+      <RelatedServices />
     </>
   );
 }

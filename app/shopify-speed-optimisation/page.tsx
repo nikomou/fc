@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { CTASection } from "@/components/home/CTASection";
+import { RelatedServices } from "@/components/ui/RelatedServices";
+import { ServiceCapabilities } from "@/components/ui/ServiceCapabilities";
 import { PageHero } from "@/components/ui/PageHero";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import { siteConfig } from "@/lib/constants";
@@ -74,6 +75,12 @@ const optimisations = [
     color: "#64748b",
   },
 ];
+const capabilityTheme = {
+  wave: "/images/wave-black-corner.svg",
+  circle: "/images/circles/circle-black.svg",
+  cardBg: "#f8f8f8",
+};
+
 
 const stats = [
   { value: "53%", label: "of mobile users leave if a page takes over 3 seconds to load" },
@@ -150,40 +157,12 @@ export default function SpeedOptimisationPage() {
 
       {/* Optimisations */}
       <Section background="alt">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
-            What We Optimise
-          </h2>
-          <p className="text-lg text-foreground max-w-2xl mx-auto">
-            We tackle every factor that affects your store&apos;s performance.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {optimisations.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={item.title}
-                className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300"
-              >
-                <div
-                  className="w-12 h-12 rounded-lg border-2 flex items-center justify-center mb-4"
-                  style={{
-                    borderColor: item.color,
-                    backgroundColor: `${item.color}10`,
-                  }}
-                >
-                  <Icon className="w-6 h-6" style={{ color: item.color }} />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground-dark mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-foreground text-sm">{item.description}</p>
-              </div>
-            );
-          })}
-        </div>
+          <ServiceCapabilities
+            heading="What We Optimise"
+            subheading="We tackle every factor that affects your store&apos;s performance."
+            items={optimisations}
+            theme={capabilityTheme}
+          />
       </Section>
 
       {/* Process */}
@@ -310,7 +289,7 @@ export default function SpeedOptimisationPage() {
         </div>
       </Section>
 
-      <CTASection />
+      <RelatedServices exclude="Speed Optimisation" />
     </>
   );
 }

@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
-import { CTASection } from "@/components/home/CTASection";
 import { Team } from "@/components/about/Team";
 import { teamValues } from "@/lib/constants";
 import { Users, Target, Award, Heart } from "lucide-react";
@@ -171,8 +170,6 @@ export default function AboutPage() {
           </div>
         </div>
       </Section>
-
-      <CTASection />
     </>
   );
 }

@@ -2,7 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { CTASection } from "@/components/home/CTASection";
+import { RelatedServices } from "@/components/ui/RelatedServices";
+import { ServiceCapabilities } from "@/components/ui/ServiceCapabilities";
 import { PageHero } from "@/components/ui/PageHero";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import { siteConfig } from "@/lib/constants";
@@ -75,6 +76,12 @@ const features = [
     color: "#64748b",
   },
 ];
+const capabilityTheme = {
+  wave: "/images/wave-pink-corner.svg",
+  circle: "/images/circles/circle-pink.svg",
+  cardBg: "#fff5f7",
+};
+
 
 const process = [
   {
@@ -144,40 +151,12 @@ export default function ThemeDevelopmentPage() {
 
       {/* Features */}
       <Section background="alt">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
-            What Makes Our Themes Different
-          </h2>
-          <p className="text-lg text-foreground max-w-2xl mx-auto">
-            We don&apos;t just build themes, we craft conversion machines.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature) => {
-            const Icon = feature.icon;
-            return (
-              <div
-                key={feature.title}
-                className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300"
-              >
-                <div
-                  className="w-12 h-12 rounded-lg border-2 flex items-center justify-center mb-4"
-                  style={{
-                    borderColor: feature.color,
-                    backgroundColor: `${feature.color}10`,
-                  }}
-                >
-                  <Icon className="w-6 h-6" style={{ color: feature.color }} />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground-dark mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-foreground text-sm">{feature.description}</p>
-              </div>
-            );
-          })}
-        </div>
+          <ServiceCapabilities
+            heading="What Makes Our Themes Different"
+            subheading="We don&apos;t just build themes, we craft conversion machines."
+            items={features}
+            theme={capabilityTheme}
+          />
       </Section>
 
       {/* Process */}
@@ -287,7 +266,7 @@ export default function ThemeDevelopmentPage() {
         </div>
       </Section>
 
-      <CTASection />
+      <RelatedServices exclude="Theme Development" />
     </>
   );
 }

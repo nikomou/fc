@@ -6,11 +6,17 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { TrustBadge } from "@/components/ui/TrustBadge";
 import { AnimatedBackground } from "@/components/ui/AnimatedBackground";
+import { RotatingCTA } from "@/components/ui/RotatingCTA";
 
 export function Hero() {
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
       <AnimatedBackground theme="blue" />
+
+      {/* Rotating CTA — bottom-right accent */}
+      <div className="absolute bottom-8 right-8 hidden lg:block">
+        <RotatingCTA variant="light" size={140} label="GET A QUOTE" href="/quote" />
+      </div>
 
       <Container>
         <div className="max-w-4xl mx-auto text-center">
@@ -42,9 +48,9 @@ export function Hero() {
             role="heading"
             aria-level={2}
           >
-            Build unforgettable Shopify
+            The Shopify agency
             <br />
-            experiences with <span className="text-white">Flex</span>
+            ecommerce brands trust
           </motion.p>
 
           <motion.p
@@ -53,7 +59,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto"
           >
-            Flex your ecommerce potential with a conversion-driven Shopify store.
+            We design, build and grow Shopify stores for ambitious brands.
           </motion.p>
 
           <motion.div
@@ -70,13 +76,13 @@ export function Hero() {
             </Button>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <TrustBadge dark />
-          </motion.div>
+          </motion.div> */}
         </div>
       </Container>
     </section>

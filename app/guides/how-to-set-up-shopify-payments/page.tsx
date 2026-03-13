@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { CTASection } from "@/components/home/CTASection";
 import { TableOfContents } from "@/components/ui/TableOfContents";
 import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowLeft, User } from "lucide-react";
@@ -357,8 +356,6 @@ export default function ShopifyPaymentsGuidePage() {
           </div>
         </div>
       </Section>
-
-      <CTASection />
     </>
   );
 }

@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
-import { CTASection } from "@/components/home/CTASection";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowRight, BookOpen, Users, RefreshCw, CheckCircle, Sparkles, Target } from "lucide-react";
@@ -311,8 +310,6 @@ export default function GuidesPage() {
           />
         </div>
       </Section>
-
-      <CTASection />
     </>
   );
 }

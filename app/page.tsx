@@ -3,7 +3,7 @@ import { Hero } from "@/components/home/Hero";
 import { ClientLogos } from "@/components/home/ClientLogos";
 import { StatsBar } from "@/components/home/StatsBar";
 import { ValueProps } from "@/components/home/ValueProps";
-import { CTASection } from "@/components/home/CTASection";
+import { LatestPosts } from "@/components/home/LatestPosts";
 import { MigrationSelector } from "@/components/home/MigrationSelector";
 import { LocationCards } from "@/components/home/LocationCards";
 import { PartnerMarquee } from "@/components/home/PartnerMarquee";
@@ -38,6 +38,16 @@ const serviceWaves: Record<string, string> = {
   "Speed Optimisation":"/images/wave-black-corner.svg",
   "Ongoing Support":   "/images/wave-blue-corner.svg",
 };
+
+const serviceCardBg: Record<string, string> = {
+  "Shopify Plus":      "#fffdf5",
+  "Theme Development": "#fff5f7",
+  "App Development":   "#f8f5ff",
+  "Shopify SEO":       "#f3fdf6",
+  "Speed Optimisation":"#f8f8f8",
+  "Ongoing Support":   "#f3f8ff",
+};
+
 
 const serviceCircles: Record<string, string> = {
   "Shopify Plus":      "/images/circles/circle-yellow.svg",
@@ -104,11 +114,13 @@ export default function HomePage() {
             const wave = serviceWaves[service.title];
             const circle = serviceCircles[service.title];
             const pills = servicePills[service.title] ?? [];
+            const cardBg = serviceCardBg[service.title] ?? "#ffffff";
             return (
               <a
                 key={service.title}
                 href={service.href}
-                className="group relative bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 overflow-hidden flex flex-col min-h-[280px]"
+                className="group relative rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 overflow-hidden flex flex-col min-h-[280px]"
+                style={{ backgroundColor: cardBg }}
               >
                 {/* Wave decoration top-right */}
                 {wave && (
@@ -222,7 +234,7 @@ export default function HomePage() {
 
       <StatsBar />
 
-      <CTASection />
+      <LatestPosts />
     </>
   );
 }

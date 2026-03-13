@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { CTASection } from "@/components/home/CTASection";
+import { RelatedServices } from "@/components/ui/RelatedServices";
+import { ServiceCapabilities } from "@/components/ui/ServiceCapabilities";
 import { PageHero } from "@/components/ui/PageHero";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import { siteConfig } from "@/lib/constants";
@@ -74,6 +75,12 @@ const services = [
     color: "#64748b",
   },
 ];
+const capabilityTheme = {
+  wave: "/images/wave-green-corner.svg",
+  circle: "/images/circles/circle-green.svg",
+  cardBg: "#f3fdf6",
+};
+
 
 const includes = [
   "Comprehensive SEO audit",
@@ -143,40 +150,12 @@ export default function SEOPage() {
 
       {/* Services */}
       <Section background="alt">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
-            Our SEO Services
-          </h2>
-          <p className="text-lg text-foreground max-w-2xl mx-auto">
-            Comprehensive SEO services tailored for Shopify and ecommerce.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service) => {
-            const Icon = service.icon;
-            return (
-              <div
-                key={service.title}
-                className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300"
-              >
-                <div
-                  className="w-12 h-12 rounded-lg border-2 flex items-center justify-center mb-4"
-                  style={{
-                    borderColor: service.color,
-                    backgroundColor: `${service.color}10`,
-                  }}
-                >
-                  <Icon className="w-6 h-6" style={{ color: service.color }} />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground-dark mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-foreground text-sm">{service.description}</p>
-              </div>
-            );
-          })}
-        </div>
+          <ServiceCapabilities
+            heading="Our SEO Services"
+            subheading="Comprehensive SEO services tailored for Shopify and ecommerce."
+            items={services}
+            theme={capabilityTheme}
+          />
       </Section>
 
       {/* What's Included */}
@@ -292,7 +271,7 @@ export default function SEOPage() {
         </div>
       </Section>
 
-      <CTASection />
+      <RelatedServices exclude="Shopify SEO" />
     </>
   );
 }

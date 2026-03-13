@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { CTASection } from "@/components/home/CTASection";
 import { PageHero } from "@/components/ui/PageHero";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import { siteConfig } from "@/lib/constants";
@@ -399,8 +398,6 @@ export default function SalesforceToShopifyMigrationPage() {
           </div>
         </div>
       </Section>
-
-      <CTASection />
     </>
   );
 }

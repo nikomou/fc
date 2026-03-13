@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { Button } from "@/components/ui/Button";
 import { partnerLogos } from "@/lib/constants";
 
 const col1 = [...partnerLogos, ...partnerLogos, ...partnerLogos];
@@ -48,6 +49,10 @@ export function PartnerMarquee() {
           <p className="text-gray-400">
             Our partnerships are built on mutual trust and shared values, enabling us to deliver unparalleled solutions.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <Button href="/partners" variant="solid-light">Our Partners</Button>
+            <Button href="/quote" variant="outline-light">Get A Quote</Button>
+          </div>
         </div>
 
         {/* Right: 2 angled scrolling columns */}

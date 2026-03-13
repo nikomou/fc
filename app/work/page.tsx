@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { CTASection } from "@/components/home/CTASection";
 import { ExternalLink, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -189,8 +188,6 @@ export default function WorkPage() {
           ))}
         </div>
       </Section>
-
-      <CTASection />
     </>
   );
 }

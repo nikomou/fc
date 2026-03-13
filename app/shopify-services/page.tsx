@@ -1,10 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { CTASection } from "@/components/home/CTASection";
 import { PageHero } from "@/components/ui/PageHero";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
+import { ProcessSteps } from "@/components/ui/ProcessSteps";
 import { siteConfig } from "@/lib/constants";
 import {
   Zap,
@@ -19,6 +20,42 @@ import {
   Search,
   Wrench,
 } from "lucide-react";
+
+const serviceCardBg: Record<string, string> = {
+  "Shopify Plus":      "#fffdf5",
+  "Theme Development": "#fff5f7",
+  "App Development":   "#f8f5ff",
+  "Migrations":        "#fff8f3",
+  "Speed Optimisation":"#f8f8f8",
+  "Ongoing Support":   "#f3f8ff",
+  "Shopify SEO":       "#f3fdf6",
+  "Store Audits":      "#f3f3ff",
+  "Integrations":      "#f0fdfb",
+};
+
+const serviceWaves: Record<string, string> = {
+  "Shopify Plus":      "/images/wave-yellow-corner.svg",
+  "Theme Development": "/images/wave-pink-corner.svg",
+  "App Development":   "/images/wave-purple-corner.svg",
+  "Migrations":        "/images/wave-orange-corner.svg",
+  "Speed Optimisation":"/images/wave-black-corner.svg",
+  "Ongoing Support":   "/images/wave-blue-corner.svg",
+  "Shopify SEO":       "/images/wave-green-corner.svg",
+  "Store Audits":      "/images/wave-indigo-corner.svg",
+  "Integrations":      "/images/wave-teal-corner.svg",
+};
+
+const serviceCircles: Record<string, string> = {
+  "Shopify Plus":      "/images/circles/circle-yellow.svg",
+  "Theme Development": "/images/circles/circle-pink.svg",
+  "App Development":   "/images/circles/circle-purple.svg",
+  "Migrations":        "/images/circles/circle-orange.svg",
+  "Speed Optimisation":"/images/circles/circle-black.svg",
+  "Ongoing Support":   "/images/circles/circle-blue.svg",
+  "Shopify SEO":       "/images/circles/circle-green.svg",
+  "Store Audits":      "/images/circles/circle-indigo.svg",
+  "Integrations":      "/images/circles/circle-teal.svg",
+};
 
 export const metadata: Metadata = {
   title: "Shopify Development Services | Flex Commerce",
@@ -255,47 +292,59 @@ export default function ServicesPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => {
             const Icon = service.icon;
+            const wave   = serviceWaves[service.title];
+            const circle = serviceCircles[service.title];
+            const cardBg = serviceCardBg[service.title] ?? "#ffffff";
             return (
-              <div
+              <Link
                 key={service.title}
-                className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300"
+                href={service.href}
+                className="group relative rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 overflow-hidden flex flex-col min-h-[320px]"
+                style={{ backgroundColor: cardBg }}
               >
-                <div
-                  className="w-12 h-12 rounded-lg border-2 flex items-center justify-center mb-5"
-                  style={{
-                    borderColor: service.color,
-                    backgroundColor: `${service.color}10`,
-                  }}
-                >
-                  <Icon className="w-6 h-6" style={{ color: service.color }} />
+                {/* Wave decoration */}
+                {wave && (
+                  <Image
+                    src={wave}
+                    alt=""
+                    width={160}
+                    height={160}
+                    className="absolute top-0 right-0 w-32 h-32 object-contain object-right-top opacity-60 pointer-events-none transition-all duration-500 ease-out group-hover:opacity-90 group-hover:scale-110 group-hover:-translate-y-2 group-hover:translate-x-2"
+                    aria-hidden="true"
+                  />
+                )}
+
+                {/* Circle icon */}
+                <div className="relative w-12 h-12 mb-4">
+                  {circle && (
+                    <Image src={circle} alt="" width={48} height={48} className="absolute inset-0 w-12 h-12" aria-hidden="true" />
+                  )}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-white" strokeWidth={1.5} />
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-foreground-dark mb-3">
+
+                <h3 className="relative text-lg font-semibold text-foreground-dark mb-2 group-hover:text-black transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-foreground mb-4">{service.description}</p>
-                <ul className="space-y-2 mb-6">
+                <p className="relative text-foreground text-sm mb-4">{service.description}</p>
+
+                <ul className="relative space-y-1.5 mb-4 flex-1">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2 text-sm">
-                      <Check
-                        className="w-4 h-4 flex-shrink-0 mt-0.5"
-                        style={{ color: service.color }}
-                      />
+                      <Check className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: service.color }} />
                       <span className="text-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <Link
-                  href={service.href}
-                  className="inline-flex items-center text-sm font-medium hover:gap-2 transition-all"
-                  style={{ color: service.color }}
-                >
-                  Learn more
-                  <ArrowRight className="w-4 h-4 ml-1" />
-                </Link>
-              </div>
+
+                <span className="relative inline-flex items-center gap-1 text-sm font-medium text-gray-500 group-hover:text-gray-800 transition-colors mt-auto">
+                  Learn more <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </Link>
             );
           })}
         </div>
@@ -312,24 +361,7 @@ export default function ServicesPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {process.map((phase, index) => (
-            <div key={phase.step} className="relative">
-              {index < process.length - 1 && (
-                <div className="hidden lg:block absolute top-8 left-1/2 w-full h-px bg-gray-700" />
-              )}
-              <div className="relative text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#ef436b] text-white text-2xl font-bold mb-4">
-                  {phase.step}
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  {phase.title}
-                </h3>
-                <p className="text-gray-400">{phase.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <ProcessSteps steps={process} />
       </Section>
 
       {/* Additional Services */}
@@ -345,26 +377,42 @@ export default function ServicesPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {additionalServices.map((service) => {
-            const Icon = service.icon;
+            const Icon   = service.icon;
+            const wave   = serviceWaves[service.title];
+            const circle = serviceCircles[service.title];
+            const cardBg = serviceCardBg[service.title] ?? "#ffffff";
             return (
               <Link
                 key={service.title}
                 href={service.href}
-                className="group bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                className="group relative rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 overflow-hidden flex flex-col min-h-[220px]"
+                style={{ backgroundColor: cardBg }}
               >
-                <div
-                  className="w-12 h-12 rounded-lg border-2 flex items-center justify-center mb-4"
-                  style={{
-                    borderColor: service.color,
-                    backgroundColor: `${service.color}10`,
-                  }}
-                >
-                  <Icon className="w-6 h-6" style={{ color: service.color }} />
+                {wave && (
+                  <Image
+                    src={wave}
+                    alt=""
+                    width={160}
+                    height={160}
+                    className="absolute top-0 right-0 w-32 h-32 object-contain object-right-top opacity-60 pointer-events-none transition-all duration-500 ease-out group-hover:opacity-90 group-hover:scale-110 group-hover:-translate-y-2 group-hover:translate-x-2"
+                    aria-hidden="true"
+                  />
+                )}
+                <div className="relative w-12 h-12 mb-4">
+                  {circle && (
+                    <Image src={circle} alt="" width={48} height={48} className="absolute inset-0 w-12 h-12" aria-hidden="true" />
+                  )}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-white" strokeWidth={1.5} />
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-foreground-dark mb-2 group-hover:text-black">
+                <h3 className="relative text-lg font-semibold text-foreground-dark mb-2 group-hover:text-black transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-foreground text-sm">{service.description}</p>
+                <p className="relative text-foreground text-sm flex-1">{service.description}</p>
+                <span className="relative inline-flex items-center gap-1 text-sm font-medium text-gray-500 group-hover:text-gray-800 transition-colors mt-4">
+                  Learn more <ArrowRight className="w-3.5 h-3.5" />
+                </span>
               </Link>
             );
           })}
@@ -401,8 +449,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </Section>
-
-      <CTASection />
     </>
   );
 }

@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { CTASection } from "@/components/home/CTASection";
+import { RelatedServices } from "@/components/ui/RelatedServices";
+import { ServiceCapabilities } from "@/components/ui/ServiceCapabilities";
 import { PageHero } from "@/components/ui/PageHero";
 import {
   Zap,
@@ -57,6 +58,12 @@ const features = [
       "Infrastructure built to handle flash sales and rapid growth.",
   },
 ];
+const capabilityTheme = {
+  wave: "/images/wave-yellow-corner.svg",
+  circle: "/images/circles/circle-yellow.svg",
+  cardBg: "#fffdf5",
+};
+
 
 const benefits = [
   "Unlimited staff accounts",
@@ -83,35 +90,12 @@ export default function ShopifyPlusPage() {
 
       {/* Features */}
       <Section background="alt">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground-dark mb-4">
-            Shopify Plus Capabilities
-          </h2>
-          <p className="text-lg text-foreground max-w-2xl mx-auto">
-            We help you leverage every feature of Shopify Plus to grow your
-            business.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature) => {
-            const Icon = feature.icon;
-            return (
-              <div
-                key={feature.title}
-                className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-200"
-              >
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-accent" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground-dark mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-foreground">{feature.description}</p>
-              </div>
-            );
-          })}
-        </div>
+          <ServiceCapabilities
+            heading="Shopify Plus Capabilities"
+            subheading="We help you leverage every feature of Shopify Plus to grow your business."
+            items={features}
+            theme={capabilityTheme}
+          />
       </Section>
 
       {/* Benefits */}
@@ -201,7 +185,7 @@ export default function ShopifyPlusPage() {
         </div>
       </Section>
 
-      <CTASection />
+      <RelatedServices exclude="Shopify Plus" />
     </>
   );
 }

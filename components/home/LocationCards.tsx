@@ -29,29 +29,31 @@ export function LocationCards() {
     offset: ["end end", "end start"],
   });
 
-  // Position — outer cards lead, inner cards lag
-  const leftOuterX  = useTransform(scrollYProgress, [0, 0.7], [0, -320]);
-  const leftInnerX  = useTransform(scrollYProgress, [0.1, 1], [0, -220]);
-  const rightInnerX = useTransform(scrollYProgress, [0.1, 1], [0,  220]);
-  const rightOuterX = useTransform(scrollYProgress, [0, 0.7], [0,  320]);
+  // Position
+  const leftOuterX  = useTransform(scrollYProgress, [0,   0.7], [0, -320]);
+  const leftInnerX  = useTransform(scrollYProgress, [0.1, 1],   [0, -220]);
+  const mainLeftX   = useTransform(scrollYProgress, [0.2, 1],   [0, -140]);
+  const mainRightX  = useTransform(scrollYProgress, [0.2, 1],   [0,  140]);
+  const rightInnerX = useTransform(scrollYProgress, [0.1, 1],   [0,  220]);
+  const rightOuterX = useTransform(scrollYProgress, [0,   0.7], [0,  320]);
 
-  // Opacity — fade out as they move away
-  const leftOuterOpacity  = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-  const leftInnerOpacity  = useTransform(scrollYProgress, [0.1, 1], [1, 0]);
-  const rightInnerOpacity = useTransform(scrollYProgress, [0.1, 1], [1, 0]);
-  const rightOuterOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  // Opacity — delayed further than movement
+  const leftOuterOpacity  = useTransform(scrollYProgress, [0.3, 0.7], [1, 0]);
+  const leftInnerOpacity  = useTransform(scrollYProgress, [0.4, 1],   [1, 0]);
+  const mainOpacity       = useTransform(scrollYProgress, [0.5, 1],   [1, 0]);
+  const rightInnerOpacity = useTransform(scrollYProgress, [0.4, 1],   [1, 0]);
+  const rightOuterOpacity = useTransform(scrollYProgress, [0.3, 0.7], [1, 0]);
 
-  // Blur — increase as they move away
-  const leftOuterFilter  = useTransform(scrollYProgress, [0, 0.7], [0, 6], { clamp: true });
-  const leftInnerFilter  = useTransform(scrollYProgress, [0.1, 1], [0, 6], { clamp: true });
-  const rightInnerFilter = useTransform(scrollYProgress, [0.1, 1], [0, 6], { clamp: true });
-  const rightOuterFilter = useTransform(scrollYProgress, [0, 0.7], [0, 6], { clamp: true });
+  // Blur — delayed further than movement
+  const leftOuterFilter  = useTransform(scrollYProgress, [0.3, 0.7], [0, 6], { clamp: true });
+  const leftInnerFilter  = useTransform(scrollYProgress, [0.4, 1],   [0, 6], { clamp: true });
+  const mainFilterValue  = useTransform(scrollYProgress, [0.5, 1],   [0, 6], { clamp: true });
+  const rightInnerFilter = useTransform(scrollYProgress, [0.4, 1],   [0, 6], { clamp: true });
+  const rightOuterFilter = useTransform(scrollYProgress, [0.3, 0.7], [0, 6], { clamp: true });
 
   const toFilter = (v: number) => `blur(${v}px)`;
 
-  const mainData = locations.filter(l =>
-    mainLocations.some(m => m.id === l.id)
-  );
+  const mainData = locations.filter(l => mainLocations.some(m => m.id === l.id));
 
   const sideCardClass = "group relative w-52 rounded-2xl overflow-hidden flex-shrink-0 self-stretch";
 
@@ -91,11 +93,12 @@ export function LocationCards() {
 
         {/* Main office cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl w-full flex-shrink-0">
-          {mainData.map((location) => (
-            <a
+          {mainData.map((location, i) => (
+            <motion.a
               key={location.id}
               href={`/${location.slug}`}
-              className="group relative rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 block aspect-[4/3] bg-gray-100"
+              style={{ x: i === 0 ? mainLeftX : mainRightX, opacity: mainOpacity, filter: useTransform(mainFilterValue, toFilter) }}
+              className="group relative rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-shadow duration-300 block aspect-[4/3] bg-gray-100"
             >
               <Image
                 src={`/images/cities/${location.id}.jpg`}
@@ -112,7 +115,7 @@ export function LocationCards() {
                   <span>{location.streetAddress}</span>
                 </div>
               </div>
-            </a>
+            </motion.a>
           ))}
         </div>
 

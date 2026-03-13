@@ -3,19 +3,20 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { forwardRef } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight, LucideIcon } from "lucide-react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "outline" | "outline-light" | "solid-light" | "cta" | "ghost";
   size?: "sm" | "md" | "lg";
   href?: string;
   icon?: boolean;
+  iconComponent?: LucideIcon;
   children: React.ReactNode;
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    { className, variant = "primary", size = "md", href, icon = true, children, ...props },
+    { className, variant = "primary", size = "md", href, icon = true, iconComponent, children, ...props },
     ref
   ) => {
     const baseStyles =
@@ -54,7 +55,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const content = (
       <>
         {children}
-        {icon && <ArrowRight className={iconSizes[size]} />}
+        {icon && (() => { const Icon = iconComponent ?? ArrowUpRight; return <Icon className={iconSizes[size]} />; })()}
       </>
     );
 
