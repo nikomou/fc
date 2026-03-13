@@ -28,6 +28,15 @@ const iconMap: Record<string, LucideIcon> = {
   Headphones,
 };
 
+const serviceWaves: Record<string, string> = {
+  "Shopify Plus":      "/images/wave-yellow-corner.svg",
+  "Theme Development": "/images/wave-pink-corner.svg",
+  "App Development":   "/images/wave-blue-corner.svg",
+  "Shopify SEO":       "/images/wave-green-corner.svg",
+  "Speed Optimisation":"/images/wave-blue-corner.svg",
+  "Ongoing Support":   "/images/wave-pink-corner.svg",
+};
+
 export default function HomePage() {
   return (
     <>
@@ -50,22 +59,34 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => {
             const Icon = iconMap[service.icon] || Zap;
+            const wave = serviceWaves[service.title];
             return (
               <a
                 key={service.title}
                 href={service.href}
-                className="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
+                className="group relative bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 overflow-hidden"
               >
+                {/* Wave decoration top-right */}
+                {wave && (
+                  <Image
+                    src={wave}
+                    alt=""
+                    width={160}
+                    height={160}
+                    className="absolute top-0 right-0 w-32 h-32 object-contain object-right-top opacity-70 pointer-events-none"
+                    aria-hidden="true"
+                  />
+                )}
                 <div
-                  className="w-12 h-12 rounded-lg border-2 flex items-center justify-center mb-4 transition-colors"
+                  className="relative w-12 h-12 rounded-lg border-2 flex items-center justify-center mb-4 transition-colors"
                   style={{ borderColor: service.color, backgroundColor: `${service.color}10` }}
                 >
                   <Icon className="w-6 h-6" style={{ color: service.color }} />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground-dark mb-2 group-hover:text-black transition-colors">
+                <h3 className="relative text-lg font-semibold text-foreground-dark mb-2 group-hover:text-black transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-foreground text-sm">{service.description}</p>
+                <p className="relative text-foreground text-sm">{service.description}</p>
               </a>
             );
           })}
