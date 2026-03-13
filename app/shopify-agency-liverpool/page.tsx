@@ -204,10 +204,10 @@ const liverpoolSchema = {
       priceRange: "£££",
       address: {
         "@type": "PostalAddress",
-        streetAddress: liverpoolLocation.streetAddress,
+        streetAddress: liverpoolLocation.streetAddress!,
         addressLocality: liverpoolLocation.addressLocality,
         addressRegion: "Merseyside",
-        postalCode: liverpoolLocation.postalCode,
+        postalCode: liverpoolLocation.postalCode!,
         addressCountry: "GB",
       },
       geo: {

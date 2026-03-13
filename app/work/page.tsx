@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { ExternalLink, ArrowRight, Briefcase } from "lucide-react";
+import { Briefcase } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
@@ -14,50 +14,50 @@ const projects = [
   {
     title: "Fashion Brand Co",
     category: "Fashion & Apparel",
+    headline: "Increased conversion rate for a fashion retailer by 40%",
     description:
       "Complete Shopify Plus migration with custom theme development and advanced filtering system.",
     results: ["40% increase in conversion rate", "2x faster page load times"],
-    image: "/images/work/fashion-brand.jpg",
   },
   {
     title: "Tech Accessories Ltd",
     category: "Electronics",
+    headline: "Grew average order value for a tech accessories brand by 60%",
     description:
       "Custom Shopify theme with product configurator and subscription functionality.",
     results: ["60% increase in average order value", "Reduced cart abandonment by 25%"],
-    image: "/images/work/tech-accessories.jpg",
   },
   {
     title: "Organic Beauty Co",
     category: "Beauty & Cosmetics",
+    headline: "Migrated a beauty brand from WooCommerce with zero ranking loss",
     description:
       "Migration from WooCommerce with full SEO preservation and custom checkout flow.",
     results: ["Zero downtime migration", "Preserved 100% of search rankings"],
-    image: "/images/work/organic-beauty.jpg",
   },
   {
     title: "Home Essentials",
     category: "Home & Living",
+    headline: "Launched a home goods brand across 5 markets, tripling B2B sales",
     description:
       "Shopify Plus build with multi-currency support and wholesale B2B portal.",
     results: ["Launched in 5 markets", "B2B sales increased 3x"],
-    image: "/images/work/home-essentials.jpg",
   },
   {
     title: "Athletic Wear Brand",
     category: "Sportswear",
+    headline: "Improved page speed by 65% for a sportswear brand",
     description:
       "High-performance theme optimisation and app integration for inventory management.",
     results: ["Page speed improved by 65%", "Reduced operational time by 40%"],
-    image: "/images/work/athletic-wear.jpg",
   },
   {
     title: "Gourmet Food Store",
     category: "Food & Beverage",
+    headline: "Grew email revenue by 200% for a subscription food brand",
     description:
       "Custom subscription box functionality with Klaviyo integration for personalised marketing.",
     results: ["75% subscription retention", "Email revenue up 200%"],
-    image: "/images/work/gourmet-food.jpg",
   },
 ];
 
@@ -80,10 +80,10 @@ export default function WorkPage() {
               key={project.title}
               className="group bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-200"
             >
-              <div className="aspect-video bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
-                <span className="text-4xl font-bold text-accent/30">
-                  {project.title.charAt(0)}
-                </span>
+              <div className="bg-[#1a1a1a] px-6 py-8 flex items-center min-h-[130px]">
+                <p className="text-white font-semibold text-lg leading-snug">
+                  {project.headline}
+                </p>
               </div>
               <div className="p-6">
                 <span className="text-xs font-medium text-accent uppercase tracking-wider">

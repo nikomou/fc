@@ -204,10 +204,10 @@ const manchesterSchema = {
       priceRange: "£££",
       address: {
         "@type": "PostalAddress",
-        streetAddress: manchesterLocation.streetAddress,
+        streetAddress: manchesterLocation.streetAddress!,
         addressLocality: manchesterLocation.addressLocality,
         addressRegion: "Greater Manchester",
-        postalCode: manchesterLocation.postalCode,
+        postalCode: manchesterLocation.postalCode!,
         addressCountry: "GB",
       },
       geo: {

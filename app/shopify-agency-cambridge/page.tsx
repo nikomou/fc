@@ -208,10 +208,10 @@ const cambridgeSchema = {
       priceRange: "£££",
       address: {
         "@type": "PostalAddress",
-        streetAddress: manchesterLocation.streetAddress,
+        streetAddress: manchesterLocation.streetAddress!,
         addressLocality: manchesterLocation.addressLocality,
         addressRegion: "Greater Manchester",
-        postalCode: manchesterLocation.postalCode,
+        postalCode: manchesterLocation.postalCode!,
         addressCountry: "GB",
       },
       geo: {
@@ -343,15 +343,15 @@ export default function CambridgePage() {
                 offices={[
                   {
                     name: "Manchester Office",
-                    streetAddress: manchesterLocation.streetAddress,
+                    streetAddress: manchesterLocation.streetAddress!,
                     addressLocality: manchesterLocation.addressLocality,
-                    postalCode: manchesterLocation.postalCode,
+                    postalCode: manchesterLocation.postalCode!,
                   },
                   {
                     name: "Liverpool Office",
-                    streetAddress: liverpoolLocation.streetAddress,
+                    streetAddress: liverpoolLocation.streetAddress!,
                     addressLocality: liverpoolLocation.addressLocality,
-                    postalCode: liverpoolLocation.postalCode,
+                    postalCode: liverpoolLocation.postalCode!,
                   },
                 ]}
               />
