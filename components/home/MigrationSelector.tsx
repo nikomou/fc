@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 
 const platforms = [
@@ -15,20 +16,18 @@ const platforms = [
 const W = 720;
 const H = 260;
 
-// Platform circles
-const C_R       = 22;   // radius
+const C_R       = 22;
 const ICON_SIZE = 20;
-const COL1_CX   = C_R + 10;                        // 32
-const COL2_CX   = COL1_CX + C_R * 2 + 16;         // 92
+const COL1_CX   = C_R + 10;               // 32
+const COL2_CX   = COL1_CX + C_R * 2 + 16; // 92
 
 const MARGIN  = 28;
-const SPACING = (H - 2 * MARGIN) / (platforms.length - 1); // ~40.8
+const SPACING = (H - 2 * MARGIN) / (platforms.length - 1);
 
-const itemCY       = (i: number) => MARGIN + i * SPACING;
-const getCircleCX  = (i: number) => i % 2 === 0 ? COL1_CX : COL2_CX;
+const itemCY        = (i: number) => MARGIN + i * SPACING;
+const getCircleCX   = (i: number) => i % 2 === 0 ? COL1_CX : COL2_CX;
 const getPathStartX = (i: number) => getCircleCX(i) + C_R;
 
-// Shopify destination
 const SHOPIFY_CX   = W - 80;
 const SHOPIFY_CY   = H / 2;
 const SHOPIFY_SIZE = 90;
@@ -36,13 +35,25 @@ const SHOPIFY_SIZE = 90;
 const getPath = (i: number) =>
   `M ${getPathStartX(i)} ${itemCY(i)} C ${W * 0.44} ${itemCY(i)} ${W * 0.68} ${SHOPIFY_CY} ${SHOPIFY_CX - SHOPIFY_SIZE / 2} ${SHOPIFY_CY}`;
 
+// Where each circle starts — all in a horizontal row at the SVG vertical centre
+const ROW_Y       = H / 2;
+const ROW_SPACING = C_R * 2 + 14;
+const ROW_START_X = W / 2 - ((platforms.length - 1) * ROW_SPACING) / 2;
+
+const rowOffsets = platforms.map((_, i) => ({
+  dx: ROW_START_X + i * ROW_SPACING - getCircleCX(i),
+  dy: ROW_Y - itemCY(i),
+}));
+
 export function MigrationSelector() {
   const [selected, setSelected] = useState(platforms[0]);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
 
   return (
-    <div className="relative">
+    <div ref={sectionRef} className="relative">
 
-      {/* ── Heading ── */}
+      {/* Heading */}
       <div className="relative z-10 text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Shopify Migrations</h2>
         <p className="text-lg text-gray-300 max-w-2xl mx-auto">
@@ -50,7 +61,7 @@ export function MigrationSelector() {
         </p>
       </div>
 
-      {/* ── Flow diagram ── */}
+      {/* Flow diagram */}
       <div className="relative z-10 w-full max-w-5xl mx-auto">
         <svg
           viewBox={`0 0 ${W} ${H}`}
@@ -66,7 +77,12 @@ export function MigrationSelector() {
             </filter>
           </defs>
 
-          {/* Platform paths + dots */}
+          {/* Connection paths + travelling dots — delayed until circles are in position */}
+          <motion.g
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isInView ? 1 : 0 }}
+            transition={{ duration: 0.4, delay: 0.5 }}
+          >
           {platforms.map((p, i) => {
             const isSelected = p.slug === selected.slug;
             const dur  = isSelected ? 1.6 : 3.2;
@@ -85,43 +101,47 @@ export function MigrationSelector() {
               </g>
             );
           })}
+          </motion.g>
 
-          {/* Platform circles */}
+          {/* Platform circles — animate from inline row to final positions on scroll-in */}
           {platforms.map((p, i) => {
             const isSelected = p.slug === selected.slug;
             const cx = getCircleCX(i);
             const cy = itemCY(i);
+            const { dx, dy } = rowOffsets[i];
             return (
-              <g key={`node-${p.slug}`} onClick={() => setSelected(p)} style={{ cursor: "pointer" }}>
-                {/* Selected accent ring */}
+              <motion.g
+                key={`node-${p.slug}`}
+                initial={{ x: dx, y: dy }}
+                animate={{ x: isInView ? 0 : dx, y: isInView ? 0 : dy }}
+                transition={{ duration: 0.7, delay: i * 0.07, ease: [0.25, 0.1, 0.25, 1] }}
+                onClick={() => setSelected(p)}
+                style={{ cursor: "pointer" }}
+              >
                 {isSelected && (
                   <circle cx={cx} cy={cy} r={C_R + 4}
                     fill="none" stroke={p.color} strokeWidth={1.5} opacity={0.5} />
                 )}
-                {/* Dark circle */}
                 <circle cx={cx} cy={cy} r={C_R}
                   fill={isSelected ? "#2e2e2e" : "#232323"}
                   stroke={isSelected ? "#555" : "#333"} strokeWidth={1}
                   filter={isSelected ? "url(#glow-shadow)" : undefined}
                 />
-                {/* White logo badge circle */}
                 <circle cx={cx} cy={cy} r={C_R - 5} fill="white" opacity={0.93} />
-                {/* Logo */}
                 <image href={p.logo}
                   x={cx - ICON_SIZE / 2} y={cy - ICON_SIZE / 2}
                   width={ICON_SIZE} height={ICON_SIZE} />
-              </g>
+              </motion.g>
             );
           })}
 
-          {/* Shopify pulse rings — overflow="visible" on SVG prevents clipping */}
+          {/* Shopify pulse rings */}
           {[0, 0.8, 1.6].map((delay) => (
             <circle key={delay} cx={SHOPIFY_CX} cy={SHOPIFY_CY} fill="none" stroke="#96bf48" strokeWidth={1.5}>
               <animate attributeName="r" from={SHOPIFY_SIZE / 2} to={SHOPIFY_SIZE / 2 + 36} dur="2.4s" begin={`${delay}s`} repeatCount="indefinite" />
               <animate attributeName="opacity" from={0.5} to={0} dur="2.4s" begin={`${delay}s`} repeatCount="indefinite" />
             </circle>
           ))}
-          {/* Static glow ring */}
           <circle cx={SHOPIFY_CX} cy={SHOPIFY_CY} r={SHOPIFY_SIZE / 2 + 5}
             fill="none" stroke="#96bf48" strokeWidth={2.5} opacity={0.4} />
           <circle cx={SHOPIFY_CX} cy={SHOPIFY_CY} r={SHOPIFY_SIZE / 2}
@@ -131,7 +151,7 @@ export function MigrationSelector() {
         </svg>
       </div>
 
-      {/* ── CTA ── */}
+      {/* CTA */}
       <div className="relative z-10 text-center mt-8">
         <p className="text-sm text-gray-400 mb-5">
           Migrating from{" "}
