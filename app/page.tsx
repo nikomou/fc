@@ -6,6 +6,7 @@ import { ValueProps } from "@/components/home/ValueProps";
 import { CTASection } from "@/components/home/CTASection";
 import { MigrationSelector } from "@/components/home/MigrationSelector";
 import { LocationCards } from "@/components/home/LocationCards";
+import { PartnerMarquee } from "@/components/home/PartnerMarquee";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { services, locations, partnerLogos } from "@/lib/constants";
@@ -86,7 +87,6 @@ export default function HomePage() {
       <Hero />
       <ClientLogos />
       <StatsBar />
-      <ValueProps />
 
       {/* Services Preview */}
       <Section background="alt">
@@ -217,34 +217,8 @@ export default function HomePage() {
       </Section>
 
       {/* Partners Section */}
-      <Section background="dark">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Technology Partners
-          </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-2">
-            We are proud to collaborate with some of the most respected names in the industry.
-          </p>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Our partnerships are built on a foundation of mutual trust and shared values, enabling us to deliver unparalleled ecommerce solutions.
-          </p>
-        </div>
-        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
-          {partnerLogos.map((partner) => (
-            <div
-              key={partner.name}
-              className="bg-white rounded-lg px-3 py-2 hover:shadow-lg transition-shadow"
-            >
-              <Image
-                src={partner.logo}
-                alt={partner.alt}
-                width={180}
-                height={90}
-                className="h-14 md:h-20 w-auto object-contain"
-              />
-            </div>
-          ))}
-        </div>
+      <Section background="dark" className="!py-0 overflow-hidden">
+        <PartnerMarquee />
       </Section>
 
       <CTASection />
