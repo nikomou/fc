@@ -1,0 +1,4 @@
+/services                       /shopify-services               301
+/ecommerce-services             /shopify-services               301
+/shopify-speed-optimization     /shopify-speed-optimisation     301
+/resources/*-checklist          /checklists/:splat-checklist    301

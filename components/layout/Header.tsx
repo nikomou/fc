@@ -23,6 +23,7 @@ import {
   BookOpen,
   CheckSquare,
   FileText,
+  Newspaper,
   ArrowUpRight,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -359,6 +360,15 @@ export function Header() {
                                 Guides
                               </span>
                             </Link>
+                            <Link
+                              href="/articles"
+                              className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors"
+                            >
+                              <Newspaper className="w-4 h-4 text-foreground" />
+                              <span className="font-medium text-foreground-dark text-sm">
+                                Articles
+                              </span>
+                            </Link>
                           </div>
                         </div>
                       </motion.div>
@@ -508,6 +518,14 @@ export function Header() {
                       >
                         <FileText className="w-4 h-4" />
                         Guides
+                      </Link>
+                      <Link
+                        href="/articles"
+                        className="flex items-center gap-3 text-foreground hover:text-accent transition-colors py-2 pl-2"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <Newspaper className="w-4 h-4" />
+                        Articles
                       </Link>
                     </div>
                   ) : (
