@@ -29,13 +29,13 @@ export function LocationCards() {
     offset: ["end end", "end start"],
   });
 
-  // Position
-  const leftOuterX  = useTransform(scrollYProgress, [0,   0.7], [0, -320]);
-  const leftInnerX  = useTransform(scrollYProgress, [0.1, 1],   [0, -220]);
-  const mainLeftX   = useTransform(scrollYProgress, [0.2, 1],   [0, -140]);
-  const mainRightX  = useTransform(scrollYProgress, [0.2, 1],   [0,  140]);
-  const rightInnerX = useTransform(scrollYProgress, [0.1, 1],   [0,  220]);
-  const rightOuterX = useTransform(scrollYProgress, [0,   0.7], [0,  320]);
+  // Position — outer outer first (no delay), inner most delayed; distance doubles outward
+  const leftOuterX  = useTransform(scrollYProgress, [0,    1], [0, -400]); // no delay, fastest
+  const leftInnerX  = useTransform(scrollYProgress, [0.15, 1], [0, -200]); // medium delay
+  const mainLeftX   = useTransform(scrollYProgress, [0.3,  1], [0, -100]); // most delayed, slowest
+  const mainRightX  = useTransform(scrollYProgress, [0.3,  1], [0,  100]);
+  const rightInnerX = useTransform(scrollYProgress, [0.15, 1], [0,  200]);
+  const rightOuterX = useTransform(scrollYProgress, [0,    1], [0,  400]);
 
   // Opacity — delayed further than movement
   const leftOuterOpacity  = useTransform(scrollYProgress, [0.3, 0.7], [1, 0]);
