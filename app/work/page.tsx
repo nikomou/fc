@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Briefcase } from "lucide-react";
+import { ProcessSteps } from "@/components/ui/ProcessSteps";
 import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
@@ -78,30 +79,22 @@ export default function WorkPage() {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="group bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-200"
+              className="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:shadow-xl transition-all duration-200"
             >
-              <div className="bg-[#1a1a1a] px-6 py-8 flex items-center min-h-[130px]">
-                <p className="text-white font-semibold text-lg leading-snug">
+              <div className="px-6 py-8 flex flex-col justify-between gap-6 min-h-[130px]">
+                <p className="text-white font-semibold text-3xl leading-snug">
                   {project.headline}
                 </p>
-              </div>
-              <div className="p-6">
-                <span className="text-xs font-medium text-accent uppercase tracking-wider">
-                  {project.category}
-                </span>
-                <h3 className="text-xl font-semibold text-foreground-dark mt-2 mb-3 group-hover:text-accent transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-foreground text-sm mb-4">
+                <p className="text-white text-sm">
                   {project.description}
                 </p>
                 <div className="space-y-2">
                   {project.results.map((result) => (
                     <div
                       key={result}
-                      className="flex items-center gap-2 text-sm text-foreground"
+                      className="flex items-center gap-2 text-sm text-white"
                     >
-                      <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#ef436b]" />
                       {result}
                     </div>
                   ))}
@@ -137,50 +130,21 @@ export default function WorkPage() {
       </Section>
 
       {/* Process */}
-      <Section>
+      <Section background="dark">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground-dark mb-4">
-            Our Process
-          </h2>
-          <p className="text-lg text-foreground max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-4">Our Process</h2>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             A proven approach that delivers results, every time.
           </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {[
-            {
-              step: "01",
-              title: "Discovery",
-              description: "We learn about your brand, goals, and challenges.",
-            },
-            {
-              step: "02",
-              title: "Strategy",
-              description: "We create a roadmap tailored to your needs.",
-            },
-            {
-              step: "03",
-              title: "Build",
-              description: "We design and develop your Shopify store.",
-            },
-            {
-              step: "04",
-              title: "Launch & Grow",
-              description: "We launch, monitor, and optimize for growth.",
-            },
-          ].map((phase) => (
-            <div key={phase.step} className="text-center">
-              <div className="text-5xl font-bold text-accent/20 mb-4">
-                {phase.step}
-              </div>
-              <h3 className="text-xl font-semibold text-foreground-dark mb-2">
-                {phase.title}
-              </h3>
-              <p className="text-foreground">{phase.description}</p>
-            </div>
-          ))}
-        </div>
+        <ProcessSteps
+          steps={[
+            { step: "01", title: "Discovery", description: "We learn about your brand, goals, and challenges." },
+            { step: "02", title: "Strategy", description: "We create a roadmap tailored to your needs." },
+            { step: "03", title: "Build", description: "We design and develop your Shopify store." },
+            { step: "04", title: "Launch & Grow", description: "We launch, monitor, and optimise for growth." },
+          ]}
+        />
       </Section>
     </>
   );
