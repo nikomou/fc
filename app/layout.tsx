@@ -13,11 +13,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `Shopify Plus Agency ${locations.map(l => l.name).join(" & ")} | ${siteConfig.name}`,
+    default: `Shopify Plus Agency Manchester & Liverpool | ${siteConfig.name}`,
     template: `%s | ${siteConfig.name}`,
   },
   description:
-    `Shopify Plus Agency in ${locations.map(l => l.name).join(" & ")} helping ambitious brands scale with custom ecommerce design, development & ongoing support. Get your free quote today.`,
+    `Shopify Plus agency in Manchester & Liverpool. Custom ecommerce design, development & ongoing support for ambitious brands. Free quote today.`,
   keywords: [
     "Shopify Plus Agency",
     ...locations.map(l => `Shopify Agency ${l.name}`),
@@ -33,27 +33,24 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `Shopify Plus Agency ${locations.map(l => l.name).join(" & ")} | ${siteConfig.name}`,
+    title: `Shopify Plus Agency Manchester & Liverpool | ${siteConfig.name}`,
     description:
-      `Shopify Plus Agency in ${locations.map(l => l.name).join(" & ")} helping ambitious brands scale with custom ecommerce design, development & ongoing support.`,
+      `Shopify Plus agency in Manchester & Liverpool. Custom ecommerce design, development & ongoing support for ambitious brands. Free quote today.`,
     images: [
       {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: `${siteConfig.name} - Shopify Plus Agency ${locations.map(l => l.name).join(" & ")}`,
+        alt: `${siteConfig.name} - Shopify Plus Agency Manchester & Liverpool`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `Shopify Plus Agency ${locations.map(l => l.name).join(" & ")} | ${siteConfig.name}`,
+    title: `Shopify Plus Agency Manchester & Liverpool | ${siteConfig.name}`,
     description:
-      `Shopify Plus Agency in ${locations.map(l => l.name).join(" & ")} helping ambitious brands scale with custom ecommerce design, development & ongoing support.`,
+      `Shopify Plus agency in Manchester & Liverpool. Custom ecommerce design, development & ongoing support for ambitious brands. Free quote today.`,
     images: ["/images/og-image.png"],
-  },
-  alternates: {
-    canonical: siteConfig.url,
   },
   robots: {
     index: true,
