@@ -73,7 +73,7 @@ export function ResourcesSection() {
       </div>
 
       {/* Quick links to Guides & Checklists */}
-      <div className="mt-6 flex flex-wrap items-center gap-3">
+      <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
         <span className="text-sm text-gray-400 mr-1">More resources:</span>
         <Link
           href="/guides"
