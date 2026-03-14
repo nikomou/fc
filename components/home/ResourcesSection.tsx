@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, BookOpen, ClipboardList } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BookOpen, ClipboardList } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { getLatestPosts } from "@/lib/blog";
@@ -93,7 +93,7 @@ export function ResourcesSection() {
           className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#1a1a1a] text-sm font-medium text-white hover:bg-black transition-colors"
         >
           All Resources
-          <ArrowRight className="w-3.5 h-3.5" />
+          <ArrowUpRight className="w-3.5 h-3.5" />
         </Link>
       </div>
 
