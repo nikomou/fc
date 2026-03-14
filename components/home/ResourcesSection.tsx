@@ -73,14 +73,7 @@ export function ResourcesSection() {
       </div>
 
       {/* Quick links to Guides & Checklists */}
-      <div className="mt-6 flex flex-wrap items-center justify-end gap-3">
-        <Link
-          href="/resources"
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#1a1a1a] text-sm font-medium text-white hover:bg-black transition-colors"
-        >
-          All Resources
-          <ArrowRight className="w-3.5 h-3.5" />
-        </Link>
+      <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
         <Link
           href="/guides"
           className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-gray-200 text-sm font-medium text-gray-700 hover:border-[#ef436b] hover:text-[#ef436b] transition-colors"
@@ -94,6 +87,13 @@ export function ResourcesSection() {
         >
           <ClipboardList className="w-3.5 h-3.5" />
           Checklists
+        </Link>
+        <Link
+          href="/resources"
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#1a1a1a] text-sm font-medium text-white hover:bg-black transition-colors"
+        >
+          All Resources
+          <ArrowRight className="w-3.5 h-3.5" />
         </Link>
       </div>
 
