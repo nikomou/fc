@@ -25,9 +25,39 @@ const footerLinks = {
   ],
 };
 
+const allLocations = [
+  { name: "Manchester", href: "/shopify-agency-manchester" },
+  { name: "Liverpool", href: "/shopify-agency-liverpool" },
+  { name: "London", href: "/shopify-agency-london" },
+  { name: "Edinburgh", href: "/shopify-agency-edinburgh" },
+  { name: "Bristol", href: "/shopify-agency-bristol" },
+  { name: "Leeds", href: "/shopify-agency-leeds" },
+  { name: "Cambridge", href: "/shopify-agency-cambridge" },
+  { name: "Birmingham", href: "/shopify-agency-birmingham" },
+  { name: "Glasgow", href: "/shopify-agency-glasgow" },
+  { name: "Newcastle", href: "/shopify-agency-newcastle" },
+];
+
 export function Footer() {
   return (
     <footer className="bg-primary-dark text-white">
+
+      {/* Location marquee */}
+      <div className="overflow-hidden border-b border-white/10 py-3">
+        <div className="flex w-max animate-[scroll_30s_linear_infinite]">
+          {[...allLocations, ...allLocations].map((loc, i) => (
+            <Link
+              key={i}
+              href={loc.href}
+              className="flex items-center gap-2 px-6 text-sm text-gray-400 hover:text-white transition-colors whitespace-nowrap"
+            >
+              <MapPin className="w-3.5 h-3.5 text-[#ef436b] flex-shrink-0" />
+              {loc.name}
+            </Link>
+          ))}
+        </div>
+      </div>
+
       <Container className="py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand & Contact */}
