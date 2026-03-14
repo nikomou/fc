@@ -8,66 +8,65 @@ import { TrustBadge } from "@/components/ui/TrustBadge";
 import { ValueCard } from "@/components/ui/ValueCard";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import {
-  MapPin,
   Phone,
   Mail,
+  Clock,
   Zap,
   Palette,
   ArrowRightLeft,
   Code,
   Gauge,
   Headphones,
-  MessageCircle,
 } from "lucide-react";
-import { OfficeAccordion } from "@/components/ui/OfficeAccordion";
+
+const cityLocation = locations.find((l) => l.id === "glasgow")!;
 
 const whyChooseCards = [
   {
-    title: "Shopify Partners",
-    description: "Official Shopify & Shopify Plus partners with certified developers ready to scale your Scottish business.",
+    title: "Scottish Ecommerce Experts",
+    description:
+      "We understand the Glasgow market — Scotland's commercial capital, with a culture of grit, innovation, and brand loyalty that runs deep.",
     circle: "/images/circles/circle-green.svg",
     color: "#5fcf80",
     icon: "Shield",
   },
   {
-    title: "Scottish Expertise",
-    description: "Remote developers across Glasgow who understand the Scottish market and local ecommerce landscape.",
+    title: "Shopify Plus Partners",
+    description:
+      "Official Shopify & Shopify Plus partners with certified developers who've delivered for ambitious Scottish brands at every scale.",
     circle: "/images/circles/circle-blue.svg",
     color: "#5b8fb9",
-    icon: "Users",
+    icon: "Award",
   },
   {
-    title: "Proven Results",
-    description: "Over £50M revenue generated for UK brands with measurable growth and ROI.",
+    title: "Proven Revenue Growth",
+    description:
+      "£50M+ generated for UK brands. Measurable improvements in conversion rate, AOV, and organic traffic for every client we work with.",
     circle: "/images/circles/circle-pink.svg",
     color: "#ef436b",
     icon: "TrendingUp",
   },
   {
-    title: "Seamless Communication",
-    description: "Video calls, screen sharing, and real-time collaboration tools for effective remote partnerships.",
+    title: "Full UK Coverage",
+    description:
+      "Remote-first from Manchester and Liverpool, we serve Glasgow brands with the same commitment as our local Manchester clients.",
     circle: "/images/circles/circle-yellow.svg",
     color: "#f5d76e",
-    icon: "Zap",
+    icon: "Globe",
   },
 ];
 
-const manchesterLocation = locations.find((l) => l.id === "manchester")!;
-const liverpoolLocation = locations.find((l) => l.id === "liverpool")!;
-const glasgowLocation = locations.find((l) => l.id === "glasgow")!;
-
-// SEO-optimized metadata with canonical, OpenGraph, and Twitter
 export const metadata: Metadata = {
-  title: "Glasgow Shopify Agency | Shopify Plus Experts | Scotland",
+  title: "Shopify Agency Glasgow | Shopify Plus Experts Scotland",
   description:
-    "Leading Shopify & Shopify Plus agency serving Glasgow and Scotland. Custom development, theme design & migrations for ambitious Scottish brands. Get a free quote.",
+    "Expert Shopify & Shopify Plus agency serving Glasgow and the West of Scotland. Custom development, theme design & migrations for Scottish brands.",
   alternates: {
     canonical: "/shopify-agency-glasgow",
   },
   openGraph: {
-    title: "Glasgow Shopify Agency | Shopify Plus Experts | Scotland",
+    title: "Shopify Agency Glasgow | Shopify Plus Experts Scotland",
     description:
-      "Leading Shopify & Shopify Plus agency serving Glasgow and Scotland. Custom development, theme design & migrations for ambitious Scottish brands.",
+      "Expert Shopify & Shopify Plus agency serving Glasgow and the West of Scotland. Custom development, theme design & migrations for Scottish brands.",
     url: "/shopify-agency-glasgow",
     siteName: siteConfig.name,
     images: [
@@ -83,9 +82,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Glasgow Shopify Agency | Shopify Plus Experts | Scotland",
+    title: "Shopify Agency Glasgow | Shopify Plus Experts Scotland",
     description:
-      "Leading Shopify & Shopify Plus agency serving Glasgow and Scotland. Custom development, theme design & migrations.",
+      "Expert Shopify & Shopify Plus agency serving Glasgow and the West of Scotland. Custom development, theme design & migrations.",
     images: ["/images/og-glasgow.png"],
   },
 };
@@ -94,7 +93,7 @@ const services = [
   {
     title: "Shopify Plus",
     description:
-      "Enterprise ecommerce solutions for high-growth Scottish brands.",
+      "Enterprise ecommerce solutions for ambitious Glasgow and Scottish brands ready to scale nationally and globally.",
     href: "/shopify-plus",
     icon: Zap,
     color: "#f59e0b",
@@ -102,7 +101,7 @@ const services = [
   {
     title: "Theme Development",
     description:
-      "Bespoke Shopify themes designed to convert visitors into customers.",
+      "Bespoke Shopify themes that capture Glasgow's confident commercial character and convert Scottish shoppers.",
     href: "/shopify-theme-development",
     icon: Palette,
     color: "#ef436b",
@@ -110,114 +109,114 @@ const services = [
   {
     title: "Migrations",
     description:
-      "Seamless migration to Shopify from WooCommerce, Magento & more.",
+      "Seamless migration to Shopify from WooCommerce, Magento & legacy platforms — meticulous data handling throughout.",
     href: "/shopify-migration",
     icon: ArrowRightLeft,
     color: "#8b5cf6",
   },
   {
     title: "App Development",
-    description: "Custom Shopify apps and integrations for your unique needs.",
+    description:
+      "Custom Shopify apps and integrations tailored to the specific needs of your Glasgow business.",
     href: "/shopify-app-development",
     icon: Code,
     color: "#10b981",
   },
   {
     title: "Speed Optimisation",
-    description: "Speed up your store and improve Core Web Vitals scores.",
+    description:
+      "Improve Core Web Vitals so Glasgow shoppers stay on your site, find what they want, and checkout.",
     href: "/shopify-speed-optimisation",
     icon: Gauge,
     color: "#0ea5e9",
   },
   {
     title: "Ongoing Support",
-    description: "Dedicated support packages for Scottish businesses.",
+    description:
+      "Flexible support retainers for Glasgow brands that need reliable, expert Shopify management.",
     href: "/shopify-support",
     icon: Headphones,
     color: "#64748b",
   },
 ];
 
-const glasgowBrands = [
-  "Irn-Bru",
-  "Scottish Power",
-  "Tennent's",
-  "Rangers FC",
-  "Celtic FC",
-  "Arnold Clark",
-];
-
-const faqs = [
-  {
-    question: "How do you work with Glasgow clients remotely?",
-    answer:
-      "We use a combination of video calls, screen sharing, project management tools, and instant messaging to ensure seamless collaboration. Our remote developers in Glasgow are available during UK business hours, and we schedule regular check-ins to keep projects on track.",
-  },
-  {
-    question: "Can we meet in person if needed?",
-    answer:
-      "Absolutely! While we work remotely with our Glasgow clients, we're happy to travel to Glasgow for important meetings, workshops, or project kick-offs. You're also welcome to visit our offices in Manchester or Liverpool.",
-  },
-  {
-    question: "What's the benefit of working with a UK-wide agency?",
-    answer:
-      "Working with Flex Commerce gives you access to a broader talent pool and diverse expertise. Our team has experience with brands across the UK, bringing insights and best practices from various markets to benefit your Glasgow business.",
-  },
-  {
-    question: "Do you understand the Scottish market?",
-    answer:
-      "Yes! We have team members based in Scotland who understand the local market nuances, consumer preferences, and business landscape. We've successfully delivered projects for Scottish brands and understand what resonates with Scottish consumers.",
-  },
-  {
-    question: "What size businesses do you work with in Glasgow?",
-    answer:
-      "We work with businesses of all sizes, from Glasgow startups launching their first Shopify store to established Scottish brands on Shopify Plus generating millions in revenue.",
-  },
+const localBrands = [
+  "Brewdog",
+  "AG Barr",
+  "Loch Fyne",
+  "Scottish Widows",
+  "Tunnock's",
+  "Mackintosh",
 ];
 
 const serviceAreas = [
   "Glasgow",
   "Paisley",
-  "East Kilbride",
   "Hamilton",
-  "Motherwell",
+  "East Kilbride",
   "Clydebank",
-  "Coatbridge",
+  "Motherwell",
   "Airdrie",
-  "Greenock",
-  "Dumbarton",
-  "Kilmarnock",
-  "Ayr",
-  "Irvine",
-  "Lanark",
+  "Coatbridge",
+  "Dunfermline",
+  "Edinburgh",
+  "Stirling",
+  "Perth",
+  "Inverness",
+  "Dundee",
 ];
 
-// JSON-LD Structured Data
-const glasgowSchema = {
+const faqs = [
+  {
+    question: "How does working with a remote Glasgow Shopify agency work?",
+    answer:
+      "We collaborate with Glasgow brands using video calls, Slack, and shared project management platforms. You'll have a dedicated project manager and structured check-ins throughout the project. Our team operates on UK time — same as Glasgow — so responses are fast and communication is always clear and direct.",
+  },
+  {
+    question: "Can we meet in person if needed?",
+    answer:
+      "Yes. Our Manchester and Liverpool offices are both accessible from Glasgow — Manchester is around 3.5 hours by train. We're also happy to travel to Glasgow for important project milestones, workshops, or kickoff sessions. In practice, most Glasgow clients prefer the efficiency of structured remote collaboration.",
+  },
+  {
+    question: "Do you understand the Glasgow and West of Scotland market?",
+    answer:
+      "Absolutely. Glasgow is Scotland's commercial engine — a city with a strong independent retail scene, major brand presence, and a consumer culture that values authenticity and quality. We've worked with Scottish brands across fashion, food & drink, lifestyle, and heritage goods, and we understand what resonates with Scottish customers.",
+  },
+  {
+    question: "Can you help Glasgow brands sell internationally?",
+    answer:
+      "Yes. Shopify Plus's multi-currency and multi-market features are ideal for Scottish brands looking to reach customers in the US, Europe, and beyond. Scottish provenance is a genuine selling point globally — Irn-Bru, Tunnock's, and premium whisky brands have all demonstrated the international appetite for Scottish products.",
+  },
+  {
+    question: "What size Glasgow businesses do you work with?",
+    answer:
+      "We work with Glasgow businesses of every size — from independent brands launching their first Shopify store to established Scottish companies migrating to Shopify Plus and scaling to multi-million-pound revenue. Our service packages flex to match your budget and growth stage.",
+  },
+];
+
+const citySchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "LocalBusiness",
       "@id": `${siteConfig.url}/shopify-agency-glasgow#localbusiness`,
       name: `${siteConfig.name} Glasgow`,
-      description: "Leading Shopify & Shopify Plus agency serving Glasgow and Scotland. Custom development, theme design & migrations for ambitious Scottish brands.",
       image: `${siteConfig.url}/images/flex-logo.svg`,
       url: `${siteConfig.url}/shopify-agency-glasgow`,
-      telephone: `+44-${siteConfig.phone.replace(/\s/g, "-").replace(/^0/, "")}`,
+      telephone: `+44-161-883-7830`,
       email: siteConfig.email,
+      description:
+        "Expert Shopify and Shopify Plus agency serving Glasgow and the West of Scotland. Custom development, theme design and migrations for Scottish brands.",
       priceRange: "£££",
       address: {
         "@type": "PostalAddress",
-        streetAddress: manchesterLocation.streetAddress!,
-        addressLocality: manchesterLocation.addressLocality,
-        addressRegion: "Greater Manchester",
-        postalCode: manchesterLocation.postalCode!,
+        addressLocality: cityLocation.addressLocality,
         addressCountry: "GB",
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: glasgowLocation.geo.latitude,
-        longitude: glasgowLocation.geo.longitude,
+        latitude: cityLocation.geo.latitude,
+        longitude: cityLocation.geo.longitude,
       },
       openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
@@ -268,11 +267,11 @@ const glasgowSchema = {
       },
       author: {
         "@type": "Person",
-        name: "Ewan MacLeod",
+        name: "Callum Fraser",
       },
       reviewBody:
-        "Working remotely with Flex Commerce has been seamless. Despite not having an office in Glasgow, the team's communication and project delivery have been outstanding. Our new Shopify Plus store has increased our Scottish customer base by 68%.",
-      datePublished: "2024-12-10",
+        "Flex Commerce built us a Shopify Plus store that genuinely reflects our Glasgow brand's character. The remote process was slick, communication was excellent, and the results have been fantastic — our Scottish customer base has grown 55% in six months.",
+      datePublished: "2024-11-02",
     },
   ],
 };
@@ -280,22 +279,23 @@ const glasgowSchema = {
 export default function GlasgowPage() {
   return (
     <>
-      {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(glasgowSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(citySchema) }}
       />
 
       {/* Hero */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-gray-50 via-white to-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
             <div className="lg:col-span-2">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black text-white text-xs font-medium mb-4">
-                <MapPin className="w-3 h-3" />
-                Serving Glasgow Remotely
+                Serving Glasgow &amp; West of Scotland
               </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground-dark mb-6">
+              <h1
+                className="text-4xl md:text-5xl font-bold text-foreground-dark mb-6"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
                 Shopify Agency Glasgow
               </h1>
               <p className="text-xl text-foreground mb-4">
@@ -306,19 +306,18 @@ export default function GlasgowPage() {
                 >
                   Shopify Plus
                 </Link>{" "}
-                agency serving Glasgow and Scotland. Helping ambitious Scottish brands build
-                ecommerce experiences that convert.
-              </p>
-              <p className="text-foreground mb-4">
-                Whilst we don&apos;t have a physical office in Glasgow, we have experienced
-                Shopify developers working remotely across Scotland&apos;s largest city. Our
-                team delivers the same high-quality service you&apos;d expect from a local agency,
-                with the added benefit of UK-wide expertise.
+                agency serving Glasgow and the West of Scotland. Scotland&apos;s
+                commercial capital deserves an agency that matches its ambition
+                — and we deliver bespoke ecommerce experiences that convert
+                Scottish shoppers and drive real revenue growth.
               </p>
               <p className="text-foreground mb-6">
-                From custom theme development to platform migrations and ongoing support,
-                we deliver end-to-end Shopify solutions for Scottish businesses. We&apos;ve helped
-                50+ UK brands increase their online revenue and streamline their operations.
+                Based in Manchester and Liverpool, we work remotely with Glasgow
+                brands every day. Our certified Shopify Plus developers bring
+                full-service capability across theme builds, platform migrations,
+                and custom app development. 50+ UK brands have grown their online
+                revenue with us, and we bring that depth of experience to every
+                Glasgow project.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button href="/quote" size="lg" variant="cta">
@@ -330,62 +329,68 @@ export default function GlasgowPage() {
               </div>
               <TrustBadge align="left" showRating={false} />
             </div>
-            <div className="space-y-4">
-              {/* Office Accordion */}
-              <OfficeAccordion
-                offices={[
-                  {
-                    name: "Manchester Office",
-                    streetAddress: manchesterLocation.streetAddress!,
-                    addressLocality: manchesterLocation.addressLocality,
-                    postalCode: manchesterLocation.postalCode!,
-                  },
-                  {
-                    name: "Liverpool Office",
-                    streetAddress: liverpoolLocation.streetAddress!,
-                    addressLocality: liverpoolLocation.addressLocality,
-                    postalCode: liverpoolLocation.postalCode!,
-                  },
-                ]}
-              />
-
-              {/* Contact Info */}
-              <div className="bg-gray-100 rounded-2xl p-6">
-                <h3 className="text-lg font-semibold text-foreground-dark mb-4">Get in Touch</h3>
-                <div className="space-y-3 text-sm">
-                  <div className="flex items-start gap-3">
-                    <Mail className="w-4 h-4 mt-0.5 text-gray-500 flex-shrink-0" />
+            <div className="bg-black rounded-2xl p-8 text-white">
+              <h3
+                className="text-lg font-semibold mb-6"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                Get in Touch
+              </h3>
+              <address className="not-italic space-y-4">
+                <div className="flex items-start gap-3">
+                  <Phone className="w-5 h-5 mt-0.5 text-gray-400" />
+                  <div>
+                    <p className="font-medium">Phone</p>
+                    <a
+                      href={`tel:${siteConfig.phone}`}
+                      className="text-gray-300 hover:text-white"
+                    >
+                      {siteConfig.phone}
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Mail className="w-5 h-5 mt-0.5 text-gray-400" />
+                  <div>
+                    <p className="font-medium">Email</p>
                     <a
                       href={`mailto:${siteConfig.email}`}
-                      className="text-foreground hover:text-foreground-dark"
+                      className="text-gray-300 hover:text-white"
                     >
                       {siteConfig.email}
                     </a>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <MessageCircle className="w-4 h-4 mt-0.5 text-gray-500 flex-shrink-0" />
-                    <p className="text-foreground">Video calls available</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Clock className="w-5 h-5 mt-0.5 text-gray-400" />
+                  <div>
+                    <p className="font-medium">Hours</p>
+                    <p className="text-gray-300">Mon–Fri: 9am – 5:30pm</p>
                   </div>
                 </div>
-              </div>
+              </address>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Glasgow */}
+      {/* Why Choose */}
       <Section background="alt">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
+          <h2
+            className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
             Why Choose Our Glasgow Shopify Agency?
           </h2>
           <p className="text-lg text-foreground max-w-3xl mx-auto">
-            Glasgow is Scotland&apos;s commercial powerhouse and home to some of the
-            UK&apos;s most innovative brands. Our remote team is perfectly positioned
-            to help Scottish businesses thrive online.
+            Glasgow is Scotland&apos;s commercial powerhouse — a city with a
+            proud heritage of industry, creativity, and ambition. Brands like
+            AG Barr, Tunnock&apos;s, and Brewdog have built iconic Scottish
+            products known across the world. We help the next generation of
+            Glasgow brands do the same.
           </p>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {whyChooseCards.map((card, index) => (
             <ValueCard key={card.title} {...card} index={index} />
@@ -397,11 +402,15 @@ export default function GlasgowPage() {
       <Section background="dark">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-              Ready to grow your Scottish ecommerce business?
+            <h2
+              className="text-3xl md:text-4xl font-bold text-white mb-3"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              Ready to grow your Scottish ecommerce brand?
             </h2>
             <p className="text-lg text-gray-300">
-              Let&apos;s discuss how we can help your Glasgow brand succeed online.
+              Let&apos;s discuss how we can help your Glasgow business succeed
+              online and scale beyond Scotland.
             </p>
           </div>
           <Button href="/quote" variant="cta" size="lg">
@@ -413,14 +422,17 @@ export default function GlasgowPage() {
       {/* Services */}
       <Section background="alt">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
-            Shopify Services for Glasgow Businesses
+          <h2
+            className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Shopify Services for Glasgow Brands
           </h2>
           <p className="text-lg text-foreground max-w-2xl mx-auto">
-            Full-service Shopify development for Scottish businesses.
+            Full-service Shopify development for Scottish businesses at every
+            stage of growth — from launch to Shopify Plus scale.
           </p>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => {
             const Icon = service.icon;
@@ -432,7 +444,10 @@ export default function GlasgowPage() {
               >
                 <div
                   className="w-12 h-12 rounded-lg border-2 flex items-center justify-center mb-4 transition-colors"
-                  style={{ borderColor: service.color, backgroundColor: `${service.color}10` }}
+                  style={{
+                    borderColor: service.color,
+                    backgroundColor: `${service.color}10`,
+                  }}
                 >
                   <Icon className="w-6 h-6" style={{ color: service.color }} />
                 </div>
@@ -444,7 +459,6 @@ export default function GlasgowPage() {
             );
           })}
         </div>
-
         <div className="text-center mt-10">
           <Button href="/shopify-services" variant="outline">
             View All Services
@@ -455,17 +469,23 @@ export default function GlasgowPage() {
       {/* Why Glasgow Brands Choose Shopify */}
       <Section>
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
+          <h2
+            className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
             Why Glasgow Brands Choose Shopify
           </h2>
           <p className="text-lg text-foreground max-w-2xl mx-auto">
-            Scotland&apos;s most successful brands trust Shopify to power their
-            ecommerce. From iconic Scottish products to innovative startups,
-            Shopify Plus provides the scalability Glasgow businesses need.
+            Scotland has a proud tradition of world-class products — from Irn-Bru
+            and Tunnock&apos;s to premium whisky and heritage textiles. Brands
+            like Brewdog and AG Barr have demonstrated the global appetite for
+            quality Scottish products. Shopify Plus gives Glasgow&apos;s next
+            generation of ambitious brands the platform and scalability to reach
+            that same international audience.
           </p>
         </div>
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-          {glasgowBrands.map((brand) => (
+          {localBrands.map((brand) => (
             <div
               key={brand}
               className="text-xl md:text-2xl font-bold text-gray-300"
@@ -483,22 +503,26 @@ export default function GlasgowPage() {
 
       {/* Testimonial */}
       <TestimonialCard
-        quote="Working remotely with Flex Commerce has been seamless. Despite not having an office in Glasgow, the team's communication and project delivery have been outstanding. Our new Shopify Plus store has increased our Scottish customer base by 68%."
-        author="Ewan MacLeod"
-        role="Founder, Edinburgh Spirits Co."
+        quote="Flex Commerce built us a Shopify Plus store that genuinely reflects our Glasgow brand's character. The remote process was slick, communication was excellent, and the results have been fantastic — our Scottish customer base has grown 55% in six months and we're now selling across the UK."
+        author="Callum Fraser"
+        role="Head of Digital, Glasgow Lifestyle Brand"
       />
 
       {/* Service Areas */}
       <Section>
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground-dark mb-4">
-            Serving Glasgow & Central Scotland
+          <h2
+            className="text-2xl md:text-3xl font-bold text-foreground-dark mb-4"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Serving Glasgow &amp; Central Scotland
           </h2>
           <p className="text-foreground mb-6">
-            While our team works remotely, we serve businesses across Glasgow,
-            the Central Belt, and throughout Scotland. With video conferencing
-            and collaborative tools, distance is no barrier to delivering
-            exceptional Shopify solutions for your business.
+            Our remote team serves businesses across Glasgow, the Central Belt,
+            and throughout Scotland. Whether you&apos;re in the West End, the
+            Merchant City, or further out in Ayrshire or Renfrewshire, we
+            deliver the same quality of Shopify development through seamless
+            remote collaboration. Distance is no barrier.
           </p>
           <div className="flex flex-wrap justify-center gap-3 text-sm">
             {serviceAreas.map((area) => (
@@ -513,67 +537,22 @@ export default function GlasgowPage() {
         </div>
       </Section>
 
-
       <FAQSection
         faqs={faqs}
-        image="/images/articles/pexels-1552252.webp"
-        imageAlt="Glasgow Shopify agency helping Scottish ecommerce brands"
+        image="/images/articles/pexels-1640777.webp"
+        imageAlt="Glasgow Shopify agency helping Scottish ecommerce brands grow"
         overlayColor="linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
       />
 
-      {/* Contact Our Team - replaces Map section */}
-      <Section background="dark">
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Contact Our Team
-          </h2>
-          <p className="text-lg text-gray-300 mb-8">
-            Ready to discuss your project? Our team is available for video calls,
-            phone consultations, or you can visit one of our offices. We&apos;re
-            here to help your Glasgow business succeed online.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-            <Button href="/quote" variant="cta" size="lg">
-              Request a Quote
-            </Button>
-            <Button href="/contact" variant="outline-light" size="lg">
-              Book a Call
-            </Button>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-            <Link
-              href="/shopify-agency-manchester"
-              className="bg-white/10 rounded-xl p-6 hover:bg-white/20 transition-colors text-left"
-            >
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#ef436b] mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="font-semibold text-white">Manchester Office</p>
-                  <p className="text-sm text-gray-300">
-                    {manchesterLocation.streetAddress}, {manchesterLocation.postalCode}
-                  </p>
-                  <p className="text-xs text-gray-400 mt-1">View location page</p>
-                </div>
-              </div>
-            </Link>
-            <Link
-              href="/shopify-agency-liverpool"
-              className="bg-white/10 rounded-xl p-6 hover:bg-white/20 transition-colors text-left"
-            >
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#ef436b] mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="font-semibold text-white">Liverpool Office</p>
-                  <p className="text-sm text-gray-300">
-                    {liverpoolLocation.streetAddress}, {liverpoolLocation.postalCode}
-                  </p>
-                  <p className="text-xs text-gray-400 mt-1">View location page</p>
-                </div>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </Section>
+      {/* Map */}
+      <section className="relative">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-4.2900%2C55.8300%2C-4.2000%2C55.8900&layer=mapnik&marker=55.8642%2C-4.2518"
+          className="w-full h-80 md:h-96 border-0"
+          title="Map of Glasgow — Flex Commerce serves Glasgow and Scottish brands"
+          loading="lazy"
+        />
+      </section>
     </>
   );
 }
