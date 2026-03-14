@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
 import { PricingGrid } from "@/components/pricing/PricingGrid";
-import { Check, HelpCircle, Tag } from "lucide-react";
+import { Check, Tag } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
+import { FAQSection } from "@/components/ui/FAQSection";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -94,31 +95,7 @@ export default function PricingPage() {
         </div>
       </Section>
 
-      {/* FAQs */}
-      <Section>
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground-dark mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-lg text-foreground max-w-2xl mx-auto">
-            Got questions? We&apos;ve got answers.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {faqs.map((faq) => (
-            <div key={faq.question} className="bg-background-alt rounded-xl p-6">
-              <div className="flex items-start gap-3 mb-3">
-                <HelpCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                <h3 className="font-semibold text-foreground-dark">
-                  {faq.question}
-                </h3>
-              </div>
-              <p className="text-foreground pl-8">{faq.answer}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
+      <FAQSection faqs={faqs} />
     </>
   );
 }
