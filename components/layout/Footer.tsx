@@ -58,9 +58,8 @@ export function Footer() {
             <Link
               key={i}
               href={loc.href}
-              className="flex items-center gap-2 px-6 text-sm text-gray-400 hover:text-white transition-colors whitespace-nowrap"
+              className="px-6 text-sm text-gray-400 hover:text-white transition-colors whitespace-nowrap"
             >
-              <MapPin className="w-3.5 h-3.5 text-[#ef436b] flex-shrink-0" />
               {loc.name}
             </Link>
           ))}
