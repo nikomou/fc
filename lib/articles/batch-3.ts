@@ -10,7 +10,7 @@ const posts: BlogPost[] = [
     readTime: "8 min read",
     date: "2026-02-01",
     image:
-      "https://images.pexels.com/photos/3051793/pexels-photo-3051793.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-3051793.jpg",
     gradient: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
     accent: "#ede9fe",
     author: "Sarah Patel",
@@ -106,7 +106,7 @@ const posts: BlogPost[] = [
     readTime: "7 min read",
     date: "2026-01-18",
     image:
-      "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-1181406.jpg",
     gradient: "linear-gradient(135deg, #ef436b 0%, #c0392b 100%)",
     accent: "#ffd6de",
     author: "Emma Clarke",
@@ -197,7 +197,7 @@ const posts: BlogPost[] = [
     readTime: "6 min read",
     date: "2026-01-05",
     image:
-      "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-3183153.jpg",
     gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
     accent: "#d1fae5",
     author: "Alex Morgan",
@@ -284,7 +284,7 @@ const posts: BlogPost[] = [
     readTime: "9 min read",
     date: "2025-12-22",
     image:
-      "https://images.pexels.com/photos/6006785/pexels-photo-6006785.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-6006785.jpg",
     gradient: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
     accent: "#fef3c7",
     author: "Sarah Patel",
@@ -383,7 +383,7 @@ const posts: BlogPost[] = [
     readTime: "6 min read",
     date: "2025-12-08",
     image:
-      "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-590016.jpg",
     gradient: "linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)",
     accent: "#e0f2fe",
     author: "Emma Clarke",
@@ -472,7 +472,7 @@ const posts: BlogPost[] = [
     readTime: "8 min read",
     date: "2025-11-25",
     image:
-      "https://images.pexels.com/photos/3944405/pexels-photo-3944405.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-3944405.jpg",
     gradient: "linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)",
     accent: "#e0e7ff",
     author: "Sarah Patel",
@@ -558,7 +558,7 @@ const posts: BlogPost[] = [
     readTime: "8 min read",
     date: "2025-11-12",
     image:
-      "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-669615.jpg",
     gradient: "linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%)",
     accent: "#e5e5e5",
     author: "Alex Morgan",
@@ -648,7 +648,7 @@ const posts: BlogPost[] = [
     readTime: "7 min read",
     date: "2025-10-30",
     image:
-      "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-3760067.jpg",
     gradient: "linear-gradient(135deg, #f97316 0%, #ea580c 100%)",
     accent: "#ffedd5",
     author: "Emma Clarke",
@@ -729,7 +729,7 @@ const posts: BlogPost[] = [
     readTime: "7 min read",
     date: "2025-10-17",
     image:
-      "https://images.pexels.com/photos/905163/pexels-photo-905163.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-905163.jpg",
     gradient: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)",
     accent: "#cffafe",
     author: "Tom Williams",
@@ -809,7 +809,7 @@ const posts: BlogPost[] = [
     readTime: "8 min read",
     date: "2025-10-04",
     image:
-      "https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-267389.jpg",
     gradient: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
     accent: "#ede9fe",
     author: "Alex Morgan",
@@ -898,7 +898,7 @@ const posts: BlogPost[] = [
     readTime: "9 min read",
     date: "2025-09-22",
     image:
-      "https://images.pexels.com/photos/4481259/pexels-photo-4481259.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-4481259.jpg",
     gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
     accent: "#d1fae5",
     author: "Tom Williams",
@@ -983,7 +983,7 @@ const posts: BlogPost[] = [
     readTime: "10 min read",
     date: "2025-09-09",
     image:
-      "https://images.pexels.com/photos/3856027/pexels-photo-3856027.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-3856027.jpg",
     gradient: "linear-gradient(135deg, #ef436b 0%, #c0392b 100%)",
     accent: "#ffd6de",
     author: "Emma Clarke",
@@ -1076,7 +1076,7 @@ const posts: BlogPost[] = [
     readTime: "7 min read",
     date: "2025-08-27",
     image:
-      "https://images.pexels.com/photos/6214381/pexels-photo-6214381.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-6214381.jpg",
     gradient: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
     accent: "#fef3c7",
     author: "Sarah Patel",
@@ -1164,7 +1164,7 @@ const posts: BlogPost[] = [
     readTime: "7 min read",
     date: "2025-08-14",
     image:
-      "https://images.pexels.com/photos/2881229/pexels-photo-2881229.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-2881229.jpg",
     gradient: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)",
     accent: "#cffafe",
     author: "Tom Williams",
@@ -1241,7 +1241,7 @@ const posts: BlogPost[] = [
     readTime: "8 min read",
     date: "2025-08-01",
     image:
-      "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-3184291.jpg",
     gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
     accent: "#e0e7ff",
     author: "Jamie Chen",
@@ -1338,7 +1338,7 @@ const posts: BlogPost[] = [
     readTime: "9 min read",
     date: "2025-07-20",
     image:
-      "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-1148820.jpg",
     gradient: "linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%)",
     accent: "#e5e5e5",
     author: "Jamie Chen",
@@ -1437,7 +1437,7 @@ const posts: BlogPost[] = [
     readTime: "7 min read",
     date: "2025-07-08",
     image:
-      "https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-3861964.jpg",
     gradient: "linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)",
     accent: "#e0f2fe",
     author: "Alex Morgan",
@@ -1523,7 +1523,7 @@ const posts: BlogPost[] = [
     readTime: "8 min read",
     date: "2025-06-25",
     image:
-      "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-3182812.jpg",
     gradient: "linear-gradient(135deg, #f97316 0%, #ea580c 100%)",
     accent: "#ffedd5",
     author: "Jamie Chen",
@@ -1617,7 +1617,7 @@ const posts: BlogPost[] = [
     readTime: "7 min read",
     date: "2025-06-12",
     image:
-      "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-1181467.jpg",
     gradient: "linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)",
     accent: "#e0e7ff",
     author: "Emma Clarke",
@@ -1716,7 +1716,7 @@ const posts: BlogPost[] = [
     readTime: "9 min read",
     date: "2025-05-30",
     image:
-      "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-3184360.jpg",
     gradient: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
     accent: "#ede9fe",
     author: "Alex Morgan",
@@ -1800,7 +1800,7 @@ const posts: BlogPost[] = [
     readTime: "8 min read",
     date: "2025-05-17",
     image:
-      "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-574071.jpg",
     gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
     accent: "#d1fae5",
     author: "Sarah Patel",
@@ -1888,7 +1888,7 @@ const posts: BlogPost[] = [
     readTime: "7 min read",
     date: "2025-05-04",
     image:
-      "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-196644.jpg",
     gradient: "linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)",
     accent: "#e0e7ff",
     author: "Jamie Chen",
@@ -1979,7 +1979,7 @@ const posts: BlogPost[] = [
     readTime: "8 min read",
     date: "2025-04-22",
     image:
-      "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-1779487.jpg",
     gradient: "linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%)",
     accent: "#e5e5e5",
     author: "Tom Williams",
@@ -2067,7 +2067,7 @@ const posts: BlogPost[] = [
     readTime: "5 min read",
     date: "2025-04-09",
     image:
-      "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-3184291.jpg",
     gradient: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
     accent: "#fef3c7",
     author: "Emma Clarke",
@@ -2146,7 +2146,7 @@ const posts: BlogPost[] = [
     readTime: "6 min read",
     date: "2025-03-27",
     image:
-      "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/articles/pexels-3182812.jpg",
     gradient: "linear-gradient(135deg, #ef436b 0%, #c0392b 100%)",
     accent: "#ffd6de",
     author: "Sarah Patel",

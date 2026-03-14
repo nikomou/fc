@@ -375,7 +375,7 @@ export default function ThemeDevelopmentPage() {
 
       <FAQSection
         faqs={faqs}
-        image="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        image="/images/articles/pexels-196644.jpg"
         imageAlt="Shopify theme development"
         overlayColor="linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
       />
