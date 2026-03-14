@@ -63,9 +63,12 @@ export function AISection() {
 
           {/* Left: heading + description + CTA */}
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-white/60 uppercase tracking-widest mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#ef436b] inline-block" />
-              AI-Powered
+            <div className="relative inline-flex p-[1px] rounded-full overflow-hidden mb-6">
+              <div className="ai-card-glow absolute inset-0" style={{ animationDelay: "1.2s", animationDuration: "2s" }} />
+              <div className="relative inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111111] text-xs font-medium text-white/60 uppercase tracking-widest">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#ef436b] inline-block" />
+                AI-Powered
+              </div>
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
