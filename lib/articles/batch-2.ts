@@ -10,7 +10,7 @@ const posts: BlogPost[] = [
     readTime: "9 min read",
     date: "2026-02-05",
     image:
-      "https://images.pexels.com/photos/2779452/pexels-photo-2779452.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1200",
     gradient: "linear-gradient(135deg, #ef436b 0%, #c0392b 100%)",
     accent: "#ffd6de",
     author: "Sarah Patel",
@@ -217,7 +217,7 @@ const posts: BlogPost[] = [
     readTime: "7 min read",
     date: "2026-01-10",
     image:
-      "https://images.pexels.com/photos/6169600/pexels-photo-6169600.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1200",
     gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
     accent: "#d1fae5",
     author: "Sarah Patel",
@@ -1594,7 +1594,7 @@ const posts: BlogPost[] = [
     readTime: "8 min read",
     date: "2025-06-10",
     image:
-      "https://images.pexels.com/photos/7693257/pexels-photo-7693257.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200",
     gradient: "linear-gradient(135deg, #ef436b 0%, #c0392b 100%)",
     accent: "#ffd6de",
     author: "Emma Clarke",

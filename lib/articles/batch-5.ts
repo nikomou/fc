@@ -887,7 +887,7 @@ const posts: BlogPost[] = [
     readTime: "8 min read",
     date: "2025-08-22",
     image:
-      "https://images.pexels.com/photos/7693257/pexels-photo-7693257.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200",
     gradient: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
     accent: "#ede9fe",
     author: "Jamie Chen",
@@ -1229,7 +1229,7 @@ const posts: BlogPost[] = [
     readTime: "6 min read",
     date: "2025-06-18",
     image:
-      "https://images.pexels.com/photos/6169600/pexels-photo-6169600.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1200",
     gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
     accent: "#d1fae5",
     author: "Emma Clarke",
@@ -1585,7 +1585,7 @@ const posts: BlogPost[] = [
     readTime: "8 min read",
     date: "2025-04-14",
     image:
-      "https://images.pexels.com/photos/2779452/pexels-photo-2779452.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1200",
     gradient: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
     accent: "#ede9fe",
     author: "Tom Williams",
