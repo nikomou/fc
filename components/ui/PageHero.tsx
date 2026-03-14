@@ -6,6 +6,19 @@ import Image from "next/image";
 
 type WaveColor = "pink" | "blue" | "yellow" | "green" | "purple" | "black" | "orange" | "teal" | "indigo";
 
+type HeroBackground = "white" | "pink" | "yellow" | "green" | "purple" | "blue" | "orange" | "teal";
+
+const heroBgColors: Record<HeroBackground, string> = {
+  white:  "#ffffff",
+  pink:   "#fff5f7",
+  yellow: "#fffdf5",
+  green:  "#f3fdf6",
+  purple: "#f8f5ff",
+  blue:   "#f3f8ff",
+  orange: "#fff8f3",
+  teal:   "#f0fdfa",
+};
+
 interface PageHeroProps {
   badge?: {
     icon: LucideIcon;
@@ -21,6 +34,7 @@ interface PageHeroProps {
     text: string;
     href: string;
   };
+  background?: HeroBackground;
   showTrustBadge?: boolean;
   shapeColors?: {
     topRight: WaveColor;
@@ -35,6 +49,7 @@ export function PageHero({
   description,
   primaryCta,
   secondaryCta,
+  background = "white",
   showTrustBadge = false,
   shapeColors,
   children,
@@ -42,7 +57,7 @@ export function PageHero({
   const BadgeIcon = badge?.icon;
 
   return (
-    <section className="pt-32 pb-16 bg-white relative overflow-hidden">
+    <section className="pt-32 pb-16 relative overflow-hidden" style={{ backgroundColor: heroBgColors[background] }}>
       {/* Background shapes - wavy gradients */}
 {shapeColors && (
         <>

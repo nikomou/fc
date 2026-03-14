@@ -50,6 +50,7 @@ export default function PricingPage() {
         badge={{ icon: Tag, text: "No Hidden Costs" }}
         title="Transparent Pricing"
         description="Clear, upfront pricing with no hidden costs. Choose the package that fits your needs, or contact us for a custom quote."
+        background="pink"
         shapeColors={{ topRight: "pink" }}
       />
 
