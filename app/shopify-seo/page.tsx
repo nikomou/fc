@@ -7,6 +7,7 @@ import { ServiceCapabilities } from "@/components/ui/ServiceCapabilities";
 import { PageHero } from "@/components/ui/PageHero";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import { FAQSection } from "@/components/ui/FAQSection";
+import { ProcessSteps } from "@/components/ui/ProcessSteps";
 import { siteConfig } from "@/lib/constants";
 import {
   Search,
@@ -296,24 +297,7 @@ export default function SEOPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {process.map((phase, index) => (
-            <div key={phase.step} className="relative">
-              {index < process.length - 1 && (
-                <div className="hidden lg:block absolute top-8 left-1/2 w-full h-px bg-gray-700" />
-              )}
-              <div className="relative text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#ef436b] text-white text-2xl font-bold mb-4">
-                  {phase.step}
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  {phase.title}
-                </h3>
-                <p className="text-gray-400">{phase.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <ProcessSteps steps={process} />
       </Section>
 
       <TestimonialCard

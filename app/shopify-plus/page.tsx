@@ -6,6 +6,7 @@ import { RelatedServices } from "@/components/ui/RelatedServices";
 import { ServiceCapabilities } from "@/components/ui/ServiceCapabilities";
 import { PageHero } from "@/components/ui/PageHero";
 import { FAQSection } from "@/components/ui/FAQSection";
+import { ProcessSteps } from "@/components/ui/ProcessSteps";
 import { siteConfig } from "@/lib/constants";
 import {
   Zap,
@@ -242,54 +243,22 @@ export default function ShopifyPlusPage() {
       </Section>
 
       {/* Process */}
-      <Section>
+      <Section background="dark">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground-dark mb-4">
+          <h2 className="text-3xl font-bold text-white mb-4">
             Our Shopify Plus Process
           </h2>
-          <p className="text-lg text-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             A proven approach for Shopify Plus implementations and migrations.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {[
-            {
-              step: "01",
-              title: "Assessment",
-              description:
-                "We analyse your current setup and identify opportunities.",
-            },
-            {
-              step: "02",
-              title: "Planning",
-              description:
-                "We create a detailed roadmap for your Shopify Plus build.",
-            },
-            {
-              step: "03",
-              title: "Development",
-              description:
-                "We build your custom Shopify Plus solution with care.",
-            },
-            {
-              step: "04",
-              title: "Optimisation",
-              description:
-                "We continuously optimise for performance and growth.",
-            },
-          ].map((phase) => (
-            <div key={phase.step} className="text-center">
-              <div className="text-5xl font-bold text-accent/20 mb-4">
-                {phase.step}
-              </div>
-              <h3 className="text-xl font-semibold text-foreground-dark mb-2">
-                {phase.title}
-              </h3>
-              <p className="text-foreground">{phase.description}</p>
-            </div>
-          ))}
-        </div>
+        <ProcessSteps steps={[
+          { step: "01", title: "Assessment", description: "We analyse your current setup and identify opportunities." },
+          { step: "02", title: "Planning", description: "We create a detailed roadmap for your Shopify Plus build." },
+          { step: "03", title: "Development", description: "We build your custom Shopify Plus solution with care." },
+          { step: "04", title: "Optimisation", description: "We continuously optimise for performance and growth." },
+        ]} />
       </Section>
 
       {/* Internal linking section */}
