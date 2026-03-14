@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, PenLine } from "lucide-react";
+import { ArrowUpRight, PenLine } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
 import { blogPosts, formatDate } from "@/lib/blog";
@@ -85,7 +85,7 @@ export default function ArticlesPage() {
             </p>
             <span className="inline-flex items-center gap-2 text-white font-medium">
               Read article
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </span>
           </div>
         </Link>
@@ -126,7 +126,7 @@ export default function ArticlesPage() {
                   </h3>
                   <span className="inline-flex items-center gap-1 text-sm font-medium text-white/80 group-hover:text-white transition-colors">
                     Read more
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
               </Link>

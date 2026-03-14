@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { getLatestPosts } from "@/lib/blog";
@@ -64,7 +64,7 @@ export function LatestPosts() {
                 </h3>
                 <span className="inline-flex items-center text-sm font-medium text-white/80 group-hover:text-white transition-colors">
                   Read more
-                  <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  <ArrowUpRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </span>
               </div>
             </Link>

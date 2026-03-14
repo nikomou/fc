@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { siteConfig } from "@/lib/constants";
-import { Clock, ArrowRight, BookOpen, Users, RefreshCw, CheckCircle, Sparkles, Target } from "lucide-react";
+import { Clock, ArrowUpRight, BookOpen, Users, RefreshCw, CheckCircle, Sparkles, Target } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
@@ -220,7 +220,7 @@ export default function GuidesPage() {
                   <div className="flex items-center gap-2 text-sm text-foreground">
                     <Clock className="w-3 h-3" />
                     <span>{guide.readTime}</span>
-                    <ArrowRight className="w-3 h-3 ml-auto group-hover:translate-x-1 transition-transform text-accent" />
+                    <ArrowUpRight className="w-3 h-3 ml-auto group-hover:translate-x-1 transition-transform text-accent" />
                   </div>
                 </Link>
               ))}

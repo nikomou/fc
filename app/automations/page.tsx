@@ -9,7 +9,6 @@ import {
   Bell,
   Shield,
   Check,
-  ArrowRight,
 } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 

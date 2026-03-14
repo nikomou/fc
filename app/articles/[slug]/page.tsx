@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Clock, Calendar } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Clock, Calendar } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { blogPosts, getBlogPost, getLatestPosts, formatDate, ContentBlock } from "@/lib/blog";
 
@@ -280,7 +280,7 @@ export default async function ArticlePostPage({
                     </h3>
                     <span className="inline-flex items-center gap-1 text-sm text-white/80 group-hover:text-white transition-colors">
                       Read more
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </div>
                 </Link>

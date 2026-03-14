@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight, BookOpen, ClipboardList, Library, Newspaper } from "lucide-react";
+import { ArrowUpRight, BookOpen, ClipboardList, Library, Newspaper } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/ui/PageHero";
@@ -134,7 +134,7 @@ export default function ResourcesPage() {
                   <h3 className="text-white font-bold text-base leading-snug mb-2">{post.title}</h3>
                   <span className="inline-flex items-center text-sm font-medium text-white/70 group-hover:text-white transition-colors">
                     Read more
-                    <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                    <ArrowUpRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-0.5 transition-transform" />
                   </span>
                 </div>
               </Link>
