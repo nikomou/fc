@@ -49,9 +49,9 @@ export function Footer() {
           to { transform: translateX(-33.333%); }
         }
       `}</style>
-      <div className="overflow-hidden border-b border-white/10 py-3">
+      <div className="group overflow-hidden border-b border-white/10 py-3">
         <div
-          className="flex w-max"
+          className="flex w-max group-hover:[animation-play-state:paused]"
           style={{ animation: "location-scroll 25s linear infinite" }}
         >
           {[...allLocations, ...allLocations, ...allLocations].map((loc, i) => (
