@@ -59,6 +59,7 @@ export default function ResourcesPage() {
         badge={{ icon: Library, text: "Free Resources" }}
         title="Resources"
         description="Guides, checklists, and expert articles to help you get the most from Shopify."
+        background="green"
         shapeColors={{ topRight: "green" }}
       />
 
