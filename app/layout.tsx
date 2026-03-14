@@ -109,6 +109,7 @@ const jsonLd = {
       "@type": "Organization",
       "@id": `${siteConfig.url}/#organization`,
       name: siteConfig.name,
+      description: "Shopify Plus agency based in Manchester and Liverpool. We design, build and grow Shopify stores for ambitious UK brands.",
       url: siteConfig.url,
       logo: {
         "@type": "ImageObject",
@@ -117,11 +118,11 @@ const jsonLd = {
       contactPoint: {
         "@type": "ContactPoint",
         telephone: `+44-${siteConfig.phone.replace(/\s/g, "-").replace(/^0/, "")}`,
+        email: siteConfig.email,
         contactType: "customer service",
         areaServed: "GB",
-        availableLanguage: "en",
+        availableLanguage: "en-GB",
       },
-      sameAs: Object.values(siteConfig.socials),
     },
     ...locationSchemas,
     {

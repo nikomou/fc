@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flex Commerce — SEO Dashboard 2026</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink: #ef436b;
+      --pink-dim: rgba(239,67,107,0.15);
+      --bg: #0d0d0d;
+      --surface: #161616;
+      --surface2: #1e1e1e;
+      --border: rgba(255,255,255,0.08);
+      --text: #e5e5e5;
+      --muted: #888;
+      --green: #10b981;
+      --amber: #f59e0b;
+      --blue: #3b82f6;
+      --purple: #8b5cf6;
+    }
+
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.6; min-height: 100vh; }
+
+    /* Layout */
+    .shell { display: flex; min-height: 100vh; }
+    .sidebar { width: 220px; flex-shrink: 0; background: var(--surface); border-right: 1px solid var(--border); padding: 28px 0; position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; }
+    .main { flex: 1; padding: 32px 36px; overflow-x: hidden; }
+
+    /* Sidebar */
+    .logo { padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .logo-name { font-weight: 700; font-size: 15px; }
+    .logo-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .nav-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; padding: 8px 20px 4px; }
+    .nav-item { display: flex; align-items: center; gap: 10px; padding: 9px 20px; cursor: pointer; color: var(--muted); font-size: 13px; font-weight: 500; border-left: 3px solid transparent; transition: all 0.15s; }
+    .nav-item:hover { color: var(--text); background: rgba(255,255,255,0.03); }
+    .nav-item.active { color: var(--pink); border-left-color: var(--pink); background: var(--pink-dim); }
+    .nav-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+    .sidebar-footer { margin-top: auto; padding: 16px 20px; border-top: 1px solid var(--border); font-size: 11px; color: var(--muted); }
+
+    /* Sections */
+    .section { display: none; }
+    .section.active { display: block; }
+    .section-title { font-family: 'Playfair Display', serif; font-style: italic; font-size: 26px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+    .section-sub { color: var(--muted); font-size: 13px; margin-bottom: 28px; }
+
+    /* Cards */
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; }
+    .card-title { font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+
+    /* KPI grid */
+    .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 28px; }
+    .kpi-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
+    .kpi-label { font-size: 11px; color: var(--muted); font-weight: 500; margin-bottom: 6px; }
+    .kpi-value { font-size: 26px; font-weight: 700; color: #fff; line-height: 1; }
+    .kpi-target { font-size: 11px; color: var(--green); margin-top: 5px; }
+    .kpi-base { font-size: 11px; color: var(--muted); }
+
+    /* Charts grid */
+    .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 28px; }
+    .chart-wrap { position: relative; height: 240px; }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead th { padding: 10px 14px; text-align: left; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); }
+    tbody td { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: rgba(255,255,255,0.02); }
+
+    /* Badges */
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 10px; font-weight: 600; letter-spacing: 0.04em; }
+    .badge-p1 { background: rgba(239,67,107,0.2); color: var(--pink); }
+    .badge-p2 { background: rgba(245,158,11,0.2); color: var(--amber); }
+    .badge-p3 { background: rgba(99,102,241,0.2); color: #818cf8; }
+    .badge-high { background: rgba(239,67,107,0.2); color: var(--pink); }
+    .badge-med { background: rgba(245,158,11,0.2); color: var(--amber); }
+    .badge-low { background: rgba(16,185,129,0.2); color: var(--green); }
+    .badge-t1 { background: rgba(239,67,107,0.2); color: var(--pink); }
+    .badge-t2 { background: rgba(245,158,11,0.2); color: var(--amber); }
+    .badge-t3 { background: rgba(59,130,246,0.2); color: var(--blue); }
+
+    /* Phase timeline */
+    .phases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 28px; }
+    .phase-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+    .phase-num { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--pink); margin-bottom: 8px; }
+    .phase-name { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .phase-weeks { font-size: 11px; color: var(--muted); margin-bottom: 12px; }
+    .phase-items { list-style: none; }
+    .phase-items li { font-size: 12px; color: var(--muted); padding: 4px 0; padding-left: 14px; position: relative; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .phase-items li:last-child { border-bottom: none; }
+    .phase-items li::before { content: '→'; position: absolute; left: 0; color: var(--pink); font-size: 10px; top: 5px; }
+
+    /* Gantt */
+    .gantt { width: 100%; margin-bottom: 28px; }
+    .gantt-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .gantt-label { width: 160px; flex-shrink: 0; font-size: 12px; color: var(--muted); text-align: right; }
+    .gantt-track { flex: 1; height: 8px; background: var(--surface2); border-radius: 4px; position: relative; }
+    .gantt-bar { height: 100%; border-radius: 4px; position: absolute; }
+    .gantt-weeks { display: flex; margin-left: 172px; margin-bottom: 6px; }
+    .gantt-week { flex: 1; font-size: 10px; color: var(--muted); text-align: center; }
+
+    /* Competitor bars */
+    .comp-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .comp-name { width: 160px; flex-shrink: 0; font-size: 12px; }
+    .comp-bar-wrap { flex: 1; height: 24px; background: var(--surface2); border-radius: 6px; overflow: hidden; position: relative; }
+    .comp-bar { height: 100%; border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 11px; font-weight: 600; color: #fff; transition: width 0.8s ease; }
+    .comp-val { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 11px; color: var(--muted); }
+
+    /* Content calendar */
+    .cal-month { margin-bottom: 22px; }
+    .cal-month-title { font-size: 12px; font-weight: 700; color: var(--pink); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; display: flex; align-items: center; gap-8px; }
+    .cal-theme { font-size: 11px; color: var(--muted); font-weight: 400; text-transform: none; letter-spacing: 0; margin-left: 8px; }
+    .cal-items { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .cal-item { background: var(--surface2); border-radius: 8px; padding: 10px 12px; border-left: 3px solid; }
+    .cal-item-type { font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 3px; }
+    .cal-item-title { font-size: 12px; color: var(--text); }
+    .cal-item-kw { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    /* Keyword table volume bar */
+    .vol-bar { display: flex; align-items: center; gap: 8px; }
+    .vol-track { width: 60px; height: 4px; background: var(--surface2); border-radius: 2px; overflow: hidden; }
+    .vol-fill { height: 100%; border-radius: 2px; background: var(--pink); }
+
+    /* Checklist */
+    .checklist { list-style: none; }
+    .check-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+    .check-item:last-child { border-bottom: none; }
+    .check-box { width: 16px; height: 16px; border-radius: 4px; border: 1.5px solid var(--border); flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; }
+    .check-box.done { background: var(--green); border-color: var(--green); }
+    .check-box.done::after { content: '✓'; font-size: 10px; color: #fff; font-weight: 700; }
+    .check-text { font-size: 13px; }
+    .check-text.done { color: var(--muted); text-decoration: line-through; }
+    .check-priority { margin-left: auto; flex-shrink: 0; }
+
+    /* Content stats */
+    .content-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 28px; }
+    .stat-ring { text-align: center; }
+    .ring-wrap { position: relative; width: 100px; height: 100px; margin: 0 auto 10px; }
+    .ring-svg { transform: rotate(-90deg); }
+    .ring-center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .ring-val { font-size: 20px; font-weight: 700; color: #fff; }
+    .ring-max { font-size: 11px; color: var(--muted); }
+
+    /* Responsive */
+    @media (max-width: 1200px) { .kpi-grid { grid-template-columns: repeat(2, 1fr); } .charts-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) { .phases { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <div class="logo-name">Flex Commerce</div>
+      <div class="logo-sub">SEO Dashboard · 2026</div>
+    </div>
+
+    <div class="nav-label">Overview</div>
+    <div class="nav-item active" onclick="show('kpis', this)"><span class="nav-dot"></span>KPI Targets</div>
+    <div class="nav-item" onclick="show('competitors', this)"><span class="nav-dot"></span>Competitors</div>
+
+    <div class="nav-label">Strategy</div>
+    <div class="nav-item" onclick="show('keywords', this)"><span class="nav-dot"></span>Keywords</div>
+    <div class="nav-item" onclick="show('content', this)"><span class="nav-dot"></span>Content Plan</div>
+    <div class="nav-item" onclick="show('roadmap', this)"><span class="nav-dot"></span>Roadmap</div>
+
+    <div class="nav-label">Technical</div>
+    <div class="nav-item" onclick="show('technical', this)"><span class="nav-dot"></span>Tech SEO Fixes</div>
+
+    <div class="sidebar-footer">Last updated: March 2026</div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- KPIs -->
+    <section id="kpis" class="section active">
+      <div class="section-title">KPI Targets</div>
+      <div class="section-sub">Year 1 projections — March 2026 to March 2027</div>
+
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Organic Sessions / Month</div>
+          <div class="kpi-value">8,000</div>
+          <div class="kpi-target">↑ 12-month target</div>
+          <div class="kpi-base">Baseline: ~1,200</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Top 10 Ranking Keywords</div>
+          <div class="kpi-value">200</div>
+          <div class="kpi-target">↑ 12-month target</div>
+          <div class="kpi-base">Baseline: ~20</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Domain Rating (Ahrefs)</div>
+          <div class="kpi-value">32</div>
+          <div class="kpi-target">↑ 12-month target</div>
+          <div class="kpi-base">Baseline: 14</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Organic Contact Submissions / Mo</div>
+          <div class="kpi-value">60</div>
+          <div class="kpi-target">↑ 12-month target</div>
+          <div class="kpi-base">Baseline: ~8</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Referring Domains</div>
+          <div class="kpi-value">180</div>
+          <div class="kpi-target">↑ 12-month target</div>
+          <div class="kpi-base">Baseline: ~40</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Top 3 Rankings</div>
+          <div class="kpi-value">70</div>
+          <div class="kpi-target">↑ 12-month target</div>
+          <div class="kpi-base">Baseline: ~5</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Avg. Position — Service Pages</div>
+          <div class="kpi-value">12</div>
+          <div class="kpi-target">↓ 12-month target</div>
+          <div class="kpi-base">Baseline: ~45</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Service Page Sessions / Month</div>
+          <div class="kpi-value">2,500</div>
+          <div class="kpi-target">↑ 12-month target</div>
+          <div class="kpi-base">Baseline: ~300</div>
+        </div>
+      </div>
+
+      <div class="charts-grid">
+        <div class="card">
+          <div class="card-title">Organic Sessions Growth</div>
+          <div class="chart-wrap"><canvas id="sessionsChart"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Ranking Keywords Growth</div>
+          <div class="chart-wrap"><canvas id="rankingsChart"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Traffic by Page Type — 12-Month Target</div>
+          <div class="chart-wrap"><canvas id="trafficBreakdown"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Domain Rating Trajectory</div>
+          <div class="chart-wrap"><canvas id="drChart"></canvas></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Content Production KPIs — 12-Month Targets</div>
+        <table>
+          <thead><tr><th>Content Type</th><th>Target</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Service pages fully optimised (1,500+ words)</td><td>12 / 12</td><td><span class="badge badge-p1">In progress</span></td></tr>
+            <tr><td>Location pages live</td><td>10 / 10</td><td><span class="badge badge-p2">2 live, 8 planned</span></td></tr>
+            <tr><td>Migration pages live</td><td>6 / 6</td><td><span class="badge badge-low">Complete</span></td></tr>
+            <tr><td>New articles published</td><td>48</td><td><span class="badge badge-p3">Q2 start</span></td></tr>
+            <tr><td>New guides published</td><td>24</td><td><span class="badge badge-p3">Q2 start</span></td></tr>
+            <tr><td>New checklists published</td><td>12</td><td><span class="badge badge-p3">Q2 start</span></td></tr>
+            <tr><td>Case studies (1,000+ words)</td><td>8</td><td><span class="badge badge-p1">Priority</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Competitors -->
+    <section id="competitors" class="section">
+      <div class="section-title">Competitor Analysis</div>
+      <div class="section-sub">UK Shopify agency landscape — Domain Rating & estimated organic traffic</div>
+
+      <div class="card" style="margin-bottom:18px;">
+        <div class="card-title">Domain Rating Comparison</div>
+        <br />
+        <div class="comp-row">
+          <div class="comp-name">Swanky Agency <span class="badge badge-t1" style="margin-left:4px">T1</span></div>
+          <div class="comp-bar-wrap"><div class="comp-bar" style="width:82%;background:linear-gradient(90deg,#ef436b,#f87171)">DR 52</div><div class="comp-val">12–18k/mo</div></div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-name">Underwaterpistol <span class="badge badge-t1" style="margin-left:4px">T1</span></div>
+          <div class="comp-bar-wrap"><div class="comp-bar" style="width:75%;background:linear-gradient(90deg,#f97316,#fb923c)">DR 48</div><div class="comp-val">9–14k/mo</div></div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-name">Velstar <span class="badge badge-t1" style="margin-left:4px">T1</span></div>
+          <div class="comp-bar-wrap"><div class="comp-bar" style="width:70%;background:linear-gradient(90deg,#f59e0b,#fbbf24)">DR 45</div><div class="comp-val">8–12k/mo</div></div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-name">Eastside Co <span class="badge badge-t2" style="margin-left:4px">T2</span></div>
+          <div class="comp-bar-wrap"><div class="comp-bar" style="width:69%;background:linear-gradient(90deg,#8b5cf6,#a78bfa)">DR 44</div><div class="comp-val">7–11k/mo</div></div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-name">Statement Agency <span class="badge badge-t2" style="margin-left:4px">T2</span></div>
+          <div class="comp-bar-wrap"><div class="comp-bar" style="width:60%;background:linear-gradient(90deg,#3b82f6,#60a5fa)">DR 38</div><div class="comp-val">5–8k/mo</div></div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-name" style="color:var(--pink);font-weight:700">Flex Commerce <span class="badge badge-t3" style="margin-left:4px">T3</span></div>
+          <div class="comp-bar-wrap"><div class="comp-bar" style="width:22%;background:linear-gradient(90deg,#ef436b,#f87171)">DR 14</div><div class="comp-val">~1.2k/mo</div></div>
+        </div>
+      </div>
+
+      <div class="charts-grid" style="grid-template-columns:1fr 1fr;margin-bottom:18px;">
+        <div class="card">
+          <div class="card-title">Content Advantages vs Competitors</div>
+          <div class="chart-wrap"><canvas id="contentAdvantage"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Keyword Gap — Commercial Terms Not Ranking</div>
+          <div class="chart-wrap"><canvas id="keywordGap"></canvas></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Key Keyword Gaps — Commercial Intent</div>
+        <table>
+          <thead><tr><th>Keyword</th><th>Volume</th><th>Swanky</th><th>Velstar</th><th>UWP</th><th>Eastside</th><th>Flex</th></tr></thead>
+          <tbody>
+            <tr><td>shopify plus agency uk</td><td>400</td><td>P1</td><td>P2</td><td>P1</td><td>P3</td><td><span class="badge badge-p1">Not ranking</span></td></tr>
+            <tr><td>shopify plus experts uk</td><td>210</td><td>P2</td><td>P4</td><td>P2</td><td>—</td><td><span class="badge badge-p1">Not ranking</span></td></tr>
+            <tr><td>ecommerce agency manchester</td><td>260</td><td>—</td><td>P2</td><td>—</td><td>—</td><td><span class="badge badge-p1">Not ranking</span></td></tr>
+            <tr><td>shopify replatforming</td><td>210</td><td>P3</td><td>P4</td><td>—</td><td>P5</td><td><span class="badge badge-p1">Not ranking</span></td></tr>
+            <tr><td>shopify plus cost uk</td><td>320</td><td>—</td><td>—</td><td>—</td><td>P4</td><td><span class="badge badge-p1">Not ranking</span></td></tr>
+            <tr><td>headless shopify agency</td><td>170</td><td>P1</td><td>—</td><td>P3</td><td>—</td><td><span class="badge badge-p2">Not ranking</span></td></tr>
+            <tr><td>shopify b2b agency</td><td>140</td><td>—</td><td>—</td><td>P3</td><td>P4</td><td><span class="badge badge-p2">Not ranking</span></td></tr>
+            <tr><td>shopify agency reviews uk</td><td>170</td><td>P2</td><td>P3</td><td>P4</td><td>P5</td><td><span class="badge badge-p2">Not ranking</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Keywords -->
+    <section id="keywords" class="section">
+      <div class="section-title">Keyword Strategy</div>
+      <div class="section-sub">Target keywords by cluster — estimated UK monthly search volume</div>
+
+      <div class="charts-grid" style="margin-bottom:18px;">
+        <div class="card">
+          <div class="card-title">Volume by Keyword Cluster</div>
+          <div class="chart-wrap"><canvas id="clusterChart"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Priority Distribution</div>
+          <div class="chart-wrap"><canvas id="priorityChart"></canvas></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:18px;">
+        <div class="card-title">Service Page Keywords</div>
+        <table>
+          <thead><tr><th>Keyword</th><th>Volume</th><th>Difficulty</th><th>Priority</th><th>Target Page</th></tr></thead>
+          <tbody>
+            <tr><td>shopify agency uk</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:100%"></div></div>800</div></td><td><span class="badge badge-high">High</span></td><td><span class="badge badge-p1">P1</span></td><td>/ecommerce-agency</td></tr>
+            <tr><td>shopify plus agency</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:75%"></div></div>600</div></td><td><span class="badge badge-high">High</span></td><td><span class="badge badge-p1">P1</span></td><td>/shopify-plus</td></tr>
+            <tr><td>shopify theme development</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:60%"></div></div>480</div></td><td><span class="badge badge-med">Med</span></td><td><span class="badge badge-p1">P1</span></td><td>/shopify-theme-development</td></tr>
+            <tr><td>shopify plus agency uk</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:50%"></div></div>400</div></td><td><span class="badge badge-high">High</span></td><td><span class="badge badge-p1">P1</span></td><td>/shopify-plus</td></tr>
+            <tr><td>shopify app development</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:49%"></div></div>390</div></td><td><span class="badge badge-med">Med</span></td><td><span class="badge badge-p1">P1</span></td><td>/shopify-app-development</td></tr>
+            <tr><td>shopify seo agency</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:40%"></div></div>320</div></td><td><span class="badge badge-med">Med</span></td><td><span class="badge badge-p1">P1</span></td><td>/shopify-seo</td></tr>
+            <tr><td>shopify migration service</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:33%"></div></div>260</div></td><td><span class="badge badge-med">Med</span></td><td><span class="badge badge-p1">P1</span></td><td>/shopify-migration</td></tr>
+            <tr><td>shopify speed optimisation</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:21%"></div></div>170</div></td><td><span class="badge badge-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td>/shopify-speed-optimisation</td></tr>
+            <tr><td>shopify store audit</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:18%"></div></div>140</div></td><td><span class="badge badge-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td>/shopify-store-audit</td></tr>
+            <tr><td>shopify integrations agency</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:16%"></div></div>130</div></td><td><span class="badge badge-low">Low</span></td><td><span class="badge badge-p2">P2</span></td><td>/shopify-integrations</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card" style="margin-bottom:18px;">
+        <div class="card-title">Migration Keywords — High Commercial Intent</div>
+        <table>
+          <thead><tr><th>Keyword</th><th>Volume</th><th>Difficulty</th><th>Target Page</th></tr></thead>
+          <tbody>
+            <tr><td>woocommerce vs shopify</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:100%"></div></div>1,600</div></td><td><span class="badge badge-med">Med</span></td><td>/articles/woocommerce-vs-shopify</td></tr>
+            <tr><td>magento to shopify</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:45%"></div></div>720</div></td><td><span class="badge badge-med">Med-High</span></td><td>/magento-to-shopify-migration</td></tr>
+            <tr><td>woocommerce to shopify migration</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:37%"></div></div>590</div></td><td><span class="badge badge-med">Med</span></td><td>/woocommerce-to-shopify-migration</td></tr>
+            <tr><td>migrate from woocommerce to shopify</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:27%"></div></div>430</div></td><td><span class="badge badge-med">Med</span></td><td>/woocommerce-to-shopify-migration</td></tr>
+            <tr><td>magento to shopify migration</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:30%"></div></div>480</div></td><td><span class="badge badge-med">Med</span></td><td>/magento-to-shopify-migration</td></tr>
+            <tr><td>bigcommerce to shopify migration</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:13%"></div></div>210</div></td><td><span class="badge badge-low">Low</span></td><td>/bigcommerce-to-shopify-migration</td></tr>
+            <tr><td>squarespace to shopify migration</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:11%"></div></div>170</div></td><td><span class="badge badge-low">Low</span></td><td>/squarespace-to-shopify-migration</td></tr>
+            <tr><td>salesforce to shopify migration</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:7%"></div></div>110</div></td><td><span class="badge badge-low">Low</span></td><td>/salesforce-to-shopify-migration</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Location Keywords</div>
+        <table>
+          <thead><tr><th>Keyword</th><th>Volume</th><th>Priority</th><th>Target Page</th></tr></thead>
+          <tbody>
+            <tr><td>shopify agency london</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:100%"></div></div>880</div></td><td><span class="badge badge-p1">P1</span></td><td>/shopify-agency-london</td></tr>
+            <tr><td>shopify developer london</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:67%"></div></div>590</div></td><td><span class="badge badge-p1">P1</span></td><td>/shopify-agency-london</td></tr>
+            <tr><td>shopify agency manchester</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:36%"></div></div>320</div></td><td><span class="badge badge-p1">P1</span></td><td>/shopify-agency-manchester</td></tr>
+            <tr><td>ecommerce agency manchester</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:30%"></div></div>260</div></td><td><span class="badge badge-p1">P1</span></td><td>/shopify-agency-manchester</td></tr>
+            <tr><td>shopify developer manchester</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:24%"></div></div>210</div></td><td><span class="badge badge-p1">P1</span></td><td>/shopify-agency-manchester</td></tr>
+            <tr><td>shopify agency birmingham</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:24%"></div></div>210</div></td><td><span class="badge badge-p2">P2</span></td><td>/shopify-agency-birmingham</td></tr>
+            <tr><td>shopify agency liverpool</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:19%"></div></div>170</div></td><td><span class="badge badge-p1">P1</span></td><td>/shopify-agency-liverpool</td></tr>
+            <tr><td>shopify agency leeds</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:19%"></div></div>170</div></td><td><span class="badge badge-p2">P2</span></td><td>/shopify-agency-leeds</td></tr>
+            <tr><td>shopify agency bristol</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:16%"></div></div>140</div></td><td><span class="badge badge-p2">P2</span></td><td>/shopify-agency-bristol</td></tr>
+            <tr><td>shopify agency edinburgh</td><td><div class="vol-bar"><div class="vol-track"><div class="vol-fill" style="width:13%"></div></div>110</div></td><td><span class="badge badge-p3">P3</span></td><td>/shopify-agency-edinburgh</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Content Plan -->
+    <section id="content" class="section">
+      <div class="section-title">Content Calendar</div>
+      <div class="section-sub">April 2026 – March 2027 · 84 pieces total: 48 articles + 24 guides + 12 checklists</div>
+
+      <div class="content-stats">
+        <div class="card stat-ring">
+          <div class="ring-wrap">
+            <svg class="ring-svg" width="100" height="100" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" fill="none" stroke="var(--surface2)" stroke-width="8"/>
+              <circle cx="50" cy="50" r="40" fill="none" stroke="var(--pink)" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="251.2" data-target="145.7" stroke-linecap="round"/>
+            </svg>
+            <div class="ring-center"><div class="ring-val">48</div><div class="ring-max">pieces</div></div>
+          </div>
+          <div class="card-title" style="text-align:center">Articles</div>
+        </div>
+        <div class="card stat-ring">
+          <div class="ring-wrap">
+            <svg class="ring-svg" width="100" height="100" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" fill="none" stroke="var(--surface2)" stroke-width="8"/>
+              <circle cx="50" cy="50" r="40" fill="none" stroke="var(--amber)" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="251.2" data-target="189.2" data-color="#f59e0b" stroke-linecap="round"/>
+            </svg>
+            <div class="ring-center"><div class="ring-val">24</div><div class="ring-max">pieces</div></div>
+          </div>
+          <div class="card-title" style="text-align:center">Guides</div>
+        </div>
+        <div class="card stat-ring">
+          <div class="ring-wrap">
+            <svg class="ring-svg" width="100" height="100" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" fill="none" stroke="var(--surface2)" stroke-width="8"/>
+              <circle cx="50" cy="50" r="40" fill="none" stroke="var(--green)" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="251.2" data-target="220.5" data-color="#10b981" stroke-linecap="round"/>
+            </svg>
+            <div class="ring-center"><div class="ring-val">12</div><div class="ring-max">pieces</div></div>
+          </div>
+          <div class="card-title" style="text-align:center">Checklists</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:18px;">
+        <div class="card-title">Monthly Publishing Volume</div>
+        <div class="chart-wrap"><canvas id="publishingChart"></canvas></div>
+      </div>
+
+      <div class="cal-month">
+        <div class="cal-month-title">April 2026 <span class="cal-theme">— Foundation: Cornerstone content</span></div>
+        <div class="cal-items">
+          <div class="cal-item" style="border-color:var(--pink)"><div class="cal-item-type" style="color:var(--pink)">Article · P1</div><div class="cal-item-title">Shopify Plus vs Shopify Advanced</div><div class="cal-item-kw">590 vol/mo</div></div>
+          <div class="cal-item" style="border-color:var(--pink)"><div class="cal-item-type" style="color:var(--pink)">Article · P1</div><div class="cal-item-title">The Real Cost of Shopify Plus in the UK</div><div class="cal-item-kw">390 vol/mo</div></div>
+          <div class="cal-item" style="border-color:var(--amber)"><div class="cal-item-type" style="color:var(--amber)">Guide · P1</div><div class="cal-item-title">How to Migrate from WooCommerce to Shopify</div><div class="cal-item-kw">720 vol/mo</div></div>
+          <div class="cal-item" style="border-color:var(--green)"><div class="cal-item-type" style="color:var(--green)">Checklist · P1</div><div class="cal-item-title">Shopify Migration Checklist: 50 Points</div><div class="cal-item-kw">migration checklist</div></div>
+        </div>
+      </div>
+
+      <div class="cal-month">
+        <div class="cal-month-title">May 2026 <span class="cal-theme">— Service Authority</span></div>
+        <div class="cal-items">
+          <div class="cal-item" style="border-color:var(--pink)"><div class="cal-item-type" style="color:var(--pink)">Article · P1</div><div class="cal-item-title">Magento vs Shopify Plus: Why Brands Are Switching</div><div class="cal-item-kw">720 vol/mo</div></div>
+          <div class="cal-item" style="border-color:var(--pink)"><div class="cal-item-type" style="color:var(--pink)">Article · P1</div><div class="cal-item-title">Shopify Plus Features: Everything You Need to Know</div><div class="cal-item-kw">720 vol/mo</div></div>
+          <div class="cal-item" style="border-color:var(--amber)"><div class="cal-item-type" style="color:var(--amber)">Guide · P1</div><div class="cal-item-title">How to Migrate from Magento to Shopify</div><div class="cal-item-kw">480 vol/mo</div></div>
+          <div class="cal-item" style="border-color:var(--green)"><div class="cal-item-type" style="color:var(--green)">Checklist · P1</div><div class="cal-item-title">Shopify Plus Launch Checklist: 40 Points</div><div class="cal-item-kw">enterprise stores</div></div>
+        </div>
+      </div>
+
+      <div class="cal-month">
+        <div class="cal-month-title">June 2026 <span class="cal-theme">— Location Expansion: London push</span></div>
+        <div class="cal-items">
+          <div class="cal-item" style="border-color:var(--pink)"><div class="cal-item-type" style="color:var(--pink)">Article · P1</div><div class="cal-item-title">London Ecommerce: Why Shopify Plus is Dominating</div><div class="cal-item-kw">shopify agency london · 880 vol</div></div>
+          <div class="cal-item" style="border-color:var(--amber)"><div class="cal-item-type" style="color:var(--amber)">Article · P2</div><div class="cal-item-title">Shopify Speed Optimisation: Achieving 95+ Scores</div><div class="cal-item-kw">430 vol/mo</div></div>
+          <div class="cal-item" style="border-color:var(--amber)"><div class="cal-item-type" style="color:var(--amber)">Guide · P1</div><div class="cal-item-title">Complete Shopify SEO Guide</div><div class="cal-item-kw">590 vol/mo</div></div>
+          <div class="cal-item" style="border-color:var(--green)"><div class="cal-item-type" style="color:var(--green)">Checklist · P2</div><div class="cal-item-title">Shopify SEO Audit Checklist</div><div class="cal-item-kw">seo audit</div></div>
+        </div>
+      </div>
+
+      <div style="text-align:center;padding:20px;color:var(--muted);font-size:12px;">
+        + 9 more months in <code>CONTENT-CALENDAR.md</code> (84 pieces total)
+      </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section id="roadmap" class="section">
+      <div class="section-title">Implementation Roadmap</div>
+      <div class="section-sub">April 2026 – March 2027 · 4 phases across 52 weeks</div>
+
+      <div class="phases">
+        <div class="phase-card">
+          <div class="phase-num">Phase 1 · Weeks 1–8</div>
+          <div class="phase-name">Foundation</div>
+          <div class="phase-weeks">Apr – May 2026</div>
+          <ul class="phase-items">
+            <li>Technical SEO audit & fixes</li>
+            <li>Google Search Console setup</li>
+            <li>On-page optimisation — 12 service pages</li>
+            <li>On-page optimisation — 6 migration pages</li>
+            <li>Google Business Profile (Manchester & Liverpool)</li>
+            <li>Structured data audit & gaps</li>
+          </ul>
+        </div>
+        <div class="phase-card">
+          <div class="phase-num">Phase 2 · Weeks 9–20</div>
+          <div class="phase-name">Content Launch</div>
+          <div class="phase-weeks">Jun – Aug 2026</div>
+          <ul class="phase-items">
+            <li>Launch content calendar (84 pieces)</li>
+            <li>First 2 detailed case studies</li>
+            <li>4 new location pages live</li>
+            <li>Cornerstone articles + comparison posts</li>
+            <li>Internal linking audit & fixes</li>
+            <li>Author profiles setup</li>
+          </ul>
+        </div>
+        <div class="phase-card">
+          <div class="phase-num">Phase 3 · Weeks 21–36</div>
+          <div class="phase-name">Authority Building</div>
+          <div class="phase-weeks">Sep – Dec 2026</div>
+          <ul class="phase-items">
+            <li>Link building sprint (40+ targets)</li>
+            <li>Remaining location pages</li>
+            <li>E-E-A-T deep work</li>
+            <li>3 industry vertical pages</li>
+            <li>Review schema on service pages</li>
+            <li>Clutch & directory listings</li>
+          </ul>
+        </div>
+        <div class="phase-card">
+          <div class="phase-num">Phase 4 · Weeks 37–52</div>
+          <div class="phase-name">Scale & Compound</div>
+          <div class="phase-weeks">Jan – Mar 2027</div>
+          <ul class="phase-items">
+            <li>Partner integration sub-pages (×6)</li>
+            <li>GEO optimisation (AI search)</li>
+            <li>Original research report</li>
+            <li>Content refresh pass</li>
+            <li>Year-end review & recalibration</li>
+            <li>200+ keywords in top 10 target</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:18px;">
+        <div class="card-title">Timeline Gantt</div>
+        <br/>
+        <div class="gantt-weeks">
+          <div class="gantt-week" style="text-align:left;margin-left:160px">Wk 1</div>
+          <div class="gantt-week">Wk 8</div>
+          <div class="gantt-week">Wk 16</div>
+          <div class="gantt-week">Wk 24</div>
+          <div class="gantt-week">Wk 32</div>
+          <div class="gantt-week">Wk 40</div>
+          <div class="gantt-week" style="text-align:right">Wk 52</div>
+        </div>
+        <div class="gantt-row"><div class="gantt-label">Technical Fixes</div><div class="gantt-track"><div class="gantt-bar" style="left:0;width:15%;background:var(--pink)"></div></div></div>
+        <div class="gantt-row"><div class="gantt-label">Service Page Optimisation</div><div class="gantt-track"><div class="gantt-bar" style="left:5%;width:20%;background:var(--pink)"></div></div></div>
+        <div class="gantt-row"><div class="gantt-label">Migration Page Optimisation</div><div class="gantt-track"><div class="gantt-bar" style="left:10%;width:15%;background:#f97316"></div></div></div>
+        <div class="gantt-row"><div class="gantt-label">GBP Setup</div><div class="gantt-track"><div class="gantt-bar" style="left:0;width:10%;background:var(--amber)"></div></div></div>
+        <div class="gantt-row"><div class="gantt-label">Content Calendar</div><div class="gantt-track"><div class="gantt-bar" style="left:17%;width:83%;background:var(--purple)"></div></div></div>
+        <div class="gantt-row"><div class="gantt-label">Location Pages</div><div class="gantt-track"><div class="gantt-bar" style="left:17%;width:50%;background:var(--blue)"></div></div></div>
+        <div class="gantt-row"><div class="gantt-label">Case Studies</div><div class="gantt-track"><div class="gantt-bar" style="left:25%;width:55%;background:var(--amber)"></div></div></div>
+        <div class="gantt-row"><div class="gantt-label">Link Building</div><div class="gantt-track"><div class="gantt-bar" style="left:40%;width:60%;background:var(--green)"></div></div></div>
+        <div class="gantt-row"><div class="gantt-label">Integration Pages</div><div class="gantt-track"><div class="gantt-bar" style="left:70%;width:30%;background:#14b8a6"></div></div></div>
+        <div class="gantt-row"><div class="gantt-label">GEO Optimisation</div><div class="gantt-track"><div class="gantt-bar" style="left:70%;width:30%;background:#6366f1"></div></div></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Quick Wins — Act Now</div>
+        <table>
+          <thead><tr><th>Action</th><th>Impact</th><th>Effort</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Submit XML sitemap to Search Console</td><td><span class="badge badge-high">High</span></td><td><span class="badge badge-low">Low</span></td><td><span class="badge badge-p1">To do</span></td></tr>
+            <tr><td>Verify Google Business Profile (Manchester)</td><td><span class="badge badge-high">High</span></td><td><span class="badge badge-low">Low</span></td><td><span class="badge badge-p1">To do</span></td></tr>
+            <tr><td>Create Clutch profile</td><td><span class="badge badge-high">High</span></td><td><span class="badge badge-low">Low</span></td><td><span class="badge badge-p1">To do</span></td></tr>
+            <tr><td>Publish 2 case studies with metrics</td><td><span class="badge badge-high">High</span></td><td><span class="badge badge-med">Med</span></td><td><span class="badge badge-p1">Priority</span></td></tr>
+            <tr><td>Add aggregateRating schema to homepage</td><td><span class="badge badge-med">Med</span></td><td><span class="badge badge-low">Low</span></td><td><span class="badge badge-p2">To do</span></td></tr>
+            <tr><td>Add description to root Organization schema</td><td><span class="badge badge-med">Med</span></td><td><span class="badge badge-low">Low</span></td><td><span class="badge badge-p2">To do</span></td></tr>
+            <tr><td>Write "WooCommerce vs Shopify" article (1,600/mo)</td><td><span class="badge badge-high">High</span></td><td><span class="badge badge-med">Med</span></td><td><span class="badge badge-p1">Priority</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Technical SEO -->
+    <section id="technical" class="section">
+      <div class="section-title">Technical SEO Fixes</div>
+      <div class="section-sub">Gaps identified from codebase audit — prioritised by impact</div>
+
+      <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:28px;">
+        <div class="kpi-card">
+          <div class="kpi-label">Critical (P1) Items</div>
+          <div class="kpi-value" style="color:var(--pink)">2</div>
+          <div class="kpi-base">XML sitemap · robots.txt</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">High Priority (P2) Items</div>
+          <div class="kpi-value" style="color:var(--amber)">6</div>
+          <div class="kpi-base">Schema gaps · alt text · lang</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Completed Fixes</div>
+          <div class="kpi-value" style="color:var(--green)">3</div>
+          <div class="kpi-base">lang · email schema · breadcrumbs</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:18px;">
+        <div class="card-title">Fix Checklist</div>
+        <ul class="checklist">
+          <li class="check-item"><div class="check-box done"></div><div class="check-text done">Set html lang="en-GB" on root layout</div><div class="check-priority"><span class="badge badge-p2">P2 · Done</span></div></li>
+          <li class="check-item"><div class="check-box done"></div><div class="check-text done">Add email to all LocalBusiness schema entries</div><div class="check-priority"><span class="badge badge-p2">P2 · Done</span></div></li>
+          <li class="check-item"><div class="check-box done"></div><div class="check-text done">Add BreadcrumbList to /automations and /ecommerce-agency</div><div class="check-priority"><span class="badge badge-p1">P1 · Done</span></div></li>
+          <li class="check-item"><div class="check-box"></div><div class="check-text">Submit XML sitemap to Google Search Console</div><div class="check-priority"><span class="badge badge-p1">P1</span></div></li>
+          <li class="check-item"><div class="check-box"></div><div class="check-text">Confirm robots.txt is accessible at /robots.txt</div><div class="check-priority"><span class="badge badge-p1">P1</span></div></li>
+          <li class="check-item"><div class="check-box"></div><div class="check-text">Add description field to root Organization schema</div><div class="check-priority"><span class="badge badge-p2">P2</span></div></li>
+          <li class="check-item"><div class="check-box"></div><div class="check-text">Add sameAs to root Organization schema (once socials active)</div><div class="check-priority"><span class="badge badge-p2">P2</span></div></li>
+          <li class="check-item"><div class="check-box"></div><div class="check-text">Audit all Image alt text — keyword-relevant descriptions</div><div class="check-priority"><span class="badge badge-p2">P2</span></div></li>
+          <li class="check-item"><div class="check-box"></div><div class="check-text">Add Article / BlogPosting schema to /articles/[slug] pages</div><div class="check-priority"><span class="badge badge-p2">P2</span></div></li>
+          <li class="check-item"><div class="check-box"></div><div class="check-text">Add aggregateRating schema to service pages (once 10+ reviews)</div><div class="check-priority"><span class="badge badge-p2">P2</span></div></li>
+          <li class="check-item"><div class="check-box"></div><div class="check-text">Add HowTo schema to step-based guide pages</div><div class="check-priority"><span class="badge badge-p3">P3</span></div></li>
+          <li class="check-item"><div class="check-box"></div><div class="check-text">Add ItemList schema to checklist pages</div><div class="check-priority"><span class="badge badge-p3">P3</span></div></li>
+          <li class="check-item"><div class="check-box"></div><div class="check-text">Add FAQPage schema to remaining service pages</div><div class="check-priority"><span class="badge badge-p3">P3</span></div></li>
+          <li class="check-item"><div class="check-box"></div><div class="check-text">Add hreflang en-GB annotation if en-US content added</div><div class="check-priority"><span class="badge badge-p3">P3</span></div></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Schema Coverage by Page Type</div>
+        <table>
+          <thead><tr><th>Page Type</th><th>Required Schema</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Homepage</td><td>Organization, WebSite, LocalBusiness, Service</td><td><span class="badge badge-low">Complete</span></td></tr>
+            <tr><td>Service Pages</td><td>Service, BreadcrumbList, FAQPage</td><td><span class="badge badge-med">Partial</span></td></tr>
+            <tr><td>Location Pages</td><td>LocalBusiness, BreadcrumbList, FAQPage, Review</td><td><span class="badge badge-med">Partial</span></td></tr>
+            <tr><td>Migration Pages</td><td>Service, BreadcrumbList, FAQPage, HowTo</td><td><span class="badge badge-med">Partial</span></td></tr>
+            <tr><td>Article Pages</td><td>Article, BreadcrumbList, Person (author)</td><td><span class="badge badge-high">Missing</span></td></tr>
+            <tr><td>Guide Pages</td><td>HowTo, Article, BreadcrumbList</td><td><span class="badge badge-high">Missing</span></td></tr>
+            <tr><td>Checklist Pages</td><td>ItemList, Article, BreadcrumbList</td><td><span class="badge badge-high">Missing</span></td></tr>
+            <tr><td>Pricing Page</td><td>PriceSpecification, Service, BreadcrumbList</td><td><span class="badge badge-high">Missing</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  // Navigation
+  function show(id, el) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    el.classList.add('active');
+  }
+
+  const pink = '#ef436b';
+  const amber = '#f59e0b';
+  const blue = '#3b82f6';
+  const green = '#10b981';
+  const purple = '#8b5cf6';
+  const muted = 'rgba(255,255,255,0.1)';
+  const gridColor = 'rgba(255,255,255,0.05)';
+  const textColor = '#888';
+
+  const baseOpts = {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { labels: { color: textColor, font: { size: 11 }, boxWidth: 10 } } },
+    scales: {
+      x: { ticks: { color: textColor, font: { size: 10 } }, grid: { color: gridColor } },
+      y: { ticks: { color: textColor, font: { size: 10 } }, grid: { color: gridColor } }
+    }
+  };
+
+  // Sessions chart
+  new Chart(document.getElementById('sessionsChart'), {
+    type: 'line',
+    data: {
+      labels: ['Now','1mo','2mo','3mo','4mo','5mo','6mo','7mo','8mo','9mo','10mo','11mo','12mo'],
+      datasets: [{
+        label: 'Organic Sessions / Month',
+        data: [1200,1400,1700,2100,2500,3000,3500,4200,5000,5800,6700,7400,8000],
+        borderColor: pink, backgroundColor: 'rgba(239,67,107,0.1)',
+        tension: 0.4, fill: true, pointRadius: 3, pointBackgroundColor: pink
+      }]
+    },
+    options: { ...baseOpts }
+  });
+
+  // Rankings chart
+  new Chart(document.getElementById('rankingsChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Now','3 months','6 months','12 months'],
+      datasets: [
+        { label: 'Top 10', data: [20,50,80,200], backgroundColor: 'rgba(239,67,107,0.7)', borderRadius: 4 },
+        { label: 'Top 3', data: [5,12,25,70], backgroundColor: 'rgba(245,158,11,0.7)', borderRadius: 4 }
+      ]
+    },
+    options: { ...baseOpts }
+  });
+
+  // Traffic breakdown
+  new Chart(document.getElementById('trafficBreakdown'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Service Pages','Location Pages','Migration Pages','Content / Blog'],
+      datasets: [{ data: [2500,1800,1400,2300], backgroundColor: [pink, amber, blue, purple], borderWidth: 0, hoverOffset: 6 }]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: textColor, font: { size: 10 }, boxWidth: 10, padding: 8 } } } }
+  });
+
+  // DR chart
+  new Chart(document.getElementById('drChart'), {
+    type: 'line',
+    data: {
+      labels: ['Now','3mo','6mo','9mo','12mo'],
+      datasets: [
+        { label: 'Flex Commerce', data: [14,16,21,26,31], borderColor: pink, backgroundColor: 'rgba(239,67,107,0.1)', tension: 0.4, fill: true, pointRadius: 4, pointBackgroundColor: pink },
+        { label: 'Statement (benchmark)', data: [38,38,39,39,40], borderColor: blue, borderDash: [4,4], tension: 0, fill: false, pointRadius: 0 }
+      ]
+    },
+    options: { ...baseOpts }
+  });
+
+  // Content advantage radar
+  new Chart(document.getElementById('contentAdvantage'), {
+    type: 'radar',
+    data: {
+      labels: ['How-to Guides','Checklists','Location Pages','Migration Pages','AI Content','Pricing Page'],
+      datasets: [
+        { label: 'Flex Commerce', data: [9,9,8,9,10,10], backgroundColor: 'rgba(239,67,107,0.2)', borderColor: pink, pointBackgroundColor: pink },
+        { label: 'Best Competitor', data: [5,3,4,5,1,1], backgroundColor: 'rgba(59,130,246,0.1)', borderColor: blue, pointBackgroundColor: blue }
+      ]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { color: textColor, font: { size: 11 }, boxWidth: 10 } } }, scales: { r: { ticks: { display: false }, grid: { color: gridColor }, pointLabels: { color: textColor, font: { size: 10 } }, min: 0, max: 10 } } }
+  });
+
+  // Keyword gap
+  new Chart(document.getElementById('keywordGap'), {
+    type: 'bar',
+    data: {
+      labels: ['Swanky','UWP','Velstar','Eastside Co','Statement','Flex Commerce'],
+      datasets: [{ label: 'Commercial Keywords in Top 10 (est.)', data: [38,32,28,24,16,4], backgroundColor: [muted,muted,muted,muted,muted,pink], borderRadius: 4 }]
+    },
+    options: { ...baseOpts, indexAxis: 'y', plugins: { legend: { display: false } } }
+  });
+
+  // Cluster chart
+  new Chart(document.getElementById('clusterChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Service Pages','Migration','Location','Informational'],
+      datasets: [
+        { label: 'Total Cluster Volume (UK/mo)', data: [3950,4370,3620,8190], backgroundColor: [pink, amber, blue, purple], borderRadius: 4 }
+      ]
+    },
+    options: { ...baseOpts, plugins: { legend: { display: false } } }
+  });
+
+  // Priority chart
+  new Chart(document.getElementById('priorityChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['P1 — High Intent','P2 — Authority','P3 — Awareness'],
+      datasets: [{ data: [18,14,8], backgroundColor: [pink, amber, '#6366f1'], borderWidth: 0, hoverOffset: 6 }]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: textColor, font: { size: 10 }, boxWidth: 10, padding: 8 } } } }
+  });
+
+  // Publishing volume
+  new Chart(document.getElementById('publishingChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar'],
+      datasets: [
+        { label: 'Articles', data: [4,4,4,4,4,4,4,4,4,4,4,4], backgroundColor: 'rgba(239,67,107,0.8)', borderRadius: 2 },
+        { label: 'Guides', data: [2,2,2,2,2,2,2,2,2,2,2,2], backgroundColor: 'rgba(245,158,11,0.8)', borderRadius: 2 },
+        { label: 'Checklists', data: [1,1,1,1,1,1,1,1,1,1,1,1], backgroundColor: 'rgba(16,185,129,0.8)', borderRadius: 2 }
+      ]
+    },
+    options: { ...baseOpts, scales: { x: { stacked: true, ticks: { color: textColor, font: { size: 10 } }, grid: { color: gridColor } }, y: { stacked: true, ticks: { color: textColor, font: { size: 10 } }, grid: { color: gridColor } } } }
+  });
+
+  // Animate rings on load
+  document.querySelectorAll('.ring-svg circle[data-target]').forEach(circle => {
+    const target = parseFloat(circle.getAttribute('data-target'));
+    const colour = circle.getAttribute('data-color') || '#ef436b';
+    circle.style.stroke = colour;
+    setTimeout(() => {
+      circle.style.transition = 'stroke-dashoffset 1s ease';
+      circle.style.strokeDashoffset = 251.2 - target;
+    }, 300);
+  });
+</script>
+</body>
+</html>
