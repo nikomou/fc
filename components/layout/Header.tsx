@@ -9,7 +9,6 @@ import {
   Menu,
   X,
   ChevronDown,
-  MapPin,
   Zap,
   Palette,
   Cog,
@@ -84,19 +83,6 @@ const growthServices = [
     href: "/shopify-maintenance",
     icon: Wrench,
   },
-];
-
-const locationsMenu = [
-  { name: "London", href: "/shopify-agency-london" },
-  { name: "Manchester", href: "/shopify-agency-manchester" },
-  { name: "Edinburgh", href: "/shopify-agency-edinburgh" },
-  { name: "Bristol", href: "/shopify-agency-bristol" },
-  { name: "Leeds", href: "/shopify-agency-leeds" },
-  { name: "Cambridge", href: "/shopify-agency-cambridge" },
-  { name: "Birmingham", href: "/shopify-agency-birmingham" },
-  { name: "Glasgow", href: "/shopify-agency-glasgow" },
-  { name: "Newcastle", href: "/shopify-agency-newcastle" },
-  { name: "Liverpool", href: "/shopify-agency-liverpool" },
 ];
 
 // Pages that should have transparent header over the hero
@@ -226,8 +212,8 @@ export function Header() {
                     transition={{ duration: 0.15 }}
                     className="absolute top-full -left-4 pt-2"
                   >
-                    <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 w-[820px]">
-                      <div className="grid grid-cols-[1fr_1fr_1.4fr] gap-8">
+                    <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 w-[520px]">
+                      <div className="grid grid-cols-2 gap-8">
                         {/* Development Column */}
                         <div>
                           <span className="text-xs font-semibold text-foreground uppercase tracking-wider mb-3 block">
@@ -270,29 +256,6 @@ export function Header() {
                           </div>
                         </div>
 
-                        {/* Locations Column */}
-                        <div>
-                          <Link
-                            href="/ecommerce-agency"
-                            className="text-xs font-semibold text-foreground hover:text-accent uppercase tracking-wider mb-3 block"
-                          >
-                            Locations
-                          </Link>
-                          <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                            {locationsMenu.map((item) => (
-                              <Link
-                                key={item.name}
-                                href={item.href}
-                                className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors"
-                              >
-                                <MapPin className="w-4 h-4 text-foreground flex-shrink-0" />
-                                <span className="font-medium text-foreground-dark text-sm">
-                                  {item.name}
-                                </span>
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </motion.div>
@@ -461,30 +424,6 @@ export function Header() {
                       {item.name}
                     </Link>
                   ))}
-                </div>
-
-                {/* Locations */}
-                <div className="py-2">
-                  <Link
-                    href="/ecommerce-agency"
-                    className="text-xs font-semibold text-foreground hover:text-accent uppercase tracking-wider mb-2 block"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Locations
-                  </Link>
-                  <div className="grid grid-cols-2 gap-1">
-                    {locationsMenu.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className="flex items-center gap-2 text-foreground hover:text-accent transition-colors py-2 pl-2"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <MapPin className="w-3 h-3" />
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
                 </div>
 
                 <hr className="my-2" />
