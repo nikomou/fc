@@ -3,7 +3,7 @@ import { Hero } from "@/components/home/Hero";
 import { ClientLogos } from "@/components/home/ClientLogos";
 import { StatsBar } from "@/components/home/StatsBar";
 import { ValueProps } from "@/components/home/ValueProps";
-import { LatestPosts } from "@/components/home/LatestPosts";
+import { ResourcesSection } from "@/components/home/ResourcesSection";
 import { MigrationSelector } from "@/components/home/MigrationSelector";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { LocationCards } from "@/components/home/LocationCards";
@@ -96,7 +96,7 @@ export default function HomePage() {
 
       <StatsBar />
 
-      <LatestPosts />
+      <ResourcesSection />
     </>
   );
 }
