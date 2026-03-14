@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, BookOpen, ClipboardList, Library, Newspaper } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BookOpen, ClipboardList, Library, Newspaper } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/ui/PageHero";
@@ -83,7 +83,7 @@ export default function ResourcesPage() {
                 <p className="text-sm text-gray-500 flex-1 mb-4">{type.description}</p>
                 <span className="inline-flex items-center gap-1 text-sm font-medium text-[#ef436b]">
                   {type.cta}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
               </Link>
             );

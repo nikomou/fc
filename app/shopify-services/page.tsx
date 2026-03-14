@@ -14,7 +14,7 @@ import {
   ArrowRightLeft,
   Gauge,
   Headphones,
-  ArrowRight,
+  ArrowUpRight,
   Check,
   Layers,
   Search,
@@ -342,7 +342,7 @@ export default function ServicesPage() {
                 </ul>
 
                 <span className="relative inline-flex items-center gap-1 text-sm font-medium text-gray-500 group-hover:text-gray-800 transition-colors mt-auto">
-                  Learn more <ArrowRight className="w-3.5 h-3.5" />
+                  Learn more <ArrowUpRight className="w-3.5 h-3.5" />
                 </span>
               </Link>
             );
@@ -411,7 +411,7 @@ export default function ServicesPage() {
                 </h3>
                 <p className="relative text-foreground text-sm flex-1">{service.description}</p>
                 <span className="relative inline-flex items-center gap-1 text-sm font-medium text-gray-500 group-hover:text-gray-800 transition-colors mt-4">
-                  Learn more <ArrowRight className="w-3.5 h-3.5" />
+                  Learn more <ArrowUpRight className="w-3.5 h-3.5" />
                 </span>
               </Link>
             );

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, Clock, Calendar } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Clock, Calendar } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { blogPosts, getBlogPost, getLatestPosts, formatDate, ContentBlock } from "@/lib/blog";
 
@@ -246,7 +246,7 @@ export default async function ArticlePostPage({
               className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-[#1a1a1a] transition-colors"
             >
               View all posts
-              <ArrowRight className="w-4 h-4" />
+              <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">

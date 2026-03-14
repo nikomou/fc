@@ -10,7 +10,7 @@ import { FAQSection } from "@/components/ui/FAQSection";
 import { siteConfig } from "@/lib/constants";
 import {
   ArrowRightLeft,
-  ArrowRight,
+  ArrowUpRight,
   Database,
   Search,
   Link2,
@@ -261,7 +261,7 @@ export default function MigrationPage() {
                 </span>
                 <div className="flex items-center gap-1 mt-2 text-xs text-[#ef436b] opacity-0 group-hover:opacity-100 transition-opacity">
                   <span>to Shopify</span>
-                  <ArrowRight className="w-3 h-3" />
+                  <ArrowUpRight className="w-3 h-3" />
                 </div>
               </Link>
             ))}
