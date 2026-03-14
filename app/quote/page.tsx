@@ -21,6 +21,7 @@ export default function QuotePage() {
   return (
     <>
       <PageHero
+        background="yellow"
         badge={{ icon: FileText, text: "Free, No Obligation" }}
         title="Get Your Free Quote"
         description="Tell us about your project and we'll provide a custom proposal tailored to your needs."

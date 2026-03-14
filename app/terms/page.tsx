@@ -14,6 +14,7 @@ export default function TermsPage() {
   return (
     <>
       <PageHero
+        background="yellow"
         badge={{ icon: FileText, text: "Last updated " + lastUpdated }}
         title="Terms of Service"
         description="Please read these terms carefully before engaging our services."

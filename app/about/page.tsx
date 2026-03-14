@@ -29,6 +29,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
+        background="blue"
         badge={{ icon: Users, text: "Established 2016" }}
         title="About Flex Commerce"
         description="We're a team of Shopify experts passionate about helping brands create exceptional ecommerce experiences."

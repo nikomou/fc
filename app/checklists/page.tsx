@@ -75,6 +75,7 @@ export default function ChecklistsPage() {
   return (
     <>
       <PageHero
+        background="green"
         badge={{ icon: CheckSquare, text: "Free Checklists" }}
         title="Shopify Checklists"
         description="Actionable checklists covering launches, migrations, SEO, and conversions. Tick off items as you go and your progress saves automatically."

@@ -35,6 +35,7 @@ export default function ArticlesPage() {
   return (
     <>
       <PageHero
+        background="purple"
         badge={{ icon: PenLine, text: "Ecommerce Articles" }}
         title="Insights to help your store grow"
         description="Shopify guides, conversion tips, case studies, and ecommerce news from the Flex Commerce team."

@@ -76,6 +76,7 @@ export default function EcommerceAgencyPage() {
         description="Unlock the full potential of your digital store with tailored strategies, cutting-edge technology, and unparalleled industry insight."
         primaryCta={{ text: "Get A Quote", href: "/quote" }}
         secondaryCta={{ text: "Contact Us", href: "/contact" }}
+        background="yellow"
         shapeColors={{ topRight: "yellow" }}
       />
 

@@ -28,6 +28,7 @@ export default function PartnersPage() {
         badge={{ icon: Handshake, text: "Our Partners" }}
         title="Technology Partners"
         description="We work with best-in-class technology providers to deliver complete ecommerce solutions for our clients."
+        background="purple"
         shapeColors={{ topRight: "purple" }}
       />
 

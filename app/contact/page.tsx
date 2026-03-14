@@ -15,6 +15,7 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
+        background="pink"
         badge={{ icon: Phone, text: "Let's Talk" }}
         title="Get in Touch"
         description="Have a project in mind? We'd love to hear from you. Send us a message and we'll respond as soon as possible."

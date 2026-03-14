@@ -85,6 +85,7 @@ export default function AutomationsPage() {
   return (
     <>
       <PageHero
+        background="green"
         badge={{ icon: Cog, text: "Efficiency at Scale" }}
         title="Automations & Integrations"
         description="Streamline your operations with powerful automations and seamless integrations. Work smarter, not harder."

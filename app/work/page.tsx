@@ -67,6 +67,7 @@ export default function WorkPage() {
     <>
       {/* Hero */}
       <PageHero
+        background="yellow"
         badge={{ icon: Briefcase, text: "Our Portfolio" }}
         title="Our Work"
         description="We've helped brands across industries create Shopify stores that convert. Here are some of our favourite projects."

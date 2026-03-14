@@ -180,6 +180,7 @@ export default function GuidesPage() {
   return (
     <>
       <PageHero
+        background="blue"
         badge={{ icon: BookOpen, text: "Expert Guides" }}
         title="Shopify Guides"
         description="In-depth tutorials from Shopify Plus experts covering setup, optimisation, marketing, and growth."

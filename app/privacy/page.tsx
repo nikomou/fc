@@ -14,6 +14,7 @@ export default function PrivacyPage() {
   return (
     <>
       <PageHero
+        background="blue"
         badge={{ icon: Shield, text: "Last updated " + lastUpdated }}
         title="Privacy Policy"
         description="How we collect, use, and protect your personal information."
