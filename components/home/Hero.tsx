@@ -32,7 +32,7 @@ export function Hero() {
             className="flex justify-center mb-8"
           >
             <Image
-              src="/images/shopify-credentials.png"
+              src="/images/shopify-credentials.webp"
               alt="Official Shopify Partners and Shopify Plus Agency Badge"
               width={280}
               height={60}

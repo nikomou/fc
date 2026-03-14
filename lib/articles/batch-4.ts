@@ -10,7 +10,7 @@ const posts: BlogPost[] = [
     readTime: "8 min read",
     date: "2026-01-30",
     image:
-      "/images/articles/pexels-3944405.jpg",
+      "/images/articles/pexels-3944405.webp",
     gradient: "linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)",
     accent: "#0ea5e9",
     author: "Alex Morgan",
@@ -109,7 +109,7 @@ const posts: BlogPost[] = [
     readTime: "10 min read",
     date: "2026-01-17",
     image:
-      "/images/articles/pexels-1181467.jpg",
+      "/images/articles/pexels-1181467.webp",
     gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
     accent: "#0f3460",
     author: "Jamie Chen",
@@ -214,7 +214,7 @@ const posts: BlogPost[] = [
     readTime: "7 min read",
     date: "2026-01-03",
     image:
-      "/images/articles/pexels-3760067.jpg",
+      "/images/articles/pexels-3760067.webp",
     gradient: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
     accent: "#8b5cf6",
     author: "Sarah Patel",
@@ -312,7 +312,7 @@ const posts: BlogPost[] = [
     readTime: "7 min read",
     date: "2025-12-18",
     image:
-      "/images/articles/pexels-1148820.jpg",
+      "/images/articles/pexels-1148820.webp",
     gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
     accent: "#10b981",
     author: "Emma Clarke",
@@ -402,7 +402,7 @@ const posts: BlogPost[] = [
     readTime: "9 min read",
     date: "2025-12-05",
     image:
-      "/images/articles/pexels-3861964.jpg",
+      "/images/articles/pexels-3861964.webp",
     gradient: "linear-gradient(135deg, #ef436b 0%, #c0392b 100%)",
     accent: "#ef436b",
     author: "Jamie Chen",
@@ -502,7 +502,7 @@ const posts: BlogPost[] = [
     readTime: "10 min read",
     date: "2025-11-22",
     image:
-      "/images/articles/pexels-3184360.jpg",
+      "/images/articles/pexels-3184360.webp",
     gradient: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
     accent: "#f59e0b",
     author: "Jamie Chen",
@@ -599,7 +599,7 @@ const posts: BlogPost[] = [
     readTime: "8 min read",
     date: "2025-11-09",
     image:
-      "/images/articles/pexels-590016.jpg",
+      "/images/articles/pexels-590016.webp",
     gradient: "linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%)",
     accent: "#6366f1",
     author: "Alex Morgan",
@@ -688,7 +688,7 @@ const posts: BlogPost[] = [
     readTime: "7 min read",
     date: "2025-10-27",
     image:
-      "/images/articles/pexels-669615.jpg",
+      "/images/articles/pexels-669615.webp",
     gradient: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)",
     accent: "#06b6d4",
     author: "Alex Morgan",
@@ -774,7 +774,7 @@ const posts: BlogPost[] = [
     readTime: "8 min read",
     date: "2025-10-14",
     image:
-      "/images/articles/pexels-905163.jpg",
+      "/images/articles/pexels-905163.webp",
     gradient: "linear-gradient(135deg, #f97316 0%, #ea580c 100%)",
     accent: "#f97316",
     author: "Sarah Patel",
@@ -864,7 +864,7 @@ const posts: BlogPost[] = [
     readTime: "7 min read",
     date: "2025-10-01",
     image:
-      "/images/articles/pexels-267389.jpg",
+      "/images/articles/pexels-267389.webp",
     gradient: "linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)",
     accent: "#6366f1",
     author: "Emma Clarke",
@@ -943,7 +943,7 @@ const posts: BlogPost[] = [
     readTime: "9 min read",
     date: "2025-09-19",
     image:
-      "/images/articles/pexels-3183153.jpg",
+      "/images/articles/pexels-3183153.webp",
     gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
     accent: "#8b5cf6",
     author: "Sarah Patel",
@@ -1032,7 +1032,7 @@ const posts: BlogPost[] = [
     readTime: "9 min read",
     date: "2025-09-06",
     image:
-      "/images/articles/pexels-6006785.jpg",
+      "/images/articles/pexels-6006785.webp",
     gradient: "linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)",
     accent: "#0ea5e9",
     author: "Jamie Chen",
@@ -1136,7 +1136,7 @@ const posts: BlogPost[] = [
     readTime: "8 min read",
     date: "2025-08-24",
     image:
-      "/images/articles/pexels-2881229.jpg",
+      "/images/articles/pexels-2881229.webp",
     gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
     accent: "#10b981",
     author: "Jamie Chen",
@@ -1238,7 +1238,7 @@ const posts: BlogPost[] = [
     readTime: "7 min read",
     date: "2025-08-11",
     image:
-      "/images/articles/pexels-3184291.jpg",
+      "/images/articles/pexels-3184291.webp",
     gradient: "linear-gradient(135deg, #ef436b 0%, #c0392b 100%)",
     accent: "#ef436b",
     author: "Alex Morgan",
@@ -1329,7 +1329,7 @@ const posts: BlogPost[] = [
     readTime: "8 min read",
     date: "2025-07-29",
     image:
-      "/images/articles/pexels-3182812.jpg",
+      "/images/articles/pexels-3182812.webp",
     gradient: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
     accent: "#f59e0b",
     author: "Sarah Patel",
@@ -1419,7 +1419,7 @@ const posts: BlogPost[] = [
     readTime: "9 min read",
     date: "2025-07-16",
     image:
-      "/images/articles/pexels-1181406.jpg",
+      "/images/articles/pexels-1181406.webp",
     gradient: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
     accent: "#8b5cf6",
     author: "Tom Williams",
@@ -1518,7 +1518,7 @@ const posts: BlogPost[] = [
     readTime: "8 min read",
     date: "2025-07-03",
     image:
-      "/images/articles/pexels-3051793.jpg",
+      "/images/articles/pexels-3051793.webp",
     gradient: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)",
     accent: "#06b6d4",
     author: "Emma Clarke",
@@ -1602,7 +1602,7 @@ const posts: BlogPost[] = [
     readTime: "7 min read",
     date: "2025-06-20",
     image:
-      "/images/articles/pexels-4481259.jpg",
+      "/images/articles/pexels-4481259.webp",
     gradient: "linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%)",
     accent: "#ef436b",
     author: "Alex Morgan",
@@ -1681,7 +1681,7 @@ const posts: BlogPost[] = [
     readTime: "7 min read",
     date: "2025-06-07",
     image:
-      "/images/articles/pexels-3856027.jpg",
+      "/images/articles/pexels-3856027.webp",
     gradient: "linear-gradient(135deg, #f97316 0%, #ea580c 100%)",
     accent: "#f97316",
     author: "Tom Williams",
@@ -1770,7 +1770,7 @@ const posts: BlogPost[] = [
     readTime: "7 min read",
     date: "2025-05-25",
     image:
-      "/images/articles/pexels-6214381.jpg",
+      "/images/articles/pexels-6214381.webp",
     gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
     accent: "#10b981",
     author: "Sarah Patel",
@@ -1856,7 +1856,7 @@ const posts: BlogPost[] = [
     readTime: "6 min read",
     date: "2025-05-12",
     image:
-      "/images/articles/pexels-196644.jpg",
+      "/images/articles/pexels-196644.webp",
     gradient: "linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)",
     accent: "#6366f1",
     author: "Emma Clarke",
@@ -1932,7 +1932,7 @@ const posts: BlogPost[] = [
     readTime: "8 min read",
     date: "2025-04-30",
     image:
-      "/images/articles/pexels-1779487.jpg",
+      "/images/articles/pexels-1779487.webp",
     gradient: "linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)",
     accent: "#0ea5e9",
     author: "Tom Williams",
@@ -2021,7 +2021,7 @@ const posts: BlogPost[] = [
     readTime: "7 min read",
     date: "2025-04-17",
     image:
-      "/images/articles/pexels-3182812.jpg",
+      "/images/articles/pexels-3182812.webp",
     gradient: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
     accent: "#8b5cf6",
     author: "Sarah Patel",
@@ -2097,7 +2097,7 @@ const posts: BlogPost[] = [
     readTime: "7 min read",
     date: "2025-04-04",
     image:
-      "/images/articles/pexels-574071.jpg",
+      "/images/articles/pexels-574071.webp",
     gradient: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)",
     accent: "#06b6d4",
     author: "Tom Williams",
@@ -2191,7 +2191,7 @@ const posts: BlogPost[] = [
     readTime: "6 min read",
     date: "2025-03-22",
     image:
-      "/images/articles/pexels-3184291.jpg",
+      "/images/articles/pexels-3184291.webp",
     gradient: "linear-gradient(135deg, #ef436b 0%, #c0392b 100%)",
     accent: "#ef436b",
     author: "Alex Morgan",

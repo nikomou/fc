@@ -75,7 +75,7 @@ export function Awards() {
       <div className="mt-12 flex justify-center">
         <div className="bg-black rounded-2xl px-8 py-6">
           <Image
-            src="/images/partners/shopify-credentials.png"
+            src="/images/partners/shopify-credentials.webp"
             alt="Shopify Partners & Shopify Plus"
             width={300}
             height={80}
