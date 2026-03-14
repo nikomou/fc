@@ -63,14 +63,14 @@ export default function HomePage() {
         </div>
       </Section>
 
+      <AISection />
+
       {/* Partners Section */}
       <Section background="dark" className="!py-0 overflow-hidden">
         <PartnerMarquee />
       </Section>
 
       <StatsBar />
-
-      <AISection />
 
       <ResourcesSection />
     </>
