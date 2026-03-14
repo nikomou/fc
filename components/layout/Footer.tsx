@@ -58,7 +58,7 @@ export function Footer() {
             <Link
               key={i}
               href={loc.href}
-              className="px-6 text-sm text-gray-400 hover:text-white transition-colors whitespace-nowrap"
+              className="px-6 text-gray-400 hover:text-white transition-colors whitespace-nowrap text-[20px]"
             >
               {loc.name}
             </Link>
