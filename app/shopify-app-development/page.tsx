@@ -1,10 +1,12 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { RelatedServices } from "@/components/ui/RelatedServices";
 import { ServiceCapabilities } from "@/components/ui/ServiceCapabilities";
 import { PageHero } from "@/components/ui/PageHero";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
+import { FAQSection } from "@/components/ui/FAQSection";
 import { siteConfig } from "@/lib/constants";
 import {
   Code,
@@ -22,18 +24,33 @@ import {
 export const metadata: Metadata = {
   title: "Shopify App Development | Custom Apps | Flex Commerce",
   description:
-    "Custom Shopify app development to extend your store's functionality. Private apps, public apps, and integrations built by certified experts.",
+    "Custom Shopify app development to extend your store's functionality. Private apps, public apps, and integrations built by certified experts in the UK.",
   alternates: {
     canonical: "/shopify-app-development",
   },
   openGraph: {
     title: "Shopify App Development | Custom Apps | Flex Commerce",
     description:
-      "Custom Shopify app development to extend your store's functionality. Private apps, public apps, and integrations built by certified experts.",
+      "Custom Shopify app development to extend your store's functionality. Private apps, public apps, and integrations built by certified experts in the UK.",
     url: "/shopify-app-development",
     siteName: siteConfig.name,
     locale: "en_GB",
     type: "website",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Shopify App Development - Flex Commerce",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify App Development | Custom Apps | Flex Commerce",
+    description:
+      "Custom Shopify app development to extend your store's functionality. Private apps, public apps, and integrations built by certified experts.",
+    images: ["/images/og-image.png"],
   },
 };
 
@@ -136,15 +153,65 @@ const appSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Shopify App Development",
-  description: "Custom Shopify app development to extend your store's functionality. Private apps, public apps, and integrations built by certified experts.",
+  description: "Custom Shopify app development to extend your store's functionality. Private apps, public apps, and integrations built by certified experts in the UK.",
   provider: {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
   },
   serviceType: "Software Development",
-  areaServed: "United Kingdom",
+  areaServed: {
+    "@type": "Country",
+    name: "United Kingdom",
+  },
+  url: `${siteConfig.url}/shopify-app-development`,
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: siteConfig.url,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Shopify App Development",
+      item: `${siteConfig.url}/shopify-app-development`,
+    },
+  ],
+};
+
+const faqs = [
+  {
+    q: "What types of Shopify apps can you build?",
+    a: "We build private apps (exclusive to your store), embedded admin apps, custom storefronts using the Storefront API, and public apps listed on the Shopify App Store. Our work spans inventory management, custom pricing logic, order routing, product configurators, loyalty programmes, and bespoke reporting dashboards.",
+  },
+  {
+    q: "How long does a custom Shopify app take to develop?",
+    a: "Timelines vary with complexity. A focused private app for a single workflow (e.g. an inventory sync) typically takes 4–6 weeks. More complex apps with multiple integrations, custom admin UIs, and extensive testing can take 10–16 weeks. We scope each project individually and provide a detailed plan during the requirements phase.",
+  },
+  {
+    q: "Do you use the latest Shopify API versions?",
+    a: "Yes. We always build against the latest stable Shopify API versions and follow Shopify's app development best practices, including OAuth 2.0 authentication and webhook management. Our apps are built to remain compatible as Shopify updates its platform.",
+  },
+  {
+    q: "Can you connect Shopify to our ERP, CRM, or warehouse system?",
+    a: "Absolutely. Many of our custom app projects involve integration between Shopify and third-party systems such as SAP, NetSuite, Salesforce, and custom warehouse management systems. Visit our Shopify integrations page for more detail on the systems we work with.",
+  },
+  {
+    q: "Who owns the code for the app you build?",
+    a: "You do. All intellectual property rights for custom apps we build are assigned to you on project completion. You receive the full source code with no ongoing licensing fees or dependencies on us.",
+  },
+  {
+    q: "Do you provide ongoing support for apps after launch?",
+    a: "Yes. We offer retainer agreements for ongoing app maintenance, updates, and new feature development. Our team is based in Manchester and Liverpool and provides priority support to retainer clients across the UK.",
+  },
+];
 
 export default function AppDevelopmentPage() {
   return (
@@ -152,6 +219,10 @@ export default function AppDevelopmentPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <PageHero
@@ -323,6 +394,42 @@ export default function AppDevelopmentPage() {
           </div>
         </div>
       </Section>
+
+      {/* Internal links */}
+      <Section background="alt">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl font-bold text-foreground-dark mb-4">
+            Custom Shopify App Developers in the UK
+          </h2>
+          <p className="text-lg text-foreground">
+            Our development team is based in{" "}
+            <Link
+              href="/shopify-agency-manchester"
+              className="text-[#ef436b] hover:underline"
+            >
+              Manchester
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/shopify-agency-liverpool"
+              className="text-[#ef436b] hover:underline"
+            >
+              Liverpool
+            </Link>{" "}
+            and works with brands across the UK. If you need to connect Shopify
+            to external systems, explore our{" "}
+            <Link
+              href="/shopify-integrations"
+              className="text-[#ef436b] hover:underline"
+            >
+              Shopify integrations
+            </Link>{" "}
+            service.
+          </p>
+        </div>
+      </Section>
+
+      <FAQSection faqs={faqs} />
 
       <RelatedServices exclude="App Development" />
     </>

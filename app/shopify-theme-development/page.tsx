@@ -6,6 +6,7 @@ import { RelatedServices } from "@/components/ui/RelatedServices";
 import { ServiceCapabilities } from "@/components/ui/ServiceCapabilities";
 import { PageHero } from "@/components/ui/PageHero";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
+import { FAQSection } from "@/components/ui/FAQSection";
 import { siteConfig } from "@/lib/constants";
 import {
   Palette,
@@ -23,18 +24,33 @@ import {
 export const metadata: Metadata = {
   title: "Shopify Theme Development | Custom Themes | Flex Commerce",
   description:
-    "Bespoke Shopify theme development that converts. Custom designs, mobile-first, speed optimised themes built by certified Shopify experts.",
+    "Bespoke Shopify theme development that converts. Custom designs, mobile-first, speed optimised themes by certified Shopify experts in Manchester & Liverpool.",
   alternates: {
     canonical: "/shopify-theme-development",
   },
   openGraph: {
     title: "Shopify Theme Development | Custom Themes | Flex Commerce",
     description:
-      "Bespoke Shopify theme development that converts. Custom designs, mobile-first, speed optimised themes built by certified Shopify experts.",
+      "Bespoke Shopify theme development that converts. Custom designs, mobile-first, speed optimised themes built by certified Shopify experts in Manchester & Liverpool.",
     url: "/shopify-theme-development",
     siteName: siteConfig.name,
     locale: "en_GB",
     type: "website",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Shopify Theme Development - Flex Commerce",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify Theme Development | Custom Themes | Flex Commerce",
+    description:
+      "Bespoke Shopify theme development that converts. Custom designs, mobile-first, speed optimised themes built by certified Shopify experts.",
+    images: ["/images/og-image.png"],
   },
 };
 
@@ -121,15 +137,65 @@ const themeSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Shopify Theme Development",
-  description: "Bespoke Shopify theme development that converts. Custom designs, mobile-first, speed optimised themes built by certified Shopify experts.",
+  description: "Bespoke Shopify theme development that converts. Custom designs, mobile-first, speed optimised themes built by certified Shopify experts in Manchester & Liverpool.",
   provider: {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
   },
   serviceType: "Web Development",
-  areaServed: "United Kingdom",
+  areaServed: {
+    "@type": "Country",
+    name: "United Kingdom",
+  },
+  url: `${siteConfig.url}/shopify-theme-development`,
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: siteConfig.url,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Shopify Theme Development",
+      item: `${siteConfig.url}/shopify-theme-development`,
+    },
+  ],
+};
+
+const faqs = [
+  {
+    q: "How long does a custom Shopify theme take to build?",
+    a: "A bespoke Shopify theme project typically takes 8–12 weeks from discovery to launch. This covers design mockups, development, testing, content migration support, and a thorough QA process. We can discuss a timeline that fits your launch date during our initial call.",
+  },
+  {
+    q: "Do you build themes from scratch or customise existing ones?",
+    a: "We do both. We can build fully bespoke themes from a blank canvas for maximum flexibility, or we can customise a premium Shopify theme such as Dawn or Prestige to your brand requirements. We'll recommend the right approach based on your budget and goals.",
+  },
+  {
+    q: "Will my custom theme be fast and score well on Core Web Vitals?",
+    a: "Yes — performance is baked into our development process. We optimise images, minimise JavaScript, and follow Shopify's best practices to ensure your theme scores well on Core Web Vitals. Our custom-built themes consistently achieve Lighthouse scores of 85+ on mobile.",
+  },
+  {
+    q: "Can I update my theme content without needing a developer?",
+    a: "Absolutely. We build themes with intuitive Shopify sections and blocks so your team can update homepage layouts, banners, and content directly from the Shopify theme editor — no coding required. We also provide training and documentation on launch.",
+  },
+  {
+    q: "Do you also handle Shopify speed optimisation if my current theme is slow?",
+    a: "Yes. If you don't need a full rebuild but your existing theme is underperforming, our Shopify speed optimisation service can significantly improve your scores. We audit your current theme code, identify bottlenecks, and implement targeted improvements.",
+  },
+  {
+    q: "Which locations do you serve for theme development projects?",
+    a: "We're based in Manchester and Liverpool and work with clients across the whole of the UK. We manage projects remotely as well as in person for clients who prefer face-to-face collaboration.",
+  },
+];
 
 export default function ThemeDevelopmentPage() {
   return (
@@ -137,6 +203,10 @@ export default function ThemeDevelopmentPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(themeSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <PageHero
@@ -265,6 +335,45 @@ export default function ThemeDevelopmentPage() {
           </div>
         </div>
       </Section>
+
+      {/* Internal links */}
+      <Section background="alt">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl font-bold text-foreground-dark mb-4">
+            Shopify Theme Experts Based in the UK
+          </h2>
+          <p className="text-lg text-foreground">
+            We design and build Shopify themes for brands based in{" "}
+            <Link
+              href="/shopify-agency-manchester"
+              className="text-[#ef436b] hover:underline"
+            >
+              Manchester
+            </Link>
+            ,{" "}
+            <Link
+              href="/shopify-agency-liverpool"
+              className="text-[#ef436b] hover:underline"
+            >
+              Liverpool
+            </Link>
+            , and across the UK. Need more than a new theme? Explore our{" "}
+            <Link
+              href="/shopify-speed-optimisation"
+              className="text-[#ef436b] hover:underline"
+            >
+              speed optimisation
+            </Link>{" "}
+            and{" "}
+            <Link href="/shopify-seo" className="text-[#ef436b] hover:underline">
+              Shopify SEO
+            </Link>{" "}
+            services.
+          </p>
+        </div>
+      </Section>
+
+      <FAQSection faqs={faqs} />
 
       <RelatedServices exclude="Theme Development" />
     </>

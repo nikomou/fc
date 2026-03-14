@@ -1,10 +1,12 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { RelatedServices } from "@/components/ui/RelatedServices";
 import { ServiceCapabilities } from "@/components/ui/ServiceCapabilities";
 import { PageHero } from "@/components/ui/PageHero";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
+import { FAQSection } from "@/components/ui/FAQSection";
 import { siteConfig } from "@/lib/constants";
 import {
   Search,
@@ -20,20 +22,35 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Shopify SEO Services | Ecommerce SEO | Flex Commerce",
+  title: "Shopify SEO Services | Ecommerce SEO Agency | Flex Commerce",
   description:
-    "Shopify SEO services that drive organic traffic and sales. Technical SEO, content strategy, and ongoing optimisation for ecommerce stores.",
+    "Shopify SEO services that drive organic traffic and sales. Technical SEO, content strategy, and ongoing optimisation for Shopify stores across the UK.",
   alternates: {
     canonical: "/shopify-seo",
   },
   openGraph: {
-    title: "Shopify SEO Services | Ecommerce SEO | Flex Commerce",
+    title: "Shopify SEO Services | Ecommerce SEO Agency | Flex Commerce",
     description:
-      "Shopify SEO services that drive organic traffic and sales. Technical SEO, content strategy, and ongoing optimisation for ecommerce stores.",
+      "Shopify SEO services that drive organic traffic and sales. Technical SEO, content strategy, and ongoing optimisation for UK ecommerce stores.",
     url: "/shopify-seo",
     siteName: siteConfig.name,
     locale: "en_GB",
     type: "website",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Shopify SEO Services - Flex Commerce",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify SEO Services | Ecommerce SEO Agency | Flex Commerce",
+    description:
+      "Shopify SEO services that drive organic traffic and sales. Technical SEO, content strategy, and ongoing optimisation for UK ecommerce stores.",
+    images: ["/images/og-image.png"],
   },
 };
 
@@ -120,15 +137,65 @@ const seoSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Shopify SEO Services",
-  description: "Shopify SEO services that drive organic traffic and sales. Technical SEO, content strategy, and ongoing optimisation for ecommerce stores.",
+  description: "Shopify SEO services that drive organic traffic and sales. Technical SEO, content strategy, and ongoing optimisation for UK ecommerce stores.",
   provider: {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
   },
   serviceType: "Search Engine Optimisation",
-  areaServed: "United Kingdom",
+  areaServed: {
+    "@type": "Country",
+    name: "United Kingdom",
+  },
+  url: `${siteConfig.url}/shopify-seo`,
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: siteConfig.url,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Shopify SEO Services",
+      item: `${siteConfig.url}/shopify-seo`,
+    },
+  ],
+};
+
+const faqs = [
+  {
+    q: "What makes Shopify SEO different from regular SEO?",
+    a: "Shopify has specific technical SEO considerations that other platforms don't: duplicate URLs caused by collection pagination, canonical URL management for product variants, Shopify's default URL structure, and JSON-LD schema for products and collections. Our team specialises in ecommerce SEO and understands these Shopify-specific challenges inside out.",
+  },
+  {
+    q: "How long does it take to see results from Shopify SEO?",
+    a: "SEO is a long-term investment. Most clients see meaningful movement in rankings and organic traffic within 3–6 months of starting work. Quick wins from technical fixes can appear faster, while competitive head terms may take 9–12 months to move significantly. We provide monthly reporting so you can track progress throughout.",
+  },
+  {
+    q: "Do you conduct keyword research as part of the SEO service?",
+    a: "Yes. Keyword research is a foundational part of our SEO process. We map keywords to existing pages, identify gaps in your content, and prioritise by search volume, commercial intent, and ranking difficulty. We also conduct competitor keyword analysis to find opportunities you're currently missing.",
+  },
+  {
+    q: "Can you fix Shopify's duplicate content issues?",
+    a: "Yes. We resolve common Shopify duplicate content issues including duplicate product URLs via collections, paginated collection pages, and filter-generated URLs. We implement canonical tags correctly and use robots.txt directives where appropriate to guide search engines.",
+  },
+  {
+    q: "Do you also improve page speed as part of SEO?",
+    a: "Core Web Vitals are a ranking factor, so page speed work is often part of our SEO projects. We have a dedicated Shopify speed optimisation service for clients who need deeper performance improvements alongside their SEO strategy.",
+  },
+  {
+    q: "Do you offer local SEO for Shopify stores with physical locations?",
+    a: "Yes. If your business has physical premises in cities like Manchester or Liverpool, local SEO — including Google Business Profile optimisation, local citation building, and location-specific landing pages — can significantly increase foot traffic and local online visibility.",
+  },
+];
 
 export default function SEOPage() {
   return (
@@ -136,6 +203,10 @@ export default function SEOPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(seoSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <PageHero
@@ -270,6 +341,49 @@ export default function SEOPage() {
           </div>
         </div>
       </Section>
+
+      {/* Internal links */}
+      <Section background="alt">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl font-bold text-foreground-dark mb-4">
+            Shopify SEO Agency in Manchester & Liverpool
+          </h2>
+          <p className="text-lg text-foreground">
+            Flex Commerce provides Shopify SEO services to brands based in{" "}
+            <Link
+              href="/shopify-agency-manchester"
+              className="text-[#ef436b] hover:underline"
+            >
+              Manchester
+            </Link>
+            ,{" "}
+            <Link
+              href="/shopify-agency-liverpool"
+              className="text-[#ef436b] hover:underline"
+            >
+              Liverpool
+            </Link>
+            , and across the UK. SEO works best alongside a fast, well-built
+            store — explore our{" "}
+            <Link
+              href="/shopify-speed-optimisation"
+              className="text-[#ef436b] hover:underline"
+            >
+              speed optimisation
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/shopify-store-audit"
+              className="text-[#ef436b] hover:underline"
+            >
+              store audit
+            </Link>{" "}
+            services.
+          </p>
+        </div>
+      </Section>
+
+      <FAQSection faqs={faqs} />
 
       <RelatedServices exclude="Shopify SEO" />
     </>

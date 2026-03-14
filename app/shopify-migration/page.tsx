@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { RelatedServices } from "@/components/ui/RelatedServices";
 import { PageHero } from "@/components/ui/PageHero";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
+import { FAQSection } from "@/components/ui/FAQSection";
 import { siteConfig } from "@/lib/constants";
 import {
   ArrowRightLeft,
@@ -22,20 +23,35 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Shopify Migration Services | Platform Migration | Flex Commerce",
+  title: "Shopify Migration | Platform Migration | Flex Commerce",
   description:
-    "Seamless migration to Shopify from WooCommerce, Magento, BigCommerce and more. Data, SEO, and customers transferred with zero downtime.",
+    "Seamless migration to Shopify from WooCommerce, Magento, BigCommerce & more. Data, SEO, and customers transferred with zero downtime. UK Shopify experts.",
   alternates: {
     canonical: "/shopify-migration",
   },
   openGraph: {
-    title: "Shopify Migration Services | Platform Migration | Flex Commerce",
+    title: "Shopify Migration | Platform Migration | Flex Commerce",
     description:
-      "Seamless migration to Shopify from WooCommerce, Magento, BigCommerce and more. Data, SEO, and customers transferred with zero downtime.",
+      "Seamless migration to Shopify from WooCommerce, Magento, BigCommerce & more. Data, SEO, and customers transferred with zero downtime. UK Shopify experts.",
     url: "/shopify-migration",
     siteName: siteConfig.name,
     locale: "en_GB",
     type: "website",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Shopify Migration Services - Flex Commerce",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify Migration | Platform Migration | Flex Commerce",
+    description:
+      "Seamless migration to Shopify from WooCommerce, Magento, BigCommerce & more. Data, SEO, and customers transferred with zero downtime.",
+    images: ["/images/og-image.png"],
   },
 };
 
@@ -126,15 +142,65 @@ const migrationSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Shopify Migration Services",
-  description: "Seamless migration to Shopify from WooCommerce, Magento, BigCommerce and more. Data, SEO, and customers transferred with zero downtime.",
+  description: "Seamless migration to Shopify from WooCommerce, Magento, BigCommerce & more. Data, SEO, and customers transferred with zero downtime. UK Shopify experts.",
   provider: {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
   },
   serviceType: "Platform Migration",
-  areaServed: "United Kingdom",
+  areaServed: {
+    "@type": "Country",
+    name: "United Kingdom",
+  },
+  url: `${siteConfig.url}/shopify-migration`,
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: siteConfig.url,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Shopify Migration Services",
+      item: `${siteConfig.url}/shopify-migration`,
+    },
+  ],
+};
+
+const faqs = [
+  {
+    q: "Will I lose my SEO rankings when migrating to Shopify?",
+    a: "Not with our process. We preserve your SEO rankings by implementing 301 redirects from every old URL to the corresponding new URL on Shopify, migrating all meta titles and descriptions, and ensuring your site structure is logically mapped. We've successfully migrated stores from Magento, WooCommerce, and BigCommerce without meaningful drops in organic traffic.",
+  },
+  {
+    q: "How long does a Shopify migration take?",
+    a: "A standard migration from a platform like WooCommerce or BigCommerce typically takes 6–10 weeks depending on the size of your catalogue and the complexity of your data. Migrations from Magento or Salesforce Commerce Cloud are more complex and typically take 10–16 weeks. We provide a detailed project plan after an initial assessment.",
+  },
+  {
+    q: "Will my customer data and order history be migrated?",
+    a: "Yes. We migrate customer accounts (with hashed passwords where technically possible), full order history, and all customer addresses. We test data completeness thoroughly before the final go-live switch.",
+  },
+  {
+    q: "Can you migrate my store with zero downtime?",
+    a: "Yes. We perform the migration in a staging environment while your existing store remains live. The final go-live is a DNS switch that typically results in less than 15 minutes of propagation time. Your customers experience no interruption to the buying journey.",
+  },
+  {
+    q: "Do you handle theme design as part of the migration?",
+    a: "We can. Many migration projects include a new custom Shopify theme alongside the data migration. We also offer the option to use a premium Shopify theme as a more cost-effective approach for brands with simpler design needs. We'll recommend the best approach during the discovery phase.",
+  },
+  {
+    q: "Which platforms do you migrate from?",
+    a: "We migrate from all major ecommerce platforms including WooCommerce, Magento 1 & 2, BigCommerce, Squarespace, Webflow, Salesforce Commerce Cloud, PrestaShop, OpenCart, Shopware, and more. If your platform isn't listed, contact us — if it has data export functionality, we can migrate it.",
+  },
+];
 
 export default function MigrationPage() {
   return (
@@ -142,6 +208,10 @@ export default function MigrationPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(migrationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <PageHero
@@ -396,6 +466,49 @@ export default function MigrationPage() {
           </div>
         </div>
       </Section>
+
+      {/* Internal links */}
+      <Section background="alt">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl font-bold text-foreground-dark mb-4">
+            Shopify Migration Experts in Manchester & Liverpool
+          </h2>
+          <p className="text-lg text-foreground">
+            Flex Commerce is a Shopify migration agency based in{" "}
+            <Link
+              href="/shopify-agency-manchester"
+              className="text-[#ef436b] hover:underline"
+            >
+              Manchester
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/shopify-agency-liverpool"
+              className="text-[#ef436b] hover:underline"
+            >
+              Liverpool
+            </Link>
+            , working with brands across the UK. After migrating, many clients
+            pair their new store with our{" "}
+            <Link
+              href="/shopify-seo"
+              className="text-[#ef436b] hover:underline"
+            >
+              Shopify SEO
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/shopify-speed-optimisation"
+              className="text-[#ef436b] hover:underline"
+            >
+              speed optimisation
+            </Link>{" "}
+            services for maximum impact from day one.
+          </p>
+        </div>
+      </Section>
+
+      <FAQSection faqs={faqs} />
 
       <RelatedServices />
     </>

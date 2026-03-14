@@ -1,10 +1,12 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { RelatedServices } from "@/components/ui/RelatedServices";
 import { ServiceCapabilities } from "@/components/ui/ServiceCapabilities";
 import { PageHero } from "@/components/ui/PageHero";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
+import { FAQSection } from "@/components/ui/FAQSection";
 import { siteConfig } from "@/lib/constants";
 import {
   Settings,
@@ -20,20 +22,35 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Shopify Maintenance Services | Keep Your Store Healthy | Flex Commerce",
+  title: "Shopify Maintenance | Store Health | Flex Commerce",
   description:
-    "Proactive Shopify maintenance to keep your store secure, fast, and up-to-date. Security updates, backups, monitoring, and performance care.",
+    "Proactive Shopify maintenance for UK brands. Security updates, backups, uptime monitoring, and performance care to keep your Shopify store running perfectly.",
   alternates: {
     canonical: "/shopify-maintenance",
   },
   openGraph: {
-    title: "Shopify Maintenance Services | Keep Your Store Healthy | Flex Commerce",
+    title: "Shopify Maintenance | Store Health | Flex Commerce",
     description:
-      "Proactive Shopify maintenance to keep your store secure, fast, and up-to-date. Security updates, backups, monitoring, and performance care.",
+      "Proactive Shopify maintenance for UK brands. Security updates, backups, uptime monitoring, and performance care to keep your store running perfectly.",
     url: "/shopify-maintenance",
     siteName: siteConfig.name,
     locale: "en_GB",
     type: "website",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Shopify Maintenance Services - Flex Commerce",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify Maintenance | Store Health | Flex Commerce",
+    description:
+      "Proactive Shopify maintenance for UK brands. Security updates, backups, uptime monitoring, and performance care to keep your store running perfectly.",
+    images: ["/images/og-image.png"],
   },
 };
 
@@ -122,15 +139,65 @@ const maintenanceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Shopify Maintenance Services",
-  description: "Proactive Shopify maintenance to keep your store secure, fast, and up-to-date. Security updates, backups, monitoring, and performance care.",
+  description: "Proactive Shopify maintenance for UK brands. Security updates, backups, uptime monitoring, and performance care to keep your store running perfectly.",
   provider: {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
   },
   serviceType: "Website Maintenance",
-  areaServed: "United Kingdom",
+  areaServed: {
+    "@type": "Country",
+    name: "United Kingdom",
+  },
+  url: `${siteConfig.url}/shopify-maintenance`,
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: siteConfig.url,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Shopify Maintenance Services",
+      item: `${siteConfig.url}/shopify-maintenance`,
+    },
+  ],
+};
+
+const faqs = [
+  {
+    q: "What's the difference between Shopify maintenance and Shopify support?",
+    a: "Maintenance is proactive and preventive — we run scheduled checks, apply security updates, monitor uptime, manage backups, and keep your apps compatible with Shopify platform changes. Support is reactive and project-based — you submit requests and we use allocated hours to build features, fix bugs, or provide guidance. The two services are complementary and can be combined.",
+  },
+  {
+    q: "Does Shopify handle updates automatically — why do I need maintenance?",
+    a: "Shopify handles platform-level updates, but your theme code, installed apps, and custom configurations do not update themselves. Apps can break with Shopify API version changes. Theme code can accumulate issues over time. Custom functions need to be kept aligned with Shopify's evolving APIs. Our maintenance service ensures everything stays aligned with the latest platform requirements.",
+  },
+  {
+    q: "How often do you perform maintenance tasks?",
+    a: "Core tasks such as uptime monitoring and error alerting run continuously. App compatibility checks and security scans run weekly. Full performance checks, broken link audits, and speed tests run monthly. We produce a health report each month summarising everything completed and flagging anything that needs attention.",
+  },
+  {
+    q: "Do you back up my Shopify store?",
+    a: "Yes. Shopify does not provide native store backups for theme code and configuration data, so this is a critical part of our maintenance service. We maintain regular backups of your theme files, metafield configurations, and store settings so we can restore quickly in the event of an issue.",
+  },
+  {
+    q: "What happens if my store goes down — how quickly do you respond?",
+    a: "Our uptime monitoring alerts us immediately if your store becomes unavailable. We investigate and respond within 1 hour during business hours (Monday–Friday 9am–5:30pm). For critical production outages outside business hours, Enterprise maintenance clients benefit from on-call escalation.",
+  },
+  {
+    q: "Can I combine maintenance with a support retainer?",
+    a: "Yes, and we recommend it. Maintenance keeps your store healthy and prevents issues, while a support retainer provides development capacity for improvements and new features. Many of our clients based in Manchester and Liverpool take both services together as a comprehensive ecommerce partnership.",
+  },
+];
 
 export default function MaintenancePage() {
   return (
@@ -138,6 +205,10 @@ export default function MaintenancePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(maintenanceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <PageHero
@@ -272,6 +343,41 @@ export default function MaintenancePage() {
           </div>
         </div>
       </Section>
+
+      {/* Internal links */}
+      <Section background="alt">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl font-bold text-foreground-dark mb-4">
+            Shopify Maintenance Plans for UK Brands
+          </h2>
+          <p className="text-lg text-foreground">
+            We provide Shopify maintenance to brands across{" "}
+            <Link
+              href="/shopify-agency-manchester"
+              className="text-[#ef436b] hover:underline"
+            >
+              Manchester
+            </Link>
+            ,{" "}
+            <Link
+              href="/shopify-agency-liverpool"
+              className="text-[#ef436b] hover:underline"
+            >
+              Liverpool
+            </Link>
+            , and the wider UK. Combine maintenance with our{" "}
+            <Link
+              href="/shopify-support"
+              className="text-[#ef436b] hover:underline"
+            >
+              Shopify support retainer
+            </Link>{" "}
+            for a complete ecommerce care package.
+          </p>
+        </div>
+      </Section>
+
+      <FAQSection faqs={faqs} />
 
       <RelatedServices />
     </>

@@ -1,10 +1,12 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { RelatedServices } from "@/components/ui/RelatedServices";
 import { ServiceCapabilities } from "@/components/ui/ServiceCapabilities";
 import { PageHero } from "@/components/ui/PageHero";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
+import { FAQSection } from "@/components/ui/FAQSection";
 import { siteConfig } from "@/lib/constants";
 import {
   Headphones,
@@ -20,20 +22,35 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Shopify Support & Maintenance | Ongoing Help | Flex Commerce",
+  title: "Shopify Support Packages | Retainer Plans | Flex Commerce",
   description:
-    "Dedicated Shopify support and maintenance packages. Priority support, bug fixes, updates, and expert help when you need it.",
+    "Dedicated Shopify support retainer packages for UK brands. Priority response, bug fixes, feature updates, and expert Shopify guidance when you need it.",
   alternates: {
     canonical: "/shopify-support",
   },
   openGraph: {
-    title: "Shopify Support & Maintenance | Ongoing Help | Flex Commerce",
+    title: "Shopify Support Packages | Retainer Plans | Flex Commerce",
     description:
-      "Dedicated Shopify support and maintenance packages. Priority support, bug fixes, updates, and expert help when you need it.",
+      "Dedicated Shopify support retainer packages for UK brands. Priority response, bug fixes, feature updates, and expert Shopify guidance when you need it.",
     url: "/shopify-support",
     siteName: siteConfig.name,
     locale: "en_GB",
     type: "website",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Shopify Support Retainer Packages - Flex Commerce",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify Support Packages | Retainer Plans | Flex Commerce",
+    description:
+      "Dedicated Shopify support retainer packages for UK brands. Priority response, bug fixes, feature updates, and expert Shopify guidance.",
+    images: ["/images/og-image.png"],
   },
 };
 
@@ -126,16 +143,66 @@ const packages = [
 const supportSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Shopify Support & Maintenance",
-  description: "Dedicated Shopify support and maintenance packages. Priority support, bug fixes, updates, and expert help when you need it.",
+  name: "Shopify Support Packages",
+  description: "Dedicated Shopify support retainer packages for UK brands. Priority response, bug fixes, feature updates, and expert Shopify guidance when you need it.",
   provider: {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
   },
   serviceType: "Technical Support",
-  areaServed: "United Kingdom",
+  areaServed: {
+    "@type": "Country",
+    name: "United Kingdom",
+  },
+  url: `${siteConfig.url}/shopify-support`,
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: siteConfig.url,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Shopify Support",
+      item: `${siteConfig.url}/shopify-support`,
+    },
+  ],
+};
+
+const faqs = [
+  {
+    q: "What's the difference between your support and maintenance packages?",
+    a: "Our support packages (on this page) provide dedicated hours each month for development work, bug fixes, feature additions, and strategic guidance. Our maintenance service focuses specifically on proactive store health — security monitoring, app updates, backups, and error detection. Many clients combine both. You can view our standalone maintenance service for more detail.",
+  },
+  {
+    q: "How quickly do you respond to support requests?",
+    a: "Response times depend on your package. Essential clients receive a 48-hour response by email. Growth clients receive a 24-hour response via email and Slack. Enterprise clients receive a 4-hour response through a dedicated Slack channel. Critical production issues are escalated regardless of plan.",
+  },
+  {
+    q: "Can I roll over unused hours to the next month?",
+    a: "Growth and Enterprise clients can carry over up to 50% of unused hours to the following month. This provides flexibility during quieter periods without losing value. Unused hours beyond this threshold expire at the end of the month.",
+  },
+  {
+    q: "Can I upgrade or downgrade my support package?",
+    a: "Yes. You can change your package with 30 days' notice. We don't tie you into long-term contracts — our clients stay because of the quality of the service, not because they're locked in.",
+  },
+  {
+    q: "What kind of work is included in support hours?",
+    a: "Support hours can be used for bug fixes, theme updates, new feature development, performance improvements, SEO changes, app installations and configuration, strategic advice, and platform updates. We maintain a shared project board so you always have visibility of work in progress and hours consumed.",
+  },
+  {
+    q: "Do you work with Shopify Plus stores on retainer?",
+    a: "Yes. A significant portion of our retainer clients are on Shopify Plus. We provide support for custom checkout functions, Shopify Flow automations, B2B configuration, multi-store management, and all other enterprise Shopify features in addition to standard support tasks.",
+  },
+];
 
 export default function SupportPage() {
   return (
@@ -143,6 +210,10 @@ export default function SupportPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(supportSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <PageHero
@@ -305,6 +376,42 @@ export default function SupportPage() {
           </div>
         </div>
       </Section>
+
+      {/* Internal links */}
+      <Section background="alt">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl font-bold text-foreground-dark mb-4">
+            Shopify Support Teams in Manchester & Liverpool
+          </h2>
+          <p className="text-lg text-foreground">
+            Our support team is based in{" "}
+            <Link
+              href="/shopify-agency-manchester"
+              className="text-[#ef436b] hover:underline"
+            >
+              Manchester
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/shopify-agency-liverpool"
+              className="text-[#ef436b] hover:underline"
+            >
+              Liverpool
+            </Link>
+            , supporting Shopify merchants across the UK. For proactive uptime
+            monitoring and security updates, see our{" "}
+            <Link
+              href="/shopify-maintenance"
+              className="text-[#ef436b] hover:underline"
+            >
+              Shopify maintenance
+            </Link>{" "}
+            service.
+          </p>
+        </div>
+      </Section>
+
+      <FAQSection faqs={faqs} />
 
       <RelatedServices exclude="Ongoing Support" />
     </>

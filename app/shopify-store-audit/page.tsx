@@ -1,10 +1,12 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { RelatedServices } from "@/components/ui/RelatedServices";
 import { ServiceCapabilities } from "@/components/ui/ServiceCapabilities";
 import { PageHero } from "@/components/ui/PageHero";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
+import { FAQSection } from "@/components/ui/FAQSection";
 import { siteConfig } from "@/lib/constants";
 import {
   ClipboardCheck,
@@ -22,18 +24,33 @@ import {
 export const metadata: Metadata = {
   title: "Shopify Store Audit | Ecommerce Analysis | Flex Commerce",
   description:
-    "Comprehensive Shopify store audit covering UX, performance, SEO, and conversion optimisation. Get actionable recommendations to grow your store.",
+    "Comprehensive Shopify store audit covering UX, performance, SEO, and conversion optimisation. Get actionable recommendations from certified UK Shopify experts.",
   alternates: {
     canonical: "/shopify-store-audit",
   },
   openGraph: {
     title: "Shopify Store Audit | Ecommerce Analysis | Flex Commerce",
     description:
-      "Comprehensive Shopify store audit covering UX, performance, SEO, and conversion optimisation. Get actionable recommendations to grow your store.",
+      "Comprehensive Shopify store audit covering UX, performance, SEO, and conversion optimisation. Get actionable recommendations from UK Shopify experts.",
     url: "/shopify-store-audit",
     siteName: siteConfig.name,
     locale: "en_GB",
     type: "website",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Shopify Store Audit - Flex Commerce",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify Store Audit | Ecommerce Analysis | Flex Commerce",
+    description:
+      "Comprehensive Shopify store audit covering UX, performance, SEO, and conversion optimisation. Get actionable recommendations from UK Shopify experts.",
+    images: ["/images/og-image.png"],
   },
 };
 
@@ -120,15 +137,65 @@ const auditSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Shopify Store Audit",
-  description: "Comprehensive Shopify store audit covering UX, performance, SEO, and conversion optimisation. Get actionable recommendations to grow your store.",
+  description: "Comprehensive Shopify store audit covering UX, performance, SEO, and conversion optimisation. Get actionable recommendations from UK Shopify experts.",
   provider: {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
   },
   serviceType: "Ecommerce Audit",
-  areaServed: "United Kingdom",
+  areaServed: {
+    "@type": "Country",
+    name: "United Kingdom",
+  },
+  url: `${siteConfig.url}/shopify-store-audit`,
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: siteConfig.url,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Shopify Store Audit",
+      item: `${siteConfig.url}/shopify-store-audit`,
+    },
+  ],
+};
+
+const faqs = [
+  {
+    q: "What does a Shopify store audit cover?",
+    a: "Our comprehensive audit covers six key areas: conversion rate analysis (user journey, checkout flow, product pages), SEO review (technical issues, on-page optimisation, content gaps), performance (Core Web Vitals, page speed, load bottlenecks), mobile experience (responsive design, touch interactions), security (SSL, app permissions), and content (product descriptions, imagery, messaging). You receive a detailed written report with prioritised recommendations.",
+  },
+  {
+    q: "How long does a store audit take?",
+    a: "We typically complete the analysis phase within 5–7 working days and deliver the written report within 10 working days of kickoff. Timelines can vary slightly depending on the size and complexity of your store. The process includes a discovery call at the start and a review call once the report is delivered.",
+  },
+  {
+    q: "Do you audit Shopify Plus stores as well as standard Shopify?",
+    a: "Yes. We audit both standard Shopify and Shopify Plus stores. For Plus stores, we also review enterprise-specific features such as checkout customisation, Scripts, Flow automations, and multi-store configurations to ensure they're being used effectively.",
+  },
+  {
+    q: "What happens after the audit — do you implement the recommendations?",
+    a: "That's entirely up to you. Some clients use the audit report as a DIY roadmap for their in-house team. Others ask us to implement the improvements as a follow-on project. We're happy to work either way. Our recommendations are always practical and clearly written so they can be acted on by any competent developer.",
+  },
+  {
+    q: "How is your store audit different from a free Shopify review tool?",
+    a: "Automated tools only check technical signals — they can't evaluate your user experience, content quality, brand messaging, or the nuanced conversion barriers in your checkout flow. Our audit combines automated analysis with hands-on expert review from specialists who have audited hundreds of ecommerce stores. The result is actionable insight, not just a list of technical scores.",
+  },
+  {
+    q: "Can I get a store audit if I'm considering migrating to Shopify?",
+    a: "Yes — a pre-migration audit is a great starting point. We can assess your current platform's strengths and weaknesses, helping us design a Shopify migration that addresses your existing issues and gives your new store the best possible foundation. We can then run a post-migration audit to confirm everything has been implemented correctly.",
+  },
+];
 
 export default function StoreAuditPage() {
   return (
@@ -136,6 +203,10 @@ export default function StoreAuditPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(auditSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <PageHero
@@ -270,6 +341,49 @@ export default function StoreAuditPage() {
           </div>
         </div>
       </Section>
+
+      {/* Internal links */}
+      <Section background="alt">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl font-bold text-foreground-dark mb-4">
+            Shopify Audit Specialists in Manchester & Liverpool
+          </h2>
+          <p className="text-lg text-foreground">
+            Our specialists are based in{" "}
+            <Link
+              href="/shopify-agency-manchester"
+              className="text-[#ef436b] hover:underline"
+            >
+              Manchester
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/shopify-agency-liverpool"
+              className="text-[#ef436b] hover:underline"
+            >
+              Liverpool
+            </Link>{" "}
+            and work with brands across the UK. After your audit, many clients
+            combine our findings with our{" "}
+            <Link
+              href="/shopify-seo"
+              className="text-[#ef436b] hover:underline"
+            >
+              SEO
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/shopify-speed-optimisation"
+              className="text-[#ef436b] hover:underline"
+            >
+              speed optimisation
+            </Link>{" "}
+            services for maximum impact.
+          </p>
+        </div>
+      </Section>
+
+      <FAQSection faqs={faqs} />
 
       <RelatedServices />
     </>

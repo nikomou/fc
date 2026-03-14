@@ -1,10 +1,12 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { RelatedServices } from "@/components/ui/RelatedServices";
 import { ServiceCapabilities } from "@/components/ui/ServiceCapabilities";
 import { PageHero } from "@/components/ui/PageHero";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
+import { FAQSection } from "@/components/ui/FAQSection";
 import { siteConfig } from "@/lib/constants";
 import {
   Layers,
@@ -22,18 +24,33 @@ import {
 export const metadata: Metadata = {
   title: "Shopify Integrations | ERP, CRM & API | Flex Commerce",
   description:
-    "Connect Shopify to your business systems. ERP, CRM, PIM, accounting, shipping and custom API integrations by certified Shopify experts.",
+    "Connect Shopify to your business systems. ERP, CRM, PIM, accounting, shipping & custom API integrations by certified Shopify experts in Manchester & Liverpool.",
   alternates: {
     canonical: "/shopify-integrations",
   },
   openGraph: {
     title: "Shopify Integrations | ERP, CRM & API | Flex Commerce",
     description:
-      "Connect Shopify to your business systems. ERP, CRM, PIM, accounting, shipping and custom API integrations by certified Shopify experts.",
+      "Connect Shopify to your business systems. ERP, CRM, PIM, accounting, shipping & custom API integrations by certified Shopify experts in Manchester & Liverpool.",
     url: "/shopify-integrations",
     siteName: siteConfig.name,
     locale: "en_GB",
     type: "website",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Shopify Integrations - ERP, CRM & API - Flex Commerce",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify Integrations | ERP, CRM & API | Flex Commerce",
+    description:
+      "Connect Shopify to your business systems. ERP, CRM, PIM, accounting, shipping & custom API integrations by certified Shopify experts in Manchester & Liverpool.",
+    images: ["/images/og-image.png"],
   },
 };
 
@@ -120,15 +137,65 @@ const integrationSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Shopify Integrations",
-  description: "Connect Shopify to your business systems. ERP, CRM, PIM, accounting, shipping and custom API integrations by certified Shopify experts.",
+  description: "Connect Shopify to your business systems. ERP, CRM, PIM, accounting, shipping & custom API integrations by certified Shopify experts in the UK.",
   provider: {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
   },
   serviceType: "System Integration",
-  areaServed: "United Kingdom",
+  areaServed: {
+    "@type": "Country",
+    name: "United Kingdom",
+  },
+  url: `${siteConfig.url}/shopify-integrations`,
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: siteConfig.url,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Shopify Integrations",
+      item: `${siteConfig.url}/shopify-integrations`,
+    },
+  ],
+};
+
+const faqs = [
+  {
+    q: "Which ERP systems can you integrate with Shopify?",
+    a: "We have experience integrating Shopify with a wide range of ERP systems including SAP, NetSuite, Microsoft Dynamics 365, Sage 200, Brightpearl, and Linnworks. If your ERP has an API or supports webhooks, we can build a reliable integration with Shopify.",
+  },
+  {
+    q: "How do you handle data conflicts between Shopify and our ERP?",
+    a: "We design integrations with a clear source-of-truth model so each system owns the data it manages. For example, your ERP typically owns inventory and pricing, while Shopify owns orders. We implement conflict resolution logic, error handling, and retry queues to ensure data integrity at all times.",
+  },
+  {
+    q: "Can you integrate Shopify with our bespoke in-house system?",
+    a: "Yes. If your system has a REST or GraphQL API, we can integrate it with Shopify. We've built custom integrations for bespoke warehouse systems, order management platforms, and in-house CRM tools. We handle the full scoping, architecture, and development.",
+  },
+  {
+    q: "Do integrations sync data in real time or on a schedule?",
+    a: "Both options are available. Real-time integrations use Shopify webhooks to trigger updates the moment an event occurs (e.g. a new order). Scheduled sync jobs run at defined intervals and are often more suitable for bulk data such as inventory updates from your warehouse. We recommend the right approach based on your business requirements.",
+  },
+  {
+    q: "What happens if an integration fails — how is it monitored?",
+    a: "All integrations we build include comprehensive error logging, alerting, and retry logic. We set up monitoring dashboards and can provide alerts via email or Slack if a sync fails. We also offer ongoing maintenance retainers to ensure your integrations remain healthy over time.",
+  },
+  {
+    q: "How long does a Shopify integration project take?",
+    a: "A standard bi-directional integration between Shopify and a well-documented system such as Xero or HubSpot typically takes 4–8 weeks. More complex ERP integrations with custom data mappings can take 8–14 weeks. We provide a detailed timeline after a scoping call.",
+  },
+];
 
 export default function IntegrationsPage() {
   return (
@@ -136,6 +203,10 @@ export default function IntegrationsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(integrationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <PageHero
@@ -267,6 +338,42 @@ export default function IntegrationsPage() {
           </div>
         </div>
       </Section>
+
+      {/* Internal links */}
+      <Section background="alt">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl font-bold text-foreground-dark mb-4">
+            Shopify Integration Specialists in the UK
+          </h2>
+          <p className="text-lg text-foreground">
+            Our integration team operates from{" "}
+            <Link
+              href="/shopify-agency-manchester"
+              className="text-[#ef436b] hover:underline"
+            >
+              Manchester
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/shopify-agency-liverpool"
+              className="text-[#ef436b] hover:underline"
+            >
+              Liverpool
+            </Link>{" "}
+            and serves brands across the UK. Need a fully custom solution?
+            Explore our{" "}
+            <Link
+              href="/shopify-app-development"
+              className="text-[#ef436b] hover:underline"
+            >
+              Shopify app development
+            </Link>{" "}
+            service.
+          </p>
+        </div>
+      </Section>
+
+      <FAQSection faqs={faqs} />
 
       <RelatedServices />
     </>

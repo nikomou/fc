@@ -1,10 +1,12 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { RelatedServices } from "@/components/ui/RelatedServices";
 import { ServiceCapabilities } from "@/components/ui/ServiceCapabilities";
 import { PageHero } from "@/components/ui/PageHero";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
+import { FAQSection } from "@/components/ui/FAQSection";
 import { siteConfig } from "@/lib/constants";
 import {
   Gauge,
@@ -22,18 +24,33 @@ import {
 export const metadata: Metadata = {
   title: "Shopify Speed Optimisation | Core Web Vitals | Flex Commerce",
   description:
-    "Speed up your Shopify store and improve Core Web Vitals. Faster load times mean higher conversions. Expert performance optimisation.",
+    "Speed up your Shopify store and improve Core Web Vitals scores. Faster load times mean higher conversions. Expert performance optimisation for UK stores.",
   alternates: {
     canonical: "/shopify-speed-optimisation",
   },
   openGraph: {
     title: "Shopify Speed Optimisation | Core Web Vitals | Flex Commerce",
     description:
-      "Speed up your Shopify store and improve Core Web Vitals. Faster load times mean higher conversions. Expert performance optimisation.",
+      "Speed up your Shopify store and improve Core Web Vitals scores. Faster load times mean higher conversions. Expert performance optimisation for UK stores.",
     url: "/shopify-speed-optimisation",
     siteName: siteConfig.name,
     locale: "en_GB",
     type: "website",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Shopify Speed Optimisation - Flex Commerce",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify Speed Optimisation | Core Web Vitals | Flex Commerce",
+    description:
+      "Speed up your Shopify store and improve Core Web Vitals scores. Faster load times mean higher conversions. Expert performance optimisation.",
+    images: ["/images/og-image.png"],
   },
 };
 
@@ -115,15 +132,65 @@ const speedSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Shopify Speed Optimisation",
-  description: "Speed up your Shopify store and improve Core Web Vitals. Faster load times mean higher conversions. Expert performance optimisation.",
+  description: "Speed up your Shopify store and improve Core Web Vitals scores. Faster load times mean higher conversions. Expert performance optimisation for UK stores.",
   provider: {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
   },
   serviceType: "Performance Optimisation",
-  areaServed: "United Kingdom",
+  areaServed: {
+    "@type": "Country",
+    name: "United Kingdom",
+  },
+  url: `${siteConfig.url}/shopify-speed-optimisation`,
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: siteConfig.url,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Shopify Speed Optimisation",
+      item: `${siteConfig.url}/shopify-speed-optimisation`,
+    },
+  ],
+};
+
+const faqs = [
+  {
+    q: "What Lighthouse score should my Shopify store aim for?",
+    a: "We target a mobile Lighthouse performance score of 80+ and desktop of 90+ for our clients' stores. A score above 80 on mobile correlates strongly with improved Core Web Vitals, which Google uses as a ranking factor. Starting point varies — we've seen stores come to us with scores of 15–30 and leave with scores of 80–95.",
+  },
+  {
+    q: "What is the most common cause of a slow Shopify store?",
+    a: "The most common culprits are excessive third-party apps injecting scripts into the storefront, unoptimised images (too large, wrong format, not lazy loaded), render-blocking JavaScript, and bloated theme code. Our audit process identifies exactly what's slowing your store down before we implement any fixes.",
+  },
+  {
+    q: "Will speeding up my store improve my Google rankings?",
+    a: "Yes — Core Web Vitals (LCP, FID/INP, and CLS) are a confirmed Google ranking factor under the Page Experience signals. Improving your scores can give you an edge in competitive search results, particularly for mobile searches where Google's mobile-first indexing makes performance more important than ever.",
+  },
+  {
+    q: "Do I need a new theme to improve my store's speed?",
+    a: "Not necessarily. In many cases we can significantly improve performance through code optimisation, image improvements, and app auditing without rebuilding the theme. However, if your theme is heavily modified with legacy code, a fresh custom theme build may be the most cost-effective path to a 90+ score.",
+  },
+  {
+    q: "How quickly will I see conversion improvements after speed work?",
+    a: "Most clients see measurable conversion improvements within 30 days of go-live following our optimisation work. The magnitude depends on how slow the store was before. We track conversions, bounce rates, and revenue per session before and after to quantify the impact.",
+  },
+  {
+    q: "Do you provide a speed audit before starting work?",
+    a: "Yes. Every speed optimisation engagement starts with a thorough performance audit. We run your store through Google PageSpeed Insights, Lighthouse, and WebPageTest across multiple device types and connection speeds. We then present a prioritised list of issues with projected impact before any development work begins.",
+  },
+];
 
 export default function SpeedOptimisationPage() {
   return (
@@ -131,6 +198,10 @@ export default function SpeedOptimisationPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(speedSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <PageHero
@@ -288,6 +359,48 @@ export default function SpeedOptimisationPage() {
           </div>
         </div>
       </Section>
+
+      {/* Internal links */}
+      <Section background="alt">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl font-bold text-foreground-dark mb-4">
+            Shopify Performance Experts Based in the UK
+          </h2>
+          <p className="text-lg text-foreground">
+            Our team works with Shopify merchants across{" "}
+            <Link
+              href="/shopify-agency-manchester"
+              className="text-[#ef436b] hover:underline"
+            >
+              Manchester
+            </Link>
+            ,{" "}
+            <Link
+              href="/shopify-agency-liverpool"
+              className="text-[#ef436b] hover:underline"
+            >
+              Liverpool
+            </Link>
+            , and the wider UK. Speed optimisation pairs perfectly with our{" "}
+            <Link
+              href="/shopify-seo"
+              className="text-[#ef436b] hover:underline"
+            >
+              Shopify SEO
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/shopify-store-audit"
+              className="text-[#ef436b] hover:underline"
+            >
+              store audit
+            </Link>{" "}
+            services for comprehensive ecommerce growth.
+          </p>
+        </div>
+      </Section>
+
+      <FAQSection faqs={faqs} />
 
       <RelatedServices exclude="Speed Optimisation" />
     </>
