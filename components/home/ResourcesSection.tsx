@@ -21,7 +21,7 @@ export function ResourcesSection() {
           <p className="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-2">
             Knowledge Base
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark" style={{ fontFamily: "var(--font-playfair)" }}>
             Resources
           </h2>
         </div>

@@ -15,6 +15,7 @@ export function ClientLogos() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           className="text-2xl md:text-3xl font-bold text-foreground-dark mb-3"
+          style={{ fontFamily: "var(--font-playfair)" }}
         >
           Trusted By Leading Brands
         </motion.h2>

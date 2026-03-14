@@ -64,7 +64,7 @@ export function TestimonialCard({
         <div className="max-w-4xl mx-auto text-center">
           <Quote className="w-12 h-12 text-[#ef436b] mx-auto mb-8 fill-[#ef436b]" strokeWidth={0} />
 
-          <blockquote className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-relaxed mb-10">
+          <blockquote className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-relaxed mb-10 italic" style={{ fontFamily: "var(--font-playfair)" }}>
             {words.map((word, i) => (
               <AnimatedWord
                 key={i}

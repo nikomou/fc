@@ -55,7 +55,7 @@ export function MigrationSelector() {
 
       {/* Heading */}
       <div className="relative z-10 text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Shopify Migrations</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair)" }}>Shopify Migrations</h2>
         <p className="text-lg text-gray-300 max-w-2xl mx-auto">
           Seamlessly migrate your store to Shopify from any platform. Zero downtime, full SEO preservation.
         </p>

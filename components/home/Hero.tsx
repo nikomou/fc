@@ -11,7 +11,7 @@ import { RotatingCTA } from "@/components/ui/RotatingCTA";
 export function Hero() {
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
-      <AnimatedBackground theme="blue" />
+      <AnimatedBackground theme="pink" />
 
       {/* Rotating CTA — bottom-right accent */}
       <motion.div
@@ -50,6 +50,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-6"
+            style={{ fontFamily: "var(--font-playfair)" }}
             role="heading"
             aria-level={2}
           >

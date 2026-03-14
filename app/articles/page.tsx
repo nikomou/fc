@@ -82,7 +82,7 @@ export default function ArticlesPage() {
               <span className="text-white/60 text-sm">{featured.readTime}</span>
               <span className="text-white/60 text-sm">{formatDate(featured.date)}</span>
             </div>
-            <h2 className="text-white font-bold text-2xl md:text-3xl leading-snug mb-4">
+            <h2 className="text-white font-bold text-2xl md:text-3xl leading-snug mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
               {featured.title}
             </h2>
             <p className="text-white/75 text-base mb-6 max-w-lg">
@@ -126,7 +126,7 @@ export default function ArticlesPage() {
                     </span>
                     <span className="text-white/60 text-xs">{post.readTime}</span>
                   </div>
-                  <h3 className="text-white font-bold text-lg leading-snug mb-3">
+                  <h3 className="text-white font-bold text-lg leading-snug mb-3" style={{ fontFamily: "var(--font-playfair)" }}>
                     {post.title}
                   </h3>
                   <span className="inline-flex items-center gap-1 text-sm font-medium text-white/80 group-hover:text-white transition-colors">

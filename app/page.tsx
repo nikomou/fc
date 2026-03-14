@@ -22,7 +22,7 @@ export default function HomePage() {
       {/* Services Preview */}
       <Section background="alt">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
             Our Services
           </h2>
           <p className="text-lg text-foreground max-w-2xl mx-auto">
@@ -47,7 +47,7 @@ export default function HomePage() {
       {/* Locations */}
       <Section>
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
             Our Locations
           </h2>
           <p className="text-lg text-foreground max-w-2xl mx-auto">
@@ -65,12 +65,12 @@ export default function HomePage() {
 
       <AISection />
 
+      <StatsBar />
+
       {/* Partners Section */}
       <Section background="dark" className="!py-0 overflow-hidden">
         <PartnerMarquee />
       </Section>
-
-      <StatsBar />
 
       <ResourcesSection />
     </>

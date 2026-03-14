@@ -22,7 +22,7 @@ interface FAQSectionProps {
 export function FAQSection({
   faqs,
   heading = "Frequently Asked Questions",
-  subheading,
+  subheading = "Find answers to the most common questions below.",
   background = "white",
   image,
   imageAlt = "",
@@ -60,10 +60,7 @@ export function FAQSection({
               <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-3">
                 {heading}
               </h2>
-              {subheading && (
-                <p className="text-lg text-foreground mb-8">{subheading}</p>
-              )}
-              {!subheading && <div className="mb-8" />}
+              <p className="text-lg text-foreground mb-8">{subheading}</p>
               <FAQAccordion faqs={normalisedFaqs} />
             </div>
 
@@ -88,9 +85,7 @@ export function FAQSection({
               <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
                 {heading}
               </h2>
-              {subheading && (
-                <p className="text-lg text-foreground">{subheading}</p>
-              )}
+              <p className="text-lg text-foreground">{subheading}</p>
             </div>
             <FAQAccordion faqs={normalisedFaqs} />
           </div>

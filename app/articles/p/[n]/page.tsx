@@ -109,7 +109,7 @@ export default async function ArticlesPageN({ params }: Props) {
                     </span>
                     <span className="text-white/60 text-xs">{post.readTime}</span>
                   </div>
-                  <h3 className="text-white font-bold text-lg leading-snug mb-3">
+                  <h3 className="text-white font-bold text-lg leading-snug mb-3" style={{ fontFamily: "var(--font-playfair)" }}>
                     {post.title}
                   </h3>
                   <span className="inline-flex items-center gap-1 text-sm font-medium text-white/80 group-hover:text-white transition-colors">

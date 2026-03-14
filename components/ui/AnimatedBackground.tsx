@@ -112,7 +112,7 @@ function generateLayerAnimations(layerCount: number) {
   }));
 }
 
-const themeOrder: ColorTheme[] = ["blue", "pink", "yellow", "green"];
+const themeOrder: ColorTheme[] = ["pink", "blue", "yellow", "green"];
 
 // Individual blob ring that animates independently
 function BlobRing({

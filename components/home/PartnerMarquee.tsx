@@ -39,7 +39,7 @@ export function PartnerMarquee() {
         {/* Left: text */}
         <div className="py-16 md:py-24 flex flex-col justify-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-4">Partners</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-playfair)" }}>
             Technology Partners
           </h2>
           <p className="text-lg text-gray-300 mb-3">
