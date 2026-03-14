@@ -1,6 +1,17 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { Zap, Search, Lightbulb, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+
+interface GlowDot {
+  x: number;
+  y: number;
+  delay: number;
+  duration: number;
+  pink: boolean;
+}
 
 const capabilities = [
   {
@@ -34,6 +45,20 @@ const capabilities = [
 ];
 
 export function AISection() {
+  const [dots, setDots] = useState<GlowDot[]>([]);
+
+  useEffect(() => {
+    setDots(
+      Array.from({ length: 22 }, () => ({
+        x: Math.floor(Math.random() * 36) * 28 + 14,
+        y: Math.floor(Math.random() * 16) * 28 + 14,
+        delay: Math.random() * 8,
+        duration: 1.5 + Math.random() * 3.5,
+        pink: Math.random() > 0.55,
+      }))
+    );
+  }, []);
+
   return (
     <section className="relative py-16 md:py-24 overflow-hidden" style={{ backgroundColor: "#0a0a0a" }}>
       <style>{`
@@ -80,7 +105,33 @@ export function AISection() {
           50%  { transform: translate(-50px, -70px) scale(1.15); }
           100% { transform: translate(0px, 0px) scale(0.95); }
         }
+        @keyframes dot-pulse {
+          0%, 100% { opacity: 0; transform: scale(0.4); }
+          50%       { opacity: 1; transform: scale(1); }
+        }
       `}</style>
+
+      {/* Glowing random dots */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+        {dots.map((dot, i) => (
+          <span
+            key={i}
+            className="absolute rounded-full"
+            style={{
+              left: dot.x,
+              top: dot.y,
+              width: 4,
+              height: 4,
+              background: dot.pink ? "#ef436b" : "#ffffff",
+              boxShadow: dot.pink
+                ? "0 0 6px 2px rgba(239,67,107,0.8), 0 0 14px 4px rgba(239,67,107,0.35)"
+                : "0 0 6px 2px rgba(255,255,255,0.8), 0 0 14px 4px rgba(255,255,255,0.3)",
+              animation: `dot-pulse ${dot.duration}s ease-in-out ${dot.delay}s infinite`,
+              opacity: 0,
+            }}
+          />
+        ))}
+      </div>
 
       {/* Dot grid */}
       <div
