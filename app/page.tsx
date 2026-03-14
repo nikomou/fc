@@ -4,6 +4,7 @@ import { ClientLogos } from "@/components/home/ClientLogos";
 import { StatsBar } from "@/components/home/StatsBar";
 import { ValueProps } from "@/components/home/ValueProps";
 import { ResourcesSection } from "@/components/home/ResourcesSection";
+import { AISection } from "@/components/home/AISection";
 import { MigrationSelector } from "@/components/home/MigrationSelector";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { LocationCards } from "@/components/home/LocationCards";
@@ -68,6 +69,8 @@ export default function HomePage() {
       </Section>
 
       <StatsBar />
+
+      <AISection />
 
       <ResourcesSection />
     </>
