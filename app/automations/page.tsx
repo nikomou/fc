@@ -11,6 +11,7 @@ import {
   Check,
 } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
+import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Automations & Integrations",
@@ -81,9 +82,19 @@ const benefits = [
   "Better decision-making with unified data",
 ];
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+    { "@type": "ListItem", position: 2, name: "Automations & Integrations", item: `${siteConfig.url}/automations` },
+  ],
+};
+
 export default function AutomationsPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <PageHero
         background="green"
         badge={{ icon: Cog, text: "Efficiency at Scale" }}

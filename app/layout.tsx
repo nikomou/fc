@@ -80,6 +80,7 @@ const locationSchemas = locations.map((location) => ({
   image: `${siteConfig.url}/images/flex-logo.svg`,
   url: `${siteConfig.url}/${location.slug}`,
   telephone: `+44-${location.phone.replace(/\s/g, "-").replace(/^0/, "")}`,
+  email: siteConfig.email,
   priceRange: "£££",
   address: {
     "@type": "PostalAddress",
@@ -179,7 +180,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.className} ${playfair.variable}`}>
+    <html lang="en-GB" className={`${inter.className} ${playfair.variable}`}>
       <head>
         <script
           type="application/ld+json"

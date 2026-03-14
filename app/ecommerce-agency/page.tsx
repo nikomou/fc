@@ -12,6 +12,7 @@ import { ArrowUpRight, Target,
   Store,
 } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
+import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Ecommerce Agency | Flex Commerce",
@@ -67,9 +68,19 @@ const benefits = [
   "Consistent 5-star service ratings",
 ];
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+    { "@type": "ListItem", position: 2, name: "Ecommerce Agency", item: `${siteConfig.url}/ecommerce-agency` },
+  ],
+};
+
 export default function EcommerceAgencyPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <PageHero
         badge={{ icon: Store, text: "Ecommerce Agency" }}
         title="Elevate Your Online Business"
