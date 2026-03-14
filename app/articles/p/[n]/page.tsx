@@ -33,11 +33,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const next = page < totalPages ? `${SITE}/articles/page/${page + 1}` : undefined;
 
   return {
-    title: `Ecommerce Articles — Page ${page} | Flex Commerce`,
+    title: `Ecommerce Articles, Page ${page} | Flex Commerce`,
     description: `Browse page ${page} of ecommerce articles from the Flex Commerce team. Shopify guides, conversion tips, case studies, and platform news.`,
     alternates: { canonical },
     openGraph: {
-      title: `Ecommerce Articles — Page ${page} | Flex Commerce`,
+      title: `Ecommerce Articles, Page ${page} | Flex Commerce`,
       description: `Browse page ${page} of ecommerce articles from the Flex Commerce team.`,
       url: canonical,
       type: "website",
@@ -73,7 +73,7 @@ export default async function ArticlesPageN({ params }: Props) {
       <PageHero
         background="purple"
         badge={{ icon: PenLine, text: "Ecommerce Articles" }}
-        title={`Articles — Page ${page}`}
+        title={`Articles, Page ${page}`}
         description="Shopify guides, conversion tips, case studies, and ecommerce news from the Flex Commerce team."
         shapeColors={{ topRight: "purple" }}
       />

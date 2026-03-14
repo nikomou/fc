@@ -453,7 +453,7 @@ export default function WholesalePricingGuidePage() {
                     <h3 className="font-semibold text-foreground-dark mb-2">B2B/Wholesale Solution</h3>
                     <p className="text-foreground mb-2">
                       Feature-rich app with custom pricing, quantity breaks, quick order forms,
-                      and customer-specific catalogs.
+                      and customer-specific catalogues.
                     </p>
                     <p className="text-sm text-foreground">
                       <strong>Best for:</strong> More complex requirements, multiple price tiers

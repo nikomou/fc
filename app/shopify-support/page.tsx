@@ -180,7 +180,7 @@ const breadcrumbSchema = {
 const faqs = [
   {
     q: "What's the difference between your support and maintenance packages?",
-    a: "Our support packages (on this page) provide dedicated hours each month for development work, bug fixes, feature additions, and strategic guidance. Our maintenance service focuses specifically on proactive store health — security monitoring, app updates, backups, and error detection. Many clients combine both. You can view our standalone maintenance service for more detail.",
+    a: "Our support packages (on this page) provide dedicated hours each month for development work, bug fixes, feature additions, and strategic guidance. Our maintenance service focuses specifically on proactive store health, security monitoring, app updates, backups, and error detection. Many clients combine both. You can view our standalone maintenance service for more detail.",
   },
   {
     q: "How quickly do you respond to support requests?",
@@ -192,7 +192,7 @@ const faqs = [
   },
   {
     q: "Can I upgrade or downgrade my support package?",
-    a: "Yes. You can change your package with 30 days' notice. We don't tie you into long-term contracts — our clients stay because of the quality of the service, not because they're locked in.",
+    a: "Yes. You can change your package with 30 days' notice. We don't tie you into long-term contracts, our clients stay because of the quality of the service, not because they're locked in.",
   },
   {
     q: "What kind of work is included in support hours?",

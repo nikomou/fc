@@ -35,10 +35,10 @@ export default function PrivacyPage() {
           <h2>2. What Data We Collect</h2>
           <p>We may collect the following types of personal data:</p>
           <ul>
-            <li><strong>Contact information</strong> — name, email address, phone number, and company name when you submit an enquiry or quote request.</li>
-            <li><strong>Usage data</strong> — pages visited, time on site, browser type, and IP address, collected via analytics tools.</li>
-            <li><strong>Communications</strong> — any messages you send us via our contact or quote forms.</li>
-            <li><strong>Cookies</strong> — small files stored on your device to improve your experience. See section 6 for more detail.</li>
+            <li><strong>Contact information</strong>, name, email address, phone number, and company name when you submit an enquiry or quote request.</li>
+            <li><strong>Usage data</strong>, pages visited, time on site, browser type, and IP address, collected via analytics tools.</li>
+            <li><strong>Communications</strong>, any messages you send us via our contact or quote forms.</li>
+            <li><strong>Cookies</strong>, small files stored on your device to improve your experience. See section 6 for more detail.</li>
           </ul>
 
           <h2>3. How We Use Your Data</h2>
@@ -54,10 +54,10 @@ export default function PrivacyPage() {
           <h2>4. Legal Basis for Processing</h2>
           <p>Under UK GDPR, we process your data on the following legal bases:</p>
           <ul>
-            <li><strong>Legitimate interests</strong> — responding to enquiries and improving our services</li>
-            <li><strong>Consent</strong> — for marketing communications, where you have opted in</li>
-            <li><strong>Contract</strong> — to deliver services you have engaged us for</li>
-            <li><strong>Legal obligation</strong> — where we are required by law</li>
+            <li><strong>Legitimate interests</strong>, responding to enquiries and improving our services</li>
+            <li><strong>Consent</strong>, for marketing communications, where you have opted in</li>
+            <li><strong>Contract</strong>, to deliver services you have engaged us for</li>
+            <li><strong>Legal obligation</strong>, where we are required by law</li>
           </ul>
 
           <h2>5. How Long We Keep Your Data</h2>
@@ -66,8 +66,8 @@ export default function PrivacyPage() {
           <h2>6. Cookies</h2>
           <p>Our website uses cookies for:</p>
           <ul>
-            <li><strong>Analytics</strong> — to understand how visitors use our site (e.g. Google Analytics)</li>
-            <li><strong>Functionality</strong> — to remember your preferences</li>
+            <li><strong>Analytics</strong>, to understand how visitors use our site (e.g. Google Analytics)</li>
+            <li><strong>Functionality</strong>, to remember your preferences</li>
           </ul>
           <p>You can control cookies through your browser settings. Disabling cookies may affect some functionality of this site.</p>
 

@@ -182,11 +182,11 @@ const faqs = [
   },
   {
     q: "Will my custom theme be fast and score well on Core Web Vitals?",
-    a: "Yes — performance is baked into our development process. We optimise images, minimise JavaScript, and follow Shopify's best practices to ensure your theme scores well on Core Web Vitals. Our custom-built themes consistently achieve Lighthouse scores of 85+ on mobile.",
+    a: "Yes, performance is baked into our development process. We optimise images, minimise JavaScript, and follow Shopify's best practices to ensure your theme scores well on Core Web Vitals. Our custom-built themes consistently achieve Lighthouse scores of 85+ on mobile.",
   },
   {
     q: "Can I update my theme content without needing a developer?",
-    a: "Absolutely. We build themes with intuitive Shopify sections and blocks so your team can update homepage layouts, banners, and content directly from the Shopify theme editor — no coding required. We also provide training and documentation on launch.",
+    a: "Absolutely. We build themes with intuitive Shopify sections and blocks so your team can update homepage layouts, banners, and content directly from the Shopify theme editor, no coding required. We also provide training and documentation on launch.",
   },
   {
     q: "Do you also handle Shopify speed optimisation if my current theme is slow?",

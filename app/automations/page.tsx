@@ -29,7 +29,7 @@ const automations = [
     icon: RefreshCw,
     title: "Order Processing",
     description:
-      "Automate order routing, fulfillment workflows, and post-purchase communications.",
+      "Automate order routing, fulfilment workflows, and post-purchase communications.",
   },
   {
     icon: Bell,

@@ -18,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: "AI-Powered Shopify Development | Flex Commerce",
   description:
-    "We've embedded AI across every part of our Shopify workflow — delivering faster builds, smarter SEO for AI search platforms, and deeper data insights for UK ecommerce brands.",
+    "We've embedded AI across every part of our Shopify workflow, delivering faster builds, smarter SEO for AI search platforms, and deeper data insights for UK ecommerce brands.",
   alternates: {
     canonical: "/shopify-ai",
   },
@@ -53,28 +53,28 @@ const capabilities = [
     icon: Zap,
     title: "AI-Accelerated Development",
     description:
-      "Faster builds with AI-assisted code generation, review and QA — without cutting corners on quality or reliability.",
+      "Faster builds with AI-assisted code generation, review and QA, without cutting corners on quality or reliability.",
     color: "#f59e0b",
   },
   {
     icon: Search,
     title: "AI Search Optimisation",
     description:
-      "Your store, structured for discovery on ChatGPT Shopping, Google SGE, and Perplexity — the new frontier of product search.",
+      "Your store, structured for discovery on ChatGPT Shopping, Google SGE, and Perplexity, the new frontier of product search.",
     color: "#ef436b",
   },
   {
     icon: Lightbulb,
     title: "Generative Creative Strategy",
     description:
-      "Rapid ideation, layout exploration, and concept testing at speed — so you move from brief to decision in hours, not days.",
+      "Rapid ideation, layout exploration, and concept testing at speed, so you move from brief to decision in hours, not days.",
     color: "#8b5cf6",
   },
   {
     icon: BarChart3,
     title: "Behavioural Data Analysis",
     description:
-      "Surface trends and growth opportunities from large datasets instantly — turning raw data into clear, actionable strategy.",
+      "Surface trends and growth opportunities from large datasets instantly, turning raw data into clear, actionable strategy.",
     color: "#10b981",
   },
   {
@@ -88,7 +88,7 @@ const capabilities = [
     icon: TrendingUp,
     title: "Continuous Optimisation",
     description:
-      "AI-driven performance monitoring and conversion improvement that runs constantly — not just after a quarterly review.",
+      "AI-driven performance monitoring and conversion improvement that runs constantly, not just after a quarterly review.",
     color: "#64748b",
   },
 ];
@@ -110,7 +110,7 @@ const process = [
     step: "02",
     title: "Integrate",
     description:
-      "AI tools are woven into design, development and strategy workflows — invisibly and without friction.",
+      "AI tools are woven into design, development and strategy workflows, invisibly and without friction.",
   },
   {
     step: "03",
@@ -122,7 +122,7 @@ const process = [
     step: "04",
     title: "Report",
     description:
-      "Regular reporting shows the tangible output and ROI of AI-enhanced delivery — in plain language.",
+      "Regular reporting shows the tangible output and ROI of AI-enhanced delivery, in plain language.",
   },
 ];
 
@@ -137,11 +137,11 @@ const faqs = [
   },
   {
     q: "How does AI help with Shopify SEO?",
-    a: "We optimise your store structure, metadata and content for AI-powered search platforms like ChatGPT Shopping and Google's AI Overviews — the new frontier of product discovery.",
+    a: "We optimise your store structure, metadata and content for AI-powered search platforms like ChatGPT Shopping and Google's AI Overviews, the new frontier of product discovery.",
   },
   {
     q: "Is AI development as reliable as traditional development?",
-    a: "Yes — we use AI to augment quality, not shortcut it. Every AI-generated output is reviewed, tested and refined by our developers before it reaches your store.",
+    a: "Yes, we use AI to augment quality, not shortcut it. Every AI-generated output is reviewed, tested and refined by our developers before it reaches your store.",
   },
   {
     q: "Can you help migrate my existing store and apply AI optimisation at the same time?",
@@ -202,7 +202,7 @@ export default function ShopifyAIPage() {
       <PageHero
         badge={{ icon: Zap, text: "AI-Powered" }}
         title="AI-Powered Shopify Development"
-        description="We've embedded AI across every part of our workflow — so you get more output, deeper insight, and stronger performance without a bigger budget."
+        description="We've embedded AI across every part of our workflow, so you get more output, deeper insight, and stronger performance without a bigger budget."
         primaryCta={{ text: "Get A Quote", href: "/quote" }}
         secondaryCta={{ text: "Book a Call", href: "/contact" }}
         shapeColors={{ topRight: "yellow", bottomLeft: "yellow" }}
@@ -212,7 +212,7 @@ export default function ShopifyAIPage() {
       <Section background="alt">
         <ServiceCapabilities
           heading="How We Use AI"
-          subheading="AI integrated across every discipline — not bolted on as an afterthought."
+          subheading="AI integrated across every discipline, not bolted on as an afterthought."
           items={capabilities}
           theme={capabilityTheme}
         />
@@ -239,13 +239,13 @@ export default function ShopifyAIPage() {
               Why AI Matters Now
             </h2>
             <p className="text-lg text-foreground mb-5">
-              The way customers discover products online is changing faster than at any point in the last decade. AI-powered search tools — ChatGPT Shopping, Google&apos;s AI Overviews, and Perplexity — are now surfacing product recommendations directly in conversation, bypassing traditional search results entirely.
+              The way customers discover products online is changing faster than at any point in the last decade. AI-powered search tools, ChatGPT Shopping, Google&apos;s AI Overviews, and Perplexity, are now surfacing product recommendations directly in conversation, bypassing traditional search results entirely.
             </p>
             <p className="text-lg text-foreground mb-5">
-              Brands that aren&apos;t structured for these platforms are already losing visibility. It&apos;s not a future problem — it&apos;s happening now. The stores that benefit are those with clean structured data, well-organised content, and pages that AI models can understand and cite confidently.
+              Brands that aren&apos;t structured for these platforms are already losing visibility. It&apos;s not a future problem, it&apos;s happening now. The stores that benefit are those with clean structured data, well-organised content, and pages that AI models can understand and cite confidently.
             </p>
             <p className="text-lg text-foreground">
-              At the same time, AI is reshaping how we build. Code generation, automated QA, rapid prototyping and intelligent analysis mean our team can deliver more in less time — and that efficiency goes directly into your project.
+              At the same time, AI is reshaping how we build. Code generation, automated QA, rapid prototyping and intelligent analysis mean our team can deliver more in less time, and that efficiency goes directly into your project.
             </p>
           </div>
 
@@ -255,26 +255,26 @@ export default function ShopifyAIPage() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#f59e0b] to-[#ef436b]" />
 
               <p className="text-xl font-semibold text-white leading-relaxed mb-6">
-                &ldquo;The brands winning in AI search aren&apos;t the biggest — they&apos;re the ones that structured their stores correctly first.&rdquo;
+                &ldquo;The brands winning in AI search aren&apos;t the biggest, they&apos;re the ones that structured their stores correctly first.&rdquo;
               </p>
 
               <div className="space-y-4 border-t border-white/10 pt-6">
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-[#f59e0b] mt-2 flex-shrink-0" />
                   <p className="text-sm text-white/60">
-                    <span className="text-white font-medium">ChatGPT Shopping</span> — 100M+ weekly active users discovering products through conversation.
+                    <span className="text-white font-medium">ChatGPT Shopping</span>, 100M+ weekly active users discovering products through conversation.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-[#ef436b] mt-2 flex-shrink-0" />
                   <p className="text-sm text-white/60">
-                    <span className="text-white font-medium">Google AI Overviews</span> — appearing in over 50% of commercial search queries globally.
+                    <span className="text-white font-medium">Google AI Overviews</span>, appearing in over 50% of commercial search queries globally.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-white/30 mt-2 flex-shrink-0" />
                   <p className="text-sm text-white/60">
-                    <span className="text-white font-medium">Perplexity</span> — the AI search engine growing fastest among high-intent buyers.
+                    <span className="text-white font-medium">Perplexity</span>, the AI search engine growing fastest among high-intent buyers.
                   </p>
                 </div>
               </div>

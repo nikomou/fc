@@ -8,9 +8,9 @@ import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Shopify Checkout Optimization: Reduce Abandonment",
+  title: "Shopify Checkout Optimisation: Reduce Abandonment",
   description:
-    "Reduce cart abandonment with our checkout optimization checklist. Covers payment options, trust signals, guest checkout and mobile UX. Boost conversions now.",
+    "Reduce cart abandonment with our checkout optimisation checklist. Covers payment options, trust signals, guest checkout and mobile UX. Boost conversions now.",
   alternates: {
     canonical: "/checklists/shopify-checkout-optimisation-checklist",
   },

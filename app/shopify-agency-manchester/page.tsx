@@ -201,7 +201,7 @@ const manchesterSchema = {
       url: `${siteConfig.url}/shopify-agency-manchester`,
       telephone: `+44-${manchesterLocation.phone.replace(/\s/g, "-").replace(/^0/, "")}`,
       email: siteConfig.email,
-      description: "Award-winning Shopify and Shopify Plus agency in Manchester city centre specializing in custom theme development, platform migrations, and ongoing ecommerce support.",
+      description: "Award-winning Shopify and Shopify Plus agency in Manchester city centre specialising in custom theme development, platform migrations, and ongoing ecommerce support.",
       priceRange: "£££",
       address: {
         "@type": "PostalAddress",

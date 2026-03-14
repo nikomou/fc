@@ -169,7 +169,7 @@ const breadcrumbSchema = {
 const faqs = [
   {
     q: "What Lighthouse score should my Shopify store aim for?",
-    a: "We target a mobile Lighthouse performance score of 80+ and desktop of 90+ for our clients' stores. A score above 80 on mobile correlates strongly with improved Core Web Vitals, which Google uses as a ranking factor. Starting point varies — we've seen stores come to us with scores of 15–30 and leave with scores of 80–95.",
+    a: "We target a mobile Lighthouse performance score of 80+ and desktop of 90+ for our clients' stores. A score above 80 on mobile correlates strongly with improved Core Web Vitals, which Google uses as a ranking factor. Starting point varies, we've seen stores come to us with scores of 15–30 and leave with scores of 80–95.",
   },
   {
     q: "What is the most common cause of a slow Shopify store?",
@@ -177,7 +177,7 @@ const faqs = [
   },
   {
     q: "Will speeding up my store improve my Google rankings?",
-    a: "Yes — Core Web Vitals (LCP, FID/INP, and CLS) are a confirmed Google ranking factor under the Page Experience signals. Improving your scores can give you an edge in competitive search results, particularly for mobile searches where Google's mobile-first indexing makes performance more important than ever.",
+    a: "Yes, Core Web Vitals (LCP, FID/INP, and CLS) are a confirmed Google ranking factor under the Page Experience signals. Improving your scores can give you an edge in competitive search results, particularly for mobile searches where Google's mobile-first indexing makes performance more important than ever.",
   },
   {
     q: "Do I need a new theme to improve my store's speed?",

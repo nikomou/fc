@@ -176,10 +176,10 @@ const breadcrumbSchema = {
 const faqs = [
   {
     q: "What's the difference between Shopify maintenance and Shopify support?",
-    a: "Maintenance is proactive and preventive — we run scheduled checks, apply security updates, monitor uptime, manage backups, and keep your apps compatible with Shopify platform changes. Support is reactive and project-based — you submit requests and we use allocated hours to build features, fix bugs, or provide guidance. The two services are complementary and can be combined.",
+    a: "Maintenance is proactive and preventive, we run scheduled checks, apply security updates, monitor uptime, manage backups, and keep your apps compatible with Shopify platform changes. Support is reactive and project-based, you submit requests and we use allocated hours to build features, fix bugs, or provide guidance. The two services are complementary and can be combined.",
   },
   {
-    q: "Does Shopify handle updates automatically — why do I need maintenance?",
+    q: "Does Shopify handle updates automatically, why do I need maintenance?",
     a: "Shopify handles platform-level updates, but your theme code, installed apps, and custom configurations do not update themselves. Apps can break with Shopify API version changes. Theme code can accumulate issues over time. Custom functions need to be kept aligned with Shopify's evolving APIs. Our maintenance service ensures everything stays aligned with the latest platform requirements.",
   },
   {
@@ -191,7 +191,7 @@ const faqs = [
     a: "Yes. Shopify does not provide native store backups for theme code and configuration data, so this is a critical part of our maintenance service. We maintain regular backups of your theme files, metafield configurations, and store settings so we can restore quickly in the event of an issue.",
   },
   {
-    q: "What happens if my store goes down — how quickly do you respond?",
+    q: "What happens if my store goes down, how quickly do you respond?",
     a: "Our uptime monitoring alerts us immediately if your store becomes unavailable. We investigate and respond within 1 hour during business hours (Monday–Friday 9am–5:30pm). For critical production outages outside business hours, Enterprise maintenance clients benefit from on-call escalation.",
   },
   {

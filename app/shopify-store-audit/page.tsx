@@ -185,16 +185,16 @@ const faqs = [
     a: "Yes. We audit both standard Shopify and Shopify Plus stores. For Plus stores, we also review enterprise-specific features such as checkout customisation, Scripts, Flow automations, and multi-store configurations to ensure they're being used effectively.",
   },
   {
-    q: "What happens after the audit — do you implement the recommendations?",
+    q: "What happens after the audit, do you implement the recommendations?",
     a: "That's entirely up to you. Some clients use the audit report as a DIY roadmap for their in-house team. Others ask us to implement the improvements as a follow-on project. We're happy to work either way. Our recommendations are always practical and clearly written so they can be acted on by any competent developer.",
   },
   {
     q: "How is your store audit different from a free Shopify review tool?",
-    a: "Automated tools only check technical signals — they can't evaluate your user experience, content quality, brand messaging, or the nuanced conversion barriers in your checkout flow. Our audit combines automated analysis with hands-on expert review from specialists who have audited hundreds of ecommerce stores. The result is actionable insight, not just a list of technical scores.",
+    a: "Automated tools only check technical signals, they can't evaluate your user experience, content quality, brand messaging, or the nuanced conversion barriers in your checkout flow. Our audit combines automated analysis with hands-on expert review from specialists who have audited hundreds of ecommerce stores. The result is actionable insight, not just a list of technical scores.",
   },
   {
     q: "Can I get a store audit if I'm considering migrating to Shopify?",
-    a: "Yes — a pre-migration audit is a great starting point. We can assess your current platform's strengths and weaknesses, helping us design a Shopify migration that addresses your existing issues and gives your new store the best possible foundation. We can then run a post-migration audit to confirm everything has been implemented correctly.",
+    a: "Yes, a pre-migration audit is a great starting point. We can assess your current platform's strengths and weaknesses, helping us design a Shopify migration that addresses your existing issues and gives your new store the best possible foundation. We can then run a post-migration audit to confirm everything has been implemented correctly.",
   },
 ];
 

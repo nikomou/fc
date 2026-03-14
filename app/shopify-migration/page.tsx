@@ -199,7 +199,7 @@ const faqs = [
   },
   {
     q: "Which platforms do you migrate from?",
-    a: "We migrate from all major ecommerce platforms including WooCommerce, Magento 1 & 2, BigCommerce, Squarespace, Webflow, Salesforce Commerce Cloud, PrestaShop, OpenCart, Shopware, and more. If your platform isn't listed, contact us — if it has data export functionality, we can migrate it.",
+    a: "We migrate from all major ecommerce platforms including WooCommerce, Magento 1 & 2, BigCommerce, Squarespace, Webflow, Salesforce Commerce Cloud, PrestaShop, OpenCart, Shopware, and more. If your platform isn't listed, contact us, if it has data export functionality, we can migrate it.",
   },
 ];
 

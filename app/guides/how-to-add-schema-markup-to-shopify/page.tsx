@@ -9,7 +9,7 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 export const metadata: Metadata = {
   title: "How to Add Schema Markup to Shopify",
   description:
-    "Complete guide to implementing schema markup on your Shopify store. Learn about Product, Organization, and FAQ schema for rich snippets in search results.",
+    "Complete guide to implementing schema markup on your Shopify store. Learn about Product, Organisation, and FAQ schema for rich snippets in search results.",
   alternates: {
     canonical: "/guides/how-to-add-schema-markup-to-shopify",
   },
@@ -27,7 +27,7 @@ const tocItems = [
   { id: "what-is-schema-markup", title: "What Is Schema Markup", level: 2 },
   { id: "why-schema-matters", title: "Why Schema Matters for SEO", level: 2 },
   { id: "product-schema", title: "Product Schema", level: 2 },
-  { id: "organization-schema", title: "Organization Schema", level: 2 },
+  { id: "organisation-schema", title: "Organisation Schema", level: 2 },
   { id: "breadcrumb-schema", title: "Breadcrumb Schema", level: 2 },
   { id: "faq-schema", title: "FAQ Schema", level: 2 },
   { id: "testing-schema", title: "Testing Your Schema", level: 2 },
@@ -121,7 +121,7 @@ export default function SchemaMarkupGuidePage() {
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-accent font-bold">•</span>
-                      <span><strong>Organization</strong> for your business information</span>
+                      <span><strong>Organisation</strong> for your business information</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-accent font-bold">•</span>
@@ -227,10 +227,10 @@ export default function SchemaMarkupGuidePage() {
                 </div>
               </section>
 
-              <section id="organization-schema" className="mb-16">
-                <h2 className="text-3xl font-bold text-foreground-dark mb-6">Organization Schema</h2>
+              <section id="organisation-schema" className="mb-16">
+                <h2 className="text-3xl font-bold text-foreground-dark mb-6">Organisation Schema</h2>
                 <p className="text-lg text-foreground mb-4">
-                  Organization schema tells search engines about your business. It appears in your Knowledge Panel and helps establish brand authority.
+                  Organisation schema tells search engines about your business. It appears in your Knowledge Panel and helps establish brand authority.
                 </p>
 
                 <h3 className="text-xl font-semibold text-foreground-dark mb-4 mt-8">Key Properties</h3>
@@ -259,7 +259,7 @@ export default function SchemaMarkupGuidePage() {
 
                 <h3 className="text-xl font-semibold text-foreground-dark mb-4 mt-8">Where to Add It</h3>
                 <p className="text-lg text-foreground mb-4">
-                  Add Organization schema to your theme.liquid file so it appears on every page. Place it just before the closing body tag.
+                  Add Organisation schema to your theme.liquid file so it appears on every page. Place it just before the closing body tag.
                 </p>
               </section>
 

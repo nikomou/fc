@@ -10,7 +10,7 @@ import { Clock, ArrowLeft } from "lucide-react";
 export const metadata: Metadata = {
   title: "Shopify CRO Checklist: Increase Conversion Rates",
   description:
-    "Boost your Shopify conversion rate with our expert CRO checklist. Covers product pages, checkout optimization, UX, trust signals and A/B testing. Start converting.",
+    "Boost your Shopify conversion rate with our expert CRO checklist. Covers product pages, checkout optimisation, UX, trust signals and A/B testing. Start converting.",
   alternates: {
     canonical: "/checklists/shopify-cro-checklist",
   },

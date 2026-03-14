@@ -10,7 +10,7 @@ import { getLatestPosts } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "Resources | Shopify Guides, Checklists & Articles | Flex Commerce",
   description:
-    "Free Shopify resources from Flex Commerce — guides, interactive checklists, and expert articles to help you grow your ecommerce store.",
+    "Free Shopify resources from Flex Commerce, guides, interactive checklists, and expert articles to help you grow your ecommerce store.",
   alternates: { canonical: "https://flexcommerce.co.uk/resources" },
 };
 

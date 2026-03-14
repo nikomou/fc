@@ -10,7 +10,7 @@ import { Clock, ArrowLeft } from "lucide-react";
 export const metadata: Metadata = {
   title: "Shopify SEO Checklist: Rank Higher in Google",
   description:
-    "Complete Shopify SEO checklist for higher rankings. Covers technical SEO, on-page optimization, schema markup, and link building. Boost organic traffic today.",
+    "Complete Shopify SEO checklist for higher rankings. Covers technical SEO, on-page optimisation, schema markup, and link building. Boost organic traffic today.",
   alternates: {
     canonical: "/checklists/shopify-seo-checklist",
   },

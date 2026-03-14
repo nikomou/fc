@@ -24,9 +24,9 @@ type QuoteFormData = z.infer<typeof quoteSchema>;
 const projectTypes = [
   "New Shopify Store",
   "Shopify Plus Migration",
-  "Theme Customization",
+  "Theme Customisation",
   "Custom Development",
-  "Performance Optimization",
+  "Performance Optimisation",
   "App Integration",
   "Other",
 ];

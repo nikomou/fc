@@ -10,7 +10,7 @@ import { Clock, ArrowLeft } from "lucide-react";
 export const metadata: Metadata = {
   title: "Abandoned Cart Recovery Checklist: Shopify Sales",
   description:
-    "Recover lost sales with our 81-point abandoned cart checklist. Master email sequences, checkout optimization, incentives, and proven recovery strategies.",
+    "Recover lost sales with our 81-point abandoned cart checklist. Master email sequences, checkout optimisation, incentives, and proven recovery strategies.",
   alternates: {
     canonical: "/checklists/shopify-abandoned-cart-checklist",
   },

@@ -10,7 +10,7 @@ import { Clock, ArrowLeft } from "lucide-react";
 export const metadata: Metadata = {
   title: "Shopify Homepage Checklist: 73-Point Guide",
   description:
-    "Build a high-converting Shopify homepage with our 73-point checklist. Covers hero sections, trust signals, product showcases, and mobile optimization.",
+    "Build a high-converting Shopify homepage with our 73-point checklist. Covers hero sections, trust signals, product showcases, and mobile optimisation.",
   alternates: {
     canonical: "/checklists/shopify-homepage-checklist",
   },

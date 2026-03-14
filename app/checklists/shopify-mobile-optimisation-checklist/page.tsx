@@ -8,9 +8,9 @@ import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Shopify Mobile Optimization: Convert 70% of Traffic",
+  title: "Shopify Mobile Optimisation: Convert 70% of Traffic",
   description:
-    "Optimize your Shopify store for mobile with our expert checklist. Covers mobile UX, speed, touch targets, express checkout and responsive design. Convert mobile traffic.",
+    "Optimise your Shopify store for mobile with our expert checklist. Covers mobile UX, speed, touch targets, express checkout and responsive design. Convert mobile traffic.",
   alternates: {
     canonical: "/checklists/shopify-mobile-optimisation-checklist",
   },

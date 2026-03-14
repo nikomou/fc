@@ -18,14 +18,14 @@ const capabilities = [
     icon: Zap,
     title: "Faster Delivery",
     description:
-      "AI-assisted development cuts build time without cutting corners — so your project ships sooner without compromising quality.",
+      "AI-assisted development cuts build time without cutting corners, so your project ships sooner without compromising quality.",
     delay: "0s",
   },
   {
     icon: Search,
     title: "Smarter SEO",
     description:
-      "Optimised for AI search platforms: ChatGPT Shopping, Google SGE, and Perplexity — where your next customers are already looking.",
+      "Optimised for AI search platforms: ChatGPT Shopping, Google SGE, and Perplexity, where your next customers are already looking.",
     delay: "0.75s",
   },
   {
@@ -39,7 +39,7 @@ const capabilities = [
     icon: BarChart3,
     title: "Data & Strategy",
     description:
-      "Process behavioural data and surface growth opportunities faster than manual analysis — turning insights into action at speed.",
+      "Process behavioural data and surface growth opportunities faster than manual analysis, turning insights into action at speed.",
     delay: "2.25s",
   },
 ];
@@ -217,7 +217,7 @@ export function AISection() {
             </h2>
 
             <p className="text-lg text-white/60 leading-relaxed mb-8 max-w-lg">
-              We&apos;ve embedded AI across every part of our workflow — so you get more output, deeper insight, and stronger performance without a bigger budget.
+              We&apos;ve embedded AI across every part of our workflow, so you get more output, deeper insight, and stronger performance without a bigger budget.
             </p>
 
             <Button href="/shopify-ai" variant="cta" size="lg">

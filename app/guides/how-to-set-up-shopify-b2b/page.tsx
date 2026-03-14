@@ -31,7 +31,7 @@ const tocItems = [
   { id: "price-lists", title: "Creating Price Lists", level: 2 },
   { id: "payment-terms", title: "Payment Terms", level: 2 },
   { id: "b2b-checkout", title: "B2B Checkout Experience", level: 2 },
-  { id: "catalogs", title: "Product Catalogs", level: 2 },
+  { id: "catalogues", title: "Product Catalogues", level: 2 },
   { id: "next-steps", title: "Next Steps", level: 2 },
 ];
 
@@ -169,7 +169,7 @@ export default function ShopifyB2BGuidePage() {
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-accent font-bold">•</span>
-                      <span><strong>Product catalogs</strong> to control what each company can see and purchase</span>
+                      <span><strong>Product catalogues</strong> to control what each company can see and purchase</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-accent font-bold">•</span>
@@ -200,7 +200,7 @@ export default function ShopifyB2BGuidePage() {
                     <h3 className="font-semibold text-foreground-dark mb-2">Shopify Plus</h3>
                     <p className="text-foreground mb-2">
                       Full B2B functionality including unlimited companies, advanced payment terms,
-                      custom catalogs, and the ability to run B2B and DTC from the same storefront
+                      custom catalogues, and the ability to run B2B and DTC from the same storefront
                       (blended store).
                     </p>
                     <p className="text-sm text-foreground">
@@ -301,7 +301,7 @@ export default function ShopifyB2BGuidePage() {
                   <li className="flex items-start gap-3">
                     <span className="w-6 h-6 rounded-full bg-accent text-white text-sm flex items-center justify-center flex-shrink-0">5</span>
                     <div>
-                      <strong>Assign a catalog and price list</strong>
+                      <strong>Assign a catalogue and price list</strong>
                       <p className="text-foreground mt-1">Determine what products this company can see and what prices they pay.</p>
                     </div>
                   </li>
@@ -453,7 +453,7 @@ export default function ShopifyB2BGuidePage() {
                 <ul className="space-y-3 text-foreground mb-6">
                   <li className="flex items-start gap-3">
                     <span className="text-accent font-bold">•</span>
-                    <span><strong>Due on fulfillment:</strong> Payment required when order ships</span>
+                    <span><strong>Due on fulfilment:</strong> Payment required when order ships</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-accent font-bold">•</span>
@@ -589,18 +589,18 @@ export default function ShopifyB2BGuidePage() {
               </section>
 
               {/* Catalogs */}
-              <section id="catalogs" className="mb-16">
+              <section id="catalogues" className="mb-16">
                 <h2 className="text-3xl font-bold text-foreground-dark mb-6">
-                  Product Catalogs
+                  Product Catalogues
                 </h2>
                 <p className="text-lg text-foreground mb-4">
-                  Catalogs control which products different B2B customers can see and purchase.
+                  Catalogues control which products different B2B customers can see and purchase.
                   This is essential when you have products only available to certain customer
                   tiers, or when you want to hide consumer products from wholesale buyers.
                 </p>
 
                 <h3 className="text-xl font-semibold text-foreground-dark mb-4 mt-8">
-                  Catalog Use Cases
+                  Catalogue Use Cases
                 </h3>
                 <ul className="space-y-3 text-foreground mb-6">
                   <li className="flex items-start gap-3">
@@ -622,35 +622,35 @@ export default function ShopifyB2BGuidePage() {
                 </ul>
 
                 <h3 className="text-xl font-semibold text-foreground-dark mb-4 mt-8">
-                  Creating Catalogs
+                  Creating Catalogues
                 </h3>
                 <ol className="space-y-4 text-foreground mb-6">
                   <li className="flex items-start gap-3">
                     <span className="w-6 h-6 rounded-full bg-accent text-white text-sm flex items-center justify-center flex-shrink-0">1</span>
                     <div>
-                      <strong>Go to Products → Catalogs</strong>
-                      <p className="text-foreground mt-1">Create a new catalog with a descriptive name.</p>
+                      <strong>Go to Products → Catalogues</strong>
+                      <p className="text-foreground mt-1">Create a new catalogue with a descriptive name.</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="w-6 h-6 rounded-full bg-accent text-white text-sm flex items-center justify-center flex-shrink-0">2</span>
                     <div>
                       <strong>Add products or collections</strong>
-                      <p className="text-foreground mt-1">Choose specific products or entire collections to include in the catalog.</p>
+                      <p className="text-foreground mt-1">Choose specific products or entire collections to include in the catalogue.</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="w-6 h-6 rounded-full bg-accent text-white text-sm flex items-center justify-center flex-shrink-0">3</span>
                     <div>
                       <strong>Link to price list</strong>
-                      <p className="text-foreground mt-1">Associate the catalog with a price list to determine pricing for these products.</p>
+                      <p className="text-foreground mt-1">Associate the catalogue with a price list to determine pricing for these products.</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="w-6 h-6 rounded-full bg-accent text-white text-sm flex items-center justify-center flex-shrink-0">4</span>
                     <div>
                       <strong>Assign to company locations</strong>
-                      <p className="text-foreground mt-1">Determine which B2B customers have access to this catalog.</p>
+                      <p className="text-foreground mt-1">Determine which B2B customers have access to this catalogue.</p>
                     </div>
                   </li>
                 </ol>
@@ -658,9 +658,9 @@ export default function ShopifyB2BGuidePage() {
                 <div className="bg-accent/5 border border-accent/20 rounded-xl p-6">
                   <h4 className="font-semibold text-foreground-dark mb-2">Pro Tip</h4>
                   <p className="text-foreground">
-                    Think of catalogs and price lists as separate layers. A catalog controls
+                    Think of catalogues and price lists as separate layers. A catalogue controls
                     visibility (what they can see), while a price list controls pricing (what they
-                    pay). The same catalog can be used with different price lists for different
+                    pay). The same catalogue can be used with different price lists for different
                     customer tiers.
                   </p>
                 </div>

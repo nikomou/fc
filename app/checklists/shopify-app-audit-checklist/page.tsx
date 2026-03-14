@@ -10,7 +10,7 @@ import { Clock, ArrowLeft } from "lucide-react";
 export const metadata: Metadata = {
   title: "Shopify App Audit Checklist: Cut Costs & Boost Speed",
   description:
-    "Audit Shopify apps with our 78-point checklist. Identify redundant apps, reduce costs, improve site speed, and optimize your app stack for better performance.",
+    "Audit Shopify apps with our 78-point checklist. Identify redundant apps, reduce costs, improve site speed, and optimise your app stack for better performance.",
   alternates: {
     canonical: "/checklists/shopify-app-audit-checklist",
   },

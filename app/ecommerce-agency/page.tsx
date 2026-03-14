@@ -30,7 +30,7 @@ const services = [
     icon: TrendingUp,
     title: "Conversion Rate Optimisation",
     description:
-      "User behavior analysis, A/B testing, and data-driven improvements to boost your sales.",
+      "User behaviour analysis, A/B testing, and data-driven improvements to boost your sales.",
   },
   {
     icon: Palette,

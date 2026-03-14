@@ -194,7 +194,7 @@ const faqs = [
   },
   {
     q: "Do you offer local SEO for Shopify stores with physical locations?",
-    a: "Yes. If your business has physical premises in cities like Manchester or Liverpool, local SEO — including Google Business Profile optimisation, local citation building, and location-specific landing pages — can significantly increase foot traffic and local online visibility.",
+    a: "Yes. If your business has physical premises in cities like Manchester or Liverpool, local SEO, including Google Business Profile optimisation, local citation building, and location-specific landing pages, can significantly increase foot traffic and local online visibility.",
   },
 ];
 
@@ -348,7 +348,7 @@ export default function SEOPage() {
               Liverpool
             </Link>
             , and across the UK. SEO works best alongside a fast, well-built
-            store — explore our{" "}
+            store, explore our{" "}
             <Link
               href="/shopify-speed-optimisation"
               className="text-[#ef436b] hover:underline"

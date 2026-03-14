@@ -8,7 +8,7 @@ import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Shopify Speed Optimization: Core Web Vitals Guide",
+  title: "Shopify Speed Optimisation: Core Web Vitals Guide",
   description:
     "Speed up your Shopify store with our expert checklist. Improve Core Web Vitals, reduce load times, and boost conversions. Get under 3 seconds page load.",
   alternates: {
@@ -158,11 +158,11 @@ const totalItems = checklistSections.reduce((acc, section) => acc + section.item
 const faqs = [
   {
     question: "What's a good page speed score for a Shopify store?",
-    answer: "Aim for Google PageSpeed Insights scores of 50+ on mobile and 80+ on desktop. However, scores aren't everything—focus on Core Web Vitals metrics: LCP under 2.5s, FID under 100ms, and CLS under 0.1. Real-world load time (time until page is usable) should be under 3 seconds on 4G mobile connections."
+    answer: "Aim for Google PageSpeed Insights scores of 50+ on mobile and 80+ on desktop. However, scores aren't everything, focus on Core Web Vitals metrics: LCP under 2.5s, FID under 100ms, and CLS under 0.1. Real-world load time (time until page is usable) should be under 3 seconds on 4G mobile connections."
   },
   {
     question: "Will removing apps really improve my site speed?",
-    answer: "Absolutely. Each app typically adds 50-200KB of code and makes additional server requests. We regularly see stores improve load times by 1-2 seconds just by removing 5-10 unused apps. Even apps you rarely use can load code on every page. Audit ruthlessly—if you don't use it weekly, remove it."
+    answer: "Absolutely. Each app typically adds 50-200KB of code and makes additional server requests. We regularly see stores improve load times by 1-2 seconds just by removing 5-10 unused apps. Even apps you rarely use can load code on every page. Audit ruthlessly, if you don't use it weekly, remove it."
   },
   {
     question: "Should I use image optimisation apps or optimise images before uploading?",
@@ -174,11 +174,11 @@ const faqs = [
   },
   {
     question: "How do I improve Core Web Vitals specifically?",
-    answer: "For LCP (Largest Contentful Paint), optimise your hero image—compress it, preload it, and ensure it's properly sized. For FID (First Input Delay), defer or remove unnecessary JavaScript, particularly from apps. For CLS (Cumulative Layout Shift), set explicit dimensions on images and ads, avoid inserting content above existing content, and use font-display: swap for web fonts."
+    answer: "For LCP (Largest Contentful Paint), optimise your hero image, compress it, preload it, and ensure it's properly sized. For FID (First Input Delay), defer or remove unnecessary JavaScript, particularly from apps. For CLS (Cumulative Layout Shift), set explicit dimensions on images and ads, avoid inserting content above existing content, and use font-display: swap for web fonts."
   },
   {
     question: "Can I have a beautiful store that's also fast?",
-    answer: "Yes, but it requires thoughtful design choices. Use CSS for animations instead of heavy JavaScript. Choose system fonts or limit custom fonts to 1-2 families. Optimise images aggressively. Avoid autoplay videos and excessive sliders. The fastest stores prove beautiful design and excellent performance aren't mutually exclusive—they just require more careful execution."
+    answer: "Yes, but it requires thoughtful design choices. Use CSS for animations instead of heavy JavaScript. Choose system fonts or limit custom fonts to 1-2 families. Optimise images aggressively. Avoid autoplay videos and excessive sliders. The fastest stores prove beautiful design and excellent performance aren't mutually exclusive, they just require more careful execution."
   }
 ];
 

@@ -189,7 +189,7 @@ const faqs = [
     a: "Both options are available. Real-time integrations use Shopify webhooks to trigger updates the moment an event occurs (e.g. a new order). Scheduled sync jobs run at defined intervals and are often more suitable for bulk data such as inventory updates from your warehouse. We recommend the right approach based on your business requirements.",
   },
   {
-    q: "What happens if an integration fails — how is it monitored?",
+    q: "What happens if an integration fails, how is it monitored?",
     a: "All integrations we build include comprehensive error logging, alerting, and retry logic. We set up monitoring dashboards and can provide alerts via email or Slack if a sync fails. We also offer ongoing maintenance retainers to ensure your integrations remain healthy over time.",
   },
   {

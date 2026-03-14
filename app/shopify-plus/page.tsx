@@ -118,7 +118,7 @@ const faqs = [
   },
   {
     q: "Can you migrate us from Magento or WooCommerce to Shopify Plus?",
-    a: "Yes — platform migration is one of our core specialisms. We handle migrations from Magento, WooCommerce, BigCommerce, Salesforce Commerce Cloud, and more. Our process preserves your SEO rankings, migrates all product data and customer records, and sets up 301 redirects to protect your search traffic. Learn more on our Shopify migration page.",
+    a: "Yes, platform migration is one of our core specialisms. We handle migrations from Magento, WooCommerce, BigCommerce, Salesforce Commerce Cloud, and more. Our process preserves your SEO rankings, migrates all product data and customer records, and sets up 301 redirects to protect your search traffic. Learn more on our Shopify migration page.",
   },
   {
     q: "Do you offer ongoing support after launch?",
@@ -126,7 +126,7 @@ const faqs = [
   },
   {
     q: "How much does Shopify Plus development cost?",
-    a: "Shopify Plus projects at Flex Commerce typically start from £13,500 for a full build. The investment depends on the complexity of your requirements — custom checkout, third-party integrations, and bespoke features all influence the final price. We provide detailed, transparent quotes with no hidden costs.",
+    a: "Shopify Plus projects at Flex Commerce typically start from £13,500 for a full build. The investment depends on the complexity of your requirements, custom checkout, third-party integrations, and bespoke features all influence the final price. We provide detailed, transparent quotes with no hidden costs.",
   },
   {
     q: "Are you a certified Shopify Plus partner?",

@@ -92,8 +92,8 @@ const checklistSections = [
     items: [
       "Research competitor pricing",
       "Consider value-based pricing",
-      "Define license terms (personal, commercial, etc.)",
-      "Create different license tiers if applicable",
+      "Define licence terms (personal, commercial, etc.)",
+      "Create different licence tiers if applicable",
       "Plan promotional pricing strategy",
       "Consider subscription or membership model",
       "Set up bundle discounts",
@@ -125,7 +125,7 @@ const checklistSections = [
       "Include copyright notice on products",
       "Add watermarks if appropriate",
       "Consider DRM for high-value content",
-      "Create license agreement",
+      "Create licence agreement",
       "Handle VAT/tax for digital goods",
       "Understand GDPR implications",
     ],
@@ -195,7 +195,7 @@ const faqs = [
   },
   {
     question: "How do I price my digital products?",
-    answer: "Digital product pricing should reflect value delivered rather than production cost. Research competitor pricing as a starting point, then consider your unique positioning. Premium pricing works for products with demonstrated results or exclusive content. Testing different price points reveals what your audience will pay. Bundle products to increase average order value. Consider tiered pricing for different license types or access levels."
+    answer: "Digital product pricing should reflect value delivered rather than production cost. Research competitor pricing as a starting point, then consider your unique positioning. Premium pricing works for products with demonstrated results or exclusive content. Testing different price points reveals what your audience will pay. Bundle products to increase average order value. Consider tiered pricing for different licence types or access levels."
   },
   {
     question: "Do I need to charge VAT on digital products?",
@@ -436,7 +436,7 @@ export default function ShopifyDigitalProductsChecklistPage() {
             </Link>
             <Link href="/checklists/shopify-b2b-wholesale-checklist" className="bg-gray-50 rounded-xl p-5 hover:bg-gray-100 transition-colors group">
               <h3 className="font-semibold text-foreground-dark group-hover:text-accent mb-2">B2B Wholesale Checklist</h3>
-              <p className="text-sm text-foreground">Sell licenses to businesses</p>
+              <p className="text-sm text-foreground">Sell licences to businesses</p>
             </Link>
           </div>
         </div>

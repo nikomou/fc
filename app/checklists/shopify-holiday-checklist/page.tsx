@@ -10,7 +10,7 @@ import { Clock, ArrowLeft } from "lucide-react";
 export const metadata: Metadata = {
   title: "Holiday Season Shopify Checklist: Christmas Sales",
   description:
-    "Maximize holiday sales with our 76-point Shopify Christmas checklist. Master inventory planning, gift wrapping, shipping deadlines, and seasonal promotions.",
+    "Maximise holiday sales with our 76-point Shopify Christmas checklist. Master inventory planning, gift wrapping, shipping deadlines, and seasonal promotions.",
   alternates: {
     canonical: "/checklists/shopify-holiday-checklist",
   },
