@@ -522,7 +522,12 @@ export default function LondonPage() {
       </Section>
 
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-669615.webp"
+        imageAlt="London Shopify agency supporting ecommerce growth"
+        overlayColor="linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
+      />
 
       {/* Contact Our Team Section (replaces map) */}
       <Section>

@@ -401,7 +401,12 @@ export default function ShopifyDropshippingChecklistPage() {
         </div>
       </Section>
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-5765873.webp"
+        imageAlt="Shopify dropshipping business setup checklist"
+        overlayColor="linear-gradient(135deg, #6366f1 0%, #4338ca 100%)"
+      />
 
       <Section background="dark">
         <div className="max-w-3xl mx-auto text-center">

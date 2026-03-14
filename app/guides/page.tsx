@@ -299,6 +299,9 @@ export default function GuidesPage() {
               "Yes. Our team handles everything from theme customisation to complex integrations. Get in touch to discuss.",
           },
         ]}
+        image="/images/articles/pexels-3183153.webp"
+        imageAlt="Ecommerce guides and resources for Shopify merchants"
+        overlayColor="linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)"
       />
     </>
   );

@@ -424,7 +424,12 @@ export default function ShopifyEmailMarketingChecklistPage() {
         </div>
       </Section>
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-6214381.webp"
+        imageAlt="Shopify email marketing strategy and automation"
+        overlayColor="linear-gradient(135deg, #6366f1 0%, #4338ca 100%)"
+      />
 
       <Section background="dark">
         <div className="max-w-3xl mx-auto text-center">

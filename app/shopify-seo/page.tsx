@@ -383,7 +383,12 @@ export default function SEOPage() {
         </div>
       </Section>
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-3760067.webp"
+        imageAlt="Shopify SEO strategy and organic search growth"
+        overlayColor="linear-gradient(135deg, #10b981 0%, #065f46 100%)"
+      />
 
       <RelatedServices exclude="Shopify SEO" />
     </>

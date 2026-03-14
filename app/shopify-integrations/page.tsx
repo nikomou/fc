@@ -373,7 +373,12 @@ export default function IntegrationsPage() {
         </div>
       </Section>
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-3622608.webp"
+        imageAlt="Shopify integrations connecting ecommerce platforms and third-party services"
+        overlayColor="linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)"
+      />
 
       <RelatedServices />
     </>

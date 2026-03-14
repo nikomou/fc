@@ -429,7 +429,12 @@ export default function AppDevelopmentPage() {
         </div>
       </Section>
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-3184291.webp"
+        imageAlt="Shopify app development team building custom ecommerce apps"
+        overlayColor="linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)"
+      />
 
       <RelatedServices exclude="App Development" />
     </>

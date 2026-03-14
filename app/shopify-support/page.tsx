@@ -411,7 +411,12 @@ export default function SupportPage() {
         </div>
       </Section>
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-6006785.webp"
+        imageAlt="Shopify support team helping ecommerce merchants"
+        overlayColor="linear-gradient(135deg, #0ea5e9 0%, #075985 100%)"
+      />
 
       <RelatedServices exclude="Ongoing Support" />
     </>

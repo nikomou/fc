@@ -376,7 +376,12 @@ export default function ShopifyGDPRChecklistPage() {
         </div>
       </Section>
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-2220316.webp"
+        imageAlt="Shopify GDPR compliance and data privacy"
+        overlayColor="linear-gradient(135deg, #6366f1 0%, #4338ca 100%)"
+      />
 
       <Section background="dark">
         <div className="max-w-3xl mx-auto text-center">

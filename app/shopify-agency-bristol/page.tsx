@@ -508,7 +508,12 @@ export default function BristolPage() {
       </Section>
 
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-574071.webp"
+        imageAlt="Bristol Shopify agency helping ecommerce businesses grow"
+        overlayColor="linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
+      />
 
       {/* Contact Our Team Section (instead of map) */}
       <Section>

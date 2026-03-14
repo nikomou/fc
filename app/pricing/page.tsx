@@ -95,7 +95,12 @@ export default function PricingPage() {
         </div>
       </Section>
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-3182812.webp"
+        imageAlt="Shopify agency pricing and retainer plans"
+        overlayColor="linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
+      />
     </>
   );
 }

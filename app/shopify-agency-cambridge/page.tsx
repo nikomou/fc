@@ -490,7 +490,12 @@ export default function CambridgePage() {
       </Section>
 
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-267389.webp"
+        imageAlt="Cambridge Shopify agency working with innovative ecommerce brands"
+        overlayColor="linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
+      />
 
       {/* Contact Our Team (instead of map) */}
       <Section>

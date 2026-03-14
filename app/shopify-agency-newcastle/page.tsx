@@ -501,7 +501,12 @@ export default function NewcastlePage() {
       </Section>
 
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-1148820.webp"
+        imageAlt="Newcastle Shopify agency supporting North East ecommerce businesses"
+        overlayColor="linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
+      />
 
       {/* Contact Our Team Section (instead of map) */}
       <Section>

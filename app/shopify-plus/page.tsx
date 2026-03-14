@@ -336,7 +336,12 @@ export default function ShopifyPlusPage() {
         </div>
       </Section>
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-1181406.webp"
+        imageAlt="Shopify Plus agency team working on ecommerce solutions"
+        overlayColor="linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
+      />
 
       <RelatedServices exclude="Shopify Plus" />
     </>

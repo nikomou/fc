@@ -385,7 +385,12 @@ export default function ShopifyMobileOptimisationChecklistPage() {
         </div>
       </Section>
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-6006785.webp"
+        imageAlt="Shopify mobile optimisation and responsive design"
+        overlayColor="linear-gradient(135deg, #6366f1 0%, #4338ca 100%)"
+      />
 
       <Section background="dark">
         <div className="max-w-3xl mx-auto text-center">

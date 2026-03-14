@@ -420,7 +420,12 @@ export default function ShopifySecurityChecklistPage() {
         </div>
       </Section>
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-905163.webp"
+        imageAlt="Shopify store security and fraud prevention"
+        overlayColor="linear-gradient(135deg, #6366f1 0%, #4338ca 100%)"
+      />
 
       <Section background="dark">
         <div className="max-w-3xl mx-auto text-center">

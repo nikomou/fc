@@ -383,7 +383,12 @@ export default function StoreAuditPage() {
         </div>
       </Section>
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-4050315.webp"
+        imageAlt="Shopify store audit and ecommerce performance review"
+        overlayColor="linear-gradient(135deg, #8b5cf6 0%, #5b21b6 100%)"
+      />
 
       <RelatedServices />
     </>

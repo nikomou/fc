@@ -516,7 +516,12 @@ export default function EdinburghPage() {
       </Section>
 
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-590016.webp"
+        imageAlt="Edinburgh Shopify agency team working with Scottish ecommerce brands"
+        overlayColor="linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
+      />
 
       {/* Contact Our Team Section (replaces map) */}
       <Section background="dark">

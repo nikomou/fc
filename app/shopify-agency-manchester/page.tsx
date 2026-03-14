@@ -513,7 +513,12 @@ export default function ManchesterPage() {
       </Section>
 
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-1640777.webp"
+        imageAlt="Manchester ecommerce agency team"
+        overlayColor="linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
+      />
 
       {/* Map */}
       <section className="relative">

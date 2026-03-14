@@ -377,7 +377,12 @@ export default function MaintenancePage() {
         </div>
       </Section>
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-3944405.webp"
+        imageAlt="Shopify maintenance and ongoing ecommerce management"
+        overlayColor="linear-gradient(135deg, #14b8a6 0%, #0f766e 100%)"
+      />
 
       <RelatedServices />
     </>

@@ -509,7 +509,12 @@ export default function LeedsPage() {
       </Section>
 
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-416778.webp"
+        imageAlt="Leeds Shopify agency supporting Yorkshire ecommerce brands"
+        overlayColor="linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
+      />
 
       {/* Contact Our Team Section (instead of map) */}
       <Section background="white">

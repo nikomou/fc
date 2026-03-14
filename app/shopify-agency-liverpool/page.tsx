@@ -511,7 +511,12 @@ export default function LiverpoolPage() {
       </Section>
 
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-905163.webp"
+        imageAlt="Liverpool Shopify agency helping local ecommerce businesses"
+        overlayColor="linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
+      />
 
       {/* Map */}
       <section className="relative">

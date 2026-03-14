@@ -514,7 +514,12 @@ export default function GlasgowPage() {
       </Section>
 
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-1552252.webp"
+        imageAlt="Glasgow Shopify agency helping Scottish ecommerce brands"
+        overlayColor="linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
+      />
 
       {/* Contact Our Team - replaces Map section */}
       <Section background="dark">

@@ -522,7 +522,12 @@ export default function BirminghamPage() {
       </Section>
 
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-2220316.webp"
+        imageAlt="Birmingham Shopify agency supporting Midlands ecommerce businesses"
+        overlayColor="linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
+      />
 
       {/* Contact Our Team Section (instead of map) */}
       <Section background="white">

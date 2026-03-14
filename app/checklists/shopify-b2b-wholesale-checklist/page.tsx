@@ -442,7 +442,12 @@ export default function ShopifyB2BWholesaleChecklistPage() {
         </div>
       </Section>
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-3051793.webp"
+        imageAlt="Shopify B2B and wholesale ecommerce setup"
+        overlayColor="linear-gradient(135deg, #6366f1 0%, #4338ca 100%)"
+      />
 
       <Section background="dark">
         <div className="max-w-3xl mx-auto text-center">

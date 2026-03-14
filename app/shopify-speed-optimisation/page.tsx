@@ -400,7 +400,12 @@ export default function SpeedOptimisationPage() {
         </div>
       </Section>
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-3856027.webp"
+        imageAlt="Ecommerce speed optimisation and performance improvements"
+        overlayColor="linear-gradient(135deg, #1a1a1a 0%, #374151 100%)"
+      />
 
       <RelatedServices exclude="Speed Optimisation" />
     </>

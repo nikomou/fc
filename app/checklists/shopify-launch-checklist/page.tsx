@@ -421,7 +421,12 @@ export default function ShopifyLaunchChecklistPage() {
         </div>
       </Section>
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-4050315.webp"
+        imageAlt="Shopify store launch preparation checklist"
+        overlayColor="linear-gradient(135deg, #6366f1 0%, #4338ca 100%)"
+      />
 
       {/* Summary */}
       <Section background="dark">

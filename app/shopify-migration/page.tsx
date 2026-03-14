@@ -508,7 +508,12 @@ export default function MigrationPage() {
         </div>
       </Section>
 
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-2881229.webp"
+        imageAlt="Ecommerce platform migration to Shopify"
+        overlayColor="linear-gradient(135deg, #10b981 0%, #059669 100%)"
+      />
 
       <RelatedServices />
     </>
