@@ -1,26 +1,17 @@
-export type ContentBlock =
-  | { type: "h2"; text: string }
-  | { type: "h3"; text: string }
-  | { type: "p"; text: string }
-  | { type: "ul"; items: string[] }
-  | { type: "ol"; items: string[] }
-  | { type: "quote"; text: string }
-  | { type: "callout"; text: string };
+export type { ContentBlock, BlogPost } from "./blog-types";
+import type { ContentBlock, BlogPost } from "./blog-types";
 
-export type BlogPost = {
-  slug: string;
-  title: string;
-  category: string;
-  description: string;
-  readTime: string;
-  date: string;
-  image: string;
-  gradient: string;
-  accent: string;
-  author: string;
-  authorRole: string;
-  content: ContentBlock[];
-};
+// Batch article imports (generated)
+import batch1 from "./articles/batch-1";
+import batch2 from "./articles/batch-2";
+import batch3 from "./articles/batch-3";
+import batch4 from "./articles/batch-4";
+import batch5 from "./articles/batch-5";
+import batch6 from "./articles/batch-6";
+import batch7 from "./articles/batch-7";
+import batch8 from "./articles/batch-8";
+import batch9 from "./articles/batch-9";
+import batch10 from "./articles/batch-10";
 
 export const blogPosts: BlogPost[] = [
   {
@@ -584,6 +575,16 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  ...batch1,
+  ...batch2,
+  ...batch3,
+  ...batch4,
+  ...batch5,
+  ...batch6,
+  ...batch7,
+  ...batch8,
+  ...batch9,
+  ...batch10,
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
