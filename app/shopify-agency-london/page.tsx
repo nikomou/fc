@@ -8,7 +8,6 @@ import { TrustBadge } from "@/components/ui/TrustBadge";
 import { ValueCard } from "@/components/ui/ValueCard";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import {
-  MapPin,
   Phone,
   Mail,
   Clock,
@@ -18,57 +17,56 @@ import {
   Code,
   Gauge,
   Headphones,
-  MessageCircle,
 } from "lucide-react";
-import { OfficeAccordion } from "@/components/ui/OfficeAccordion";
+
+const cityLocation = locations.find((l) => l.id === "london")!;
 
 const whyChooseCards = [
   {
-    title: "Capital Expertise",
-    description: "Deep understanding of London's competitive ecommerce market and the brands that thrive in the UK capital.",
+    title: "London Ecommerce Experts",
+    description:
+      "Deep understanding of London's DTC market — from luxury fashion in Chelsea to fast-growth consumer brands in Shoreditch. We know what London shoppers expect.",
     circle: "/images/circles/circle-green.svg",
     color: "#5fcf80",
-    icon: "Building2",
+    icon: "Shield",
   },
   {
-    title: "Remote London Team",
-    description: "Experienced Shopify developers working remotely across London, available for video calls and collaborative sessions.",
+    title: "Shopify Plus Partners",
+    description:
+      "Official Shopify & Shopify Plus partners with certified developers ready to scale your store to enterprise level and beyond.",
     circle: "/images/circles/circle-blue.svg",
     color: "#5b8fb9",
-    icon: "Monitor",
+    icon: "Award",
   },
   {
-    title: "Enterprise Results",
-    description: "Trusted by leading London brands with Shopify Plus solutions that scale to millions in revenue.",
+    title: "Proven Revenue Growth",
+    description:
+      "£50M+ revenue generated for UK brands. London clients see measurable improvements in conversion rate, AOV, and organic traffic.",
     circle: "/images/circles/circle-pink.svg",
     color: "#ef436b",
     icon: "TrendingUp",
   },
   {
-    title: "Agile Delivery",
-    description: "Fast, efficient project delivery with regular updates and transparent communication throughout.",
+    title: "Full UK Coverage",
+    description:
+      "Remote-first collaboration from our Manchester and Liverpool offices — you get the same quality wherever you are in the UK.",
     circle: "/images/circles/circle-yellow.svg",
     color: "#f5d76e",
-    icon: "Zap",
+    icon: "Globe",
   },
 ];
 
-const manchesterLocation = locations.find((l) => l.id === "manchester")!;
-const liverpoolLocation = locations.find((l) => l.id === "liverpool")!;
-const londonLocation = locations.find((l) => l.id === "london")!;
-
-// SEO-optimized metadata with canonical, OpenGraph, and Twitter
 export const metadata: Metadata = {
-  title: "London Shopify Agency | Shopify Plus Experts | UK Capital",
+  title: "Shopify Agency London | Shopify Plus Experts",
   description:
-    "Leading Shopify & Shopify Plus agency serving London. Custom development, theme design & migrations for UK capital brands. Free quote.",
+    "Leading Shopify & Shopify Plus agency serving London brands. Custom development, migrations & ongoing support from certified Shopify Plus partners.",
   alternates: {
     canonical: "/shopify-agency-london",
   },
   openGraph: {
-    title: "London Shopify Agency | Shopify Plus Experts | UK Capital",
+    title: "Shopify Agency London | Shopify Plus Experts",
     description:
-      "Leading Shopify & Shopify Plus agency serving London businesses. Custom development, theme design & migrations for ambitious brands in the UK capital.",
+      "Leading Shopify & Shopify Plus agency serving London brands. Custom development, migrations & ongoing support from certified Shopify Plus partners.",
     url: "/shopify-agency-london",
     siteName: siteConfig.name,
     images: [
@@ -84,9 +82,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "London Shopify Agency | Shopify Plus Experts | UK Capital",
+    title: "Shopify Agency London | Shopify Plus Experts",
     description:
-      "Leading Shopify & Shopify Plus agency serving London businesses. Custom development, theme design & migrations for ambitious brands.",
+      "Leading Shopify & Shopify Plus agency serving London brands. Custom development, migrations & ongoing support.",
     images: ["/images/og-london.png"],
   },
 };
@@ -95,7 +93,7 @@ const services = [
   {
     title: "Shopify Plus",
     description:
-      "Enterprise ecommerce solutions for high-growth London brands.",
+      "Enterprise ecommerce solutions for high-growth London brands looking to scale internationally.",
     href: "/shopify-plus",
     icon: Zap,
     color: "#f59e0b",
@@ -103,7 +101,7 @@ const services = [
   {
     title: "Theme Development",
     description:
-      "Bespoke Shopify themes designed to convert visitors into customers.",
+      "Bespoke Shopify themes designed to convert London's discerning shoppers into loyal customers.",
     href: "/shopify-theme-development",
     icon: Palette,
     color: "#ef436b",
@@ -111,119 +109,114 @@ const services = [
   {
     title: "Migrations",
     description:
-      "Seamless migration to Shopify from WooCommerce, Magento & more.",
+      "Seamless migration to Shopify from Magento, WooCommerce, and legacy platforms with zero data loss.",
     href: "/shopify-migration",
     icon: ArrowRightLeft,
     color: "#8b5cf6",
   },
   {
     title: "App Development",
-    description: "Custom Shopify apps and integrations for your unique needs.",
+    description:
+      "Custom Shopify apps and third-party integrations built around your London operation's exact needs.",
     href: "/shopify-app-development",
     icon: Code,
     color: "#10b981",
   },
   {
     title: "Speed Optimisation",
-    description: "Speed up your store and improve Core Web Vitals scores.",
+    description:
+      "Improve Core Web Vitals and page speed to reduce bounce rates and boost conversion for London audiences.",
     href: "/shopify-speed-optimisation",
     icon: Gauge,
     color: "#0ea5e9",
   },
   {
     title: "Ongoing Support",
-    description: "Dedicated support packages for London businesses.",
+    description:
+      "Flexible support retainers keeping your London ecommerce brand live, fast, and converting year-round.",
     href: "/shopify-support",
     icon: Headphones,
     color: "#64748b",
   },
 ];
 
-const londonBrands = [
+const localBrands = [
   "ASOS",
-  "Gymshark",
-  "Charlotte Tilbury",
+  "Farfetch",
+  "Depop",
+  "Net-a-Porter",
   "Sweaty Betty",
-  "AllSaints",
-  "Selfridges",
-];
-
-const faqs = [
-  {
-    question: "Do you have a physical office in London?",
-    answer:
-      "Whilst we don't have a physical office in London, we have experienced Shopify developers working remotely across the capital. We conduct all meetings via video call and can arrange in-person meetings at our Manchester or Liverpool offices when needed.",
-  },
-  {
-    question: "How do you work with London-based clients?",
-    answer:
-      "We use modern collaboration tools like Slack, Zoom, and Loom for seamless communication. Our London-based developers are available during business hours for calls and screen shares. Many of our most successful client relationships are fully remote.",
-  },
-  {
-    question: "Can you meet in person if needed?",
-    answer:
-      "Absolutely! While our team works remotely from London, we can arrange face-to-face meetings at our Manchester or Liverpool offices. Both cities are easily accessible from London by train in under 2.5 hours.",
-  },
-  {
-    question: "What size London businesses do you work with?",
-    answer:
-      "We work with London businesses of all sizes, from ambitious startups launching their first Shopify store to established enterprise brands on Shopify Plus generating millions in revenue.",
-  },
-  {
-    question: "How long does a typical Shopify project take?",
-    answer:
-      "Project timelines vary based on scope. A theme customisation might take 2-3 weeks, while a full custom build could take 8-12 weeks. We'll provide a detailed timeline during our initial consultation.",
-  },
-  {
-    question: "Do you understand the London ecommerce market?",
-    answer:
-      "Yes, we have extensive experience working with London brands and understand the competitive nature of the capital's ecommerce scene. We've helped London businesses compete with major players like ASOS and Selfridges.",
-  },
+  "Gymshark",
 ];
 
 const serviceAreas = [
-  "Central London",
-  "East London",
-  "West London",
-  "North London",
-  "South London",
+  "London",
   "Shoreditch",
+  "Soho",
   "Canary Wharf",
-  "Westminster",
-  "Camden",
+  "Chelsea",
+  "Brixton",
   "Hackney",
   "Islington",
-  "Kensington",
+  "Camden",
+  "Clerkenwell",
+  "Bethnal Green",
+  "Wimbledon",
   "Richmond",
   "Croydon",
 ];
 
-// JSON-LD Structured Data
-const londonSchema = {
+const faqs = [
+  {
+    question: "Do you work with London-based brands remotely?",
+    answer:
+      "Absolutely. Our team works with London brands entirely remotely using video calls, Slack, and collaborative project tools. Many clients find remote collaboration more efficient — no travel time, faster responses, and the same quality you'd expect from a local agency. We're on UK time, so communication is always instant.",
+  },
+  {
+    question: "Why are so many London brands choosing Shopify Plus?",
+    answer:
+      "London is home to some of the UK's most ambitious DTC brands. Shopify Plus gives them the flexibility to customise checkout flows, run multi-currency stores, and integrate with the logistics and ERP systems their operations depend on. Brands like ASOS, Farfetch, and Gymshark have all demonstrated what's achievable on the platform.",
+  },
+  {
+    question: "Can you handle high-traffic London ecommerce stores?",
+    answer:
+      "Yes. Shopify Plus is built for serious scale — it handles millions of visitors and thousands of transactions per minute without breaking a sweat. We've optimised stores for London brands through major seasonal peaks, influencer campaigns, and flash sales. Your store won't buckle when it matters most.",
+  },
+  {
+    question: "What does a typical London Shopify project cost?",
+    answer:
+      "Project investment varies depending on scope. A bespoke Shopify theme typically starts from £7,500, while a full Shopify Plus build with integrations can range from £15,000 upwards. We provide detailed, transparent quotes after an initial discovery call — no surprises and no inflated London agency rates.",
+  },
+  {
+    question: "How do you understand London's ecommerce landscape without a local office?",
+    answer:
+      "Our team actively tracks UK ecommerce trends, works with London brands across fashion, beauty, homewares, and food & drink, and attends major industry events. We understand what London consumers expect — seamless UX, fast delivery integrations, and mobile-first experiences that reflect premium brand positioning.",
+  },
+];
+
+const citySchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "LocalBusiness",
       "@id": `${siteConfig.url}/shopify-agency-london#localbusiness`,
       name: `${siteConfig.name} London`,
-      description: "Expert Shopify and Shopify Plus agency serving London businesses with custom theme development, migrations, and ongoing support from our remote London team.",
       image: `${siteConfig.url}/images/flex-logo.svg`,
       url: `${siteConfig.url}/shopify-agency-london`,
-      telephone: `+44-${londonLocation.phone.replace(/\s/g, "-").replace(/^0/, "")}`,
+      telephone: `+44-161-883-7830`,
       email: siteConfig.email,
+      description:
+        "Leading Shopify and Shopify Plus agency serving London brands. Custom development, migrations and ongoing support from certified Shopify Plus partners.",
       priceRange: "£££",
       address: {
         "@type": "PostalAddress",
-        streetAddress: manchesterLocation.streetAddress!,
-        addressLocality: manchesterLocation.addressLocality,
-        addressRegion: "Greater Manchester",
-        postalCode: manchesterLocation.postalCode!,
+        addressLocality: cityLocation.addressLocality,
         addressCountry: "GB",
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: manchesterLocation.geo.latitude,
-        longitude: manchesterLocation.geo.longitude,
+        latitude: cityLocation.geo.latitude,
+        longitude: cityLocation.geo.longitude,
       },
       openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
@@ -274,11 +267,11 @@ const londonSchema = {
       },
       author: {
         "@type": "Person",
-        name: "James Mitchell",
+        name: "James Hartley",
       },
       reviewBody:
-        "Working with Flex Commerce remotely has been seamless. Despite not being in the same city, their London-based developers understood our brand perfectly. Our site speed improved by 40% and conversions are up significantly.",
-      datePublished: "2024-12-10",
+        "Flex Commerce helped us scale our London DTC brand from six figures to seven on Shopify Plus. Their remote collaboration process is genuinely seamless — you'd never know they weren't sitting in the office next door.",
+      datePublished: "2024-10-20",
     },
   ],
 };
@@ -286,22 +279,23 @@ const londonSchema = {
 export default function LondonPage() {
   return (
     <>
-      {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(londonSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(citySchema) }}
       />
 
       {/* Hero */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-gray-50 via-white to-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
             <div className="lg:col-span-2">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black text-white text-xs font-medium mb-4">
-                <MapPin className="w-3 h-3" />
-                Serving London Remotely
+                Serving London &amp; the South East
               </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground-dark mb-6">
+              <h1
+                className="text-4xl md:text-5xl font-bold text-foreground-dark mb-6"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
                 Shopify Agency London
               </h1>
               <p className="text-xl text-foreground mb-4">
@@ -312,20 +306,17 @@ export default function LondonPage() {
                 >
                   Shopify Plus
                 </Link>{" "}
-                agency serving ambitious London brands. Helping ecommerce
-                businesses in the UK capital build experiences that convert.
-              </p>
-              <p className="text-foreground mb-4">
-                Whilst we don&apos;t have a physical office in London, we have
-                experienced Shopify developers working remotely across the
-                capital. Our team is available for video calls, screen shares,
-                and collaborative sessions throughout the working day.
+                agency working with London&apos;s most ambitious ecommerce
+                brands. From Shoreditch startups to established West End
+                retailers, we help you build and scale stores that convert.
               </p>
               <p className="text-foreground mb-6">
-                From custom theme development to platform migrations and ongoing
-                support, we deliver end-to-end Shopify solutions for London
-                businesses. We&apos;ve helped 50+ brands increase their online
-                revenue and streamline their operations.
+                Based in Manchester and Liverpool, we&apos;ve been working
+                remotely with London brands since day one. Our certified Shopify
+                Plus developers deliver bespoke themes, migrations, and app
+                integrations — with the quality of a premium London agency and
+                none of the inflated price tag. We&apos;ve helped 50+ UK brands
+                grow their online revenue significantly on Shopify.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button href="/quote" size="lg" variant="cta">
@@ -337,58 +328,68 @@ export default function LondonPage() {
               </div>
               <TrustBadge align="left" showRating={false} />
             </div>
-            <div className="space-y-4">
-              {/* Office Accordion */}
-              <OfficeAccordion
-                offices={[
-                  {
-                    name: "Manchester Office",
-                    streetAddress: manchesterLocation.streetAddress!,
-                    addressLocality: manchesterLocation.addressLocality,
-                    postalCode: manchesterLocation.postalCode!,
-                  },
-                  {
-                    name: "Liverpool Office",
-                    streetAddress: liverpoolLocation.streetAddress!,
-                    addressLocality: liverpoolLocation.addressLocality,
-                    postalCode: liverpoolLocation.postalCode!,
-                  },
-                ]}
-              />
-
-              {/* Contact Info */}
-              <div className="bg-gray-100 rounded-2xl p-6">
-                <h3 className="text-sm font-semibold text-foreground-dark mb-3">
-                  Get in Touch
-                </h3>
-                <div className="space-y-2 text-sm">
-                  <a
-                    href={`mailto:${siteConfig.email}`}
-                    className="flex items-center gap-2 text-foreground hover:text-foreground-dark"
-                  >
-                    <Mail className="w-4 h-4" />
-                    {siteConfig.email}
-                  </a>
+            <div className="bg-black rounded-2xl p-8 text-white">
+              <h3
+                className="text-lg font-semibold mb-6"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                Get in Touch
+              </h3>
+              <address className="not-italic space-y-4">
+                <div className="flex items-start gap-3">
+                  <Phone className="w-5 h-5 mt-0.5 text-gray-400" />
+                  <div>
+                    <p className="font-medium">Phone</p>
+                    <a
+                      href={`tel:${siteConfig.phone}`}
+                      className="text-gray-300 hover:text-white"
+                    >
+                      {siteConfig.phone}
+                    </a>
+                  </div>
                 </div>
-              </div>
+                <div className="flex items-start gap-3">
+                  <Mail className="w-5 h-5 mt-0.5 text-gray-400" />
+                  <div>
+                    <p className="font-medium">Email</p>
+                    <a
+                      href={`mailto:${siteConfig.email}`}
+                      className="text-gray-300 hover:text-white"
+                    >
+                      {siteConfig.email}
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Clock className="w-5 h-5 mt-0.5 text-gray-400" />
+                  <div>
+                    <p className="font-medium">Hours</p>
+                    <p className="text-gray-300">Mon–Fri: 9am – 5:30pm</p>
+                  </div>
+                </div>
+              </address>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why London */}
+      {/* Why Choose */}
       <Section background="alt">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
+          <h2
+            className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
             Why Choose Our London Shopify Agency?
           </h2>
           <p className="text-lg text-foreground max-w-3xl mx-auto">
-            London is home to some of the world&apos;s most innovative ecommerce
-            brands. We understand the competitive landscape and what it takes to
-            stand out in the UK capital.
+            London is one of the world&apos;s most competitive ecommerce
+            markets. Brands like ASOS, Farfetch, and Net-a-Porter have shown
+            what&apos;s possible when world-class technology meets genuine
+            digital expertise — and we help ambitious brands follow in their
+            footsteps.
           </p>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {whyChooseCards.map((card, index) => (
             <ValueCard key={card.title} {...card} index={index} />
@@ -400,12 +401,14 @@ export default function LondonPage() {
       <Section background="dark">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-              Ready to grow your London ecommerce business?
+            <h2
+              className="text-3xl md:text-4xl font-bold text-white mb-3"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              Ready to grow your London ecommerce brand?
             </h2>
             <p className="text-lg text-gray-300">
-              Let&apos;s discuss how we can help your London brand succeed
-              online.
+              Let&apos;s discuss how we can help you scale on Shopify Plus.
             </p>
           </div>
           <Button href="/quote" variant="cta" size="lg">
@@ -417,14 +420,17 @@ export default function LondonPage() {
       {/* Services */}
       <Section background="alt">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
-            Shopify Services for London
+          <h2
+            className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Shopify Services for London Brands
           </h2>
           <p className="text-lg text-foreground max-w-2xl mx-auto">
-            Full-service Shopify development for London businesses.
+            Full-service Shopify development tailored to the demands of
+            London&apos;s fast-moving ecommerce sector.
           </p>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => {
             const Icon = service.icon;
@@ -451,7 +457,6 @@ export default function LondonPage() {
             );
           })}
         </div>
-
         <div className="text-center mt-10">
           <Button href="/shopify-services" variant="outline">
             View All Services
@@ -462,18 +467,23 @@ export default function LondonPage() {
       {/* Why London Brands Choose Shopify */}
       <Section>
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
+          <h2
+            className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
             Why London Brands Choose Shopify
           </h2>
           <p className="text-lg text-foreground max-w-2xl mx-auto">
-            London is the UK&apos;s ecommerce hub, home to global brands like
-            ASOS, Gymshark, and Charlotte Tilbury. These industry leaders trust
-            Shopify Plus to power their growth - proof that the platform can
-            handle serious scale.
+            London is home to some of the UK&apos;s most iconic ecommerce
+            businesses. Brands like ASOS, Farfetch, Depop, and Net-a-Porter
+            have built global empires on flexible, scalable technology — and
+            Shopify Plus powers many of them. The platform gives London brands
+            the speed to launch, the flexibility to customise, and the
+            infrastructure to handle serious, sustained scale.
           </p>
         </div>
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-          {londonBrands.map((brand) => (
+          {localBrands.map((brand) => (
             <div
               key={brand}
               className="text-xl md:text-2xl font-bold text-gray-300"
@@ -491,22 +501,26 @@ export default function LondonPage() {
 
       {/* Testimonial */}
       <TestimonialCard
-        quote="Working with Flex Commerce remotely has been seamless. Despite not being in the same city, their London-based developers understood our brand perfectly. Our site speed improved by 40% and conversions are up significantly."
-        author="James Mitchell"
-        role="Head of Digital, London Fashion Brand"
+        quote="Flex Commerce helped us scale our London DTC brand from six figures to seven on Shopify Plus. Their remote collaboration process is genuinely seamless — you'd never know they weren't sitting in the office next door. The results have been transformational."
+        author="James Hartley"
+        role="Head of Ecommerce, London Lifestyle Brand"
       />
 
       {/* Service Areas */}
       <Section>
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground-dark mb-4">
-            Serving All of London & The South East
+          <h2
+            className="text-2xl md:text-3xl font-bold text-foreground-dark mb-4"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Serving London &amp; the South East
           </h2>
           <p className="text-foreground mb-6">
-            Our remote London team serves businesses across the entire capital
-            and South East region. Whether you&apos;re based in the City,
-            Shoreditch&apos;s tech hub, or anywhere else in London, we&apos;re
-            ready to help your ecommerce business thrive.
+            Whether your team is in Shoreditch, Soho, Canary Wharf, or
+            distributed across Greater London, we&apos;re set up for seamless
+            remote collaboration. Our Manchester and Liverpool teams operate on
+            UK time, respond quickly, and are always available on a call when
+            you need us. No London commute required.
           </p>
           <div className="flex flex-wrap justify-center gap-3 text-sm">
             {serviceAreas.map((area) => (
@@ -521,73 +535,22 @@ export default function LondonPage() {
         </div>
       </Section>
 
-
       <FAQSection
         faqs={faqs}
-        image="/images/articles/pexels-669615.webp"
-        imageAlt="London Shopify agency supporting ecommerce growth"
+        image="/images/articles/pexels-1640777.webp"
+        imageAlt="London ecommerce Shopify agency"
         overlayColor="linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
       />
 
-      {/* Contact Our Team Section (replaces map) */}
-      <Section>
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-12 border border-gray-100">
-            <div className="text-center mb-8">
-              <div className="w-16 h-16 bg-[#ef436b]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <MessageCircle className="w-8 h-8 text-[#ef436b]" />
-              </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground-dark mb-4">
-                Contact Our London Team
-              </h2>
-              <p className="text-foreground max-w-2xl mx-auto">
-                Ready to discuss your Shopify project? Our London-based
-                developers are available for video calls and consultations. Get
-                in touch today for a free quote and discover how we can help
-                your brand grow.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="text-center p-4">
-                <Phone className="w-6 h-6 text-[#ef436b] mx-auto mb-3" />
-                <p className="font-semibold text-foreground-dark mb-1">
-                  Call Us
-                </p>
-                <a
-                  href={`tel:${siteConfig.phone}`}
-                  className="text-foreground hover:text-[#ef436b]"
-                >
-                  {siteConfig.phone}
-                </a>
-              </div>
-              <div className="text-center p-4">
-                <Mail className="w-6 h-6 text-[#ef436b] mx-auto mb-3" />
-                <p className="font-semibold text-foreground-dark mb-1">
-                  Email Us
-                </p>
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="text-foreground hover:text-[#ef436b]"
-                >
-                  {siteConfig.email}
-                </a>
-              </div>
-              <div className="text-center p-4">
-                <Clock className="w-6 h-6 text-[#ef436b] mx-auto mb-3" />
-                <p className="font-semibold text-foreground-dark mb-1">Hours</p>
-                <p className="text-foreground">Mon-Fri: 9am - 5:30pm</p>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <Button href="/quote" variant="cta" size="lg">
-                Get a Free Quote
-              </Button>
-            </div>
-          </div>
-        </div>
-      </Section>
+      {/* Map */}
+      <section className="relative">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-0.1400%2C51.4900%2C-0.0800%2C51.5200&layer=mapnik&marker=51.5074%2C-0.1278"
+          className="w-full h-80 md:h-96 border-0"
+          title="Map of London — Flex Commerce serves London brands"
+          loading="lazy"
+        />
+      </section>
     </>
   );
 }

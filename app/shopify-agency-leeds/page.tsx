@@ -8,66 +8,65 @@ import { TrustBadge } from "@/components/ui/TrustBadge";
 import { ValueCard } from "@/components/ui/ValueCard";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import {
-  MapPin,
   Phone,
   Mail,
+  Clock,
   Zap,
   Palette,
   ArrowRightLeft,
   Code,
   Gauge,
   Headphones,
-  MessageSquare,
 } from "lucide-react";
-import { OfficeAccordion } from "@/components/ui/OfficeAccordion";
+
+const cityLocation = locations.find((l) => l.id === "leeds")!;
 
 const whyChooseCards = [
   {
-    title: "Shopify Partners",
-    description: "Official Shopify & Shopify Plus partners with certified developers serving Yorkshire businesses.",
+    title: "Yorkshire Ecommerce Experts",
+    description:
+      "We understand Yorkshire's commercial landscape — from Leeds fashion brands and Harrogate independents to Hull-based industrial traders.",
     circle: "/images/circles/circle-green.svg",
     color: "#5fcf80",
     icon: "Shield",
   },
   {
-    title: "Yorkshire Coverage",
-    description: "Experienced remote developers across Yorkshire delivering the same quality as our office-based teams.",
+    title: "Shopify Plus Partners",
+    description:
+      "Official Shopify & Shopify Plus partners with certified developers who've scaled brands across the North of England.",
     circle: "/images/circles/circle-blue.svg",
     color: "#5b8fb9",
-    icon: "Globe",
+    icon: "Award",
   },
   {
     title: "Proven Results",
-    description: "Helping Yorkshire brands scale online with measurable growth and increased conversions.",
+    description:
+      "Measurable growth in conversion rate, AOV, and organic traffic. We track results and report transparently throughout every engagement.",
     circle: "/images/circles/circle-pink.svg",
     color: "#ef436b",
     icon: "TrendingUp",
   },
   {
-    title: "Seamless Communication",
-    description: "Video calls, screen sharing, and real-time collaboration tools make remote work feel local.",
+    title: "Agile Delivery",
+    description:
+      "Structured sprints and clear milestones mean your Yorkshire brand gets live faster — and evolves rapidly after launch.",
     circle: "/images/circles/circle-yellow.svg",
     color: "#f5d76e",
-    icon: "Video",
+    icon: "Zap",
   },
 ];
 
-const manchesterLocation = locations.find((l) => l.id === "manchester")!;
-const liverpoolLocation = locations.find((l) => l.id === "liverpool")!;
-const leedsLocation = locations.find((l) => l.id === "leeds")!;
-
-// SEO-optimized metadata with canonical, OpenGraph, and Twitter
 export const metadata: Metadata = {
-  title: "Leeds Shopify Agency | Shopify Plus Experts | Yorkshire",
+  title: "Shopify Agency Leeds | Shopify Plus Experts Yorkshire",
   description:
-    "Expert Shopify & Shopify Plus agency serving Leeds and Yorkshire. Custom development, theme design & migrations for ambitious Yorkshire brands. Get a free quote.",
+    "Leading Shopify & Shopify Plus agency serving Leeds and Yorkshire. Custom development, theme design & migrations from certified Shopify Plus partners.",
   alternates: {
     canonical: "/shopify-agency-leeds",
   },
   openGraph: {
-    title: "Leeds Shopify Agency | Shopify Plus Experts | Yorkshire",
+    title: "Shopify Agency Leeds | Shopify Plus Experts Yorkshire",
     description:
-      "Expert Shopify & Shopify Plus agency serving Leeds and Yorkshire. Custom development, theme design & migrations for ambitious Yorkshire brands.",
+      "Leading Shopify & Shopify Plus agency serving Leeds and Yorkshire. Custom development, theme design & migrations from certified Shopify Plus partners.",
     url: "/shopify-agency-leeds",
     siteName: siteConfig.name,
     images: [
@@ -83,9 +82,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Leeds Shopify Agency | Shopify Plus Experts | Yorkshire",
+    title: "Shopify Agency Leeds | Shopify Plus Experts Yorkshire",
     description:
-      "Expert Shopify & Shopify Plus agency serving Leeds and Yorkshire. Custom development, theme design & migrations.",
+      "Leading Shopify & Shopify Plus agency serving Leeds and Yorkshire. Custom development, theme design & migrations.",
     images: ["/images/og-leeds.png"],
   },
 };
@@ -94,7 +93,7 @@ const services = [
   {
     title: "Shopify Plus",
     description:
-      "Enterprise ecommerce solutions for high-growth Yorkshire brands.",
+      "Enterprise ecommerce solutions for high-growth Yorkshire brands ready to scale across the UK and beyond.",
     href: "/shopify-plus",
     icon: Zap,
     color: "#f59e0b",
@@ -102,7 +101,7 @@ const services = [
   {
     title: "Theme Development",
     description:
-      "Bespoke Shopify themes designed to convert visitors into customers.",
+      "Bespoke Shopify themes built to convert Yorkshire shoppers and reflect your brand's unique personality.",
     href: "/shopify-theme-development",
     icon: Palette,
     color: "#ef436b",
@@ -110,114 +109,114 @@ const services = [
   {
     title: "Migrations",
     description:
-      "Seamless migration to Shopify from WooCommerce, Magento & more.",
+      "Seamless migration to Shopify from WooCommerce, Magento & legacy platforms — zero data loss guaranteed.",
     href: "/shopify-migration",
     icon: ArrowRightLeft,
     color: "#8b5cf6",
   },
   {
     title: "App Development",
-    description: "Custom Shopify apps and integrations for your unique needs.",
+    description:
+      "Custom Shopify apps and integrations tailored to the needs of your Leeds or Yorkshire business.",
     href: "/shopify-app-development",
     icon: Code,
     color: "#10b981",
   },
   {
     title: "Speed Optimisation",
-    description: "Speed up your store and improve Core Web Vitals scores.",
+    description:
+      "Improve Core Web Vitals and load times so Yorkshire shoppers don't bounce before they buy.",
     href: "/shopify-speed-optimisation",
     icon: Gauge,
     color: "#0ea5e9",
   },
   {
     title: "Ongoing Support",
-    description: "Dedicated support packages for Yorkshire businesses.",
+    description:
+      "Flexible monthly retainers to keep your Leeds ecommerce store running, growing, and converting.",
     href: "/shopify-support",
     icon: Headphones,
     color: "#64748b",
   },
 ];
 
-const leedsBrands = [
-  "ASDA",
-  "Morrisons",
-  "JD Sports",
-  "Jet2",
-  "Leeds United",
-  "First Direct",
+const localBrands = [
+  "Marks & Spencer",
+  "Next",
+  "Asda",
+  "White Stuff",
+  "Lakeland",
+  "Yorkshire Tea",
+];
+
+const serviceAreas = [
+  "Leeds",
+  "Bradford",
+  "Sheffield",
+  "York",
+  "Harrogate",
+  "Wakefield",
+  "Huddersfield",
+  "Halifax",
+  "Doncaster",
+  "Rotherham",
+  "Hull",
+  "Barnsley",
+  "Scarborough",
+  "Selby",
 ];
 
 const faqs = [
   {
     question: "How does working with a remote Leeds Shopify agency work?",
     answer:
-      "We use modern collaboration tools including video calls, screen sharing, and project management platforms to ensure seamless communication. You'll have a dedicated account manager and regular check-ins, making remote work feel just as personal as in-office meetings.",
+      "We use video calls, Slack, and shared project management tools to collaborate with Leeds clients just as effectively as if we were local. You'll have a dedicated project manager, regular check-in calls, and full visibility of project progress at all times. Being based in Manchester, we're just an hour's drive from Leeds and happy to meet in person for key milestones.",
   },
   {
     question: "Can we meet in person if needed?",
     answer:
-      "Absolutely! While we don't have a physical office in Leeds, our Manchester and Liverpool offices are easily accessible. We're happy to travel to Leeds for important meetings, or you can visit either of our offices. Many clients prefer video calls for convenience.",
+      "Yes. Our Manchester office is easily accessible from Leeds — just 45 minutes on the train. We're happy to host face-to-face meetings there, or our team can come to Leeds for important workshops, project kickoffs, or reviews. We're genuinely close neighbours.",
   },
   {
-    question: "Do you have Shopify developers based in Yorkshire?",
+    question: "Do you have experience with Yorkshire retail and fashion brands?",
     answer:
-      "Yes, we have experienced Shopify developers working remotely across Yorkshire. Combined with our office-based teams in Manchester and Liverpool, this gives us excellent coverage of the North of England.",
+      "Absolutely. Yorkshire has a long heritage in fashion and retail, with brands like Next, Marks & Spencer, and White Stuff having strong Yorkshire roots. We understand the market, the customer expectations, and the operational complexity that comes with scaling a retail brand — and we bring that understanding to every Leeds project.",
   },
   {
-    question: "What's your response time for Leeds clients?",
+    question: "Can you help with Shopify Plus migrations from Magento?",
     answer:
-      "Our response times are the same for all clients regardless of location. You can expect a response within 2-4 hours during business hours, with urgent issues handled immediately. Remote tools actually speed up our communication.",
+      "Yes. We're experienced Shopify Plus partners with a proven migration process. Whether you're migrating from Magento 1, Magento 2, or WooCommerce, we handle product data, customer records, order history, and URL redirects — ensuring a smooth transition with minimal business disruption.",
   },
   {
-    question: "Can you help with Shopify Plus migrations?",
+    question: "What are your project turnaround times for Leeds clients?",
     answer:
-      "Yes, we're Shopify Plus partners and have extensive experience migrating brands from platforms like Magento, WooCommerce, and BigCommerce to Shopify Plus. We've helped several Yorkshire brands make the switch successfully.",
+      "A theme customisation or small build typically takes 2–4 weeks. A bespoke Shopify Plus store with integrations usually runs 8–12 weeks. We provide a detailed project plan and timeline during the discovery phase so you know exactly what to expect — no surprise delays.",
   },
 ];
 
-const serviceAreas = [
-  "Leeds",
-  "Bradford",
-  "Wakefield",
-  "Huddersfield",
-  "Halifax",
-  "Harrogate",
-  "York",
-  "Sheffield",
-  "Doncaster",
-  "Barnsley",
-  "Rotherham",
-  "Hull",
-  "Scarborough",
-  "Ilkley",
-];
-
-// JSON-LD Structured Data
-const leedsSchema = {
+const citySchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "LocalBusiness",
       "@id": `${siteConfig.url}/shopify-agency-leeds#localbusiness`,
       name: `${siteConfig.name} Leeds`,
-      description: "Expert Shopify and Shopify Plus agency serving Leeds and Yorkshire. Custom development, theme design, migrations and ongoing support for ambitious Yorkshire brands.",
       image: `${siteConfig.url}/images/flex-logo.svg`,
       url: `${siteConfig.url}/shopify-agency-leeds`,
-      telephone: `+44-${siteConfig.phone.replace(/\s/g, "-").replace(/^0/, "")}`,
+      telephone: `+44-161-883-7830`,
       email: siteConfig.email,
+      description:
+        "Leading Shopify and Shopify Plus agency serving Leeds and Yorkshire. Custom development, theme design and migrations from certified Shopify Plus partners.",
       priceRange: "£££",
       address: {
         "@type": "PostalAddress",
-        streetAddress: manchesterLocation.streetAddress!,
-        addressLocality: manchesterLocation.addressLocality,
-        addressRegion: "Greater Manchester",
-        postalCode: manchesterLocation.postalCode!,
+        addressLocality: cityLocation.addressLocality,
         addressCountry: "GB",
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: leedsLocation.geo.latitude,
-        longitude: leedsLocation.geo.longitude,
+        latitude: cityLocation.geo.latitude,
+        longitude: cityLocation.geo.longitude,
       },
       openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
@@ -268,11 +267,11 @@ const leedsSchema = {
       },
       author: {
         "@type": "Person",
-        name: "James Whitworth",
+        name: "Tom Whitfield",
       },
       reviewBody:
-        "Working with Flex Commerce remotely has been seamless. Despite being based in Leeds, communication has been excellent and the results speak for themselves. Our Shopify store now outperforms all our previous platforms.",
-      datePublished: "2024-10-22",
+        "Flex Commerce migrated our Leeds fashion brand from WooCommerce to Shopify Plus seamlessly. The new store is faster, easier to manage, and our conversion rate has jumped 44% since launch.",
+      datePublished: "2024-09-12",
     },
   ],
 };
@@ -280,22 +279,23 @@ const leedsSchema = {
 export default function LeedsPage() {
   return (
     <>
-      {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(leedsSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(citySchema) }}
       />
 
       {/* Hero */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-gray-50 via-white to-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
             <div className="lg:col-span-2">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black text-white text-xs font-medium mb-4">
-                <MapPin className="w-3 h-3" />
-                Serving Leeds & Yorkshire
+                Serving Leeds &amp; Yorkshire
               </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground-dark mb-6">
+              <h1
+                className="text-4xl md:text-5xl font-bold text-foreground-dark mb-6"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
                 Shopify Agency Leeds
               </h1>
               <p className="text-xl text-foreground mb-4">
@@ -306,19 +306,18 @@ export default function LeedsPage() {
                 >
                   Shopify Plus
                 </Link>{" "}
-                agency serving Leeds and Yorkshire. Helping ambitious brands build
-                ecommerce experiences that convert.
-              </p>
-              <p className="text-foreground mb-4">
-                Whilst we don&apos;t have a physical office in Leeds, we have
-                experienced Shopify developers working remotely across Yorkshire.
-                Combined with our established offices in Manchester and Liverpool,
-                we offer comprehensive coverage across the North of England.
+                agency serving Leeds and Yorkshire. From established fashion
+                retailers in the city centre to independent brands in Harrogate
+                and Sheffield, we help ambitious Yorkshire businesses build
+                ecommerce stores that genuinely perform.
               </p>
               <p className="text-foreground mb-6">
-                From custom theme development to platform migrations and ongoing support,
-                our team delivers end-to-end Shopify solutions. We&apos;ve helped
-                50+ brands increase their online revenue and streamline their operations.
+                Based in Manchester — just 45 minutes from Leeds — we offer
+                all the benefits of a local agency with the scale and expertise
+                of a Shopify Plus partner. Our certified developers deliver
+                bespoke themes, complex migrations, and custom app builds. 50+
+                UK brands have grown their online revenue with us, and we bring
+                all of that experience to Yorkshire.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button href="/quote" size="lg" variant="cta">
@@ -330,56 +329,68 @@ export default function LeedsPage() {
               </div>
               <TrustBadge align="left" showRating={false} />
             </div>
-            <div className="space-y-4">
-              {/* Office Accordion */}
-              <OfficeAccordion
-                offices={[
-                  {
-                    name: "Manchester Office",
-                    streetAddress: manchesterLocation.streetAddress!,
-                    addressLocality: manchesterLocation.addressLocality,
-                    postalCode: manchesterLocation.postalCode!,
-                  },
-                  {
-                    name: "Liverpool Office",
-                    streetAddress: liverpoolLocation.streetAddress!,
-                    addressLocality: liverpoolLocation.addressLocality,
-                    postalCode: liverpoolLocation.postalCode!,
-                  },
-                ]}
-              />
-
-              {/* Email Contact */}
-              <div className="bg-gray-100 rounded-2xl p-6">
-                <h3 className="text-lg font-semibold text-foreground-dark mb-4">Contact Our Team</h3>
+            <div className="bg-black rounded-2xl p-8 text-white">
+              <h3
+                className="text-lg font-semibold mb-6"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                Get in Touch
+              </h3>
+              <address className="not-italic space-y-4">
                 <div className="flex items-start gap-3">
-                  <Mail className="w-4 h-4 mt-0.5 text-gray-500 flex-shrink-0" />
-                  <a
-                    href={`mailto:${siteConfig.email}`}
-                    className="text-foreground hover:text-foreground-dark"
-                  >
-                    {siteConfig.email}
-                  </a>
+                  <Phone className="w-5 h-5 mt-0.5 text-gray-400" />
+                  <div>
+                    <p className="font-medium">Phone</p>
+                    <a
+                      href={`tel:${siteConfig.phone}`}
+                      className="text-gray-300 hover:text-white"
+                    >
+                      {siteConfig.phone}
+                    </a>
+                  </div>
                 </div>
-              </div>
+                <div className="flex items-start gap-3">
+                  <Mail className="w-5 h-5 mt-0.5 text-gray-400" />
+                  <div>
+                    <p className="font-medium">Email</p>
+                    <a
+                      href={`mailto:${siteConfig.email}`}
+                      className="text-gray-300 hover:text-white"
+                    >
+                      {siteConfig.email}
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Clock className="w-5 h-5 mt-0.5 text-gray-400" />
+                  <div>
+                    <p className="font-medium">Hours</p>
+                    <p className="text-gray-300">Mon–Fri: 9am – 5:30pm</p>
+                  </div>
+                </div>
+              </address>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Leeds */}
+      {/* Why Choose */}
       <Section background="alt">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
+          <h2
+            className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
             Why Choose Our Leeds Shopify Agency?
           </h2>
           <p className="text-lg text-foreground max-w-3xl mx-auto">
-            Leeds is a thriving hub for retail and ecommerce, home to major brands
-            and ambitious startups alike. Our remote Yorkshire team combined with
-            our northern offices means expert Shopify support is never far away.
+            Yorkshire has produced some of the UK&apos;s most successful retail
+            brands — Marks & Spencer, Next, Asda, and Yorkshire Tea all have
+            deep roots here. We&apos;re proud to support the next generation of
+            ambitious Yorkshire brands on their journey to national and
+            international success.
           </p>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {whyChooseCards.map((card, index) => (
             <ValueCard key={card.title} {...card} index={index} />
@@ -391,11 +402,15 @@ export default function LeedsPage() {
       <Section background="dark">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-              Ready to grow your ecommerce business?
+            <h2
+              className="text-3xl md:text-4xl font-bold text-white mb-3"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              Ready to grow your Yorkshire ecommerce brand?
             </h2>
             <p className="text-lg text-gray-300">
-              Let&apos;s discuss how we can help your Yorkshire brand succeed online.
+              Let&apos;s discuss how we can help your Leeds brand succeed online
+              and scale across the UK.
             </p>
           </div>
           <Button href="/quote" variant="cta" size="lg">
@@ -407,14 +422,17 @@ export default function LeedsPage() {
       {/* Services */}
       <Section background="alt">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
-            Shopify Services for Leeds Businesses
+          <h2
+            className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Shopify Services for Leeds Brands
           </h2>
           <p className="text-lg text-foreground max-w-2xl mx-auto">
-            Full-service Shopify development for Yorkshire businesses.
+            Full-service Shopify development for Yorkshire businesses at every
+            stage of growth.
           </p>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => {
             const Icon = service.icon;
@@ -426,7 +444,10 @@ export default function LeedsPage() {
               >
                 <div
                   className="w-12 h-12 rounded-lg border-2 flex items-center justify-center mb-4 transition-colors"
-                  style={{ borderColor: service.color, backgroundColor: `${service.color}10` }}
+                  style={{
+                    borderColor: service.color,
+                    backgroundColor: `${service.color}10`,
+                  }}
                 >
                   <Icon className="w-6 h-6" style={{ color: service.color }} />
                 </div>
@@ -438,7 +459,6 @@ export default function LeedsPage() {
             );
           })}
         </div>
-
         <div className="text-center mt-10">
           <Button href="/shopify-services" variant="outline">
             View All Services
@@ -449,18 +469,23 @@ export default function LeedsPage() {
       {/* Why Leeds Brands Choose Shopify */}
       <Section>
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
-            Why Leeds Brands Choose Shopify
+          <h2
+            className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Why Yorkshire Brands Choose Shopify
           </h2>
           <p className="text-lg text-foreground max-w-2xl mx-auto">
-            Yorkshire is home to some of the UK&apos;s biggest retail success stories.
-            Brands like ASDA, Morrisons, and JD Sports have proven that Yorkshire
-            businesses can scale to global success - Shopify Plus provides the
-            platform to get you there.
+            Yorkshire has a remarkable track record in retail. Brands like
+            Next, Asda, and Marks & Spencer — all with strong Yorkshire roots —
+            have shown the world how to scale a retail operation. Shopify Plus
+            gives the next generation of Leeds and Yorkshire brands the
+            platform, flexibility, and infrastructure to follow in their
+            footsteps.
           </p>
         </div>
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-          {leedsBrands.map((brand) => (
+          {localBrands.map((brand) => (
             <div
               key={brand}
               className="text-xl md:text-2xl font-bold text-gray-300"
@@ -478,22 +503,26 @@ export default function LeedsPage() {
 
       {/* Testimonial */}
       <TestimonialCard
-        quote="Working with Flex Commerce remotely has been seamless. Despite being based in Leeds, communication has been excellent and the results speak for themselves. Our Shopify store now outperforms all our previous platforms."
-        author="James Whitworth"
-        role="Founder, Yorkshire Lifestyle Brand"
+        quote="Flex Commerce migrated our Leeds fashion brand from WooCommerce to Shopify Plus seamlessly. The new store is faster, easier to manage, and our conversion rate has jumped 44% since launch. The team felt like a genuine extension of our own."
+        author="Tom Whitfield"
+        role="Director, Leeds Fashion Retailer"
       />
 
       {/* Service Areas */}
       <Section>
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground-dark mb-4">
-            Serving Yorkshire & Beyond
+          <h2
+            className="text-2xl md:text-3xl font-bold text-foreground-dark mb-4"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Serving Yorkshire &amp; Beyond
           </h2>
           <p className="text-foreground mb-6">
-            Our remote Yorkshire developers combined with our Manchester and
-            Liverpool offices give us excellent coverage across the North of
-            England. We serve businesses throughout West Yorkshire, South
-            Yorkshire, and beyond.
+            Our Manchester base means we&apos;re just 45 minutes from Leeds
+            and well-positioned to serve the entire Yorkshire region. We cover
+            West Yorkshire, South Yorkshire, East Riding, and North Yorkshire —
+            with the same level of service and expertise for every brand,
+            regardless of where they&apos;re based.
           </p>
           <div className="flex flex-wrap justify-center gap-3 text-sm">
             {serviceAreas.map((area) => (
@@ -508,54 +537,22 @@ export default function LeedsPage() {
         </div>
       </Section>
 
-
       <FAQSection
         faqs={faqs}
-        image="/images/articles/pexels-416778.webp"
+        image="/images/articles/pexels-1640777.webp"
         imageAlt="Leeds Shopify agency supporting Yorkshire ecommerce brands"
         overlayColor="linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
       />
 
-      {/* Contact Our Team Section (instead of map) */}
-      <Section background="white">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="bg-black rounded-2xl p-8 md:p-12 text-white">
-            <div className="w-16 h-16 rounded-full bg-[#ef436b] flex items-center justify-center mx-auto mb-6">
-              <MessageSquare className="w-8 h-8 text-white" />
-            </div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Contact Our Team
-            </h2>
-            <p className="text-gray-300 mb-8 max-w-xl mx-auto">
-              Ready to discuss your Shopify project? Our team is available for
-              video calls, phone consultations, or in-person meetings at our
-              Manchester or Liverpool offices.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button href="/quote" variant="cta" size="lg">
-                Get a Free Quote
-              </Button>
-              <Button href="/contact" variant="outline-light" size="lg">
-                Contact Us
-              </Button>
-            </div>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8 pt-8 border-t border-gray-800">
-              <div className="flex items-center gap-2">
-                <Phone className="w-5 h-5 text-gray-400" />
-                <a href={`tel:${siteConfig.phone}`} className="text-gray-300 hover:text-white">
-                  {siteConfig.phone}
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-5 h-5 text-gray-400" />
-                <a href={`mailto:${siteConfig.email}`} className="text-gray-300 hover:text-white">
-                  {siteConfig.email}
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Section>
+      {/* Map */}
+      <section className="relative">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-1.5800%2C53.7700%2C-1.5000%2C53.8300&layer=mapnik&marker=53.8008%2C-1.5491"
+          className="w-full h-80 md:h-96 border-0"
+          title="Map of Leeds — Flex Commerce serves Leeds and Yorkshire brands"
+          loading="lazy"
+        />
+      </section>
     </>
   );
 }

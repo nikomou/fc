@@ -215,22 +215,22 @@ Google's Experience, Expertise, Authoritativeness, and Trustworthiness signals a
 
 ### 7.2 Gaps to Address
 
-| Issue | Priority | Action |
-|---|---|---|
-| No XML sitemap confirmed | P1 | Verify next-sitemap or static sitemap.xml is generated at build time and submitted to Search Console |
-| No robots.txt confirmed | P1 | Confirm robots.txt exists at root; ensure /out/ paths resolve correctly on Cloudflare |
-| Breadcrumb schema missing from service pages | P1 | Add BreadcrumbList JSON-LD to all service, migration, and article pages |
-| No `sameAs` on root Organization schema | P2 | Add social profile URLs to root schema (LinkedIn, Twitter, Instagram) |
-| No `description` on root Organization schema | P2 | Add company description to root Organization JSON-LD |
-| No `email` on root Organization schema | P2 | Add hello@flexcommerce.co.uk to root schema |
-| Missing `aggregateRating` on service pages | P2 | Add once review count is sufficient |
-| Article pages missing Article/BlogPosting schema | P2 | Add per-article schema with `author`, `datePublished`, `dateModified`, `headline` |
-| Guide pages missing HowTo schema | P3 | Add HowTo schema to step-based guide pages |
-| Checklist pages missing ItemList schema | P3 | Add ItemList schema to checklist pages |
-| No FAQ schema on service pages | P3 | Add FAQPage schema to service pages where FAQ section exists |
-| `lang="en"` should be `lang="en-GB"` | P2 | Update root layout HTML lang attribute |
-| No hreflang (if targeting .co.uk specifically) | P3 | Add hreflang `en-GB` annotation if en-US content ever added |
-| Image alt text audit needed | P2 | Ensure all `<Image>` components have descriptive alt text including target keywords |
+| Issue | Priority | Status | Action |
+|---|---|---|---|
+| No XML sitemap confirmed | P1 | ✅ Done | `app/sitemap.ts` generates sitemap.xml at build time covering 130+ URLs |
+| No robots.txt confirmed | P1 | ✅ Done | `app/robots.ts` generates correct robots.txt with /api/ and /_next/ disallowed |
+| Breadcrumb schema missing from service pages | P1 | ✅ Partial | BreadcrumbList added to service pages, migration pages, automations, ecommerce-agency |
+| `lang="en"` should be `lang="en-GB"` | P2 | ✅ Done | Updated in `app/layout.tsx` |
+| No `description` on root Organization schema | P2 | ✅ Done | Description added to root Organization JSON-LD in layout.tsx |
+| No `email` on root Organization schema | P2 | ✅ Done | email added to root Organization and all LocalBusiness schemas |
+| No FAQ schema on service pages | P2 | ✅ Done | FAQPage JSON-LD added to all 10 service pages with existing FAQ sections |
+| No `sameAs` on root Organization schema | P2 | ⏳ Pending | Add once social profiles are active (LinkedIn, Twitter, Instagram) |
+| Missing `aggregateRating` on service pages | P2 | ⏳ Pending | Add once Trustpilot review count reaches 10+ |
+| Article pages missing Article/BlogPosting schema | P2 | ⏳ Pending | Add per-article schema with `author`, `datePublished`, `dateModified`, `headline` |
+| Image alt text audit needed | P2 | ⏳ Pending | Audit all `<Image>` components for descriptive, keyword-relevant alt text |
+| Guide pages missing HowTo schema | P3 | ⏳ Pending | Add HowTo schema to step-based guide pages |
+| Checklist pages missing ItemList schema | P3 | ⏳ Pending | Add ItemList schema to checklist pages |
+| No hreflang (if targeting .co.uk specifically) | P3 | ⏳ Not needed yet | Add hreflang `en-GB` annotation if en-US content ever added |
 
 ### 7.3 Core Web Vitals Monitoring
 
@@ -372,3 +372,124 @@ Each location page must include:
 - LocalBusiness JSON-LD with `geo`, `areaServed`, `openingHoursSpecification`
 - FAQPage schema with city-specific questions
 - Internal links to relevant service pages
+
+---
+
+## 12. Conversion Rate Optimisation (CRO) — SEO-to-Lead Path
+
+Organic traffic is only valuable if it converts. The following CRO principles should be applied to every landing page that receives organic traffic.
+
+### 12.1 Primary Conversion Goals (in priority order)
+
+1. **Get a Free Quote** — `/quote` form submission (highest value; direct revenue signal)
+2. **Book a Call** — Calendly or equivalent booking (mid-funnel; high intent)
+3. **Download a resource** — guides/checklists gated by email (lead gen; nurture funnel entry)
+4. **Contact form** — `/contact` (fallback for lower-intent visitors)
+
+### 12.2 Above-the-Fold Requirements (Service and Location Pages)
+
+Every service/location page must have within the first screen on both desktop and mobile:
+- Clear H1 containing the primary keyword
+- A value statement (2–3 sentences max)
+- A primary CTA button (Get a Free Quote — pink `#ef436b`)
+- A secondary CTA (View Work or Book a Call)
+- At least one social proof signal (TrustBadge with "50+ happy clients", Shopify Partner badge, or star rating)
+
+### 12.3 Trust Signals — Placement Priority
+
+| Signal | Where | Priority |
+|---|---|---|
+| "50+ happy clients" TrustBadge | Hero section, all commercial pages | P1 |
+| Shopify Partner badge | Header, all service pages | P1 |
+| Trustpilot rating widget | Homepage, all service pages | P1 |
+| Client logo bar | Homepage, high-traffic service pages | P2 |
+| Case study excerpts with £ metrics | Migration pages, Shopify Plus page | P2 |
+| Named testimonial quotes (Playfair Display, styled) | All location pages, long service pages | P2 |
+| Awards/press mentions | About page, homepage | P3 |
+
+### 12.4 CTA Copy Recommendations
+
+Avoid generic copy. Use benefit-led, specific CTAs:
+
+| Context | CTA Copy |
+|---|---|
+| Service pages — primary | "Get a Free Quote" |
+| Migration pages | "Get a Free Migration Quote" |
+| Location pages | "Talk to Our Team" |
+| Articles/guides (in-content) | "Need help with this? Talk to our Shopify experts" |
+| Pricing page | "Start Your Project" |
+| Exit intent / sticky bar | "Get a free 30-minute consultation" |
+
+### 12.5 Page Speed as Conversion Signal
+
+Every 100ms increase in page load time reduces conversions by ~1%. With the static Cloudflare Pages setup, Flex Commerce should consistently achieve:
+- LCP < 2.0s on service and location pages
+- Zero CLS (no layout shift on font load — ensured by `display: swap` + `size-adjust`)
+- INP < 150ms (well under the 200ms "Good" threshold)
+
+Run a monthly PageSpeed Insights sweep of the top 10 commercial pages. Flag any LCP regression > 0.5s immediately.
+
+---
+
+## 13. Content Refresh Strategy
+
+Content decay is a significant risk as the site grows. High-performing articles from Year 1 will need refreshing in Year 2.
+
+### 13.1 Decay Detection
+
+Monitor monthly in Google Search Console for:
+- Pages where average position has dropped > 5 spots over a rolling 90-day window
+- Pages where impressions have declined > 30% YoY
+- Pages with CTR below 2% despite ranking in positions 1–10
+
+### 13.2 Refresh Protocol
+
+When a page is flagged for decay:
+
+1. **Audit the gap:** Compare current content to what ranks in position 1–3. What do they have that this page lacks?
+2. **Update statistics:** Replace all year-specific stats, prices, and platform feature details with current data.
+3. **Add FAQ expansion:** Add 2–3 new FAQs targeting "People Also Ask" results in the SERP.
+4. **Improve internal links:** Add links to newer, related content published since the original article.
+5. **Update schema:** Update `dateModified` in Article/HowTo schema.
+6. **Resubmit to Search Console:** Use the URL Inspection tool to request re-indexing.
+
+### 13.3 Refresh Priority Order
+
+| Priority | Page Type | Trigger |
+|---|---|---|
+| P1 | High-volume service pages | Any ranking drop |
+| P1 | Migration pages | Any ranking drop |
+| P2 | Location pages | Annual review + Q1 refresh |
+| P2 | Cornerstone articles (WooCommerce vs Shopify, Magento vs Shopify) | Annual + whenever Shopify releases major updates |
+| P3 | Guides and checklists | Annual review |
+
+---
+
+## 14. Measuring Success — Monthly Reporting Template
+
+### Dashboard Metrics to Track Monthly
+
+| Metric | Source | Target (Month 12) |
+|---|---|---|
+| Organic sessions | GA4 | 8,000/month |
+| Organic-attributed form submissions | GA4 (Goals) | 60/month |
+| Keyword rankings (top 10) | Ahrefs/Semrush | 200 |
+| Keyword rankings (top 3) | Ahrefs/Semrush | 70 |
+| Domain Rating | Ahrefs | 31 |
+| Referring domains | Ahrefs | 180 |
+| GBP profile views (Manchester) | GBP Insights | Growing MoM |
+| GBP profile views (Liverpool) | GBP Insights | Growing MoM |
+| Core Web Vitals pass rate | Search Console | 100% |
+| Indexed pages | Search Console | 200+ |
+| Crawl errors | Search Console | 0 |
+
+### Monthly Report Structure
+
+1. **Executive summary** — 3 bullet wins + 1 concern
+2. **Traffic overview** — organic sessions vs prior month and YoY
+3. **Keyword ranking movements** — top 10 gains + top 5 losses
+4. **Content performance** — top 5 articles by organic sessions
+5. **Link building progress** — new referring domains acquired, outreach pipeline
+6. **Technical health** — any new crawl errors, CWV issues, indexation drops
+7. **Conversion performance** — form submissions from organic, assisted conversions
+8. **Next month priorities** — 3–5 specific actions

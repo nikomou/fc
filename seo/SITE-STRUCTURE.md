@@ -31,24 +31,24 @@ https://flexcommerce.co.uk/
 │   └── /ecommerce-agency
 │
 ├── (Commercial — Migration Pages)
-│   ├── /woocommerce-to-shopify-migration
-│   ├── /magento-to-shopify-migration
-│   ├── /bigcommerce-to-shopify-migration
-│   ├── /squarespace-to-shopify-migration
-│   ├── /webflow-to-shopify-migration
-│   └── /salesforce-to-shopify-migration
+│   ├── /woocommerce-to-shopify-migration   [live]
+│   ├── /magento-to-shopify-migration       [live]
+│   ├── /bigcommerce-to-shopify-migration   [live]
+│   ├── /squarespace-to-shopify-migration   [live]
+│   ├── /webflow-to-shopify-migration       [live]
+│   └── /salesforce-to-shopify-migration    [live]
 │
 ├── (Commercial — Location Pages)
 │   ├── /shopify-agency-manchester          [live]
 │   ├── /shopify-agency-liverpool           [live]
-│   ├── /shopify-agency-london              [planned — Priority 1]
-│   ├── /shopify-agency-birmingham          [planned — Priority 1]
-│   ├── /shopify-agency-leeds               [planned — Priority 1]
-│   ├── /shopify-agency-bristol             [planned — Priority 1]
-│   ├── /shopify-agency-edinburgh           [planned — Priority 2]
-│   ├── /shopify-agency-glasgow             [planned — Priority 2]
-│   ├── /shopify-agency-newcastle           [planned — Priority 2]
-│   └── /shopify-agency-cambridge           [planned — Priority 2]
+│   ├── /shopify-agency-london              [live]
+│   ├── /shopify-agency-birmingham          [live]
+│   ├── /shopify-agency-leeds               [live]
+│   ├── /shopify-agency-bristol             [live]
+│   ├── /shopify-agency-edinburgh           [live]
+│   ├── /shopify-agency-glasgow             [live]
+│   ├── /shopify-agency-newcastle           [live]
+│   └── /shopify-agency-cambridge           [live]
 │
 ├── (Commercial — Industry Vertical Pages)  [all planned]
 │   ├── /shopify-for-fashion
@@ -575,3 +575,152 @@ With 250+ articles, 60+ guides, 30+ checklists, and 10 location pages, crawl eff
 - Keep `robots.txt` clean — disallow `/api/` routes and any admin paths
 - Use `next/image` for all images (already in place) to ensure WebP delivery and lazy loading
 - Monitor "Crawled - currently not indexed" report in GSC and investigate causes promptly
+
+---
+
+## 9. Integration Sub-Page Template
+
+Each `/shopify-integrations/[partner]` page should follow this structure. Target length: 1,200–1,500 words.
+
+### Page Structure
+
+```
+/shopify-integrations/[partner]
+├── Hero
+│   ├── H1: "Shopify [Partner] Integration — Expert Setup & Support"
+│   ├── Subtitle: What the integration does + who it's for
+│   ├── CTA: Get a free quote
+│   └── Partner logo + Flex Commerce logo
+│
+├── What is [Partner]? (100 words)
+│   └── Overview of the tool, key features, who uses it
+│
+├── Why Integrate [Partner] with Shopify? (200 words)
+│   ├── Benefits of the integration
+│   └── Use cases specific to Shopify merchants
+│
+├── What We Set Up (feature list with icons)
+│   ├── [Feature 1 — e.g., Klaviyo: email flows, segments, automation]
+│   ├── [Feature 2]
+│   └── [Feature 3]
+│
+├── How We Work
+│   ├── Discovery call
+│   ├── Technical setup
+│   ├── Testing & QA
+│   └── Handover & training
+│
+├── Who It's For (target audience)
+│   └── DTC brands, Shopify Plus merchants, high-volume stores, etc.
+│
+├── Testimonial or social proof
+│
+├── FAQSection (4–5 questions)
+│   ├── "Do I need Shopify Plus to use [Partner]?"
+│   ├── "How long does the integration take?"
+│   ├── "Can you migrate existing data from [alternative]?"
+│   └── "What's included in your setup service?"
+│
+└── CTA strip: "Ready to integrate [Partner]? Get a free quote."
+```
+
+### Metadata Template
+
+```
+Title: "Shopify [Partner] Integration | Expert Setup | Flex Commerce"
+Description: "Expert Shopify [Partner] integration by certified Shopify Plus developers. We handle setup, configuration & testing. Free consultation."
+Canonical: https://flexcommerce.co.uk/shopify-integrations/[partner]
+```
+
+### Schema Template
+
+```json
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Shopify [Partner] Integration",
+      "serviceType": "Shopify Integration",
+      "provider": { "@id": "https://flexcommerce.co.uk/#organization" },
+      "areaServed": { "@type": "Country", "name": "United Kingdom" },
+      "description": "Expert [Partner] integration for Shopify merchants..."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://flexcommerce.co.uk" },
+        { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://flexcommerce.co.uk/shopify-integrations" },
+        { "@type": "ListItem", "position": 3, "name": "[Partner] Integration", "item": "https://flexcommerce.co.uk/shopify-integrations/[partner]" }
+      ]
+    },
+    { "@type": "FAQPage", "mainEntity": [/* FAQ array */] }
+  ]
+}
+```
+
+### Integration Pages to Build (Priority Order)
+
+| Partner | Target Keyword | Est. Vol. | Priority |
+|---|---|---|---|
+| Klaviyo | shopify klaviyo integration | 260/mo | P1 |
+| Yotpo | shopify yotpo integration | 170/mo | P1 |
+| Gorgias | shopify gorgias integration | 140/mo | P1 |
+| Nosto | shopify nosto personalisation | 90/mo | P2 |
+| Brightpearl | shopify brightpearl integration | 110/mo | P2 |
+| Klevu | shopify klevu search | 70/mo | P2 |
+
+---
+
+## 10. Industry Vertical Page Template
+
+Each `/shopify-for-[industry]` page should follow this structure. Target length: 1,500–2,000 words.
+
+### Page Structure
+
+```
+/shopify-for-[industry]
+├── Hero
+│   ├── H1: "Shopify for [Industry] — [Agency Name] Specialists"
+│   ├── Subtitle: Why Shopify is the best platform for this vertical
+│   ├── CTA: Get a free quote
+│   └── Industry-relevant hero image or iconography
+│
+├── "[Industry] Ecommerce Challenges" section (3 pain points)
+│   └── Each pain point: heading + 2-3 sentences
+│
+├── "Why Shopify (Plus) for [Industry]?" section
+│   ├── Platform advantages specific to this vertical
+│   └── Examples of major [industry] brands on Shopify
+│
+├── "Our [Industry] Shopify Services" — service cards
+│   ├── Custom theme design (industry-specific)
+│   ├── Migration from common platforms in this vertical
+│   ├── Industry-specific integrations
+│   └── Ongoing support
+│
+├── Case study teaser (if available)
+│
+├── Client logos — industry-specific subset
+│
+├── Testimonial
+│
+├── FAQSection
+│   ├── "Is Shopify Plus right for [industry] brands?"
+│   ├── "What [industry]-specific integrations do you recommend?"
+│   └── "Can you migrate our [industry] store from [platform]?"
+│
+└── CTA: "Start your [industry] Shopify project"
+```
+
+### Industry Pages to Build (Priority Order)
+
+| Page | Primary Keyword | Vol. | Secondary Keywords |
+|---|---|---|---|
+| `/shopify-for-fashion` | shopify fashion agency uk | 110/mo | shopify clothing store, fashion ecommerce agency |
+| `/shopify-for-health-beauty` | shopify health beauty agency | 90/mo | beauty ecommerce shopify, health shopify agency |
+| `/shopify-for-b2b` | shopify b2b agency | 140/mo | shopify wholesale, shopify b2b development |
+| `/shopify-for-food-drink` | shopify food drink agency | 60/mo | food ecommerce shopify, d2c food brand shopify |
+| `/shopify-for-sports-fitness` | shopify sports fitness | 70/mo | fitness brand shopify, activewear shopify agency |
+| `/shopify-for-luxury` | shopify luxury brand agency | 50/mo | premium ecommerce shopify, luxury retail shopify |
+| `/shopify-for-home-garden` | shopify home decor agency | 40/mo | home interiors ecommerce, garden brand shopify |

@@ -8,67 +8,65 @@ import { TrustBadge } from "@/components/ui/TrustBadge";
 import { ValueCard } from "@/components/ui/ValueCard";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import {
-  MapPin,
   Phone,
   Mail,
+  Clock,
   Zap,
   Palette,
   ArrowRightLeft,
   Code,
   Gauge,
   Headphones,
-  Video,
-  MessageCircle,
 } from "lucide-react";
-import { OfficeAccordion } from "@/components/ui/OfficeAccordion";
+
+const cityLocation = locations.find((l) => l.id === "edinburgh")!;
 
 const whyChooseCards = [
   {
-    title: "Scottish Expertise",
-    description: "Deep understanding of the Scottish market and local ecommerce trends from Edinburgh to the Highlands.",
+    title: "Scottish Ecommerce Experts",
+    description:
+      "Deep understanding of the Scottish market — from heritage whisky and textiles brands to Edinburgh's fast-growing tech startup scene.",
     circle: "/images/circles/circle-green.svg",
     color: "#5fcf80",
-    icon: "MapPin",
+    icon: "Shield",
   },
   {
-    title: "Remote Edinburgh Team",
-    description: "Experienced Shopify developers based in Edinburgh, delivering exceptional results without the need for office meetings.",
+    title: "Shopify Plus Partners",
+    description:
+      "Official Shopify & Shopify Plus partners with certified developers ready to scale your Scottish brand to its full potential.",
     circle: "/images/circles/circle-blue.svg",
     color: "#5b8fb9",
-    icon: "Users",
+    icon: "Award",
   },
   {
     title: "Proven Results",
-    description: "Helping Scottish brands generate significant online revenue with measurable growth across all metrics.",
+    description:
+      "Measurable revenue growth for ambitious brands. We track the metrics that matter — conversions, AOV, and long-term retention.",
     circle: "/images/circles/circle-pink.svg",
     color: "#ef436b",
     icon: "TrendingUp",
   },
   {
-    title: "Seamless Communication",
-    description: "Video calls, screen sharing, and instant messaging ensure you're always connected with your dedicated team.",
+    title: "Full UK Coverage",
+    description:
+      "Remote-first from our Manchester and Liverpool offices. Same UK timezone, same dedication — geography is never a barrier.",
     circle: "/images/circles/circle-yellow.svg",
     color: "#f5d76e",
-    icon: "Video",
+    icon: "Globe",
   },
 ];
 
-const manchesterLocation = locations.find((l) => l.id === "manchester")!;
-const liverpoolLocation = locations.find((l) => l.id === "liverpool")!;
-const edinburghLocation = locations.find((l) => l.id === "edinburgh")!;
-
-// SEO-optimized metadata with canonical, OpenGraph, and Twitter
 export const metadata: Metadata = {
-  title: "Edinburgh Shopify Agency | Shopify Plus Experts | Scotland",
+  title: "Shopify Agency Edinburgh | Shopify Plus Experts Scotland",
   description:
-    "Expert Shopify & Shopify Plus agency serving Edinburgh and Scotland. Custom themes, migrations & ongoing support for Scottish brands. Get a free quote.",
+    "Expert Shopify & Shopify Plus agency serving Edinburgh and Scotland. Custom development, theme design & migrations for ambitious Scottish brands.",
   alternates: {
     canonical: "/shopify-agency-edinburgh",
   },
   openGraph: {
-    title: "Edinburgh Shopify Agency | Shopify Plus Experts | Scotland",
+    title: "Shopify Agency Edinburgh | Shopify Plus Experts Scotland",
     description:
-      "Expert Shopify & Shopify Plus agency serving Edinburgh and Scotland. Remote team of certified developers delivering custom ecommerce solutions for Scottish brands.",
+      "Expert Shopify & Shopify Plus agency serving Edinburgh and Scotland. Custom development, theme design & migrations for ambitious Scottish brands.",
     url: "/shopify-agency-edinburgh",
     siteName: siteConfig.name,
     images: [
@@ -84,9 +82,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Edinburgh Shopify Agency | Shopify Plus Experts | Scotland",
+    title: "Shopify Agency Edinburgh | Shopify Plus Experts Scotland",
     description:
-      "Expert Shopify & Shopify Plus agency serving Edinburgh and Scotland. Remote team delivering custom ecommerce solutions.",
+      "Expert Shopify & Shopify Plus agency serving Edinburgh and Scotland. Custom development, theme design & migrations.",
     images: ["/images/og-edinburgh.png"],
   },
 };
@@ -95,7 +93,7 @@ const services = [
   {
     title: "Shopify Plus",
     description:
-      "Enterprise ecommerce solutions for high-growth Scottish brands.",
+      "Enterprise ecommerce solutions for high-growth Scottish brands ready to scale.",
     href: "/shopify-plus",
     icon: Zap,
     color: "#f59e0b",
@@ -103,7 +101,7 @@ const services = [
   {
     title: "Theme Development",
     description:
-      "Bespoke Shopify themes designed to convert visitors into customers.",
+      "Bespoke Shopify themes that capture your Scottish brand identity and convert visitors into customers.",
     href: "/shopify-theme-development",
     icon: Palette,
     color: "#ef436b",
@@ -111,114 +109,114 @@ const services = [
   {
     title: "Migrations",
     description:
-      "Seamless migration to Shopify from WooCommerce, Magento & more.",
+      "Seamless migration to Shopify from WooCommerce, Magento & more — zero data loss, minimal downtime.",
     href: "/shopify-migration",
     icon: ArrowRightLeft,
     color: "#8b5cf6",
   },
   {
     title: "App Development",
-    description: "Custom Shopify apps and integrations for your unique needs.",
+    description:
+      "Custom Shopify apps and integrations built for the specific needs of your Scottish business.",
     href: "/shopify-app-development",
     icon: Code,
     color: "#10b981",
   },
   {
     title: "Speed Optimisation",
-    description: "Speed up your store and improve Core Web Vitals scores.",
+    description:
+      "Improve Core Web Vitals and load times to keep Scottish shoppers on your store and spending.",
     href: "/shopify-speed-optimisation",
     icon: Gauge,
     color: "#0ea5e9",
   },
   {
     title: "Ongoing Support",
-    description: "Dedicated support packages for Edinburgh and Scottish businesses.",
+    description:
+      "Flexible support retainers for Edinburgh and Scotland businesses — we're here when you need us.",
     href: "/shopify-support",
     icon: Headphones,
     color: "#64748b",
   },
 ];
 
-const edinburghBrands = [
-  "BrewDog",
-  "Skyscanner",
-  "FanDuel",
-  "Blackwell's",
-  "Johnstons of Elgin",
-  "Harris Tweed",
-];
-
-const faqs = [
-  {
-    question: "How does working with a remote Edinburgh team work?",
-    answer:
-      "We use modern collaboration tools including video conferencing, screen sharing, and project management software to ensure seamless communication. You'll have a dedicated project manager and regular check-ins, making remote collaboration just as effective as in-person meetings.",
-  },
-  {
-    question: "Can I meet the team in person if needed?",
-    answer:
-      "Absolutely! While our Edinburgh team works remotely, we have physical offices in Manchester and Liverpool. We're happy to arrange in-person meetings at either location, or we can travel to Edinburgh for important project milestones.",
-  },
-  {
-    question: "Do you understand the Scottish ecommerce market?",
-    answer:
-      "Yes, our Edinburgh-based developers have extensive experience working with Scottish brands. We understand the unique aspects of the Scottish market, from local consumer preferences to regional logistics considerations.",
-  },
-  {
-    question: "What timezone do you operate in?",
-    answer:
-      "We operate on UK time (GMT/BST), the same as Edinburgh. Our team is available during standard business hours Monday to Friday, with emergency support available for critical issues outside these hours.",
-  },
-  {
-    question: "How do you handle project kickoffs without a local office?",
-    answer:
-      "We conduct comprehensive video discovery sessions to understand your brand, goals, and requirements. We use collaborative tools like Figma for design reviews and Loom for async updates, ensuring you're always in the loop.",
-  },
+const localBrands = [
+  "Brewdog",
+  "Tunnock's",
+  "Loch Fyne Oysters",
+  "AG Barr",
+  "Calnaturale",
+  "Isle of Harris Gin",
 ];
 
 const serviceAreas = [
   "Edinburgh",
-  "Leith",
-  "Stockbridge",
-  "Morningside",
-  "Portobello",
-  "Musselburgh",
-  "Dalkeith",
-  "Livingston",
-  "Dunfermline",
-  "Falkirk",
-  "Stirling",
-  "Perth",
+  "Glasgow",
   "Dundee",
+  "Aberdeen",
+  "Perth",
+  "Stirling",
+  "Inverness",
   "St Andrews",
+  "Kirkcaldy",
+  "Falkirk",
+  "Livingston",
+  "Paisley",
+  "Hamilton",
+  "Motherwell",
 ];
 
-// JSON-LD Structured Data
-const edinburghSchema = {
+const faqs = [
+  {
+    question: "How does working with a remote Edinburgh Shopify agency work?",
+    answer:
+      "We collaborate entirely remotely using video calls, Slack, and shared project management tools. You'll have a dedicated project manager and regular check-ins built into your project plan. Most Edinburgh clients find this approach just as effective — often more so — than working with a local agency. Same UK timezone, fast responses, no commute.",
+  },
+  {
+    question: "Can we meet in person if needed?",
+    answer:
+      "Yes. While we work remotely with Edinburgh clients, we have physical offices in Manchester and Liverpool. We're happy to arrange face-to-face meetings at either location for important project milestones, or our team can travel to Edinburgh when needed.",
+  },
+  {
+    question: "Do you understand the Scottish ecommerce and retail market?",
+    answer:
+      "Absolutely. We've worked with Scottish brands across food & drink, heritage goods, fashion, and outdoor lifestyle. Scotland has a proud tradition of quality craftsmanship, and we understand how to present that authentically online — from brand storytelling to seamless cross-border shipping integrations.",
+  },
+  {
+    question: "Why should an Edinburgh brand choose Shopify Plus over Magento?",
+    answer:
+      "Shopify Plus offers significantly lower total cost of ownership than Magento — no server costs, faster updates, and a much simpler developer ecosystem. Edinburgh brands migrating from Magento typically see faster site speeds, reduced maintenance overhead, and better conversion rates within months of launch.",
+  },
+  {
+    question: "Can you help with Scottish brand expansions into international markets?",
+    answer:
+      "Yes. Shopify Plus's multi-currency, multi-language, and multi-storefront capabilities make it ideal for Scottish brands expanding into Europe, North America, and Asia Pacific. We've helped heritage Scottish brands set up international storefronts that maintain their local character while converting globally.",
+  },
+];
+
+const citySchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "LocalBusiness",
       "@id": `${siteConfig.url}/shopify-agency-edinburgh#localbusiness`,
       name: `${siteConfig.name} Edinburgh`,
-      description: "Expert Shopify & Shopify Plus agency serving Edinburgh and Scotland. Remote team of certified developers delivering custom ecommerce solutions for Scottish brands.",
       image: `${siteConfig.url}/images/flex-logo.svg`,
       url: `${siteConfig.url}/shopify-agency-edinburgh`,
-      telephone: `+44-${siteConfig.phone.replace(/\s/g, "-").replace(/^0/, "")}`,
+      telephone: `+44-161-883-7830`,
       email: siteConfig.email,
+      description:
+        "Expert Shopify and Shopify Plus agency serving Edinburgh and Scotland. Custom development, theme design and migrations for ambitious Scottish brands.",
       priceRange: "£££",
       address: {
         "@type": "PostalAddress",
-        streetAddress: manchesterLocation.streetAddress!,
-        addressLocality: manchesterLocation.addressLocality,
-        addressRegion: "Greater Manchester",
-        postalCode: manchesterLocation.postalCode!,
+        addressLocality: cityLocation.addressLocality,
         addressCountry: "GB",
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: edinburghLocation.geo.latitude,
-        longitude: edinburghLocation.geo.longitude,
+        latitude: cityLocation.geo.latitude,
+        longitude: cityLocation.geo.longitude,
       },
       openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
@@ -269,11 +267,11 @@ const edinburghSchema = {
       },
       author: {
         "@type": "Person",
-        name: "Alistair MacLeod",
+        name: "Fiona MacLeod",
       },
       reviewBody:
-        "Working with Flex Commerce remotely from Edinburgh has been seamless. Their team understood our Scottish heritage brand perfectly and delivered an online store that exceeded our expectations. Sales have increased by 68% since launch.",
-      datePublished: "2024-09-22",
+        "Flex Commerce transformed our Edinburgh brand's online presence. The remote process was completely painless and they truly understood our Scottish heritage positioning. Sales have grown 65% since launch.",
+      datePublished: "2024-11-08",
     },
   ],
 };
@@ -281,22 +279,23 @@ const edinburghSchema = {
 export default function EdinburghPage() {
   return (
     <>
-      {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(edinburghSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(citySchema) }}
       />
 
       {/* Hero */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-gray-50 via-white to-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
             <div className="lg:col-span-2">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black text-white text-xs font-medium mb-4">
-                <MapPin className="w-3 h-3" />
-                Serving Edinburgh Remotely
+                Serving Edinburgh &amp; Scotland
               </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground-dark mb-6">
+              <h1
+                className="text-4xl md:text-5xl font-bold text-foreground-dark mb-6"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
                 Shopify Agency Edinburgh
               </h1>
               <p className="text-xl text-foreground mb-4">
@@ -307,16 +306,17 @@ export default function EdinburghPage() {
                 >
                   Shopify Plus
                 </Link>{" "}
-                agency serving Edinburgh and the whole of Scotland. Helping ambitious Scottish brands build
-                ecommerce experiences that convert.
-              </p>
-              <p className="text-foreground mb-4">
-                Whilst we don&apos;t have a physical office in Edinburgh, we have experienced Shopify developers working remotely across Scotland&apos;s capital. Our team combines local market knowledge with the full support of our UK-wide agency.
+                agency serving Edinburgh and the whole of Scotland. Whether
+                you&apos;re a heritage brand in the Old Town or a tech startup
+                in Leith, we help ambitious Scottish businesses build ecommerce
+                experiences that genuinely convert.
               </p>
               <p className="text-foreground mb-6">
-                From custom theme development to platform migrations and ongoing support,
-                our Edinburgh team delivers end-to-end Shopify solutions. We&apos;ve helped
-                Scottish brands increase their online revenue and reach customers worldwide.
+                Based in Manchester and Liverpool, we work with Edinburgh brands
+                entirely remotely — same UK timezone, fast communication, and
+                the full backing of a certified Shopify Plus agency. We&apos;ve
+                helped 50+ UK brands grow their online revenue and we bring that
+                experience to every Scottish project we take on.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button href="/quote" size="lg" variant="cta">
@@ -328,66 +328,68 @@ export default function EdinburghPage() {
               </div>
               <TrustBadge align="left" showRating={false} />
             </div>
-            <div className="space-y-4">
-              {/* Office Accordion */}
-              <OfficeAccordion
-                offices={[
-                  {
-                    name: "Manchester Office",
-                    streetAddress: manchesterLocation.streetAddress!,
-                    addressLocality: manchesterLocation.addressLocality,
-                    postalCode: manchesterLocation.postalCode!,
-                  },
-                  {
-                    name: "Liverpool Office",
-                    streetAddress: liverpoolLocation.streetAddress!,
-                    addressLocality: liverpoolLocation.addressLocality,
-                    postalCode: liverpoolLocation.postalCode!,
-                  },
-                ]}
-              />
-
-              {/* Contact Info */}
-              <div className="bg-gray-100 rounded-2xl p-6">
-                <h3 className="text-lg font-semibold mb-4 text-foreground-dark">Get in Touch</h3>
-                <div className="space-y-3 text-sm">
-                  <div className="flex items-start gap-3">
-                    <Mail className="w-4 h-4 mt-0.5 text-gray-500 flex-shrink-0" />
+            <div className="bg-black rounded-2xl p-8 text-white">
+              <h3
+                className="text-lg font-semibold mb-6"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                Get in Touch
+              </h3>
+              <address className="not-italic space-y-4">
+                <div className="flex items-start gap-3">
+                  <Phone className="w-5 h-5 mt-0.5 text-gray-400" />
+                  <div>
+                    <p className="font-medium">Phone</p>
+                    <a
+                      href={`tel:${siteConfig.phone}`}
+                      className="text-gray-300 hover:text-white"
+                    >
+                      {siteConfig.phone}
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Mail className="w-5 h-5 mt-0.5 text-gray-400" />
+                  <div>
+                    <p className="font-medium">Email</p>
                     <a
                       href={`mailto:${siteConfig.email}`}
-                      className="text-foreground hover:text-foreground-dark"
+                      className="text-gray-300 hover:text-white"
                     >
                       {siteConfig.email}
                     </a>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <Video className="w-4 h-4 mt-0.5 text-gray-500 flex-shrink-0" />
-                    <p className="text-foreground">Video calls available</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <MessageCircle className="w-4 h-4 mt-0.5 text-gray-500 flex-shrink-0" />
-                    <p className="text-foreground">Instant messaging support</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Clock className="w-5 h-5 mt-0.5 text-gray-400" />
+                  <div>
+                    <p className="font-medium">Hours</p>
+                    <p className="text-gray-300">Mon–Fri: 9am – 5:30pm</p>
                   </div>
                 </div>
-              </div>
+              </address>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Edinburgh */}
+      {/* Why Choose */}
       <Section background="alt">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
-            Why Choose Our Edinburgh Shopify Team?
+          <h2
+            className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Why Choose Our Edinburgh Shopify Agency?
           </h2>
           <p className="text-lg text-foreground max-w-3xl mx-auto">
-            Edinburgh is home to a thriving tech scene and innovative brands. Our
-            remote team combines local Scottish expertise with the resources of a
-            full-service Shopify agency.
+            Edinburgh is Scotland&apos;s commercial heart — a city with a proud
+            heritage of craft, innovation, and ambition. Brands like Brewdog,
+            Tunnock&apos;s, and Isle of Harris Gin have shown what Scottish
+            products can achieve on the world stage. We&apos;re here to help
+            the next generation do the same.
           </p>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {whyChooseCards.map((card, index) => (
             <ValueCard key={card.title} {...card} index={index} />
@@ -399,11 +401,15 @@ export default function EdinburghPage() {
       <Section background="dark">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-              Ready to grow your ecommerce business?
+            <h2
+              className="text-3xl md:text-4xl font-bold text-white mb-3"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              Ready to grow your Scottish ecommerce business?
             </h2>
             <p className="text-lg text-gray-300">
-              Let&apos;s discuss how we can help your Edinburgh brand succeed online.
+              Let&apos;s discuss how we can help your Edinburgh brand succeed
+              online and beyond.
             </p>
           </div>
           <Button href="/quote" variant="cta" size="lg">
@@ -415,14 +421,17 @@ export default function EdinburghPage() {
       {/* Services */}
       <Section background="alt">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
-            Shopify Services for Edinburgh Businesses
+          <h2
+            className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Shopify Services for Edinburgh Brands
           </h2>
           <p className="text-lg text-foreground max-w-2xl mx-auto">
-            Full-service Shopify development for Scottish businesses.
+            Full-service Shopify development for Scottish businesses of every
+            size and sector.
           </p>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => {
             const Icon = service.icon;
@@ -434,7 +443,10 @@ export default function EdinburghPage() {
               >
                 <div
                   className="w-12 h-12 rounded-lg border-2 flex items-center justify-center mb-4 transition-colors"
-                  style={{ borderColor: service.color, backgroundColor: `${service.color}10` }}
+                  style={{
+                    borderColor: service.color,
+                    backgroundColor: `${service.color}10`,
+                  }}
                 >
                   <Icon className="w-6 h-6" style={{ color: service.color }} />
                 </div>
@@ -446,7 +458,6 @@ export default function EdinburghPage() {
             );
           })}
         </div>
-
         <div className="text-center mt-10">
           <Button href="/shopify-services" variant="outline">
             View All Services
@@ -457,17 +468,23 @@ export default function EdinburghPage() {
       {/* Why Edinburgh Brands Choose Shopify */}
       <Section>
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
+          <h2
+            className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
             Why Edinburgh Brands Choose Shopify
           </h2>
           <p className="text-lg text-foreground max-w-2xl mx-auto">
-            From heritage Scottish brands to innovative tech startups, Edinburgh
-            businesses trust Shopify to power their online growth. Brands like
-            BrewDog and Johnstons of Elgin have scaled globally with Shopify Plus.
+            Scotland has a rich tradition of world-class products — from
+            premium spirits and artisan foods to innovative technology
+            companies. Brands like Brewdog, Isle of Harris Gin, and AG Barr
+            have built international followings on Shopify Plus, proving the
+            platform can power Scottish heritage brands to global audiences
+            with the same conviction they bring to their craft.
           </p>
         </div>
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-          {edinburghBrands.map((brand) => (
+          {localBrands.map((brand) => (
             <div
               key={brand}
               className="text-xl md:text-2xl font-bold text-gray-300"
@@ -485,22 +502,26 @@ export default function EdinburghPage() {
 
       {/* Testimonial */}
       <TestimonialCard
-        quote="Working with Flex Commerce remotely from Edinburgh has been seamless. Their team understood our Scottish heritage brand perfectly and delivered an online store that exceeded our expectations. Sales have increased by 68% since launch."
-        author="Alistair MacLeod"
-        role="Founder, Edinburgh Heritage Goods"
+        quote="Flex Commerce transformed our Edinburgh brand's online presence. The remote process was completely painless and they truly understood how to present our Scottish heritage authentically online. Sales have grown 65% since we launched the new store."
+        author="Fiona MacLeod"
+        role="Managing Director, Edinburgh Retail Brand"
       />
 
       {/* Service Areas */}
       <Section>
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground-dark mb-4">
-            Serving Edinburgh, Scotland & Beyond
+          <h2
+            className="text-2xl md:text-3xl font-bold text-foreground-dark mb-4"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Serving Edinburgh, Scotland &amp; Beyond
           </h2>
           <p className="text-foreground mb-6">
-            Our remote Edinburgh team serves businesses across Scotland&apos;s capital
-            and beyond. Whether you&apos;re in the heart of the Old Town or operating
-            from the Highlands, we deliver the same exceptional Shopify solutions
-            through seamless remote collaboration.
+            Our remote team serves businesses across Edinburgh and the wider
+            Scottish market. Whether you&apos;re operating from the Royal Mile,
+            the Grassmarket, or a farm in the Highlands, our collaboration
+            tools make distance irrelevant. We&apos;re always just a call away
+            and on the same page as your team.
           </p>
           <div className="flex flex-wrap justify-center gap-3 text-sm">
             {serviceAreas.map((area) => (
@@ -515,45 +536,22 @@ export default function EdinburghPage() {
         </div>
       </Section>
 
-
       <FAQSection
         faqs={faqs}
-        image="/images/articles/pexels-590016.webp"
-        imageAlt="Edinburgh Shopify agency team working with Scottish ecommerce brands"
+        image="/images/articles/pexels-1640777.webp"
+        imageAlt="Edinburgh Shopify agency working with Scottish ecommerce brands"
         overlayColor="linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
       />
 
-      {/* Contact Our Team Section (replaces map) */}
-      <Section background="dark">
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Contact Our Edinburgh Team
-          </h2>
-          <p className="text-lg text-gray-300 mb-8">
-            Ready to discuss your Shopify project? Our Edinburgh-based team is just
-            a call or video chat away. We&apos;ll arrange a discovery session to
-            understand your goals and show you how we can help grow your online business.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/quote" variant="cta" size="lg">
-              Request a Quote
-            </Button>
-            <Button href="/contact" variant="outline-light" size="lg">
-              Schedule a Call
-            </Button>
-          </div>
-          <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4" />
-              <span>{siteConfig.phone}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4" />
-              <span>{siteConfig.email}</span>
-            </div>
-          </div>
-        </div>
-      </Section>
+      {/* Map */}
+      <section className="relative">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-3.2100%2C55.9300%2C-3.1600%2C55.9700&layer=mapnik&marker=55.9533%2C-3.1883"
+          className="w-full h-80 md:h-96 border-0"
+          title="Map of Edinburgh — Flex Commerce serves Edinburgh brands"
+          loading="lazy"
+        />
+      </section>
     </>
   );
 }

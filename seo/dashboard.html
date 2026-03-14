@@ -603,8 +603,8 @@
         </div>
         <div class="kpi-card">
           <div class="kpi-label">Completed Fixes</div>
-          <div class="kpi-value" style="color:var(--green)">3</div>
-          <div class="kpi-base">lang · email schema · breadcrumbs</div>
+          <div class="kpi-value" style="color:var(--green)">9</div>
+          <div class="kpi-base">lang · email · breadcrumbs · robots · sitemap · org schema · FAQPage · Article schema · 8 location pages</div>
         </div>
       </div>
 
@@ -614,16 +614,18 @@
           <li class="check-item"><div class="check-box done"></div><div class="check-text done">Set html lang="en-GB" on root layout</div><div class="check-priority"><span class="badge badge-p2">P2 · Done</span></div></li>
           <li class="check-item"><div class="check-box done"></div><div class="check-text done">Add email to all LocalBusiness schema entries</div><div class="check-priority"><span class="badge badge-p2">P2 · Done</span></div></li>
           <li class="check-item"><div class="check-box done"></div><div class="check-text done">Add BreadcrumbList to /automations and /ecommerce-agency</div><div class="check-priority"><span class="badge badge-p1">P1 · Done</span></div></li>
-          <li class="check-item"><div class="check-box"></div><div class="check-text">Submit XML sitemap to Google Search Console</div><div class="check-priority"><span class="badge badge-p1">P1</span></div></li>
-          <li class="check-item"><div class="check-box"></div><div class="check-text">Confirm robots.txt is accessible at /robots.txt</div><div class="check-priority"><span class="badge badge-p1">P1</span></div></li>
-          <li class="check-item"><div class="check-box"></div><div class="check-text">Add description field to root Organization schema</div><div class="check-priority"><span class="badge badge-p2">P2</span></div></li>
-          <li class="check-item"><div class="check-box"></div><div class="check-text">Add sameAs to root Organization schema (once socials active)</div><div class="check-priority"><span class="badge badge-p2">P2</span></div></li>
+          <li class="check-item"><div class="check-box done"></div><div class="check-text done">Create robots.ts (generates /robots.txt at build)</div><div class="check-priority"><span class="badge badge-p1">P1 · Done</span></div></li>
+          <li class="check-item"><div class="check-box done"></div><div class="check-text done">Create sitemap.ts (130+ URLs + all articles)</div><div class="check-priority"><span class="badge badge-p1">P1 · Done</span></div></li>
+          <li class="check-item"><div class="check-box done"></div><div class="check-text done">Add description + email to root Organization schema</div><div class="check-priority"><span class="badge badge-p2">P2 · Done</span></div></li>
+          <li class="check-item"><div class="check-box done"></div><div class="check-text done">Add FAQPage JSON-LD to all 10 service pages</div><div class="check-priority"><span class="badge badge-p2">P2 · Done</span></div></li>
+          <li class="check-item"><div class="check-box done"></div><div class="check-text done">Add Article / BlogPosting schema to /articles/[slug] pages</div><div class="check-priority"><span class="badge badge-p2">P2 · Done</span></div></li>
+          <li class="check-item"><div class="check-box done"></div><div class="check-text done">Build all 8 remaining location pages (London, Edinburgh, Bristol, Leeds, Cambridge, Birmingham, Glasgow, Newcastle)</div><div class="check-priority"><span class="badge badge-p1">P1 · Done</span></div></li>
+          <li class="check-item"><div class="check-box"></div><div class="check-text">Submit XML sitemap to Google Search Console</div><div class="check-priority"><span class="badge badge-p1">P1 · Manual</span></div></li>
+          <li class="check-item"><div class="check-box"></div><div class="check-text">Add sameAs to root Organization schema (once socials active)</div><div class="check-priority"><span class="badge badge-p2">P2 · Pending</span></div></li>
           <li class="check-item"><div class="check-box"></div><div class="check-text">Audit all Image alt text — keyword-relevant descriptions</div><div class="check-priority"><span class="badge badge-p2">P2</span></div></li>
-          <li class="check-item"><div class="check-box"></div><div class="check-text">Add Article / BlogPosting schema to /articles/[slug] pages</div><div class="check-priority"><span class="badge badge-p2">P2</span></div></li>
-          <li class="check-item"><div class="check-box"></div><div class="check-text">Add aggregateRating schema to service pages (once 10+ reviews)</div><div class="check-priority"><span class="badge badge-p2">P2</span></div></li>
+          <li class="check-item"><div class="check-box"></div><div class="check-text">Add aggregateRating schema to service pages (once 10+ reviews)</div><div class="check-priority"><span class="badge badge-p2">P2 · Pending</span></div></li>
           <li class="check-item"><div class="check-box"></div><div class="check-text">Add HowTo schema to step-based guide pages</div><div class="check-priority"><span class="badge badge-p3">P3</span></div></li>
           <li class="check-item"><div class="check-box"></div><div class="check-text">Add ItemList schema to checklist pages</div><div class="check-priority"><span class="badge badge-p3">P3</span></div></li>
-          <li class="check-item"><div class="check-box"></div><div class="check-text">Add FAQPage schema to remaining service pages</div><div class="check-priority"><span class="badge badge-p3">P3</span></div></li>
           <li class="check-item"><div class="check-box"></div><div class="check-text">Add hreflang en-GB annotation if en-US content added</div><div class="check-priority"><span class="badge badge-p3">P3</span></div></li>
         </ul>
       </div>
@@ -635,9 +637,9 @@
           <tbody>
             <tr><td>Homepage</td><td>Organization, WebSite, LocalBusiness, Service</td><td><span class="badge badge-low">Complete</span></td></tr>
             <tr><td>Service Pages</td><td>Service, BreadcrumbList, FAQPage</td><td><span class="badge badge-med">Partial</span></td></tr>
-            <tr><td>Location Pages</td><td>LocalBusiness, BreadcrumbList, FAQPage, Review</td><td><span class="badge badge-med">Partial</span></td></tr>
+            <tr><td>Location Pages (10)</td><td>LocalBusiness, BreadcrumbList, FAQPage, Review</td><td><span class="badge badge-low">Complete</span></td></tr>
             <tr><td>Migration Pages</td><td>Service, BreadcrumbList, FAQPage, HowTo</td><td><span class="badge badge-med">Partial</span></td></tr>
-            <tr><td>Article Pages</td><td>Article, BreadcrumbList, Person (author)</td><td><span class="badge badge-high">Missing</span></td></tr>
+            <tr><td>Article Pages</td><td>Article, BreadcrumbList, Person (author)</td><td><span class="badge badge-med">Partial</span></td></tr>
             <tr><td>Guide Pages</td><td>HowTo, Article, BreadcrumbList</td><td><span class="badge badge-high">Missing</span></td></tr>
             <tr><td>Checklist Pages</td><td>ItemList, Article, BreadcrumbList</td><td><span class="badge badge-high">Missing</span></td></tr>
             <tr><td>Pricing Page</td><td>PriceSpecification, Service, BreadcrumbList</td><td><span class="badge badge-high">Missing</span></td></tr>

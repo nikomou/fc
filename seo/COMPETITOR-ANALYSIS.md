@@ -224,7 +224,7 @@ These are mid-to-long-tail queries where no dominant competitor ranks and Flex C
 | How-to guides (50+) | No | No | No | No | No | YES (advantage — 60+) |
 | Checklists | No | No | No | Partial | No | YES (advantage — 30+) |
 | Shopify AI/automation content | No | No | No | No | No | YES (advantage — /shopify-ai, /automations) |
-| Location pages (10 cities) | No | 3 cities | 1 city | 2 cities | 2 cities | YES (advantage — 10 planned) |
+| Location pages (10 cities) | No | 3 cities | 1 city | 2 cities | 2 cities | YES (advantage — 10 live) |
 | Webinars/events | Yes | No | No | Yes | No | No (gap) |
 | Original research/reports | Yes | No | No | Partial | No | No (gap) |
 | Video content | Partial | No | Yes | Partial | No | No (gap) |
@@ -284,3 +284,151 @@ Sites that link to 2+ competitors but not yet Flex Commerce:
 - Promanchester — member directory
 - Northern Power Women — diversity angle for PR
 - Tech Nation — UK startup/scaleup directory
+
+---
+
+## 6. Outreach Templates
+
+### 6.1 Guest Post Pitch (Partner Blogs — Klaviyo, Yotpo, Gorgias)
+
+**Subject:** Guest post pitch — "How to [specific outcome] with [Partner] + Shopify"
+
+> Hi [Name],
+>
+> I'm [Your Name] from Flex Commerce, a certified Shopify Plus agency based in Manchester. We're a [Partner] partner and use it daily with our clients.
+>
+> I'd love to contribute a guest post to the [Partner] blog. I have a few article ideas that would be genuinely useful for your [Shopify merchant / DTC brand] audience:
+>
+> 1. [Title — specific, actionable, based on real client work]
+> 2. [Title — alternative idea]
+> 3. [Title — alternative idea]
+>
+> Each article would be 1,200–1,500 words with practical examples from client projects. I'd also include a 1-line author bio linking to our team profile.
+>
+> Would any of these be a fit? Happy to send a full outline for whichever you prefer.
+>
+> Best,
+> [Name]
+> [Title], Flex Commerce
+
+**Notes:**
+- Personalise the pitch with a specific article title, not a generic "I'd like to contribute"
+- Reference a recent article from their blog to show you've read it
+- Do not ask for a followed link in the initial pitch — it will be rejected
+
+---
+
+### 6.2 Agency Directory Submission (Clutch, G2, DesignRush)
+
+**What to include on every listing:**
+
+- Agency name: **Flex Commerce**
+- Tagline: Shopify Plus Agency — Manchester & Liverpool
+- Services: Shopify Plus Development, Theme Development, Ecommerce SEO, Migrations, Ongoing Support
+- Location: Manchester, UK (Primary); Liverpool, UK (Secondary)
+- Founded: [Year]
+- Team size: [Accurate range]
+- Minimum project size: [Honest figure from pricing page]
+- Focus areas: B2C, DTC, B2B, Shopify Plus
+- Portfolio: Link to `/work` — include 3–5 case studies with screenshots
+- Reviews: Request reviews from past clients before submitting — agencies with 0 reviews on listing platforms often rank poorly in directory searches
+
+**For Clutch specifically:**
+- Upload project descriptions for each case study (Clutch's "project" format gets additional SEO exposure)
+- Ask clients to submit verified reviews via Clutch's platform (interviewers contact the client directly)
+- Target: 5 Clutch reviews in Year 1
+
+---
+
+### 6.3 UK Ecommerce Press Pitch (Internet Retailing, The Drum)
+
+**Subject:** Expert commentary: [Specific data point or trend] in UK ecommerce
+
+> Hi [Editor Name],
+>
+> I'm [Name], co-founder of Flex Commerce, a Shopify Plus agency based in Manchester. We work with [type of clients] across the UK and see a lot of what's happening on the ground in ecommerce.
+>
+> I noticed you've been covering [recent topic they published about]. I have a perspective on [specific angle] that I think your readers would find useful — specifically, [one concrete data point or observation from your work].
+>
+> Would you be interested in a 400-word op-ed or a quote for a future feature? I'm also happy to share anonymised client data to support a story.
+>
+> Best,
+> [Name]
+
+**Notes:**
+- Lead with a specific, newsworthy observation — not a company announcement
+- Offer data, not opinion
+- Do not mention link building
+
+---
+
+## 7. SERP Monitoring Protocol
+
+### 7.1 Monthly SERP Reviews
+
+Check the following 20 priority terms monthly in Ahrefs or Semrush rank tracker (UK, desktop + mobile):
+
+**Tier 1 — check weekly:**
+- shopify agency manchester
+- shopify plus agency uk
+- shopify agency liverpool
+- woocommerce to shopify migration
+- magento to shopify migration
+- shopify agency london
+
+**Tier 2 — check monthly:**
+- shopify theme development uk
+- shopify app development agency
+- shopify seo agency uk
+- shopify speed optimisation
+- ecommerce agency manchester
+- shopify agency birmingham
+- shopify agency leeds
+- shopify plus cost uk
+- shopify migration service uk
+
+**Tier 3 — check quarterly:**
+- All remaining location city terms
+- Long-tail article targets
+- Partner integration keywords
+
+### 7.2 Competitor Rank Change Alerts
+
+Set up Ahrefs or Semrush alerts for these competitor domains:
+- velstar.co.uk (high threat — direct geographic overlap)
+- swankyagency.com (benchmark for content quality)
+- statementagency.com (active Manchester competitor)
+- eastsideco.com (active SEO investment)
+
+Alert triggers:
+- Competitor enters top 3 for any Tier 1 keyword
+- Competitor publishes new page targeting a migration or location keyword
+- Competitor earns 5+ new referring domains in a month
+
+### 7.3 Featured Snippet & PAA Tracking
+
+Track which of Flex Commerce's target pages appear in:
+- **Featured snippets** (zero-click result at position 0)
+- **People Also Ask (PAA)** boxes
+
+Content most likely to earn snippets:
+- FAQ sections on service pages (structured question/answer format)
+- Step-by-step migration guides (numbered list format)
+- Comparison articles with clear "Which is better?" sections
+- Definition-style headings ("What is Shopify Plus?")
+
+When a competitor owns a featured snippet for a target keyword, study their snippet structure and replicate the format with more depth or better data.
+
+---
+
+## 8. Competitive Intelligence Calendar
+
+| Task | Frequency | Tool |
+|---|---|---|
+| Full competitor keyword gap analysis | Quarterly | Ahrefs/Semrush |
+| Competitor content audit (new pages, updated pages) | Monthly | Screaming Frog or Sitechecker |
+| Competitor backlink profile review | Monthly | Ahrefs |
+| SERP feature tracking (snippets, PAA, local pack) | Monthly | Manual + Semrush |
+| Competitor pricing/positioning review | Quarterly | Manual site review |
+| Velstar weekly rank check (Manchester/Liverpool terms) | Weekly | Ahrefs rank tracker |
+| Industry news monitoring (algorithm updates, Shopify announcements) | Weekly | Google Alerts, SEJ, Search Engine Land |

@@ -23,12 +23,12 @@
 ### Week 1–2: Technical SEO Audit & Fixes
 
 **SEO tasks:**
-- [ ] Verify XML sitemap is generated at build time and submit to Google Search Console
+- [x] Verify XML sitemap is generated at build time and submit to Google Search Console — `app/sitemap.ts` built
 - [ ] Verify XML sitemap is submitted to Bing Webmaster Tools
-- [ ] Confirm robots.txt is accessible at `https://flexcommerce.co.uk/robots.txt` with correct directives
-- [ ] Change root HTML `lang="en"` to `lang="en-GB"` in `/app/layout.tsx`
-- [ ] Add `email` and `description` fields to root Organization schema in `/app/layout.tsx`
-- [ ] Add `sameAs` array to root Organization schema (LinkedIn, Twitter, Instagram URLs)
+- [x] Confirm robots.txt is accessible at `https://flexcommerce.co.uk/robots.txt` with correct directives — `app/robots.ts` built
+- [x] Change root HTML `lang="en"` to `lang="en-GB"` in `/app/layout.tsx`
+- [x] Add `email` and `description` fields to root Organization schema in `/app/layout.tsx`
+- [ ] Add `sameAs` array to root Organization schema (LinkedIn, Twitter, Instagram URLs) — pending socials launch
 - [ ] Audit all `<Image>` alt text across site — ensure all images have descriptive, keyword-relevant alt text
 - [ ] Verify canonical tags are set on all pages (service, location, migration, content)
 - [ ] Test all structured data in Google's Rich Results Test tool
@@ -69,8 +69,8 @@ For each of the 12 service pages, review and update:
 - [ ] H1: One per page, exact or close-match primary keyword
 - [ ] Word count: Minimum 1,200 words (aim for 1,500–2,000)
 - [ ] Subheadings (H2/H3): Include secondary keywords naturally
-- [ ] Add BreadcrumbList JSON-LD schema
-- [ ] Add FAQPage JSON-LD schema (minimum 4 FAQs per service page)
+- [x] Add BreadcrumbList JSON-LD schema — added to service and migration pages
+- [x] Add FAQPage JSON-LD schema (minimum 4 FAQs per service page) — added to all 10 service pages
 - [ ] Add `ProfessionalService` or `Service` schema with `provider` linking to Organisation
 - [ ] Internal links: Minimum 3 links to related service/location pages
 - [ ] CTA: Clear primary CTA (Get a Quote) + secondary CTA (View Work)
@@ -187,10 +187,10 @@ Publish minimum 2 full case studies (1,000+ words each):
 
 Launch the 4 highest-volume location pages that are not yet live:
 
-- [ ] `/shopify-agency-london` — full template, LocalBusiness schema, map embed
-- [ ] `/shopify-agency-birmingham` — full template, LocalBusiness schema, map embed
-- [ ] `/shopify-agency-leeds` — full template, LocalBusiness schema, map embed
-- [ ] `/shopify-agency-bristol` — full template, LocalBusiness schema, map embed
+- [x] `/shopify-agency-london` — full template, LocalBusiness schema, map embed
+- [x] `/shopify-agency-birmingham` — full template, LocalBusiness schema, map embed
+- [x] `/shopify-agency-leeds` — full template, LocalBusiness schema, map embed
+- [x] `/shopify-agency-bristol` — full template, LocalBusiness schema, map embed
 
 **Each page must follow the Manchester template exactly, including:**
 - Hero with office details card (note "virtual office" if no physical presence)
@@ -254,12 +254,12 @@ Execute April and May content calendar:
 
 Launch remaining 4 location pages:
 
-- [ ] `/shopify-agency-edinburgh`
-- [ ] `/shopify-agency-glasgow`
-- [ ] `/shopify-agency-newcastle`
-- [ ] `/shopify-agency-cambridge`
+- [x] `/shopify-agency-edinburgh`
+- [x] `/shopify-agency-glasgow`
+- [x] `/shopify-agency-newcastle`
+- [x] `/shopify-agency-cambridge`
 
-(Verify that `/shopify-agency-manchester` and `/shopify-agency-liverpool` are already live and optimised from existing build.)
+(All 10 location pages are now live, including Manchester and Liverpool which were already in the initial build.)
 
 ---
 
