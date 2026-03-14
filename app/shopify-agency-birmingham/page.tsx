@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
+import { FAQSection } from "@/components/ui/FAQSection";
 import { Button } from "@/components/ui/Button";
 import { siteConfig, locations } from "@/lib/constants";
 import { TrustBadge } from "@/components/ui/TrustBadge";
@@ -531,52 +532,8 @@ export default function BirminghamPage() {
         </div>
       </Section>
 
-      {/* FAQs */}
-      <Section background="alt">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
-            Frequently Asked Questions
-          </h2>
-        </div>
 
-        <div className="max-w-3xl mx-auto space-y-6">
-          {faqs.map((faq, index) => (
-            <div
-              key={faq.question}
-              className="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
-            >
-              <h3 className="font-semibold text-foreground-dark mb-2">
-                {faq.question}
-              </h3>
-              <p className="text-foreground">
-                {index === 2 ? (
-                  <>
-                    Absolutely! We have offices in{" "}
-                    <Link
-                      href="/shopify-agency-manchester"
-                      className="text-[#ef436b] hover:underline"
-                    >
-                      Manchester
-                    </Link>{" "}
-                    and{" "}
-                    <Link
-                      href="/shopify-agency-liverpool"
-                      className="text-[#ef436b] hover:underline"
-                    >
-                      Liverpool
-                    </Link>
-                    , both easily accessible from Birmingham. We&apos;re happy to
-                    arrange face-to-face meetings at either location, or our team
-                    can travel to Birmingham for key project milestones.
-                  </>
-                ) : (
-                  faq.answer
-                )}
-              </p>
-            </div>
-          ))}
-        </div>
-      </Section>
+      <FAQSection faqs={faqs} />
 
       {/* Contact Our Team Section (instead of map) */}
       <Section background="white">

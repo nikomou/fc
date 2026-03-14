@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
-import { FAQAccordion } from "@/components/ui/FAQAccordion";
+import { FAQSection } from "@/components/ui/FAQSection";
 import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowUpRight, BookOpen, Users, RefreshCw, CheckCircle, Sparkles, Target } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
@@ -271,43 +271,35 @@ export default function GuidesPage() {
         </div>
       </Section>
 
-      {/* FAQ Section */}
-      <Section background="alt">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-foreground-dark mb-8 text-center">
-            Frequently Asked Questions
-          </h2>
-          <FAQAccordion
-            faqs={[
-              {
-                question: "Are these guides free?",
-                answer:
-                  "Yes, completely free. No signup or email required.",
-              },
-              {
-                question: "How often are they updated?",
-                answer:
-                  "Monthly, or immediately when Shopify releases major updates. Each guide shows the last updated date.",
-              },
-              {
-                question: "Can I request a guide topic?",
-                answer:
-                  "Yes! Contact us with your suggestion. We prioritise topics based on community requests.",
-              },
-              {
-                question: "Do I need Shopify Plus?",
-                answer:
-                  "No, most guides work for all Shopify plans. Plus-specific guides are clearly marked.",
-              },
-              {
-                question: "Can you implement these for me?",
-                answer:
-                  "Yes. Our team handles everything from theme customisation to complex integrations. Get in touch to discuss.",
-              },
-            ]}
-          />
-        </div>
-      </Section>
+      <FAQSection
+        faqs={[
+          {
+            question: "Are these guides free?",
+            answer:
+              "Yes, completely free. No signup or email required.",
+          },
+          {
+            question: "How often are they updated?",
+            answer:
+              "Monthly, or immediately when Shopify releases major updates. Each guide shows the last updated date.",
+          },
+          {
+            question: "Can I request a guide topic?",
+            answer:
+              "Yes! Contact us with your suggestion. We prioritise topics based on community requests.",
+          },
+          {
+            question: "Do I need Shopify Plus?",
+            answer:
+              "No, most guides work for all Shopify plans. Plus-specific guides are clearly marked.",
+          },
+          {
+            question: "Can you implement these for me?",
+            answer:
+              "Yes. Our team handles everything from theme customisation to complex integrations. Get in touch to discuss.",
+          },
+        ]}
+      />
     </>
   );
 }

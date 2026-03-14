@@ -3,8 +3,10 @@ import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { Section } from "@/components/ui/Section";
 
 export interface FAQ {
-  q: string;
-  a: string;
+  question?: string;
+  answer?: string;
+  q?: string;
+  a?: string;
 }
 
 interface FAQSectionProps {
@@ -26,15 +28,20 @@ export function FAQSection({
   imageAlt = "",
   overlayColor = "linear-gradient(135deg, #ef436b 0%, #c0392b 100%)",
 }: FAQSectionProps) {
+  const normalisedFaqs = faqs.map((f) => ({
+    question: f.question ?? f.q ?? "",
+    answer: f.answer ?? f.a ?? "",
+  }));
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
+    mainEntity: normalisedFaqs.map((faq) => ({
       "@type": "Question",
-      name: faq.q,
+      name: faq.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: faq.a,
+        text: faq.answer,
       },
     })),
   };
@@ -57,9 +64,7 @@ export function FAQSection({
                 <p className="text-lg text-foreground mb-8">{subheading}</p>
               )}
               {!subheading && <div className="mb-8" />}
-              <FAQAccordion
-                faqs={faqs.map((faq) => ({ question: faq.q, answer: faq.a }))}
-              />
+              <FAQAccordion faqs={normalisedFaqs} />
             </div>
 
             {/* Right: image with colour overlay */}
@@ -87,9 +92,7 @@ export function FAQSection({
                 <p className="text-lg text-foreground">{subheading}</p>
               )}
             </div>
-            <FAQAccordion
-              faqs={faqs.map((faq) => ({ question: faq.q, answer: faq.a }))}
-            />
+            <FAQAccordion faqs={normalisedFaqs} />
           </div>
         )}
       </Section>

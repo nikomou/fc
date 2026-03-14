@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
+import { FAQSection } from "@/components/ui/FAQSection";
 import { Button } from "@/components/ui/Button";
 import { siteConfig, locations } from "@/lib/constants";
 import { TrustBadge } from "@/components/ui/TrustBadge";
@@ -525,28 +526,8 @@ export default function EdinburghPage() {
         </div>
       </Section>
 
-      {/* FAQs */}
-      <Section background="alt">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground-dark mb-4">
-            Frequently Asked Questions
-          </h2>
-        </div>
 
-        <div className="max-w-3xl mx-auto space-y-6">
-          {faqs.map((faq) => (
-            <div
-              key={faq.question}
-              className="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
-            >
-              <h3 className="font-semibold text-foreground-dark mb-2">
-                {faq.question}
-              </h3>
-              <p className="text-foreground">{faq.answer}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
+      <FAQSection faqs={faqs} />
 
       {/* Contact Our Team Section (replaces map) */}
       <Section background="dark">

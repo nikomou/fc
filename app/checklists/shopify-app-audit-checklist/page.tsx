@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Checklist, ChecklistProgress } from "@/components/ui/Checklist";
-import { FAQAccordion } from "@/components/ui/FAQAccordion";
+import { FAQSection } from "@/components/ui/FAQSection";
 import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowLeft } from "lucide-react";
 
@@ -228,23 +228,11 @@ const breadcrumbSchema = {
     { "@type": "ListItem", position: 3, name: "App Audit Checklist", item: `${siteConfig.url}/checklists/shopify-app-audit-checklist` },
   ],
 };
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: { "@type": "Answer", text: faq.answer },
-  })),
-};
-
 export default function ShopifyAppAuditChecklistPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="pt-32 pb-16 bg-white">
         <div className="max-w-3xl mx-auto px-4">
@@ -423,15 +411,7 @@ export default function ShopifyAppAuditChecklistPage() {
         </div>
       </Section>
 
-      {/* FAQ Section */}
-      <Section background="alt">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-foreground-dark mb-8">
-            Frequently Asked Questions
-          </h2>
-          <FAQAccordion faqs={faqs} />
-        </div>
-      </Section>
+      <FAQSection faqs={faqs} />
 
       <Section background="dark">
         <div className="max-w-3xl mx-auto text-center">
