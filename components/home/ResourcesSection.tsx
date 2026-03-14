@@ -74,7 +74,13 @@ export function ResourcesSection() {
 
       {/* Quick links to Guides & Checklists */}
       <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-        <span className="text-sm text-gray-400 mr-1">More resources:</span>
+        <Link
+          href="/resources"
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#1a1a1a] text-sm font-medium text-white hover:bg-black transition-colors"
+        >
+          All Resources
+          <ArrowRight className="w-3.5 h-3.5" />
+        </Link>
         <Link
           href="/guides"
           className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-gray-200 text-sm font-medium text-gray-700 hover:border-[#ef436b] hover:text-[#ef436b] transition-colors"
