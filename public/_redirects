@@ -1,3 +1,6 @@
+# Article pagination rewrite (page/ is reserved in Next.js App Router)
+/articles/page/:n               /articles/p/:n                  200
+
 /services                       /shopify-services               301
 /ecommerce-services             /shopify-services               301
 /shopify-speed-optimization     /shopify-speed-optimisation     301

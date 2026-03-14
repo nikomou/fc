@@ -5,6 +5,14 @@ const isCF = process.env.BUILD_TARGET === "cf";
 const nextConfig: NextConfig = {
   ...(isCF && { output: "export", images: { unoptimized: true } }),
   ...(!isCF && {
+    async rewrites() {
+      return [
+        {
+          source: "/articles/page/:n",
+          destination: "/articles/p/:n",
+        },
+      ];
+    },
     async redirects() {
       return [
         {

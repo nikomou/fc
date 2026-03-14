@@ -587,6 +587,18 @@ export const blogPosts: BlogPost[] = [
   ...batch10,
 ];
 
+export const POSTS_PER_PAGE = 12;
+
+export function getPaginatedPosts(page: number) {
+  const sorted = [...blogPosts].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+  const start = (page - 1) * POSTS_PER_PAGE;
+  const posts = sorted.slice(start, start + POSTS_PER_PAGE);
+  const totalPages = Math.ceil(sorted.length / POSTS_PER_PAGE);
+  return { posts, totalPages, totalPosts: sorted.length };
+}
+
 export function getBlogPost(slug: string): BlogPost | undefined {
   return blogPosts.find((p) => p.slug === slug);
 }

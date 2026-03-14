@@ -4,18 +4,21 @@ import Image from "next/image";
 import { ArrowUpRight, PenLine } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
-import { blogPosts, formatDate } from "@/lib/blog";
+import { Pagination } from "@/components/ui/Pagination";
+import { getPaginatedPosts, formatDate } from "@/lib/blog";
+
+const SITE = "https://flexcommerce.co.uk";
 
 export const metadata: Metadata = {
   title: "Ecommerce Articles | Shopify Tips, Guides & Case Studies",
   description:
     "Expert ecommerce insights from the Flex Commerce team. Shopify guides, conversion optimisation tips, case studies, and platform news to help you grow your store.",
-  alternates: { canonical: "https://flexcommerce.co.uk/articles" },
+  alternates: { canonical: `${SITE}/articles` },
   openGraph: {
     title: "Ecommerce Articles | Flex Commerce",
     description:
       "Expert ecommerce insights from the Flex Commerce team. Shopify guides, conversion optimisation tips, case studies, and platform news.",
-    url: "https://flexcommerce.co.uk/articles",
+    url: `${SITE}/articles`,
     type: "website",
   },
 };
@@ -26,14 +29,17 @@ const categoryColors: Record<string, { bg: string; text: string }> = {
   "Case Studies":   { bg: "#ede9fe", text: "#5b21b6" },
 };
 
-const sorted = [...blogPosts].sort(
-  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-);
-const [featured, ...rest] = sorted;
-
 export default function ArticlesPage() {
+  const { posts, totalPages } = getPaginatedPosts(1);
+  const [featured, ...rest] = posts;
+
   return (
     <>
+      {/* rel="next" for page 1 */}
+      {totalPages > 1 && (
+        <link rel="next" href={`${SITE}/articles/page/2`} />
+      )}
+
       <PageHero
         background="purple"
         badge={{ icon: PenLine, text: "Ecommerce Articles" }}
@@ -57,9 +63,7 @@ export default function ArticlesPage() {
             sizes="(max-width: 1280px) 100vw, 1200px"
             priority
           />
-          {/* Colour tint overlay */}
           <div className="absolute inset-0 opacity-60" style={{ background: featured.gradient }} />
-          {/* Dark gradient for text */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
           <div className="relative p-8 md:p-12 max-w-2xl">
@@ -91,7 +95,7 @@ export default function ArticlesPage() {
           </div>
         </Link>
 
-        {/* Rest of posts */}
+        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {rest.map((post) => {
             const c = categoryColors[post.category] ?? { bg: "#f1f5f9", text: "#1e293b" };
@@ -134,6 +138,8 @@ export default function ArticlesPage() {
             );
           })}
         </div>
+
+        <Pagination currentPage={1} totalPages={totalPages} />
       </Section>
     </>
   );
