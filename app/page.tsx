@@ -11,7 +11,6 @@ import { PartnerMarquee } from "@/components/home/PartnerMarquee";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { locations, partnerLogos } from "@/lib/constants";
-import { MapPin } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -60,32 +59,6 @@ export default function HomePage() {
         {/* Office Location Cards */}
         <div className="mb-10">
           <LocationCards />
-        </div>
-
-        {/* Other Service Areas */}
-        <div className="text-center">
-          <p className="text-sm text-foreground mb-4">We also serve clients in</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              { name: "London", href: "/shopify-agency-london" },
-              { name: "Edinburgh", href: "/shopify-agency-edinburgh" },
-              { name: "Bristol", href: "/shopify-agency-bristol" },
-              { name: "Leeds", href: "/shopify-agency-leeds" },
-              { name: "Cambridge", href: "/shopify-agency-cambridge" },
-              { name: "Birmingham", href: "/shopify-agency-birmingham" },
-              { name: "Glasgow", href: "/shopify-agency-glasgow" },
-              { name: "Newcastle", href: "/shopify-agency-newcastle" },
-            ].map((city) => (
-              <a
-                key={city.name}
-                href={city.href}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-gray-200 text-foreground-dark text-sm font-medium hover:border-gray-300 hover:shadow-sm transition-all"
-              >
-                <MapPin className="w-4 h-4" />
-                {city.name}
-              </a>
-            ))}
-          </div>
         </div>
       </Section>
 
