@@ -35,7 +35,7 @@ const capabilities = [
 
 export function AISection() {
   return (
-    <section className="py-16 md:py-24" style={{ backgroundColor: "#0a0a0a" }}>
+    <section className="relative py-16 md:py-24 overflow-hidden" style={{ backgroundColor: "#0a0a0a" }}>
       <style>{`
         @property --ai-angle {
           syntax: '<angle>';
@@ -56,10 +56,90 @@ export function AISection() {
           );
           animation: ai-border-spin 3s linear infinite;
         }
+        @keyframes aurora-1 {
+          0%   { transform: translate(0px, 0px) scale(1); }
+          25%  { transform: translate(60px, -80px) scale(1.15); }
+          50%  { transform: translate(-40px, 60px) scale(0.9); }
+          75%  { transform: translate(80px, 40px) scale(1.05); }
+          100% { transform: translate(0px, 0px) scale(1); }
+        }
+        @keyframes aurora-2 {
+          0%   { transform: translate(0px, 0px) scale(1); }
+          33%  { transform: translate(-70px, 50px) scale(1.2); }
+          66%  { transform: translate(50px, -60px) scale(0.85); }
+          100% { transform: translate(0px, 0px) scale(1); }
+        }
+        @keyframes aurora-3 {
+          0%   { transform: translate(0px, 0px) scale(1.1); }
+          40%  { transform: translate(40px, 70px) scale(0.9); }
+          80%  { transform: translate(-60px, -40px) scale(1.2); }
+          100% { transform: translate(0px, 0px) scale(1.1); }
+        }
+        @keyframes aurora-4 {
+          0%   { transform: translate(0px, 0px) scale(0.95); }
+          50%  { transform: translate(-50px, -70px) scale(1.15); }
+          100% { transform: translate(0px, 0px) scale(0.95); }
+        }
       `}</style>
 
+      {/* Aurora blobs */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        {/* Pink — top right */}
+        <div
+          className="absolute rounded-full"
+          style={{
+            width: 600,
+            height: 600,
+            top: "-15%",
+            right: "-10%",
+            background: "radial-gradient(circle, rgba(239,67,107,0.28) 0%, transparent 70%)",
+            filter: "blur(60px)",
+            animation: "aurora-1 18s ease-in-out infinite",
+          }}
+        />
+        {/* Purple — bottom left */}
+        <div
+          className="absolute rounded-full"
+          style={{
+            width: 500,
+            height: 500,
+            bottom: "-20%",
+            left: "-5%",
+            background: "radial-gradient(circle, rgba(124,58,237,0.22) 0%, transparent 70%)",
+            filter: "blur(70px)",
+            animation: "aurora-2 22s ease-in-out infinite",
+          }}
+        />
+        {/* Blue — centre */}
+        <div
+          className="absolute rounded-full"
+          style={{
+            width: 400,
+            height: 400,
+            top: "30%",
+            left: "35%",
+            background: "radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%)",
+            filter: "blur(80px)",
+            animation: "aurora-3 26s ease-in-out infinite",
+          }}
+        />
+        {/* Teal — top left */}
+        <div
+          className="absolute rounded-full"
+          style={{
+            width: 350,
+            height: 350,
+            top: "10%",
+            left: "5%",
+            background: "radial-gradient(circle, rgba(20,184,166,0.14) 0%, transparent 70%)",
+            filter: "blur(65px)",
+            animation: "aurora-4 20s ease-in-out infinite",
+          }}
+        />
+      </div>
+
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Left: heading + description + CTA */}
           <div>
