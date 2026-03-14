@@ -43,9 +43,18 @@ export function Footer() {
     <footer className="bg-primary-dark text-white">
 
       {/* Location marquee */}
+      <style>{`
+        @keyframes location-scroll {
+          from { transform: translateX(0); }
+          to { transform: translateX(-33.333%); }
+        }
+      `}</style>
       <div className="overflow-hidden border-b border-white/10 py-3">
-        <div className="flex w-max animate-[scroll_30s_linear_infinite]">
-          {[...allLocations, ...allLocations].map((loc, i) => (
+        <div
+          className="flex w-max"
+          style={{ animation: "location-scroll 25s linear infinite" }}
+        >
+          {[...allLocations, ...allLocations, ...allLocations].map((loc, i) => (
             <Link
               key={i}
               href={loc.href}
