@@ -128,10 +128,10 @@ export function Header() {
       className={`fixed top-3 z-50 transition-colors duration-300 ${
         mobileMenuOpen ? "rounded-none lg:rounded-full" : "rounded-full"
       } ${
-        isTransparent && !mobileMenuOpen
-          ? "bg-transparent"
-          : mobileMenuOpen
+        mobileMenuOpen
           ? "bg-white shadow-[0_4px_24px_rgba(0,0,0,0.12)]"
+          : isTransparent
+          ? "bg-white/10 backdrop-blur-md shadow-[0_4px_24px_rgba(0,0,0,0.12)]"
           : "bg-white/50 backdrop-blur-2xl backdrop-saturate-150 shadow-[0_4px_24px_rgba(0,0,0,0.08)]"
       }`}
     >
