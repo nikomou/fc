@@ -7,11 +7,11 @@ import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "How to Use Shopify Inbox",
+  title: "How to Use Shopify Inbox for Customer Support",
   description: "Learn how to use Shopify Inbox for customer messaging. Covers setup, automated replies, product sharing, conversation management, mobile app, and analytics.",
   alternates: { canonical: "/guides/how-to-use-shopify-inbox" },
   openGraph: {
-    title: "How to Use Shopify Inbox",
+    title: "How to Use Shopify Inbox for Customer Support",
     description: "Learn how to use Shopify Inbox for customer messaging. Covers setup, automated replies, product sharing, conversation management, mobile app, and analytics.",
     url: "/guides/how-to-use-shopify-inbox",
     siteName: siteConfig.name,

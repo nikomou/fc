@@ -391,9 +391,9 @@ export default function SchemaMarkupGuidePage() {
                 <div className="bg-gray-50 rounded-xl p-6">
                   <h3 className="font-semibold text-foreground-dark mb-4">Related Resources</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <Link href="/checklists/shopify-seo-checklist" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">SEO Checklist →</h4>
-                      <p className="text-sm text-foreground">Complete technical SEO guide</p>
+                    <Link href="/guides/how-to-write-shopify-meta-descriptions" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Write Shopify Meta Descriptions →</h4>
+                      <p className="text-sm text-foreground">Craft compelling meta descriptions for SEO</p>
                     </Link>
                     <Link href="/guides/how-to-optimise-shopify-product-pages-for-seo" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
                       <h4 className="font-medium text-foreground-dark group-hover:text-accent">Product Page SEO →</h4>

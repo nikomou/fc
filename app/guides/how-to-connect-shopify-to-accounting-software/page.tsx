@@ -749,11 +749,11 @@ Asset Accounts:
                       <p className="text-sm text-foreground">For larger system integrations</p>
                     </Link>
                     <Link
-                      href="/shopify-integrations"
+                      href="/guides/how-to-integrate-shopify-with-sage"
                       className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group"
                     >
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Integration Services</h4>
-                      <p className="text-sm text-foreground">Professional integration help</p>
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Integrate Shopify with Sage</h4>
+                      <p className="text-sm text-foreground">Sync orders and inventory with Sage</p>
                     </Link>
                   </div>
                 </div>

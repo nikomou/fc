@@ -410,9 +410,9 @@ export default function OptimiseProductImagesGuidePage() {
                 <div className="bg-gray-50 rounded-xl p-6">
                   <h3 className="font-semibold text-foreground-dark mb-4">Related Resources</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <Link href="/checklists/shopify-speed-optimisation-checklist" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Speed Optimisation →</h4>
-                      <p className="text-sm text-foreground">Complete speed checklist</p>
+                    <Link href="/guides/how-to-optimise-shopify-images-for-seo" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Optimise Images for SEO →</h4>
+                      <p className="text-sm text-foreground">Improve image alt text and file names for search</p>
                     </Link>
                     <Link href="/guides/how-to-optimise-shopify-product-pages-for-seo" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
                       <h4 className="font-medium text-foreground-dark group-hover:text-accent">Product Page SEO →</h4>

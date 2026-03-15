@@ -206,9 +206,9 @@ export default function NavigationMenusGuidePage() {
                       <h4 className="font-medium text-foreground-dark group-hover:text-accent">Create Collections →</h4>
                       <p className="text-sm text-foreground">Organise your products</p>
                     </Link>
-                    <Link href="/checklists/shopify-homepage-checklist" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Homepage Checklist →</h4>
-                      <p className="text-sm text-foreground">Optimise your homepage</p>
+                    <Link href="/guides/how-to-create-shopify-mega-menu" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Create a Mega Menu on Shopify →</h4>
+                      <p className="text-sm text-foreground">Build a large navigation menu with images</p>
                     </Link>
                   </div>
                 </div>

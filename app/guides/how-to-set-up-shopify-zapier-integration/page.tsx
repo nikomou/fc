@@ -8,11 +8,11 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "How to Set Up Shopify Zapier Integration",
-  description: "Learn how to connect Shopify to other apps using Zapier. Covers connecting Shopify, popular Zaps, order notifications, customer data automation, limitations, and when to use native integrations.",
+  description: "Learn how to connect Shopify to other apps using Zapier. Covers popular Zaps, order notifications, customer data automation, and when to use native integrations.",
   alternates: { canonical: "/guides/how-to-set-up-shopify-zapier-integration" },
   openGraph: {
     title: "How to Set Up Shopify Zapier Integration",
-    description: "Learn how to connect Shopify to other apps using Zapier. Covers connecting Shopify, popular Zaps, order notifications, customer data automation, limitations, and when to use native integrations.",
+    description: "Learn how to connect Shopify to other apps using Zapier. Covers popular Zaps, order notifications, customer data automation, and when to use native integrations.",
     url: "/guides/how-to-set-up-shopify-zapier-integration",
     siteName: siteConfig.name,
     locale: "en_GB",

@@ -9,13 +9,13 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 export const metadata: Metadata = {
   title: "How to Add Cookie Consent to Shopify",
   description:
-    "Complete guide to implementing cookie consent on your Shopify store. Learn about cookie banners, consent management, GDPR compliance, and best practices for UK and EU stores.",
+    "Complete guide to implementing cookie consent on your Shopify store. Learn about cookie banners, consent management, GDPR compliance, and UK/EU best practices.",
   alternates: {
     canonical: "/guides/how-to-add-cookie-consent-to-shopify",
   },
   openGraph: {
     title: "How to Add Cookie Consent to Shopify",
-    description: "Complete guide to implementing cookie consent on your Shopify store.",
+    description: "Complete guide to implementing cookie consent on your Shopify store. Learn about cookie banners, consent management, GDPR compliance, and UK/EU best practices.",
     url: "/guides/how-to-add-cookie-consent-to-shopify",
     siteName: siteConfig.name,
     locale: "en_GB",
@@ -351,9 +351,9 @@ export default function CookieConsentGuidePage() {
                       <h4 className="font-medium text-foreground-dark group-hover:text-accent">GDPR Compliance Guide →</h4>
                       <p className="text-sm text-foreground">Full GDPR requirements</p>
                     </Link>
-                    <Link href="/checklists/shopify-launch-checklist" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Launch Checklist →</h4>
-                      <p className="text-sm text-foreground">Pre-launch compliance checks</p>
+                    <Link href="/guides/how-to-add-age-verification-to-shopify" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Add Age Verification to Shopify →</h4>
+                      <p className="text-sm text-foreground">Comply with UK age restriction rules</p>
                     </Link>
                   </div>
                 </div>

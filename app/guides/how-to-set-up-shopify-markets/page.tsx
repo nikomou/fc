@@ -7,14 +7,14 @@ import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "How to Set Up Shopify Markets",
+  title: "How to Set Up Shopify Markets for International Sales",
   description:
     "Complete guide to setting up Shopify Markets for international selling. Learn about market configuration, pricing strategies, duties, domains, and localisation.",
   alternates: {
     canonical: "/guides/how-to-set-up-shopify-markets",
   },
   openGraph: {
-    title: "How to Set Up Shopify Markets",
+    title: "How to Set Up Shopify Markets for International Sales",
     description: "Complete guide to setting up Shopify Markets for international selling.",
     url: "/guides/how-to-set-up-shopify-markets",
     siteName: siteConfig.name,

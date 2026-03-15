@@ -7,14 +7,14 @@ import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "How to Add Reviews to Shopify",
+  title: "How to Add Customer Reviews to Shopify",
   description:
     "Learn how to add product reviews to your Shopify store. Covers review apps, collecting reviews, displaying them effectively, and using review schema for SEO.",
   alternates: {
     canonical: "/guides/how-to-add-reviews-to-shopify",
   },
   openGraph: {
-    title: "How to Add Reviews to Shopify",
+    title: "How to Add Customer Reviews to Shopify",
     description: "Learn how to add product reviews to your Shopify store.",
     url: "/guides/how-to-add-reviews-to-shopify",
     siteName: siteConfig.name,

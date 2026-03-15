@@ -9,13 +9,13 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 export const metadata: Metadata = {
   title: "How to Track Shopify Conversions",
   description:
-    "Complete guide to setting up conversion tracking on Shopify. Learn how to configure Google Analytics 4, Facebook Pixel, Google Ads, and other tracking platforms correctly.",
+    "Complete guide to setting up conversion tracking on Shopify. Learn to configure Google Analytics 4, Facebook Pixel, Google Ads, and other tracking platforms.",
   alternates: {
     canonical: "/guides/how-to-track-shopify-conversions",
   },
   openGraph: {
     title: "How to Track Shopify Conversions",
-    description: "Complete guide to setting up conversion tracking on Shopify.",
+    description: "Complete guide to setting up conversion tracking on Shopify. Learn to configure Google Analytics 4, Facebook Pixel, Google Ads, and other tracking platforms.",
     url: "/guides/how-to-track-shopify-conversions",
     siteName: siteConfig.name,
     locale: "en_GB",

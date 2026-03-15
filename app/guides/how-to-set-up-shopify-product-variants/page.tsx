@@ -9,13 +9,13 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 export const metadata: Metadata = {
   title: "How to Set Up Shopify Product Variants",
   description:
-    "Complete guide to setting up product variants in Shopify. Learn about options, variant limits, pricing, inventory tracking, and best practices for managing product variations.",
+    "Complete guide to setting up product variants in Shopify. Learn about options, variant limits, pricing, inventory tracking, and best practices.",
   alternates: {
     canonical: "/guides/how-to-set-up-shopify-product-variants",
   },
   openGraph: {
     title: "How to Set Up Shopify Product Variants",
-    description: "Complete guide to setting up product variants in Shopify.",
+    description: "Complete guide to setting up product variants in Shopify. Learn about options, variant limits, pricing, inventory tracking, and best practices.",
     url: "/guides/how-to-set-up-shopify-product-variants",
     siteName: siteConfig.name,
     locale: "en_GB",
@@ -414,6 +414,29 @@ export default function ProductVariantsGuidePage() {
                     <Link href="/checklists/shopify-launch-checklist" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
                       <h4 className="font-medium text-foreground-dark group-hover:text-accent">Launch Checklist &rarr;</h4>
                       <p className="text-sm text-foreground">Complete store launch guide</p>
+                    </Link>
+                  </div>
+                </div>
+              </section>
+
+              {/* Related Resources */}
+              <section className="mb-16">
+                <div className="bg-gray-50 rounded-xl p-6">
+                  <h3 className="font-semibold text-foreground-dark mb-4">Related Guides</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <Link
+                      href="/guides/how-to-add-products-to-shopify"
+                      className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group"
+                    >
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Add Products to Shopify</h4>
+                      <p className="text-sm text-foreground">Complete guide to adding and managing products</p>
+                    </Link>
+                    <Link
+                      href="/guides/how-to-create-shopify-product-bundles"
+                      className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group"
+                    >
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Create Shopify Product Bundles</h4>
+                      <p className="text-sm text-foreground">Increase average order value with bundles</p>
                     </Link>
                   </div>
                 </div>

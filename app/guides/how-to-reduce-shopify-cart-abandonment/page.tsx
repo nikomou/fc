@@ -687,11 +687,11 @@ export default function CartAbandonmentGuidePage() {
                       <p className="text-sm text-foreground">Build customer confidence</p>
                     </Link>
                     <Link
-                      href="/shopify-speed-optimisation"
+                      href="/guides/how-to-set-up-shopify-abandoned-cart-emails"
                       className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group"
                     >
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Speed Optimisation →</h4>
-                      <p className="text-sm text-foreground">Faster checkout = more conversions</p>
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Set Up Abandoned Cart Emails →</h4>
+                      <p className="text-sm text-foreground">Recover lost sales with automated emails</p>
                     </Link>
                   </div>
                 </div>

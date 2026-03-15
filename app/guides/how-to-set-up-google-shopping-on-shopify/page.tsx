@@ -8,11 +8,11 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "How to Set Up Google Shopping on Shopify",
-  description: "Learn how to set up Google Shopping on Shopify. Covers Google Merchant Centre setup, product feed requirements, optimising titles, bidding strategy, and fixing common errors.",
+  description: "Learn how to set up Google Shopping on Shopify. Covers Merchant Centre setup, product feed requirements, optimising titles, bidding strategy, and common errors.",
   alternates: { canonical: "/guides/how-to-set-up-google-shopping-on-shopify" },
   openGraph: {
     title: "How to Set Up Google Shopping on Shopify",
-    description: "Learn how to set up Google Shopping on Shopify. Covers Google Merchant Centre setup, product feed requirements, optimising titles, bidding strategy, and fixing common errors.",
+    description: "Learn how to set up Google Shopping on Shopify. Covers Merchant Centre setup, product feed requirements, optimising titles, bidding strategy, and common errors.",
     url: "/guides/how-to-set-up-google-shopping-on-shopify",
     siteName: siteConfig.name,
     locale: "en_GB",

@@ -9,14 +9,14 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 export const metadata: Metadata = {
   title: "How to Integrate Shopify with ERP",
   description:
-    "Learn how to connect your Shopify store with ERP systems like SAP, NetSuite, and Microsoft Dynamics. Covers integration methods, data mapping, and implementation best practices.",
+    "Learn how to integrate Shopify with ERP systems like SAP, NetSuite, and Microsoft Dynamics. Covers integration methods, data mapping, and best practices.",
   alternates: {
     canonical: "/guides/how-to-integrate-shopify-with-erp",
   },
   openGraph: {
     title: "How to Integrate Shopify with ERP",
     description:
-      "Learn how to connect your Shopify store with ERP systems.",
+      "Learn how to integrate Shopify with ERP systems like SAP, NetSuite, and Microsoft Dynamics. Covers integration methods, data mapping, and best practices.",
     url: "/guides/how-to-integrate-shopify-with-erp",
     siteName: siteConfig.name,
     locale: "en_GB",
@@ -722,11 +722,11 @@ export default function ERPIntegrationGuidePage() {
                       <p className="text-sm text-foreground">Connect to Xero, QuickBooks, and more</p>
                     </Link>
                     <Link
-                      href="/shopify-integrations"
+                      href="/guides/how-to-manage-shopify-inventory"
                       className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group"
                     >
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Integration Services</h4>
-                      <p className="text-sm text-foreground">Professional integration development</p>
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Manage Shopify Inventory</h4>
+                      <p className="text-sm text-foreground">Sync and track stock across your systems</p>
                     </Link>
                   </div>
                 </div>

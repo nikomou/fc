@@ -8,11 +8,11 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "How to Improve Shopify Checkout Conversion",
-  description: "Learn how to improve checkout conversion on Shopify. Covers reducing form fields, payment options, trust signals, express checkout, abandoned checkout recovery, and Plus customisation.",
+  description: "Learn how to improve checkout conversion on Shopify. Covers payment options, trust signals, express checkout, abandoned cart recovery, and Plus customisation.",
   alternates: { canonical: "/guides/how-to-improve-shopify-checkout-conversion" },
   openGraph: {
     title: "How to Improve Shopify Checkout Conversion",
-    description: "Learn how to improve checkout conversion on Shopify. Covers reducing form fields, payment options, trust signals, express checkout, abandoned checkout recovery, and Plus customisation.",
+    description: "Learn how to improve checkout conversion on Shopify. Covers payment options, trust signals, express checkout, abandoned cart recovery, and Plus customisation.",
     url: "/guides/how-to-improve-shopify-checkout-conversion",
     siteName: siteConfig.name,
     locale: "en_GB",

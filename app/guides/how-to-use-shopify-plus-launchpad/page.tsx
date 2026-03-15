@@ -8,11 +8,11 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "How to Use Shopify Plus Launchpad",
-  description: "Learn how to use Shopify Plus Launchpad to schedule and automate sale events. Covers creating events, scheduling price changes, theme publishing, and post-event reporting.",
+  description: "Learn how to use Shopify Plus Launchpad to schedule and automate sales events. Covers creating events, price changes, theme publishing, and reporting.",
   alternates: { canonical: "/guides/how-to-use-shopify-plus-launchpad" },
   openGraph: {
     title: "How to Use Shopify Plus Launchpad",
-    description: "Learn how to use Shopify Plus Launchpad to schedule and automate sale events. Covers creating events, scheduling price changes, theme publishing, and post-event reporting.",
+    description: "Learn how to use Shopify Plus Launchpad to schedule and automate sales events. Covers creating events, price changes, theme publishing, and reporting.",
     url: "/guides/how-to-use-shopify-plus-launchpad",
     siteName: siteConfig.name,
     locale: "en_GB",

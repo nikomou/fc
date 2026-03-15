@@ -7,14 +7,14 @@ import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "How to Set Up Shopify Taxes",
+  title: "How to Set Up Shopify Taxes for UK Stores",
   description:
     "Complete guide to configuring taxes in Shopify. Learn about UK VAT setup, international tax collection, tax-inclusive pricing, and exemptions.",
   alternates: {
     canonical: "/guides/how-to-set-up-shopify-taxes",
   },
   openGraph: {
-    title: "How to Set Up Shopify Taxes",
+    title: "How to Set Up Shopify Taxes for UK Stores",
     description:
       "Complete guide to configuring taxes in Shopify. Learn about UK VAT setup, international tax collection, and exemptions.",
     url: "/guides/how-to-set-up-shopify-taxes",

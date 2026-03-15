@@ -7,14 +7,14 @@ import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "How to Set Up Shopify B2B",
+  title: "How to Set Up Shopify B2B for Wholesale Selling",
   description:
     "Complete guide to setting up B2B ecommerce on Shopify. Learn about company accounts, customer-specific pricing, payment terms, and wholesale functionality.",
   alternates: {
     canonical: "/guides/how-to-set-up-shopify-b2b",
   },
   openGraph: {
-    title: "How to Set Up Shopify B2B",
+    title: "How to Set Up Shopify B2B for Wholesale Selling",
     description:
       "Complete guide to setting up B2B ecommerce on Shopify. Learn about company accounts, customer-specific pricing, and wholesale functionality.",
     url: "/guides/how-to-set-up-shopify-b2b",

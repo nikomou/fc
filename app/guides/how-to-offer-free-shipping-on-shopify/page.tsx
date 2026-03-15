@@ -353,9 +353,9 @@ export default function ShopifyFreeShippingGuidePage() {
                       <h4 className="font-medium text-foreground-dark group-hover:text-accent">Local Delivery Guide →</h4>
                       <p className="text-sm text-foreground">Alternative to shipping</p>
                     </Link>
-                    <Link href="/checklists/shopify-checkout-optimisation-checklist" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Checkout Optimisation →</h4>
-                      <p className="text-sm text-foreground">Reduce cart abandonment</p>
+                    <Link href="/guides/how-to-configure-shopify-shipping-rates" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Configure Shopify Shipping Rates →</h4>
+                      <p className="text-sm text-foreground">Set up shipping zones and rates</p>
                     </Link>
                   </div>
                 </div>

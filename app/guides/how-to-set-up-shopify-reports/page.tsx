@@ -7,11 +7,11 @@ import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "How to Set Up Shopify Reports",
+  title: "How to Set Up Shopify Reports and Custom Dashboards",
   description: "Complete guide to setting up and using Shopify reports. Learn about sales reports, custom reports, analytics, and data-driven decision making.",
   alternates: { canonical: "/guides/how-to-set-up-shopify-reports" },
   openGraph: {
-    title: "How to Set Up Shopify Reports",
+    title: "How to Set Up Shopify Reports and Custom Dashboards",
     description: "Complete guide to setting up and using Shopify reports.",
     url: "/guides/how-to-set-up-shopify-reports",
     siteName: siteConfig.name,

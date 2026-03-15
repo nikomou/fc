@@ -671,11 +671,11 @@ body, button, input, select, textarea {
                       <p className="text-sm text-foreground">Create custom announcement bars</p>
                     </Link>
                     <Link
-                      href="/shopify-theme-development"
+                      href="/guides/how-to-add-custom-fonts-to-shopify"
                       className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group"
                     >
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Theme Development Services</h4>
-                      <p className="text-sm text-foreground">Professional theme customisation</p>
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Add Custom Fonts to Shopify</h4>
+                      <p className="text-sm text-foreground">Load and apply custom typefaces to your theme</p>
                     </Link>
                   </div>
                 </div>

@@ -7,14 +7,14 @@ import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "How to Read Shopify Analytics",
+  title: "How to Read Shopify Analytics and Reports",
   description:
     "Complete guide to understanding Shopify Analytics. Learn how to interpret your store data, identify trends, and make data-driven decisions to grow your business.",
   alternates: {
     canonical: "/guides/how-to-read-shopify-analytics",
   },
   openGraph: {
-    title: "How to Read Shopify Analytics",
+    title: "How to Read Shopify Analytics and Reports",
     description: "Complete guide to understanding Shopify Analytics.",
     url: "/guides/how-to-read-shopify-analytics",
     siteName: siteConfig.name,
@@ -368,9 +368,9 @@ export default function ShopifyAnalyticsGuidePage() {
                       <h4 className="font-medium text-foreground-dark group-hover:text-accent">Conversion Tracking Guide →</h4>
                       <p className="text-sm text-foreground">Set up accurate tracking</p>
                     </Link>
-                    <Link href="/checklists/shopify-launch-checklist" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Launch Checklist →</h4>
-                      <p className="text-sm text-foreground">Complete pre-launch guide</p>
+                    <Link href="/guides/how-to-set-up-shopify-reports" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Set Up Shopify Reports →</h4>
+                      <p className="text-sm text-foreground">Create custom dashboards and reports</p>
                     </Link>
                   </div>
                 </div>

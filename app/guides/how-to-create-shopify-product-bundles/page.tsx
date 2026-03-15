@@ -335,9 +335,9 @@ export default function ShopifyProductBundlesGuidePage() {
                 <div className="bg-gray-50 rounded-xl p-6">
                   <h3 className="font-semibold text-foreground-dark mb-4">Related Resources</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <Link href="/checklists/shopify-product-page-checklist" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Product Page Checklist →</h4>
-                      <p className="text-sm text-foreground">Optimise product pages</p>
+                    <Link href="/guides/how-to-set-up-shopify-upsells" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Set Up Upsells on Shopify →</h4>
+                      <p className="text-sm text-foreground">Increase average order value with upsells</p>
                     </Link>
                     <Link href="/guides/how-to-manage-shopify-inventory" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
                       <h4 className="font-medium text-foreground-dark group-hover:text-accent">Inventory Management →</h4>

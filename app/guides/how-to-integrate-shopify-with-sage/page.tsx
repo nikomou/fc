@@ -8,11 +8,11 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "How to Integrate Shopify with Sage",
-  description: "Learn how to integrate Shopify with Sage accounting software. Covers integration options, data mapping, order sync, inventory sync, and troubleshooting common issues.",
+  description: "Learn how to integrate Shopify with Sage accounting software. Covers integration options, data mapping, order and inventory sync, and troubleshooting.",
   alternates: { canonical: "/guides/how-to-integrate-shopify-with-sage" },
   openGraph: {
     title: "How to Integrate Shopify with Sage",
-    description: "Learn how to integrate Shopify with Sage accounting software. Covers integration options, data mapping, order sync, inventory sync, and troubleshooting common issues.",
+    description: "Learn how to integrate Shopify with Sage accounting software. Covers integration options, data mapping, order and inventory sync, and troubleshooting.",
     url: "/guides/how-to-integrate-shopify-with-sage",
     siteName: siteConfig.name,
     locale: "en_GB",

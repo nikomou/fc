@@ -643,11 +643,11 @@ Large:    /products/blue-bag_1200x.jpg`}
                       <p className="text-sm text-foreground">Optimise images for conversions</p>
                     </Link>
                     <Link
-                      href="/shopify-seo"
+                      href="/guides/how-to-optimise-shopify-product-pages-for-seo"
                       className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group"
                     >
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Our SEO Services →</h4>
-                      <p className="text-sm text-foreground">Professional Shopify SEO</p>
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Optimise Product Pages for SEO →</h4>
+                      <p className="text-sm text-foreground">Rank higher with better on-page SEO</p>
                     </Link>
                   </div>
                 </div>

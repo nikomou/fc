@@ -9,13 +9,13 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 export const metadata: Metadata = {
   title: "How to Migrate to Shopify Plus",
   description:
-    "Complete guide to upgrading from standard Shopify to Shopify Plus. Learn about the benefits, migration process, new features to implement, and how to maximise your Plus investment.",
+    "Complete guide to upgrading from Shopify to Shopify Plus. Learn about the benefits, migration process, new features to implement, and maximising your investment.",
   alternates: {
     canonical: "/guides/how-to-migrate-to-shopify-plus",
   },
   openGraph: {
     title: "How to Migrate to Shopify Plus",
-    description: "Complete guide to upgrading from standard Shopify to Shopify Plus.",
+    description: "Complete guide to upgrading from Shopify to Shopify Plus. Learn about the benefits, migration process, new features to implement, and maximising your investment.",
     url: "/guides/how-to-migrate-to-shopify-plus",
     siteName: siteConfig.name,
     locale: "en_GB",

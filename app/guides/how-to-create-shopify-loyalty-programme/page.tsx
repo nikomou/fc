@@ -8,11 +8,11 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "How to Create a Loyalty Programme on Shopify",
-  description: "Learn how to create a loyalty programme on Shopify. Covers programme types, points vs tiered models, app selection, earn rates, reward options, and measuring LTV impact.",
+  description: "Learn how to create a loyalty programme on Shopify. Covers programme types, points vs tiered models, app selection, earn rates, and measuring LTV impact.",
   alternates: { canonical: "/guides/how-to-create-shopify-loyalty-programme" },
   openGraph: {
     title: "How to Create a Loyalty Programme on Shopify",
-    description: "Learn how to create a loyalty programme on Shopify. Covers programme types, points vs tiered models, app selection, earn rates, reward options, and measuring LTV impact.",
+    description: "Learn how to create a loyalty programme on Shopify. Covers programme types, points vs tiered models, app selection, earn rates, and measuring LTV impact.",
     url: "/guides/how-to-create-shopify-loyalty-programme",
     siteName: siteConfig.name,
     locale: "en_GB",

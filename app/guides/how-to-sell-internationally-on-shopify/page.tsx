@@ -9,13 +9,13 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 export const metadata: Metadata = {
   title: "How to Sell Internationally on Shopify",
   description:
-    "Complete guide to selling internationally on Shopify. Learn about multi-currency, international shipping, duties and taxes, localisation, and global expansion strategies.",
+    "Complete guide to selling internationally on Shopify. Learn about multi-currency, international shipping, duties, localisation, and global expansion strategies.",
   alternates: {
     canonical: "/guides/how-to-sell-internationally-on-shopify",
   },
   openGraph: {
     title: "How to Sell Internationally on Shopify",
-    description: "Complete guide to selling internationally on Shopify.",
+    description: "Complete guide to selling internationally on Shopify. Learn about multi-currency, international shipping, duties, localisation, and global expansion strategies.",
     url: "/guides/how-to-sell-internationally-on-shopify",
     siteName: siteConfig.name,
     locale: "en_GB",

@@ -7,14 +7,14 @@ import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "How to Choose Shopify Apps",
+  title: "How to Choose Shopify Apps: What to Look For",
   description:
     "Learn how to evaluate and choose the right Shopify apps for your store. Covers review analysis, performance impact, security, pricing, and essential app categories.",
   alternates: {
     canonical: "/guides/how-to-choose-shopify-apps",
   },
   openGraph: {
-    title: "How to Choose Shopify Apps",
+    title: "How to Choose Shopify Apps: What to Look For",
     description:
       "Learn how to evaluate and choose the right Shopify apps for your store.",
     url: "/guides/how-to-choose-shopify-apps",

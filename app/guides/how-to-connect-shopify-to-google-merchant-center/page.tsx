@@ -9,14 +9,14 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 export const metadata: Metadata = {
   title: "How to Connect Shopify to Google Merchant Center",
   description:
-    "Learn how to connect your Shopify store to Google Merchant Center for Shopping ads and free listings. Complete guide covering feed setup, product approval, and optimisation.",
+    "Learn how to connect Shopify to Google Merchant Center for Shopping ads and free listings. Covers feed setup, product approval, and optimisation.",
   alternates: {
     canonical: "/guides/how-to-connect-shopify-to-google-merchant-center",
   },
   openGraph: {
     title: "How to Connect Shopify to Google Merchant Center",
     description:
-      "Learn how to connect your Shopify store to Google Merchant Center for Shopping ads and free listings.",
+      "Learn how to connect Shopify to Google Merchant Center for Shopping ads and free listings. Covers feed setup, product approval, and optimisation.",
     url: "/guides/how-to-connect-shopify-to-google-merchant-center",
     siteName: siteConfig.name,
     locale: "en_GB",
@@ -738,11 +738,11 @@ export default function GoogleMerchantCenterGuidePage() {
                       <p className="text-sm text-foreground">Track your store performance</p>
                     </Link>
                     <Link
-                      href="/shopify-seo"
+                      href="/guides/how-to-set-up-google-shopping-on-shopify"
                       className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group"
                     >
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Shopify SEO Services</h4>
-                      <p className="text-sm text-foreground">Improve organic visibility</p>
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Set Up Google Shopping on Shopify</h4>
+                      <p className="text-sm text-foreground">Run Shopping ads from your product feed</p>
                     </Link>
                   </div>
                 </div>

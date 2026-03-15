@@ -8,11 +8,11 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "How to Set Up Shopify Flow Automations",
-  description: "Learn how to set up advanced Shopify Flow automations for Plus. Covers high-value customer workflows, risk management, inventory alerts, B2B automations, and debugging.",
+  description: "Learn how to set up Shopify Flow automations for Plus. Covers high-value customer workflows, risk management, inventory alerts, B2B automations, and debugging.",
   alternates: { canonical: "/guides/how-to-set-up-shopify-flow-automations" },
   openGraph: {
     title: "How to Set Up Shopify Flow Automations",
-    description: "Learn how to set up advanced Shopify Flow automations for Plus. Covers high-value customer workflows, risk management, inventory alerts, B2B automations, and debugging.",
+    description: "Learn how to set up Shopify Flow automations for Plus. Covers high-value customer workflows, risk management, inventory alerts, B2B automations, and debugging.",
     url: "/guides/how-to-set-up-shopify-flow-automations",
     siteName: siteConfig.name,
     locale: "en_GB",

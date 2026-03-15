@@ -7,14 +7,14 @@ import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "How to Handle Shopify Returns",
+  title: "How to Handle Returns on Shopify Effectively",
   description:
     "Complete guide to managing returns on Shopify. Learn about return policies, refund processing, return apps, and reducing return rates.",
   alternates: {
     canonical: "/guides/how-to-handle-shopify-returns",
   },
   openGraph: {
-    title: "How to Handle Shopify Returns",
+    title: "How to Handle Returns on Shopify Effectively",
     description: "Complete guide to managing returns on Shopify.",
     url: "/guides/how-to-handle-shopify-returns",
     siteName: siteConfig.name,
@@ -389,9 +389,9 @@ export default function ShopifyReturnsGuidePage() {
                       <h4 className="font-medium text-foreground-dark group-hover:text-accent">Order Tracking Guide →</h4>
                       <p className="text-sm text-foreground">Post-purchase experience</p>
                     </Link>
-                    <Link href="/checklists/shopify-launch-checklist" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Launch Checklist →</h4>
-                      <p className="text-sm text-foreground">Complete pre-launch guide</p>
+                    <Link href="/guides/how-to-write-shopify-store-policies" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Write Shopify Store Policies →</h4>
+                      <p className="text-sm text-foreground">Create clear return and refund policies</p>
                     </Link>
                   </div>
                 </div>

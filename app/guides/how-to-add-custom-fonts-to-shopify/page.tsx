@@ -349,6 +349,29 @@ body {
                 </div>
               </section>
 
+              {/* Related Resources */}
+              <section className="mb-16">
+                <div className="bg-gray-50 rounded-xl p-6">
+                  <h3 className="font-semibold text-foreground-dark mb-4">Related Guides</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <Link
+                      href="/guides/how-to-add-custom-css-to-shopify"
+                      className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group"
+                    >
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Add Custom CSS to Shopify</h4>
+                      <p className="text-sm text-foreground">Style your theme with custom CSS</p>
+                    </Link>
+                    <Link
+                      href="/guides/how-to-customise-shopify-theme"
+                      className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group"
+                    >
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Customise Your Shopify Theme</h4>
+                      <p className="text-sm text-foreground">A complete guide to theme customisation</p>
+                    </Link>
+                  </div>
+                </div>
+              </section>
+
             </article>
 
             <aside className="hidden lg:block w-64 flex-shrink-0">

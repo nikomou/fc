@@ -609,11 +609,11 @@ Checkout:     yourstore.com/checkouts/[token]`}
                       <p className="text-sm text-foreground">Master Shopify redirects</p>
                     </Link>
                     <Link
-                      href="/shopify-seo"
+                      href="/guides/how-to-write-shopify-meta-descriptions"
                       className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group"
                     >
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Our SEO Services →</h4>
-                      <p className="text-sm text-foreground">Professional Shopify SEO</p>
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Write Shopify Meta Descriptions →</h4>
+                      <p className="text-sm text-foreground">Improve click-through rates from search</p>
                     </Link>
                   </div>
                 </div>

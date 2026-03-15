@@ -8,11 +8,11 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "How to Write Shopify Store Policies",
-  description: "Learn how to write Shopify store policies for UK merchants. Covers refund policy, privacy policy, terms of service, shipping policy, UK consumer rights, and adding policies to your store.",
+  description: "Learn how to write Shopify store policies for UK merchants. Covers refund policy, privacy policy, terms of service, shipping policy, and UK consumer rights.",
   alternates: { canonical: "/guides/how-to-write-shopify-store-policies" },
   openGraph: {
     title: "How to Write Shopify Store Policies",
-    description: "Learn how to write Shopify store policies for UK merchants. Covers refund policy, privacy policy, terms of service, shipping policy, UK consumer rights, and adding policies to your store.",
+    description: "Learn how to write Shopify store policies for UK merchants. Covers refund policy, privacy policy, terms of service, shipping policy, and UK consumer rights.",
     url: "/guides/how-to-write-shopify-store-policies",
     siteName: siteConfig.name,
     locale: "en_GB",

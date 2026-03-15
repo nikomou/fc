@@ -9,13 +9,13 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 export const metadata: Metadata = {
   title: "How to Translate Your Shopify Store",
   description:
-    "Complete guide to making your Shopify store multilingual. Learn about translation apps, Shopify Markets, language selectors, and SEO considerations for international stores.",
+    "Complete guide to making your Shopify store multilingual. Learn about translation apps, Shopify Markets, language selectors, and international SEO.",
   alternates: {
     canonical: "/guides/how-to-translate-your-shopify-store",
   },
   openGraph: {
     title: "How to Translate Your Shopify Store",
-    description: "Complete guide to making your Shopify store multilingual.",
+    description: "Complete guide to making your Shopify store multilingual. Learn about translation apps, Shopify Markets, language selectors, and international SEO.",
     url: "/guides/how-to-translate-your-shopify-store",
     siteName: siteConfig.name,
     locale: "en_GB",
@@ -361,9 +361,9 @@ export default function TranslateShopifyStoreGuidePage() {
                 <div className="bg-gray-50 rounded-xl p-6">
                   <h3 className="font-semibold text-foreground-dark mb-4">Related Resources</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <Link href="/checklists/shopify-launch-checklist" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Launch Checklist →</h4>
-                      <p className="text-sm text-foreground">Complete pre-launch guide</p>
+                    <Link href="/guides/how-to-set-up-shopify-markets" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Set Up Shopify Markets →</h4>
+                      <p className="text-sm text-foreground">Manage international pricing and currencies</p>
                     </Link>
                     <Link href="/guides/how-to-set-up-shopify-b2b" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
                       <h4 className="font-medium text-foreground-dark group-hover:text-accent">B2B Setup Guide →</h4>

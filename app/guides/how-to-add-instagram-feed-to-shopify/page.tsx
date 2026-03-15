@@ -8,11 +8,11 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "How to Add an Instagram Feed to Shopify",
-  description: "Learn how to add an Instagram feed to your Shopify store. Covers benefits, app options, performance impact, curating content, shoppable posts, and GDPR considerations.",
+  description: "Learn how to add an Instagram feed to your Shopify store. Covers app options, performance impact, shoppable posts, curating content, and GDPR compliance.",
   alternates: { canonical: "/guides/how-to-add-instagram-feed-to-shopify" },
   openGraph: {
     title: "How to Add an Instagram Feed to Shopify",
-    description: "Learn how to add an Instagram feed to your Shopify store. Covers benefits, app options, performance impact, curating content, shoppable posts, and GDPR considerations.",
+    description: "Learn how to add an Instagram feed to your Shopify store. Covers app options, performance impact, shoppable posts, curating content, and GDPR compliance.",
     url: "/guides/how-to-add-instagram-feed-to-shopify",
     siteName: siteConfig.name,
     locale: "en_GB",

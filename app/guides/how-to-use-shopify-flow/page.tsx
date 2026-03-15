@@ -7,12 +7,12 @@ import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "How to Use Shopify Flow",
-  description: "Learn how to use Shopify Flow to automate store operations. Covers triggers, conditions, actions, fraud prevention, customer tagging, inventory workflows, and testing.",
+  title: "How to Use Shopify Flow: Automation Guide",
+  description: "Learn how to use Shopify Flow to automate store operations. Covers triggers, conditions, actions, fraud prevention, customer tagging, and inventory workflows.",
   alternates: { canonical: "/guides/how-to-use-shopify-flow" },
   openGraph: {
-    title: "How to Use Shopify Flow",
-    description: "Learn how to use Shopify Flow to automate store operations. Covers triggers, conditions, actions, fraud prevention, customer tagging, inventory workflows, and testing.",
+    title: "How to Use Shopify Flow: Automation Guide",
+    description: "Learn how to use Shopify Flow to automate store operations. Covers triggers, conditions, actions, fraud prevention, customer tagging, and inventory workflows.",
     url: "/guides/how-to-use-shopify-flow",
     siteName: siteConfig.name,
     locale: "en_GB",

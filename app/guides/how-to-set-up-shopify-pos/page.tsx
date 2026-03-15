@@ -7,14 +7,14 @@ import { siteConfig } from "@/lib/constants";
 import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "How to Set Up Shopify POS",
+  title: "How to Set Up Shopify POS: Complete Guide",
   description:
     "Complete guide to setting up Shopify Point of Sale for your retail location. Learn about hardware requirements, configuration, staff management, and inventory sync.",
   alternates: {
     canonical: "/guides/how-to-set-up-shopify-pos",
   },
   openGraph: {
-    title: "How to Set Up Shopify POS",
+    title: "How to Set Up Shopify POS: Complete Guide",
     description: "Complete guide to setting up Shopify Point of Sale for your retail location.",
     url: "/guides/how-to-set-up-shopify-pos",
     siteName: siteConfig.name,
@@ -429,9 +429,9 @@ export default function ShopifyPOSGuidePage() {
                 <div className="bg-gray-50 rounded-xl p-6">
                   <h3 className="font-semibold text-foreground-dark mb-4">Related Resources</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <Link href="/checklists/shopify-launch-checklist" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Launch Checklist &rarr;</h4>
-                      <p className="text-sm text-foreground">Complete store launch guide</p>
+                    <Link href="/guides/how-to-set-up-shopify-local-delivery" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Set Up Local Delivery &rarr;</h4>
+                      <p className="text-sm text-foreground">Offer delivery alongside in-store pickup</p>
                     </Link>
                     <Link href="/guides/how-to-set-up-shopify-payments" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
                       <h4 className="font-medium text-foreground-dark group-hover:text-accent">Payments Setup Guide &rarr;</h4>

@@ -9,14 +9,14 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 export const metadata: Metadata = {
   title: "How to Create Shopify Announcement Bars",
   description:
-    "Learn how to create effective announcement bars for your Shopify store. Covers built-in options, custom development, rotating messages, and conversion best practices.",
+    "Learn how to create announcement bars for your Shopify store. Covers built-in options, custom development, rotating messages, and conversion best practices.",
   alternates: {
     canonical: "/guides/how-to-create-shopify-announcement-bars",
   },
   openGraph: {
     title: "How to Create Shopify Announcement Bars",
     description:
-      "Learn how to create effective announcement bars for your Shopify store.",
+      "Learn how to create announcement bars for your Shopify store. Covers built-in options, custom development, rotating messages, and conversion best practices.",
     url: "/guides/how-to-create-shopify-announcement-bars",
     siteName: siteConfig.name,
     locale: "en_GB",
@@ -770,11 +770,11 @@ export default function AnnouncementBarsGuidePage() {
                       <p className="text-sm text-foreground">Style your announcement bar</p>
                     </Link>
                     <Link
-                      href="/shopify-theme-development"
+                      href="/guides/how-to-create-urgency-on-shopify"
                       className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group"
                     >
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Theme Development</h4>
-                      <p className="text-sm text-foreground">Custom announcement solutions</p>
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Create Urgency on Shopify</h4>
+                      <p className="text-sm text-foreground">Drive action with scarcity and countdown tactics</p>
                     </Link>
                   </div>
                 </div>

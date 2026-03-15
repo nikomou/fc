@@ -8,11 +8,11 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "How to Set Up Click and Collect on Shopify",
-  description: "Learn how to set up click and collect on Shopify. Covers enabling local pickup, multiple locations, customer notifications, managing pickup orders, and combining with delivery.",
+  description: "Learn how to set up click and collect on Shopify. Covers local pickup, multiple locations, customer notifications, and managing pickup orders.",
   alternates: { canonical: "/guides/how-to-set-up-shopify-click-and-collect" },
   openGraph: {
     title: "How to Set Up Click and Collect on Shopify",
-    description: "Learn how to set up click and collect on Shopify. Covers enabling local pickup, multiple locations, customer notifications, managing pickup orders, and combining with delivery.",
+    description: "Learn how to set up click and collect on Shopify. Covers local pickup, multiple locations, customer notifications, and managing pickup orders.",
     url: "/guides/how-to-set-up-shopify-click-and-collect",
     siteName: siteConfig.name,
     locale: "en_GB",

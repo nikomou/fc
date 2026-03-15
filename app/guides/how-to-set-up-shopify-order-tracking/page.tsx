@@ -357,9 +357,9 @@ export default function ShopifyOrderTrackingGuidePage() {
                       <h4 className="font-medium text-foreground-dark group-hover:text-accent">Returns Guide →</h4>
                       <p className="text-sm text-foreground">Handle returns smoothly</p>
                     </Link>
-                    <Link href="/checklists/shopify-launch-checklist" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Launch Checklist →</h4>
-                      <p className="text-sm text-foreground">Complete pre-launch guide</p>
+                    <Link href="/guides/how-to-set-up-shopify-abandoned-cart-emails" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Set Up Abandoned Cart Emails →</h4>
+                      <p className="text-sm text-foreground">Recover lost sales post-browse</p>
                     </Link>
                   </div>
                 </div>

@@ -9,13 +9,13 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 export const metadata: Metadata = {
   title: "How to Migrate from Magento to Shopify",
   description:
-    "Complete guide to migrating your Magento store to Shopify. Learn about data migration, handling complex Magento features, URL redirects, and enterprise-level considerations.",
+    "Complete guide to migrating from Magento to Shopify. Learn about data migration, complex feature handling, URL redirects, and enterprise considerations.",
   alternates: {
     canonical: "/guides/how-to-migrate-from-magento-to-shopify",
   },
   openGraph: {
     title: "How to Migrate from Magento to Shopify",
-    description: "Complete guide to migrating your Magento store to Shopify.",
+    description: "Complete guide to migrating from Magento to Shopify. Learn about data migration, complex feature handling, URL redirects, and enterprise considerations.",
     url: "/guides/how-to-migrate-from-magento-to-shopify",
     siteName: siteConfig.name,
     locale: "en_GB",
@@ -467,9 +467,9 @@ export default function MagentoToShopifyGuidePage() {
                       <h4 className="font-medium text-foreground-dark group-hover:text-accent">Shopify Plus Upgrade →</h4>
                       <p className="text-sm text-foreground">Enterprise features for Magento merchants</p>
                     </Link>
-                    <Link href="/checklists/shopify-launch-checklist" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Launch Checklist →</h4>
-                      <p className="text-sm text-foreground">Pre-launch verification</p>
+                    <Link href="/guides/how-to-create-shopify-redirects" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Create Shopify Redirects →</h4>
+                      <p className="text-sm text-foreground">Preserve SEO rankings after migration</p>
                     </Link>
                   </div>
                 </div>

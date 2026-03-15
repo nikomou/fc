@@ -8,11 +8,11 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "How to Add Age Verification to Shopify",
-  description: "Learn how to add age verification to your Shopify store. Covers UK legal requirements, app options, implementation methods, limitations, and compliance documentation.",
+  description: "Learn how to add age verification to your Shopify store. Covers UK legal requirements, app options, implementation methods, and compliance documentation.",
   alternates: { canonical: "/guides/how-to-add-age-verification-to-shopify" },
   openGraph: {
     title: "How to Add Age Verification to Shopify",
-    description: "Learn how to add age verification to your Shopify store. Covers UK legal requirements, app options, implementation methods, limitations, and compliance documentation.",
+    description: "Learn how to add age verification to your Shopify store. Covers UK legal requirements, app options, implementation methods, and compliance documentation.",
     url: "/guides/how-to-add-age-verification-to-shopify",
     siteName: siteConfig.name,
     locale: "en_GB",

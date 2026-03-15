@@ -205,9 +205,9 @@ export default function ConfigureCheckoutGuidePage() {
                 <div className="bg-gray-50 rounded-xl p-6">
                   <h3 className="font-semibold text-foreground-dark mb-4">Related Resources</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <Link href="/checklists/shopify-checkout-optimisation-checklist" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Checkout Optimisation Checklist →</h4>
-                      <p className="text-sm text-foreground">Complete checkout audit</p>
+                    <Link href="/guides/how-to-improve-shopify-checkout-conversion" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Improve Checkout Conversion →</h4>
+                      <p className="text-sm text-foreground">Increase purchase completion rates</p>
                     </Link>
                     <Link href="/guides/how-to-set-up-shopify-payments" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
                       <h4 className="font-medium text-foreground-dark group-hover:text-accent">Set Up Shopify Payments →</h4>

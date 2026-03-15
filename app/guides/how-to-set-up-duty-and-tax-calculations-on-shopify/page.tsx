@@ -8,11 +8,11 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "How to Set Up Duty and Tax Calculations on Shopify",
-  description: "Learn how to set up duty and tax calculations on Shopify for international orders. Covers post-Brexit rules, Shopify Markets duties, DDP, threshold limits, and testing.",
+  description: "Learn how to set up duty and tax calculations on Shopify. Covers post-Brexit rules, Shopify Markets duties, DDP settings, threshold limits, and testing.",
   alternates: { canonical: "/guides/how-to-set-up-duty-and-tax-calculations-on-shopify" },
   openGraph: {
     title: "How to Set Up Duty and Tax Calculations on Shopify",
-    description: "Learn how to set up duty and tax calculations on Shopify for international orders. Covers post-Brexit rules, Shopify Markets duties, DDP, threshold limits, and testing.",
+    description: "Learn how to set up duty and tax calculations on Shopify. Covers post-Brexit rules, Shopify Markets duties, DDP settings, threshold limits, and testing.",
     url: "/guides/how-to-set-up-duty-and-tax-calculations-on-shopify",
     siteName: siteConfig.name,
     locale: "en_GB",

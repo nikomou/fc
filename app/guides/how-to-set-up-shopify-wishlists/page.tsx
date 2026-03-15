@@ -8,11 +8,11 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "How to Set Up a Wishlist on Shopify",
-  description: "Learn how to add a wishlist feature to your Shopify store. Covers app options, placement, sharing functionality, wishlist emails, and measuring impact on conversions.",
+  description: "Learn how to add a wishlist feature to your Shopify store. Covers app options, placement, sharing functionality, wishlist emails, and conversion impact.",
   alternates: { canonical: "/guides/how-to-set-up-shopify-wishlists" },
   openGraph: {
     title: "How to Set Up a Wishlist on Shopify",
-    description: "Learn how to add a wishlist feature to your Shopify store. Covers app options, placement, sharing functionality, wishlist emails, and measuring impact on conversions.",
+    description: "Learn how to add a wishlist feature to your Shopify store. Covers app options, placement, sharing functionality, wishlist emails, and conversion impact.",
     url: "/guides/how-to-set-up-shopify-wishlists",
     siteName: siteConfig.name,
     locale: "en_GB",

@@ -439,9 +439,9 @@ export default function ShopifyImportProductsGuidePage() {
                       <h4 className="font-medium text-foreground-dark group-hover:text-accent">Inventory Management →</h4>
                       <p className="text-sm text-foreground">Stock tracking guide</p>
                     </Link>
-                    <Link href="/checklists/shopify-launch-checklist" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Launch Checklist →</h4>
-                      <p className="text-sm text-foreground">Complete pre-launch guide</p>
+                    <Link href="/guides/how-to-add-products-to-shopify" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Add Products to Shopify →</h4>
+                      <p className="text-sm text-foreground">Manually add and configure products</p>
                     </Link>
                   </div>
                 </div>

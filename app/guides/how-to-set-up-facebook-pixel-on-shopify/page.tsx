@@ -819,11 +819,11 @@ fbq('track', 'WishlistAdd', {
                       <p className="text-sm text-foreground">Complete GA4 tracking for Shopify</p>
                     </Link>
                     <Link
-                      href="/shopify-integrations"
+                      href="/guides/how-to-track-shopify-conversions"
                       className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group"
                     >
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Shopify Integration Services</h4>
-                      <p className="text-sm text-foreground">Professional tracking setup</p>
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Track Shopify Conversions</h4>
+                      <p className="text-sm text-foreground">Set up conversion tracking across all platforms</p>
                     </Link>
                   </div>
                 </div>

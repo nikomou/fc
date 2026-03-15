@@ -8,11 +8,11 @@ import { Clock, ArrowLeft, User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "How to Reduce JavaScript on Shopify",
-  description: "Learn how to reduce JavaScript bloat on Shopify to improve page speed. Covers auditing JS, removing unused scripts, deferring non-critical code, and measuring improvements.",
+  description: "Learn how to reduce JavaScript on Shopify for faster page speeds. Covers auditing JS, removing unused scripts, deferring non-critical code, and measuring results.",
   alternates: { canonical: "/guides/how-to-reduce-shopify-javascript" },
   openGraph: {
     title: "How to Reduce JavaScript on Shopify",
-    description: "Reduce JavaScript on Shopify for faster page loads and better Core Web Vitals.",
+    description: "Learn how to reduce JavaScript on Shopify for faster page speeds. Covers auditing JS, removing unused scripts, deferring non-critical code, and measuring results.",
     url: "/guides/how-to-reduce-shopify-javascript",
     siteName: siteConfig.name,
     locale: "en_GB",

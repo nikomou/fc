@@ -187,9 +187,9 @@ export default function CustomerAccountsGuidePage() {
                       <h4 className="font-medium text-foreground-dark group-hover:text-accent">Configure Checkout →</h4>
                       <p className="text-sm text-foreground">Checkout settings guide</p>
                     </Link>
-                    <Link href="/checklists/shopify-launch-checklist" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
-                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Launch Checklist →</h4>
-                      <p className="text-sm text-foreground">Complete pre-launch guide</p>
+                    <Link href="/guides/how-to-create-shopify-loyalty-programme" className="bg-white rounded-lg p-4 border border-gray-200 hover:border-accent transition-colors group">
+                      <h4 className="font-medium text-foreground-dark group-hover:text-accent">Create a Loyalty Programme →</h4>
+                      <p className="text-sm text-foreground">Reward repeat customers and increase LTV</p>
                     </Link>
                   </div>
                 </div>
