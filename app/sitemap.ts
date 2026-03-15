@@ -1,10 +1,21 @@
 import { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog";
+import fs from "fs";
+import path from "path";
 
 export const dynamic = "force-static";
 
 const BASE = "https://flexcommerce.co.uk";
 const NOW = new Date().toISOString();
+
+function getDirectorySlugs(segment: string): string[] {
+  const dir = path.join(process.cwd(), "app", segment);
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir, { withFileTypes: true })
+    .filter((d) => d.isDirectory())
+    .map((d) => d.name);
+}
 
 const staticRoutes: MetadataRoute.Sitemap = [
   { url: BASE, lastModified: NOW, changeFrequency: "weekly", priority: 1.0 },
@@ -58,150 +69,6 @@ const staticRoutes: MetadataRoute.Sitemap = [
   { url: `${BASE}/checklists`,lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
   { url: `${BASE}/privacy`,   lastModified: NOW, changeFrequency: "yearly",  priority: 0.3 },
   { url: `${BASE}/terms`,     lastModified: NOW, changeFrequency: "yearly",  priority: 0.3 },
-
-  // Guide pages
-  { url: `${BASE}/guides/how-to-add-cookie-consent-to-shopify`,           lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-add-currency-converter-to-shopify`,        lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-add-custom-css-to-shopify`,                lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-add-custom-fonts-to-shopify`,              lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-add-products-to-shopify`,                  lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-add-reviews-to-shopify`,                   lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-add-schema-markup-to-shopify`,             lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-add-trust-badges-to-shopify`,              lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-choose-shopify-apps`,                      lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-configure-shopify-checkout`,               lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-configure-shopify-shipping-rates`,         lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-connect-shopify-to-accounting-software`,   lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-connect-shopify-to-google-merchant-center`,lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-create-shopify-announcement-bars`,         lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-create-shopify-collections`,               lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-create-shopify-discount-codes`,            lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-create-shopify-email-campaigns`,           lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-create-shopify-landing-pages`,             lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-create-shopify-product-bundles`,           lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-create-shopify-redirects`,                 lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-create-urgency-on-shopify`,                lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-create-wholesale-pricing-on-shopify`,      lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-customise-shopify-theme`,                  lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-handle-shopify-returns`,                   lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-import-products-to-shopify`,               lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-integrate-shopify-with-erp`,               lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-make-shopify-gdpr-compliant`,              lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-manage-shopify-inventory`,                 lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-migrate-from-magento-to-shopify`,          lastModified: NOW, changeFrequency: "yearly", priority: 0.7 },
-  { url: `${BASE}/guides/how-to-migrate-from-woocommerce-to-shopify`,      lastModified: NOW, changeFrequency: "yearly", priority: 0.7 },
-  { url: `${BASE}/guides/how-to-migrate-to-shopify-plus`,                  lastModified: NOW, changeFrequency: "yearly", priority: 0.7 },
-  { url: `${BASE}/guides/how-to-offer-free-shipping-on-shopify`,           lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-optimise-shopify-images-for-seo`,          lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-optimise-shopify-product-images`,          lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-optimise-shopify-product-pages-for-seo`,   lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-optimise-your-shopify-store-for-speed`,    lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-read-shopify-analytics`,                   lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-reduce-shopify-cart-abandonment`,          lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-remove-unused-shopify-app-code`,           lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-run-shopify-flash-sales`,                  lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-secure-your-shopify-store`,                lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-sell-internationally-on-shopify`,          lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-facebook-pixel-on-shopify`,         lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-google-analytics-4-on-shopify`,     lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-klaviyo-on-shopify`,                lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-abandoned-cart-emails`,     lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-b2b`,                       lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-customer-accounts`,         lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-local-delivery`,            lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-markets`,                   lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-navigation-menus`,          lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-order-tracking`,            lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-payments`,                  lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-pos`,                       lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-product-variants`,          lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-reports`,                   lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-taxes`,                     lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-trade-accounts-on-shopify`,         lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-structure-shopify-urls-for-seo`,           lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-track-shopify-conversions`,                lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-translate-your-shopify-store`,             lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-write-product-descriptions-that-sell`,     lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-write-shopify-meta-descriptions`,          lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-
-  // New guide pages (batch 2)
-  { url: `${BASE}/guides/how-to-set-up-shopify-gift-cards`,                lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-subscriptions`,             lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-digital-downloads`,         lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-metafields`,                lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-create-shopify-gift-wrapping`,             lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-product-personalisation-on-shopify`,lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-do-shopify-keyword-research`,              lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-build-backlinks-for-shopify`,              lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-fix-shopify-duplicate-content`,            lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-reduce-shopify-javascript`,                lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-use-shopify-lazy-loading`,                 lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-audit-shopify-app-performance`,            lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-upsells`,                   lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-add-shopify-product-recommendations`,      lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-improve-shopify-checkout-conversion`,      lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-wishlists`,                 lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-add-size-guide-to-shopify`,                lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-tiktok-pixel-on-shopify`,           lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-run-shopify-affiliate-programme`,          lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-google-shopping-on-shopify`,        lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-use-shopify-flow`,                         lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-add-video-to-shopify-product-pages`,       lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-create-shopify-mega-menu`,                 lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-add-countdown-timer-to-shopify`,           lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-add-instagram-feed-to-shopify`,            lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-customise-shopify-checkout-page`,          lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-click-and-collect`,         lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-integrate-shopify-with-royal-mail`,        lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-dropshipping`,              lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-duty-and-tax-calculations-on-shopify`, lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-manage-shopify-multi-location`,            lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-minimum-order-quantities-on-shopify`, lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-create-shopify-b2b-price-lists`,           lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-two-factor-authentication`, lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-add-age-verification-to-shopify`,          lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-integrate-shopify-with-sage`,              lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-connect-shopify-to-xero`,                  lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-integrate-shopify-with-netsuite`,          lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-connect-shopify-to-mailchimp`,             lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-zapier-integration`,        lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-live-chat`,                 lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-create-shopify-loyalty-programme`,         lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-referral-programme`,        lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-write-shopify-store-policies`,             lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-use-shopify-inbox`,                        lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-use-shopify-plus-launchpad`,               lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-plus-scripts`,              lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-customise-shopify-plus-checkout`,          lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-set-up-shopify-flow-automations`,          lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/guides/how-to-use-shopify-plus-organisation-admin`,      lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-
-  // Checklist pages
-  { url: `${BASE}/checklists/magento-to-shopify-checklist`,               lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-abandoned-cart-checklist`,           lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-app-audit-checklist`,                lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-b2b-wholesale-checklist`,            lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-black-friday-checklist`,             lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-checkout-optimisation-checklist`,    lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-cro-checklist`,                      lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-digital-products-checklist`,         lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-dropshipping-checklist`,             lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-email-marketing-checklist`,          lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-facebook-ads-checklist`,             lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-flash-sale-checklist`,               lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-gdpr-checklist`,                     lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-google-shopping-checklist`,          lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-holiday-checklist`,                  lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-homepage-checklist`,                 lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-launch-checklist`,                   lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-mobile-optimisation-checklist`,      lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-plus-migration-checklist`,           lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-print-on-demand-checklist`,          lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-product-page-checklist`,             lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-security-checklist`,                 lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-seo-checklist`,                      lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/shopify-speed-optimisation-checklist`,       lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
-  { url: `${BASE}/checklists/woocommerce-to-shopify-checklist`,           lastModified: NOW, changeFrequency: "yearly", priority: 0.6 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -212,5 +79,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...articleRoutes];
+  const guideRoutes: MetadataRoute.Sitemap = getDirectorySlugs("guides").map((slug) => ({
+    url: `${BASE}/guides/${slug}`,
+    lastModified: NOW,
+    changeFrequency: "yearly",
+    priority: 0.6,
+  }));
+
+  const checklistRoutes: MetadataRoute.Sitemap = getDirectorySlugs("checklists").map((slug) => ({
+    url: `${BASE}/checklists/${slug}`,
+    lastModified: NOW,
+    changeFrequency: "yearly",
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...guideRoutes, ...checklistRoutes, ...articleRoutes];
 }
