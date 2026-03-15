@@ -12,11 +12,15 @@ import {
 } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { siteConfig } from "@/lib/constants";
+import { FAQSection } from "@/components/ui/FAQSection";
 
 export const metadata: Metadata = {
-  title: "Automations & Integrations",
+  title: "Shopify Automation & Integrations | Shopify Flow & API | Flex Commerce",
   description:
-    "Streamline your Shopify operations with powerful automations and seamless integrations. Shopify Flow, custom APIs, and more.",
+    "Custom Shopify automation workflows and third-party integrations. We connect Shopify to ERPs, Klaviyo, Yotpo, Gorgias, and 50+ platforms. Free consultation.",
+  alternates: {
+    canonical: "/automations",
+  },
 };
 
 const automations = [
@@ -82,19 +86,66 @@ const benefits = [
   "Better decision-making with unified data",
 ];
 
-const breadcrumbSchema = {
+const faqs = [
+  {
+    question: "What automation tools do you use for Shopify?",
+    answer: "We primarily use Shopify Flow for native automation workflows, alongside custom API integrations for connecting Shopify to external systems like ERPs, CRMs, and marketing platforms. For complex workflows we build bespoke solutions using Shopify's REST and GraphQL APIs."
+  },
+  {
+    question: "Can you integrate Shopify with our existing ERP system?",
+    answer: "Yes. We have experience integrating Shopify with major ERP systems including NetSuite, SAP, Brightpearl, and Microsoft Dynamics. We build real-time two-way sync for inventory, orders, and customer data."
+  },
+  {
+    question: "How long does a typical integration project take?",
+    answer: "A standard third-party app integration (e.g., connecting Shopify to Klaviyo or Yotpo) takes 1–2 weeks. Custom API integrations with ERP or WMS systems typically take 4–8 weeks depending on complexity and the quality of the third-party API."
+  },
+  {
+    question: "Do you offer ongoing support for integrations after launch?",
+    answer: "Yes. We offer monthly retainer packages that include monitoring, maintenance, and updates for your integrations. API changes and platform updates can break integrations, so ongoing monitoring is strongly recommended."
+  },
+  {
+    question: "Can you automate our order fulfilment process?",
+    answer: "Absolutely. We build custom fulfilment automation workflows using Shopify Flow, including automatic order routing to fulfilment centres, low stock alerts, fraud flagging, and post-purchase communication sequences."
+  },
+];
+
+const pageSchema = {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
-    { "@type": "ListItem", position: 2, name: "Automations & Integrations", item: `${siteConfig.url}/automations` },
+  "@graph": [
+    {
+      "@type": "Service",
+      name: "Shopify Automation & Integration Services",
+      serviceType: "Shopify Automation",
+      provider: {
+        "@type": "Organization",
+        name: siteConfig.name,
+        url: siteConfig.url,
+      },
+      areaServed: "United Kingdom",
+      description: "Custom Shopify automation workflows and third-party integrations. We connect your Shopify store to ERPs, CRMs, marketing platforms, and more.",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+        { "@type": "ListItem", position: 2, name: "Automations & Integrations", item: `${siteConfig.url}/automations` },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: { "@type": "Answer", text: f.answer },
+      })),
+    },
   ],
 };
 
 export default function AutomationsPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       <PageHero
         background="green"
         badge={{ icon: Cog, text: "Efficiency at Scale" }}
@@ -223,6 +274,29 @@ export default function AutomationsPage() {
           </div>
         </div>
       </Section>
+
+      {/* CTA */}
+      <Section background="dark">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
+            Ready to Automate Your Operations?
+          </h2>
+          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+            Tell us about your current setup and we&apos;ll identify the highest-impact automation opportunities for your store.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button href="/quote" variant="cta" size="lg">Get a Free Quote</Button>
+            <Button href="/contact" variant="outline-light" size="lg">Book a Consultation</Button>
+          </div>
+        </div>
+      </Section>
+
+      <FAQSection
+        faqs={faqs}
+        image="/images/articles/pexels-3182812.webp"
+        imageAlt="Shopify automations and integration services"
+        overlayColor="linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)"
+      />
     </>
   );
 }

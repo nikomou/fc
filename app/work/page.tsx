@@ -1,9 +1,11 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { Briefcase } from "lucide-react";
+import { Briefcase, ArrowUpRight } from "lucide-react";
 import { ProcessSteps } from "@/components/ui/ProcessSteps";
 import { PageHero } from "@/components/ui/PageHero";
+import { siteConfig } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Our Work",
@@ -13,6 +15,7 @@ export const metadata: Metadata = {
 
 const projects = [
   {
+    slug: "fashion-brand-co",
     title: "Fashion Brand Co",
     category: "Fashion & Apparel",
     headline: "Increased conversion rate for a fashion retailer by 40%",
@@ -21,6 +24,7 @@ const projects = [
     results: ["40% increase in conversion rate", "2x faster page load times"],
   },
   {
+    slug: "tech-accessories-ltd",
     title: "Tech Accessories Ltd",
     category: "Electronics",
     headline: "Grew average order value for a tech accessories brand by 60%",
@@ -29,6 +33,7 @@ const projects = [
     results: ["60% increase in average order value", "Reduced cart abandonment by 25%"],
   },
   {
+    slug: "organic-beauty-co",
     title: "Organic Beauty Co",
     category: "Beauty & Cosmetics",
     headline: "Migrated a beauty brand from WooCommerce with zero ranking loss",
@@ -37,6 +42,7 @@ const projects = [
     results: ["Zero downtime migration", "Preserved 100% of search rankings"],
   },
   {
+    slug: "home-essentials",
     title: "Home Essentials",
     category: "Home & Living",
     headline: "Launched a home goods brand across 5 markets, tripling B2B sales",
@@ -45,6 +51,7 @@ const projects = [
     results: ["Launched in 5 markets", "B2B sales increased 3x"],
   },
   {
+    slug: "athletic-wear-brand",
     title: "Athletic Wear Brand",
     category: "Sportswear",
     headline: "Improved page speed by 65% for a sportswear brand",
@@ -53,6 +60,7 @@ const projects = [
     results: ["Page speed improved by 65%", "Reduced operational time by 40%"],
   },
   {
+    slug: "gourmet-food-store",
     title: "Gourmet Food Store",
     category: "Food & Beverage",
     headline: "Grew email revenue by 200% for a subscription food brand",
@@ -62,9 +70,38 @@ const projects = [
   },
 ];
 
+const workPageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+        { "@type": "ListItem", position: 2, name: "Our Work", item: `${siteConfig.url}/work` },
+      ],
+    },
+    {
+      "@type": "ItemList",
+      name: "Flex Commerce Portfolio",
+      description: "Case studies from Flex Commerce — Shopify Plus agency",
+      itemListElement: projects.map((p, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: p.title,
+        item: `${siteConfig.url}/work/${p.slug}`,
+      })),
+    },
+  ],
+};
+
 export default function WorkPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(workPageSchema) }}
+      />
+
       {/* Hero */}
       <PageHero
         background="yellow"
@@ -80,9 +117,9 @@ export default function WorkPage() {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:shadow-xl transition-all duration-200"
+              className="group bg-[#1a1a1a] rounded-xl overflow-hidden hover:shadow-xl transition-all duration-200 flex flex-col"
             >
-              <div className="px-6 py-8 flex flex-col justify-between gap-6 min-h-[130px]">
+              <div className="px-6 py-8 flex flex-col justify-between gap-6 flex-1">
                 <p className="text-white font-semibold text-3xl leading-snug">
                   {project.headline}
                 </p>
@@ -100,6 +137,13 @@ export default function WorkPage() {
                     </div>
                   ))}
                 </div>
+                <Link
+                  href={`/work/${project.slug}`}
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-[#ef436b] hover:text-white transition-colors mt-auto pt-2 border-t border-white/10"
+                >
+                  View case study
+                  <ArrowUpRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
           ))}

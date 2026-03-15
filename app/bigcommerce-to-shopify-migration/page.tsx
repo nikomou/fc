@@ -148,6 +148,17 @@ const migrationSchema = {
         },
       ],
     },
+    {
+      "@type": "HowTo",
+      name: "BigCommerce to Shopify Migration: Step-by-Step Process",
+      description: "How to migrate your BigCommerce store to Shopify with zero downtime.",
+      step: process.map((s, i) => ({
+        "@type": "HowToStep",
+        position: i + 1,
+        name: s.title,
+        text: s.description,
+      })),
+    },
   ],
 };
 

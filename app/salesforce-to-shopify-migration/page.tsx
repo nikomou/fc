@@ -149,6 +149,17 @@ const migrationSchema = {
         },
       ],
     },
+    {
+      "@type": "HowTo",
+      name: "Salesforce Commerce Cloud to Shopify Migration: Step-by-Step Process",
+      description: "How to migrate your Salesforce Commerce Cloud store to Shopify with zero downtime.",
+      step: process.map((s, i) => ({
+        "@type": "HowToStep",
+        position: i + 1,
+        name: s.title,
+        text: s.description,
+      })),
+    },
   ],
 };
 
