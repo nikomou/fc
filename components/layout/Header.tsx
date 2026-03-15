@@ -85,47 +85,10 @@ const growthServices = [
   },
 ];
 
-// Pages that should have transparent header over the hero
-const transparentDarkPages = [
-  // Service & migration pages
-  "/shopify-services",
-  "/shopify-plus",
-  "/shopify-theme-development",
-  "/shopify-app-development",
-  "/shopify-integrations",
-  "/shopify-migration",
-  "/shopify-seo",
-  "/shopify-speed-optimisation",
-  "/shopify-store-audit",
-  "/shopify-support",
-  "/shopify-maintenance",
-  "/woocommerce-to-shopify-migration",
-  "/magento-to-shopify-migration",
-  "/bigcommerce-to-shopify-migration",
-  "/squarespace-to-shopify-migration",
-  "/webflow-to-shopify-migration",
-  "/salesforce-to-shopify-migration",
-  // General pages
-  "/about",
-  "/work",
-  "/articles",
-  "/resources",
-  "/contact",
-  "/checklists",
-  "/guides",
-  "/pricing",
-  "/quote",
-  "/partners",
-  "/automations",
-  "/ecommerce-agency",
-  "/privacy",
-  "/terms",
-];
 
 export function Header() {
   const pathname = usePathname();
   const isHomepage = pathname === "/";
-  const isServicePage = transparentDarkPages.includes(pathname);
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [ecommerceOpen, setEcommerceOpen] = useState(false);
@@ -134,7 +97,7 @@ export function Header() {
   const [margin, setMargin] = useState(12);
 
   useEffect(() => {
-    if (!isHomepage && !isServicePage) return;
+    if (!isHomepage) return;
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 150);
@@ -142,7 +105,7 @@ export function Header() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isHomepage, isServicePage]);
+  }, [isHomepage]);
 
   useEffect(() => {
     const calcMargin = () => {
@@ -155,7 +118,7 @@ export function Header() {
 
   // Homepage: transparent with white text
   // Service pages: transparent with dark text
-  const isTransparent = (isHomepage || isServicePage) && !scrolled && !mobileMenuOpen;
+  const isTransparent = isHomepage && !scrolled && !mobileMenuOpen;
 
   return (
     <motion.header
