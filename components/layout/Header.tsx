@@ -120,6 +120,19 @@ export function Header() {
   const useWhiteText = isHomepage && isTransparent;
 
   return (
+    <>
+    <AnimatePresence>
+      {mobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="lg:hidden fixed inset-0 z-40 bg-black/40 backdrop-blur-sm"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
+    </AnimatePresence>
     <motion.header
       initial={false}
       animate={{ left: mobileMenuOpen ? 0 : margin, right: mobileMenuOpen ? 0 : margin, top: mobileMenuOpen ? 0 : scrolled ? 12 : 0 }}
@@ -482,5 +495,6 @@ export function Header() {
         )}
       </AnimatePresence>
     </motion.header>
+    </>
   );
 }
