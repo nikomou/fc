@@ -25,7 +25,6 @@ import {
   Newspaper,
   ArrowUpRight,
 } from "lucide-react";
-import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { navigation } from "@/lib/constants";
 
@@ -93,45 +92,44 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [ecommerceOpen, setEcommerceOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
+  const [mobileShopifyOpen, setMobileShopifyOpen] = useState(false);
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [margin, setMargin] = useState(12);
+  const [margin, setMargin] = useState(0);
 
   useEffect(() => {
-    if (!isHomepage) return;
-
     const handleScroll = () => {
-      setScrolled(window.scrollY > 150);
+      setScrolled(window.scrollY > 80);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isHomepage]);
+  }, []);
 
   useEffect(() => {
     const calcMargin = () => {
-      setMargin(scrolled ? Math.max(12, (window.innerWidth - 1256) / 2) : 12);
+      setMargin(scrolled ? Math.max(12, (window.innerWidth - 1256) / 2) : 0);
     };
     calcMargin();
     window.addEventListener("resize", calcMargin);
     return () => window.removeEventListener("resize", calcMargin);
   }, [scrolled]);
 
-  // Homepage: transparent with white text
-  // Service pages: transparent with dark text
-  const isTransparent = isHomepage && !scrolled && !mobileMenuOpen;
+  const isTransparent = !scrolled && !mobileMenuOpen;
+  const useWhiteText = isHomepage && isTransparent;
 
   return (
     <motion.header
       initial={false}
-      animate={{ left: mobileMenuOpen ? 0 : margin, right: mobileMenuOpen ? 0 : margin, top: mobileMenuOpen ? 0 : 12 }}
+      animate={{ left: mobileMenuOpen ? 0 : margin, right: mobileMenuOpen ? 0 : margin, top: mobileMenuOpen ? 0 : scrolled ? 12 : 0 }}
       transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-      className={`fixed top-3 z-50 transition-colors duration-300 ${
-        mobileMenuOpen ? "rounded-none lg:rounded-full" : "rounded-full"
+      className={`fixed top-0 z-50 transition-colors duration-300 ${
+        mobileMenuOpen ? "rounded-none lg:rounded-full" : scrolled ? "rounded-full" : "rounded-none"
       } ${
         mobileMenuOpen
           ? "bg-white shadow-[0_4px_24px_rgba(0,0,0,0.12)]"
           : isTransparent
-          ? "bg-white/10 backdrop-blur-md shadow-[0_4px_24px_rgba(0,0,0,0.12)]"
+          ? "bg-transparent"
           : "bg-white/50 backdrop-blur-2xl backdrop-saturate-150 shadow-[0_4px_24px_rgba(0,0,0,0.08)]"
       }`}
     >
@@ -139,7 +137,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
-              src={isTransparent ? "/images/flex-logo-white.svg" : "/images/flex-logo.svg"}
+              src={useWhiteText ? "/images/flex-logo-white.svg" : "/images/flex-logo.svg"}
               alt="Flex Commerce"
               width={140}
               height={32}
@@ -158,7 +156,7 @@ export function Header() {
               <Link
                 href="/shopify-services"
                 className={`flex items-center gap-1 transition-colors font-medium ${
-                  isTransparent
+                  useWhiteText
                     ? "text-white hover:text-white/80"
                     : "text-foreground hover:text-accent"
                 }`}
@@ -240,7 +238,7 @@ export function Header() {
                   <Link
                     href={item.href}
                     className={`flex items-center gap-1 transition-colors font-medium ${
-                      isTransparent
+                      useWhiteText
                         ? "text-white hover:text-white/80"
                         : "text-foreground hover:text-accent"
                     }`}
@@ -309,7 +307,7 @@ export function Header() {
                   key={item.name}
                   href={item.href}
                   className={`transition-colors font-medium ${
-                    isTransparent
+                    useWhiteText
                       ? "text-white hover:text-white/80"
                       : "text-foreground hover:text-accent"
                   }`}
@@ -325,7 +323,7 @@ export function Header() {
             <Button
               href="/quote"
               size="sm"
-              variant={isTransparent ? "outline-light" : "cta"}
+              variant={useWhiteText ? "outline-light" : "cta"}
             >
               Get a Quote
             </Button>
@@ -333,7 +331,7 @@ export function Header() {
 
           {/* Mobile menu button */}
           <button
-            className={`lg:hidden p-2 ${isTransparent ? "text-white" : "text-foreground-dark"}`}
+            className={`lg:hidden p-2 ${useWhiteText ? "text-white" : "text-foreground-dark"}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -355,89 +353,118 @@ export function Header() {
             className="lg:hidden bg-white border-t border-gray-100"
           >
             <div className="px-5 py-4 overflow-y-auto max-h-[calc(100svh-4rem)]">
-              <div className="flex flex-col gap-2">
-                {/* Development Services */}
-                <div className="py-2">
-                  <span className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2 block">
-                    Development
-                  </span>
-                  {developmentServices.map((item) => (
+              <div className="flex flex-col">
+
+                {/* Shopify — accordion */}
+                <div className="border-b border-gray-100">
+                  <div className="flex items-center justify-between">
                     <Link
-                      key={item.name}
-                      href={item.href}
-                      className="flex items-center gap-3 text-foreground hover:text-accent transition-colors py-2 pl-2"
+                      href="/shopify-services"
+                      className="font-medium text-foreground hover:text-accent transition-colors py-3.5 flex-1"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      <item.icon className="w-4 h-4" />
-                      {item.name}
+                      Shopify
                     </Link>
-                  ))}
-                </div>
-
-                {/* Growth & Support Services */}
-                <div className="py-2">
-                  <span className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2 block">
-                    Growth & Support
-                  </span>
-                  {growthServices.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="flex items-center gap-3 text-foreground hover:text-accent transition-colors py-2 pl-2"
-                      onClick={() => setMobileMenuOpen(false)}
+                    <button
+                      className="p-2 text-foreground hover:text-accent transition-colors"
+                      onClick={() => setMobileShopifyOpen(!mobileShopifyOpen)}
+                      aria-label="Toggle Shopify menu"
                     >
-                      <item.icon className="w-4 h-4" />
-                      {item.name}
-                    </Link>
-                  ))}
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${mobileShopifyOpen ? "rotate-180" : ""}`} />
+                    </button>
+                  </div>
+                  <AnimatePresence initial={false}>
+                    {mobileShopifyOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pb-3">
+                          <span className="text-xs font-semibold text-foreground/50 uppercase tracking-wider mb-1 block">Development</span>
+                          {developmentServices.map((item) => (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              className="flex items-center gap-3 text-foreground hover:text-accent transition-colors py-2 pl-2"
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              <item.icon className="w-4 h-4" />
+                              {item.name}
+                            </Link>
+                          ))}
+                          <span className="text-xs font-semibold text-foreground/50 uppercase tracking-wider mt-3 mb-1 block">Growth & Support</span>
+                          {growthServices.map((item) => (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              className="flex items-center gap-3 text-foreground hover:text-accent transition-colors py-2 pl-2"
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              <item.icon className="w-4 h-4" />
+                              {item.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
 
-                <hr className="my-2" />
-
+                {/* Other nav items */}
                 {navigation.map((item) =>
                   item.name === "Resources" ? (
-                    <div key={item.name} className="py-2">
-                      <span className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2 block">
-                        Resources
-                      </span>
-                      <Link
-                        href="/resources"
-                        className="flex items-center gap-3 text-foreground hover:text-accent transition-colors py-2 pl-2"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <BookOpen className="w-4 h-4" />
-                        All Resources
-                      </Link>
-                      <Link
-                        href="/checklists"
-                        className="flex items-center gap-3 text-foreground hover:text-accent transition-colors py-2 pl-2"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <CheckSquare className="w-4 h-4" />
-                        Checklists
-                      </Link>
-                      <Link
-                        href="/guides"
-                        className="flex items-center gap-3 text-foreground hover:text-accent transition-colors py-2 pl-2"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <FileText className="w-4 h-4" />
-                        Guides
-                      </Link>
-                      <Link
-                        href="/articles"
-                        className="flex items-center gap-3 text-foreground hover:text-accent transition-colors py-2 pl-2"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <Newspaper className="w-4 h-4" />
-                        Articles
-                      </Link>
+                    <div key={item.name} className="border-b border-gray-100">
+                      <div className="flex items-center justify-between">
+                        <Link
+                          href="/resources"
+                          className="font-medium text-foreground hover:text-accent transition-colors py-3.5 flex-1"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          Resources
+                        </Link>
+                        <button
+                          className="p-2 text-foreground hover:text-accent transition-colors"
+                          onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
+                          aria-label="Toggle Resources menu"
+                        >
+                          <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${mobileResourcesOpen ? "rotate-180" : ""}`} />
+                        </button>
+                      </div>
+                      <AnimatePresence initial={false}>
+                        {mobileResourcesOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
+                            className="overflow-hidden"
+                          >
+                            <div className="pb-3">
+                              <Link href="/resources" className="flex items-center gap-3 text-foreground hover:text-accent transition-colors py-2 pl-2" onClick={() => setMobileMenuOpen(false)}>
+                                <BookOpen className="w-4 h-4" />All Resources
+                              </Link>
+                              <Link href="/checklists" className="flex items-center gap-3 text-foreground hover:text-accent transition-colors py-2 pl-2" onClick={() => setMobileMenuOpen(false)}>
+                                <CheckSquare className="w-4 h-4" />Checklists
+                              </Link>
+                              <Link href="/guides" className="flex items-center gap-3 text-foreground hover:text-accent transition-colors py-2 pl-2" onClick={() => setMobileMenuOpen(false)}>
+                                <FileText className="w-4 h-4" />Guides
+                              </Link>
+                              <Link href="/articles" className="flex items-center gap-3 text-foreground hover:text-accent transition-colors py-2 pl-2" onClick={() => setMobileMenuOpen(false)}>
+                                <Newspaper className="w-4 h-4" />Articles
+                              </Link>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   ) : (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="text-foreground hover:text-accent transition-colors font-medium py-2"
+                      className="font-medium text-foreground hover:text-accent transition-colors py-3.5 border-b border-gray-100"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.name}
@@ -445,9 +472,7 @@ export function Header() {
                   )
                 )}
 
-                <hr className="my-2" />
-
-                <Button href="/quote" variant="cta" className="mt-2" iconComponent={ArrowUpRight}>
+                <Button href="/quote" variant="cta" className="mt-5" iconComponent={ArrowUpRight}>
                   Get a Quote
                 </Button>
               </div>
