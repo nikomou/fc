@@ -13,6 +13,7 @@ import batch8 from "./articles/batch-8";
 import batch9 from "./articles/batch-9";
 import batch10 from "./articles/batch-10";
 import batch11 from "./articles/batch-11";
+import batch12 from "./articles/batch-12";
 
 export const blogPosts: BlogPost[] = [
   {
@@ -587,6 +588,7 @@ export const blogPosts: BlogPost[] = [
   ...batch9,
   ...batch10,
   ...batch11,
+  ...batch12,
 ];
 
 export const POSTS_PER_PAGE = 12;
