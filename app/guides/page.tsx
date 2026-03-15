@@ -35,6 +35,9 @@ const guideCategories = [
       { title: "How to Configure Shopify Checkout", href: "/guides/how-to-configure-shopify-checkout", readTime: "12 min" },
       { title: "How to Set Up Shopify Customer Accounts", href: "/guides/how-to-set-up-shopify-customer-accounts", readTime: "10 min" },
       { title: "How to Set Up Shopify Navigation Menus", href: "/guides/how-to-set-up-shopify-navigation-menus", readTime: "8 min" },
+      { title: "How to Set Up Gift Cards on Shopify", href: "/guides/how-to-set-up-shopify-gift-cards", readTime: "12 min" },
+      { title: "How to Set Up Subscriptions on Shopify", href: "/guides/how-to-set-up-shopify-subscriptions", readTime: "16 min" },
+      { title: "How to Set Up Digital Downloads on Shopify", href: "/guides/how-to-set-up-shopify-digital-downloads", readTime: "10 min" },
     ],
   },
   {
@@ -47,6 +50,9 @@ const guideCategories = [
       { title: "How to Create Shopify Product Bundles", href: "/guides/how-to-create-shopify-product-bundles", readTime: "14 min" },
       { title: "How to Import Products to Shopify", href: "/guides/how-to-import-products-to-shopify", readTime: "15 min" },
       { title: "How to Manage Shopify Inventory", href: "/guides/how-to-manage-shopify-inventory", readTime: "12 min" },
+      { title: "How to Set Up Shopify Metafields", href: "/guides/how-to-set-up-shopify-metafields", readTime: "14 min" },
+      { title: "How to Add Gift Wrapping to Shopify", href: "/guides/how-to-create-shopify-gift-wrapping", readTime: "10 min" },
+      { title: "How to Set Up Product Personalisation on Shopify", href: "/guides/how-to-set-up-product-personalisation-on-shopify", readTime: "14 min" },
     ],
   },
   {
@@ -59,6 +65,9 @@ const guideCategories = [
       { title: "How to Write Shopify Meta Descriptions", href: "/guides/how-to-write-shopify-meta-descriptions", readTime: "12 min" },
       { title: "How to Structure Shopify URLs for SEO", href: "/guides/how-to-structure-shopify-urls-for-seo", readTime: "10 min" },
       { title: "How to Optimise Shopify Images for SEO", href: "/guides/how-to-optimise-shopify-images-for-seo", readTime: "12 min" },
+      { title: "How to Do Keyword Research for Shopify", href: "/guides/how-to-do-shopify-keyword-research", readTime: "18 min" },
+      { title: "How to Build Backlinks for Your Shopify Store", href: "/guides/how-to-build-backlinks-for-shopify", readTime: "16 min" },
+      { title: "How to Fix Duplicate Content on Shopify", href: "/guides/how-to-fix-shopify-duplicate-content", readTime: "14 min" },
     ],
   },
   {
@@ -69,6 +78,9 @@ const guideCategories = [
       { title: "How to Optimise Shopify Product Images", href: "/guides/how-to-optimise-shopify-product-images", readTime: "12 min" },
       { title: "How to Remove Unused Shopify App Code", href: "/guides/how-to-remove-unused-shopify-app-code", readTime: "10 min" },
       { title: "How to Choose Shopify Apps", href: "/guides/how-to-choose-shopify-apps", readTime: "14 min" },
+      { title: "How to Reduce JavaScript on Shopify", href: "/guides/how-to-reduce-shopify-javascript", readTime: "16 min" },
+      { title: "How to Use Lazy Loading on Shopify", href: "/guides/how-to-use-shopify-lazy-loading", readTime: "12 min" },
+      { title: "How to Audit Shopify App Performance", href: "/guides/how-to-audit-shopify-app-performance", readTime: "14 min" },
     ],
   },
   {
@@ -80,6 +92,11 @@ const guideCategories = [
       { title: "How to Create Urgency on Shopify", href: "/guides/how-to-create-urgency-on-shopify", readTime: "12 min" },
       { title: "How to Add Reviews to Shopify", href: "/guides/how-to-add-reviews-to-shopify", readTime: "14 min" },
       { title: "How to Write Product Descriptions That Sell", href: "/guides/how-to-write-product-descriptions-that-sell", readTime: "15 min" },
+      { title: "How to Set Up Upsells on Shopify", href: "/guides/how-to-set-up-shopify-upsells", readTime: "14 min" },
+      { title: "How to Add Product Recommendations to Shopify", href: "/guides/how-to-add-shopify-product-recommendations", readTime: "12 min" },
+      { title: "How to Improve Shopify Checkout Conversion", href: "/guides/how-to-improve-shopify-checkout-conversion", readTime: "18 min" },
+      { title: "How to Set Up a Wishlist on Shopify", href: "/guides/how-to-set-up-shopify-wishlists", readTime: "10 min" },
+      { title: "How to Add a Size Guide to Shopify", href: "/guides/how-to-add-size-guide-to-shopify", readTime: "10 min" },
     ],
   },
   {
@@ -94,6 +111,10 @@ const guideCategories = [
       { title: "How to Set Up Shopify Abandoned Cart Emails", href: "/guides/how-to-set-up-shopify-abandoned-cart-emails", readTime: "12 min" },
       { title: "How to Read Shopify Analytics", href: "/guides/how-to-read-shopify-analytics", readTime: "15 min" },
       { title: "How to Track Shopify Conversions", href: "/guides/how-to-track-shopify-conversions", readTime: "14 min" },
+      { title: "How to Set Up TikTok Pixel on Shopify", href: "/guides/how-to-set-up-tiktok-pixel-on-shopify", readTime: "12 min" },
+      { title: "How to Run an Affiliate Programme on Shopify", href: "/guides/how-to-run-shopify-affiliate-programme", readTime: "16 min" },
+      { title: "How to Set Up Google Shopping on Shopify", href: "/guides/how-to-set-up-google-shopping-on-shopify", readTime: "16 min" },
+      { title: "How to Use Shopify Flow", href: "/guides/how-to-use-shopify-flow", readTime: "14 min" },
     ],
   },
   {
@@ -113,6 +134,11 @@ const guideCategories = [
       { title: "How to Add Custom Fonts to Shopify", href: "/guides/how-to-add-custom-fonts-to-shopify", readTime: "12 min" },
       { title: "How to Add Custom CSS to Shopify", href: "/guides/how-to-add-custom-css-to-shopify", readTime: "14 min" },
       { title: "How to Create Shopify Landing Pages", href: "/guides/how-to-create-shopify-landing-pages", readTime: "15 min" },
+      { title: "How to Add Video to Shopify Product Pages", href: "/guides/how-to-add-video-to-shopify-product-pages", readTime: "12 min" },
+      { title: "How to Create a Mega Menu on Shopify", href: "/guides/how-to-create-shopify-mega-menu", readTime: "14 min" },
+      { title: "How to Add a Countdown Timer to Shopify", href: "/guides/how-to-add-countdown-timer-to-shopify", readTime: "10 min" },
+      { title: "How to Add an Instagram Feed to Shopify", href: "/guides/how-to-add-instagram-feed-to-shopify", readTime: "10 min" },
+      { title: "How to Customise the Shopify Checkout Page", href: "/guides/how-to-customise-shopify-checkout-page", readTime: "14 min" },
     ],
   },
   {
@@ -123,6 +149,9 @@ const guideCategories = [
       { title: "How to Offer Free Shipping on Shopify", href: "/guides/how-to-offer-free-shipping-on-shopify", readTime: "10 min" },
       { title: "How to Set Up Shopify Order Tracking", href: "/guides/how-to-set-up-shopify-order-tracking", readTime: "12 min" },
       { title: "How to Handle Shopify Returns", href: "/guides/how-to-handle-shopify-returns", readTime: "14 min" },
+      { title: "How to Set Up Click and Collect on Shopify", href: "/guides/how-to-set-up-shopify-click-and-collect", readTime: "12 min" },
+      { title: "How to Integrate Shopify with Royal Mail", href: "/guides/how-to-integrate-shopify-with-royal-mail", readTime: "14 min" },
+      { title: "How to Set Up Dropshipping on Shopify", href: "/guides/how-to-set-up-shopify-dropshipping", readTime: "18 min" },
     ],
   },
   {
@@ -133,6 +162,8 @@ const guideCategories = [
       { title: "How to Set Up Shopify Markets", href: "/guides/how-to-set-up-shopify-markets", readTime: "16 min" },
       { title: "How to Add Currency Converter to Shopify", href: "/guides/how-to-add-currency-converter-to-shopify", readTime: "12 min" },
       { title: "How to Translate Your Shopify Store", href: "/guides/how-to-translate-your-shopify-store", readTime: "15 min" },
+      { title: "How to Set Up Duty and Tax Calculations on Shopify", href: "/guides/how-to-set-up-duty-and-tax-calculations-on-shopify", readTime: "14 min" },
+      { title: "How to Manage Multi-Location Inventory on Shopify", href: "/guides/how-to-manage-shopify-multi-location", readTime: "14 min" },
     ],
   },
   {
@@ -142,6 +173,8 @@ const guideCategories = [
       { title: "How to Set Up Shopify B2B", href: "/guides/how-to-set-up-shopify-b2b", readTime: "18 min" },
       { title: "How to Create Wholesale Pricing on Shopify", href: "/guides/how-to-create-wholesale-pricing-on-shopify", readTime: "14 min" },
       { title: "How to Set Up Trade Accounts on Shopify", href: "/guides/how-to-set-up-trade-accounts-on-shopify", readTime: "12 min" },
+      { title: "How to Set Up Minimum Order Quantities on Shopify", href: "/guides/how-to-set-up-minimum-order-quantities-on-shopify", readTime: "10 min" },
+      { title: "How to Create B2B Price Lists on Shopify", href: "/guides/how-to-create-shopify-b2b-price-lists", readTime: "14 min" },
     ],
   },
   {
@@ -151,6 +184,8 @@ const guideCategories = [
       { title: "How to Secure Your Shopify Store", href: "/guides/how-to-secure-your-shopify-store", readTime: "15 min" },
       { title: "How to Make Shopify GDPR Compliant", href: "/guides/how-to-make-shopify-gdpr-compliant", readTime: "16 min" },
       { title: "How to Add Cookie Consent to Shopify", href: "/guides/how-to-add-cookie-consent-to-shopify", readTime: "12 min" },
+      { title: "How to Set Up Two-Factor Authentication on Shopify", href: "/guides/how-to-set-up-shopify-two-factor-authentication", readTime: "8 min" },
+      { title: "How to Add Age Verification to Shopify", href: "/guides/how-to-add-age-verification-to-shopify", readTime: "10 min" },
     ],
   },
   {
@@ -161,6 +196,33 @@ const guideCategories = [
       { title: "How to Connect Shopify to Accounting Software", href: "/guides/how-to-connect-shopify-to-accounting-software", readTime: "14 min" },
       { title: "How to Set Up Shopify POS", href: "/guides/how-to-set-up-shopify-pos", readTime: "16 min" },
       { title: "How to Set Up Shopify Reports", href: "/guides/how-to-set-up-shopify-reports", readTime: "12 min" },
+      { title: "How to Integrate Shopify with Sage", href: "/guides/how-to-integrate-shopify-with-sage", readTime: "14 min" },
+      { title: "How to Connect Shopify to Xero", href: "/guides/how-to-connect-shopify-to-xero", readTime: "12 min" },
+      { title: "How to Integrate Shopify with NetSuite", href: "/guides/how-to-integrate-shopify-with-netsuite", readTime: "16 min" },
+      { title: "How to Connect Shopify to Mailchimp", href: "/guides/how-to-connect-shopify-to-mailchimp", readTime: "12 min" },
+      { title: "How to Set Up Shopify Zapier Integration", href: "/guides/how-to-set-up-shopify-zapier-integration", readTime: "12 min" },
+    ],
+  },
+  {
+    name: "Customer Experience",
+    description: "Build loyalty and improve customer satisfaction with live chat, loyalty programmes, referral schemes, and clear store policies.",
+    guides: [
+      { title: "How to Set Up Live Chat on Shopify", href: "/guides/how-to-set-up-shopify-live-chat", readTime: "12 min" },
+      { title: "How to Create a Loyalty Programme on Shopify", href: "/guides/how-to-create-shopify-loyalty-programme", readTime: "16 min" },
+      { title: "How to Set Up a Referral Programme on Shopify", href: "/guides/how-to-set-up-shopify-referral-programme", readTime: "14 min" },
+      { title: "How to Write Shopify Store Policies", href: "/guides/how-to-write-shopify-store-policies", readTime: "12 min" },
+      { title: "How to Use Shopify Inbox", href: "/guides/how-to-use-shopify-inbox", readTime: "10 min" },
+    ],
+  },
+  {
+    name: "Shopify Plus",
+    description: "Unlock the full power of Shopify Plus with Launchpad, Scripts, checkout extensibility, advanced automations, and multi-store management.",
+    guides: [
+      { title: "How to Use Shopify Plus Launchpad", href: "/guides/how-to-use-shopify-plus-launchpad", readTime: "12 min" },
+      { title: "How to Set Up Shopify Scripts (Plus)", href: "/guides/how-to-set-up-shopify-plus-scripts", readTime: "16 min" },
+      { title: "How to Customise Shopify Plus Checkout", href: "/guides/how-to-customise-shopify-plus-checkout", readTime: "18 min" },
+      { title: "How to Set Up Shopify Flow Automations", href: "/guides/how-to-set-up-shopify-flow-automations", readTime: "14 min" },
+      { title: "How to Use the Shopify Plus Organisation Admin", href: "/guides/how-to-use-shopify-plus-organisation-admin", readTime: "12 min" },
     ],
   },
   {
@@ -193,7 +255,7 @@ export default function GuidesPage() {
           </span>
           <span className="px-4 py-2 bg-accent/10 text-accent rounded-full font-medium text-sm">
             <Users className="w-4 h-4 inline mr-2" />
-            14 categories
+            16 categories
           </span>
           <span className="px-4 py-2 bg-accent/10 text-accent rounded-full font-medium text-sm">
             <RefreshCw className="w-4 h-4 inline mr-2" />
