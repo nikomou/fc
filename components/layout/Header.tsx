@@ -90,6 +90,7 @@ export function Header() {
   const isHomepage = pathname === "/";
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuExited, setMobileMenuExited] = useState(true);
   const [ecommerceOpen, setEcommerceOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
   const [mobileShopifyOpen, setMobileShopifyOpen] = useState(false);
@@ -124,7 +125,7 @@ export function Header() {
       animate={{ left: mobileMenuOpen ? 0 : margin, right: mobileMenuOpen ? 0 : margin, top: mobileMenuOpen ? 0 : scrolled ? 12 : 0 }}
       transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
       className={`fixed top-0 z-50 transition-colors duration-300 ${
-        mobileMenuOpen ? "rounded-none lg:rounded-full" : scrolled ? "rounded-full" : "rounded-none"
+        (!mobileMenuExited || mobileMenuOpen) ? "rounded-none" : scrolled ? "rounded-full" : "rounded-none"
       } ${
         mobileMenuOpen
           ? "bg-white shadow-[0_4px_24px_rgba(0,0,0,0.12)]"
@@ -332,7 +333,7 @@ export function Header() {
           {/* Mobile menu button */}
           <button
             className={`lg:hidden p-2 ${useWhiteText ? "text-white" : "text-foreground-dark"}`}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => { if (!mobileMenuOpen) setMobileMenuExited(false); setMobileMenuOpen(!mobileMenuOpen); }}
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
@@ -344,7 +345,7 @@ export function Header() {
       </nav>
 
         {/* Mobile Navigation */}
-      <AnimatePresence>
+      <AnimatePresence onExitComplete={() => setMobileMenuExited(true)}>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
