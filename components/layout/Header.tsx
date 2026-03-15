@@ -161,11 +161,15 @@ export function Header() {
   return (
     <motion.header
       initial={false}
-      animate={{ left: margin, right: margin }}
+      animate={{ left: mobileMenuOpen ? 0 : margin, right: mobileMenuOpen ? 0 : margin, top: mobileMenuOpen ? 0 : 12 }}
       transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-      className={`fixed top-3 z-50 rounded-full transition-colors duration-300 ${
-        isTransparent
+      className={`fixed top-3 z-50 transition-colors duration-300 ${
+        mobileMenuOpen ? "rounded-none lg:rounded-full" : "rounded-full"
+      } ${
+        isTransparent && !mobileMenuOpen
           ? "bg-transparent"
+          : mobileMenuOpen
+          ? "bg-white shadow-[0_4px_24px_rgba(0,0,0,0.12)]"
           : "bg-white/50 backdrop-blur-2xl backdrop-saturate-150 shadow-[0_4px_24px_rgba(0,0,0,0.08)]"
       }`}
     >
@@ -386,9 +390,9 @@ export function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white/50 backdrop-blur-2xl border-t border-white/40 rounded-b-3xl"
+            className="lg:hidden bg-white border-t border-gray-100"
           >
-            <div className="px-5 py-4">
+            <div className="px-5 py-4 overflow-y-auto max-h-[calc(100svh-4rem)]">
               <div className="flex flex-col gap-2">
                 {/* Development Services */}
                 <div className="py-2">
