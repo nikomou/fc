@@ -156,7 +156,6 @@ export function Header() {
   // Homepage: transparent with white text
   // Service pages: transparent with dark text
   const isTransparent = (isHomepage || isServicePage) && !scrolled && !mobileMenuOpen;
-  const useWhiteText = isHomepage && isTransparent;
 
   return (
     <motion.header
@@ -177,7 +176,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
-              src={useWhiteText ? "/images/flex-logo-white.svg" : "/images/flex-logo.svg"}
+              src={isTransparent ? "/images/flex-logo-white.svg" : "/images/flex-logo.svg"}
               alt="Flex Commerce"
               width={140}
               height={32}
@@ -196,7 +195,7 @@ export function Header() {
               <Link
                 href="/shopify-services"
                 className={`flex items-center gap-1 transition-colors font-medium ${
-                  useWhiteText
+                  isTransparent
                     ? "text-white hover:text-white/80"
                     : "text-foreground hover:text-accent"
                 }`}
@@ -278,7 +277,7 @@ export function Header() {
                   <Link
                     href={item.href}
                     className={`flex items-center gap-1 transition-colors font-medium ${
-                      useWhiteText
+                      isTransparent
                         ? "text-white hover:text-white/80"
                         : "text-foreground hover:text-accent"
                     }`}
@@ -347,7 +346,7 @@ export function Header() {
                   key={item.name}
                   href={item.href}
                   className={`transition-colors font-medium ${
-                    useWhiteText
+                    isTransparent
                       ? "text-white hover:text-white/80"
                       : "text-foreground hover:text-accent"
                   }`}
@@ -363,7 +362,7 @@ export function Header() {
             <Button
               href="/quote"
               size="sm"
-              variant={useWhiteText ? "outline-light" : "cta"}
+              variant={isTransparent ? "outline-light" : "cta"}
             >
               Get a Quote
             </Button>
@@ -371,7 +370,7 @@ export function Header() {
 
           {/* Mobile menu button */}
           <button
-            className={`lg:hidden p-2 ${useWhiteText ? "text-white" : "text-foreground-dark"}`}
+            className={`lg:hidden p-2 ${isTransparent ? "text-white" : "text-foreground-dark"}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
