@@ -14,6 +14,9 @@ import batch9 from "./articles/batch-9";
 import batch10 from "./articles/batch-10";
 import batch11 from "./articles/batch-11";
 import batch12 from "./articles/batch-12";
+import batch13 from "./articles/batch-13";
+import batch14 from "./articles/batch-14";
+import batch15 from "./articles/batch-15";
 
 export const blogPosts: BlogPost[] = [
   {
@@ -589,6 +592,9 @@ export const blogPosts: BlogPost[] = [
   ...batch10,
   ...batch11,
   ...batch12,
+  ...batch13,
+  ...batch14,
+  ...batch15,
 ];
 
 export const POSTS_PER_PAGE = 12;

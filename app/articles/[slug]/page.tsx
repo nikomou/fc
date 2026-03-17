@@ -104,6 +104,17 @@ function renderBlock(block: ContentBlock, i: number) {
           {block.text}
         </div>
       );
+    case "image":
+      return (
+        <figure key={i} className="my-8">
+          <div className="relative w-full rounded-xl overflow-hidden border border-gray-100 shadow-sm" style={{ aspectRatio: "16/9" }}>
+            <Image src={block.src} alt={block.alt} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 720px" />
+          </div>
+          {block.caption && (
+            <figcaption className="mt-2 text-center text-sm text-gray-400">{block.caption}</figcaption>
+          )}
+        </figure>
+      );
     default:
       return null;
   }

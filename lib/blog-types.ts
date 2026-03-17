@@ -5,7 +5,8 @@ export type ContentBlock =
   | { type: "ul"; items: string[] }
   | { type: "ol"; items: string[] }
   | { type: "quote"; text: string }
-  | { type: "callout"; text: string };
+  | { type: "callout"; text: string }
+  | { type: "image"; src: string; alt: string; caption?: string };
 
 export type BlogPost = {
   slug: string;

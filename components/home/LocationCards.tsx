@@ -12,13 +12,14 @@ const sideLeft = [
 ];
 
 const sideRight = [
-  { id: "london", name: "London", href: "/shopify-agency-london" }, // inner
-  { id: "leeds",  name: "Leeds",  href: "/shopify-agency-leeds" },  // outer
+  { id: "london",     name: "London",     href: "/shopify-agency-london" },     // inner
+  { id: "birmingham", name: "Birmingham", href: "/shopify-agency-birmingham" }, // outer
 ];
 
 const mainLocations = [
   { id: "manchester", slug: "shopify-agency-manchester" },
   { id: "liverpool",  slug: "shopify-agency-liverpool" },
+  { id: "leeds",      slug: "shopify-agency-leeds" },
 ];
 
 export function LocationCards() {
@@ -92,7 +93,7 @@ export function LocationCards() {
         </div>
 
         {/* Main office cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl w-full flex-shrink-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl w-full flex-shrink-0">
           {mainData.map((location, i) => (
             <motion.a
               key={location.id}

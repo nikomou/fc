@@ -51,8 +51,8 @@ export default function HomePage() {
             Our Locations
           </h2>
           <p className="text-lg text-foreground max-w-2xl mx-auto">
-            With offices in Manchester and Liverpool, we&apos;re perfectly positioned
-            to serve brands across the UK. Whether you&apos;re local or nationwide, our team delivers
+            With offices in Manchester, Liverpool, and Leeds, we&apos;re perfectly positioned
+            to serve brands across the North of England and the wider UK. Whether you&apos;re local or nationwide, our team delivers
             the same exceptional service and results.
           </p>
         </div>

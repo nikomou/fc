@@ -8,6 +8,7 @@ import { TrustBadge } from "@/components/ui/TrustBadge";
 import { ValueCard } from "@/components/ui/ValueCard";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import {
+  MapPin,
   Phone,
   Mail,
   Clock,
@@ -168,14 +169,14 @@ const serviceAreas = [
 
 const faqs = [
   {
-    question: "How does working with a remote Leeds Shopify agency work?",
+    question: "Where is your Leeds office?",
     answer:
-      "We use video calls, Slack, and shared project management tools to collaborate with Leeds clients just as effectively as if we were local. You'll have a dedicated project manager, regular check-in calls, and full visibility of project progress at all times. Being based in Manchester, we're just an hour's drive from Leeds and happy to meet in person for key milestones.",
+      "We're based at 118 North Street, Leeds, LS2 7PN — right in the heart of Leeds city centre. We're open Monday to Friday, 9am to 5:30pm, and happy to meet in person for discovery sessions, project reviews, or just a coffee.",
   },
   {
-    question: "Can we meet in person if needed?",
+    question: "Why choose a Leeds-based Shopify agency?",
     answer:
-      "Yes. Our Manchester office is easily accessible from Leeds — just 45 minutes on the train. We're happy to host face-to-face meetings there, or our team can come to Leeds for important workshops, project kickoffs, or reviews. We're genuinely close neighbours.",
+      "Working with a local Leeds agency means face-to-face meetings, same-timezone collaboration, and a team that understands the Yorkshire business landscape. We're right here in the city and invest in long-term relationships with our clients.",
   },
   {
     question: "Do you have experience with Yorkshire retail and fashion brands?",
@@ -188,7 +189,7 @@ const faqs = [
       "Yes. We're experienced Shopify Plus partners with a proven migration process. Whether you're migrating from Magento 1, Magento 2, or WooCommerce, we handle product data, customer records, order history, and URL redirects — ensuring a smooth transition with minimal business disruption.",
   },
   {
-    question: "What are your project turnaround times for Leeds clients?",
+    question: "What are your project turnaround times?",
     answer:
       "A theme customisation or small build typically takes 2–4 weeks. A bespoke Shopify Plus store with integrations usually runs 8–12 weeks. We provide a detailed project plan and timeline during the discovery phase so you know exactly what to expect — no surprise delays.",
   },
@@ -210,7 +211,10 @@ const citySchema = {
       priceRange: "£££",
       address: {
         "@type": "PostalAddress",
+        streetAddress: cityLocation.streetAddress!,
         addressLocality: cityLocation.addressLocality,
+        addressRegion: "West Yorkshire",
+        postalCode: cityLocation.postalCode!,
         addressCountry: "GB",
       },
       geo: {
@@ -290,7 +294,8 @@ export default function LeedsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
             <div className="lg:col-span-2">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black text-white text-xs font-medium mb-4">
-                Serving Leeds &amp; Yorkshire
+                <MapPin className="w-3 h-3" />
+                Leeds City Centre
               </span>
               <h1
                 className="text-4xl md:text-5xl font-bold text-foreground-dark mb-6"
@@ -312,12 +317,12 @@ export default function LeedsPage() {
                 ecommerce stores that genuinely perform.
               </p>
               <p className="text-foreground mb-6">
-                Based in Manchester — just 45 minutes from Leeds — we offer
-                all the benefits of a local agency with the scale and expertise
-                of a Shopify Plus partner. Our certified developers deliver
-                bespoke themes, complex migrations, and custom app builds. 50+
-                UK brands have grown their online revenue with us, and we bring
-                all of that experience to Yorkshire.
+                With an office on North Street in Leeds city centre, we offer
+                local expertise backed by the scale of a Shopify Plus partner.
+                Our certified developers deliver bespoke themes, complex
+                migrations, and custom app builds. 50+ UK brands have grown
+                their online revenue with us, and we bring all of that
+                experience to Yorkshire.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button href="/quote" size="lg" variant="cta">
@@ -330,21 +335,24 @@ export default function LeedsPage() {
               <TrustBadge align="left" showRating={false} />
             </div>
             <div className="bg-black rounded-2xl p-8 text-white">
-              <h3
-                className="text-lg font-semibold mb-6"
-                style={{ fontFamily: "var(--font-playfair)" }}
-              >
-                Get in Touch
-              </h3>
+              <h3 className="text-lg font-semibold mb-6">Leeds Office</h3>
               <address className="not-italic space-y-4">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 mt-0.5 text-gray-400" />
+                  <div>
+                    <p className="font-medium">Address</p>
+                    <p className="text-gray-300">
+                      {cityLocation.streetAddress},{" "}
+                      {cityLocation.addressLocality},{" "}
+                      {cityLocation.postalCode}
+                    </p>
+                  </div>
+                </div>
                 <div className="flex items-start gap-3">
                   <Phone className="w-5 h-5 mt-0.5 text-gray-400" />
                   <div>
                     <p className="font-medium">Phone</p>
-                    <a
-                      href={`tel:${siteConfig.phone}`}
-                      className="text-gray-300 hover:text-white"
-                    >
+                    <a href={`tel:${siteConfig.phone}`} className="text-gray-300 hover:text-white">
                       {siteConfig.phone}
                     </a>
                   </div>
@@ -353,10 +361,7 @@ export default function LeedsPage() {
                   <Mail className="w-5 h-5 mt-0.5 text-gray-400" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <a
-                      href={`mailto:${siteConfig.email}`}
-                      className="text-gray-300 hover:text-white"
-                    >
+                    <a href={`mailto:${siteConfig.email}`} className="text-gray-300 hover:text-white">
                       {siteConfig.email}
                     </a>
                   </div>
@@ -518,11 +523,10 @@ export default function LeedsPage() {
             Serving Yorkshire &amp; Beyond
           </h2>
           <p className="text-foreground mb-6">
-            Our Manchester base means we&apos;re just 45 minutes from Leeds
-            and well-positioned to serve the entire Yorkshire region. We cover
-            West Yorkshire, South Yorkshire, East Riding, and North Yorkshire —
-            with the same level of service and expertise for every brand,
-            regardless of where they&apos;re based.
+            Our Leeds office on North Street puts us right in the heart of the
+            city, with easy access across West Yorkshire, South Yorkshire,
+            East Riding, and North Yorkshire. The same level of service and
+            expertise for every brand, wherever they&apos;re based.
           </p>
           <div className="flex flex-wrap justify-center gap-3 text-sm">
             {serviceAreas.map((area) => (
@@ -547,11 +551,26 @@ export default function LeedsPage() {
       {/* Map */}
       <section className="relative">
         <iframe
-          src="https://www.openstreetmap.org/export/embed.html?bbox=-1.5800%2C53.7700%2C-1.5000%2C53.8300&layer=mapnik&marker=53.8008%2C-1.5491"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-1.5550%2C53.7950%2C-1.5250%2C53.8100&layer=mapnik&marker=53.8008%2C-1.5491"
           className="w-full h-80 md:h-96 border-0"
-          title="Map of Leeds — Flex Commerce serves Leeds and Yorkshire brands"
+          title="Map showing Flex Commerce Leeds office at 118 North Street"
           loading="lazy"
         />
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=118+North+Street+Leeds+LS2+7PN"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute bottom-6 left-6 bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow"
+        >
+          <div className="flex items-start gap-3">
+            <MapPin className="w-5 h-5 text-[#ef436b] mt-0.5 flex-shrink-0" />
+            <div>
+              <p className="font-semibold text-foreground-dark">Leeds Office</p>
+              <p className="text-sm text-foreground">118 North Street, Leeds, LS2 7PN</p>
+              <p className="text-xs text-gray-400 mt-1">Open in Google Maps</p>
+            </div>
+          </div>
+        </a>
       </section>
     </>
   );

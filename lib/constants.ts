@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Flex Commerce",
-  description: "Shopify Plus Agency - Manchester & Liverpool",
+  description: "Shopify Plus Agency - Manchester, Liverpool & Leeds",
   url: "https://flexcommerce.co.uk",
   phone: "0161 883 7830",
   email: "hello@flexcommerce.co.uk",
@@ -98,10 +98,12 @@ export const locations = [
     id: "leeds",
     name: "Leeds",
     slug: "shopify-agency-leeds",
+    streetAddress: "118 North Street",
     addressLocality: "Leeds",
+    postalCode: "LS2 7PN",
     addressCountry: "GB",
     phone: "0161 883 7830",
-    hasOffice: false,
+    hasOffice: true,
     geo: {
       latitude: 53.8008,
       longitude: -1.5491,
