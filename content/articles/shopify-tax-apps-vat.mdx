@@ -1,0 +1,49 @@
+---
+title: "Shopify Tax Apps: Handling VAT and Sales Tax"
+category: "Tips & Tricks"
+description: "VAT compliance for UK and EU merchants and sales tax for US sellers can be complex on Shopify. Here's how to configure tax correctly and when to use a dedicated tax app."
+readTime: "6 min read"
+date: "2025-03-22"
+image: "/images/articles/pexels-3184291.webp"
+gradient: "linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
+accent: "#ef436b"
+author: "Alex Morgan"
+authorRole: "Head of Strategy"
+---
+Tax compliance is one of the most consequential technical configurations in your Shopify store. Getting VAT or sales tax wrong doesn't just create accounting headaches — it can result in significant financial liability. Understanding how Shopify handles tax natively, and when you need a dedicated tax app, is essential for any merchant operating at scale or across multiple jurisdictions.
+
+## Shopify's Native Tax Configuration
+
+Shopify calculates tax based on tax regions configured in Settings &gt; Taxes and Duties. For UK merchants, this means configuring VAT at 20% (standard) with appropriate exemptions for zero-rated and exempt products. Shopify will apply tax automatically based on the customer's delivery address and your configured tax regions. For most UK DTC merchants selling only within the UK, Shopify's native tax configuration is sufficient.
+
+## VAT OSS for EU Sales
+
+Post-Brexit, UK merchants selling B2C into the EU must register for VAT OSS (One Stop Shop) once they exceed the EU-wide threshold of €10,000 in cross-border sales per year. Shopify supports configuring EU VAT rates, but managing OSS returns — which require reporting sales and VAT by destination country — typically benefits from a dedicated tax solution.
+
+## When to Use a Dedicated Tax App
+
+- You sell to multiple countries with different VAT/GST requirements
+- You sell into the US and need automated sales tax nexus management
+- You have products that span multiple tax categories (standard, reduced, zero-rated)
+- You need automated VAT return preparation and filing support
+- You're using Shopify Markets and need accurate landed cost calculations
+
+## Leading Tax Apps for Shopify
+
+Avalara (AvaTax) is the enterprise standard for US sales tax automation, handling nexus determination and rate calculation across all 50 states automatically. TaxJar is a strong alternative, particularly at mid-market scale, with automated filing support. For UK and EU VAT, Quaderno and Taxually are purpose-built for European compliance requirements, including OSS filing support.
+
+<Callout>
+If you're unsure about your VAT obligations — particularly for EU OSS or importing duties — consult a VAT specialist before configuring Shopify. Tax configuration errors are much harder to fix retrospectively than to get right from the start.
+</Callout>
+
+## Shopify Tax (US Merchants)
+
+Shopify Tax is Shopify's built-in US sales tax solution, available to US merchants. It automatically calculates sales tax based on nexus and rooftop-level rates, replacing the need for a third-party app for many US merchants. If you're a US-based merchant without complex multi-state requirements, Shopify Tax may be all you need — check your state nexus obligations before deciding.
+
+## Practical Configuration Tips
+
+1. Review your product tax codes — many stores apply standard VAT to products that should be zero-rated
+2. Test your checkout tax calculation with real addresses in each market you sell to
+3. Ensure shipping tax settings are correctly configured — shipping is VAT-exempt in some jurisdictions
+4. Verify B2B VAT handling — if selling to VAT-registered businesses, you may need reverse charge configuration
+5. Reconcile Shopify tax reports against your accounting system monthly

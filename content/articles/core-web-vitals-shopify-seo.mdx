@@ -1,0 +1,43 @@
+---
+title: "Core Web Vitals Impact on Shopify SEO"
+category: "Guides"
+description: "Core Web Vitals are Google ranking signals that measure your site's page experience. This guide explains what they measure, how Shopify stores typically fail, and how to fix common issues."
+readTime: "8 min read"
+date: "2025-04-28"
+image: "/images/articles/pexels-4481259.webp"
+gradient: "linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)"
+accent: "#0ea5e9"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Core Web Vitals (CWV) are a set of real-world user experience metrics that Google uses as ranking signals. They measure loading performance, interactivity, and visual stability of a page as experienced by real users. Shopify stores frequently struggle with Core Web Vitals due to heavy app ecosystems, large product images, and theme bloat — but they're fixable with targeted technical work.
+
+## The Three Core Web Vitals
+
+- Largest Contentful Paint (LCP): measures how quickly the largest visible element (usually the hero image) loads. Target: under 2.5 seconds.
+- Interaction to Next Paint (INP): measures responsiveness to user interactions like button clicks. Target: under 200 milliseconds. (Replaced FID in March 2024.)
+- Cumulative Layout Shift (CLS): measures unexpected layout movement during page load. Target: under 0.1. Common cause: images without defined dimensions.
+
+## Why Shopify Stores Fail Core Web Vitals
+
+The most common culprits on Shopify: unoptimised hero images that are too large or not preloaded, excessive third-party app scripts that compete for thread time and increase INP, CSS and JavaScript bundles from the theme that block rendering, and images without width and height attributes causing CLS. Each installed app that injects code on every page degrades your CWV scores cumulatively.
+
+## Fixing LCP on Shopify
+
+Identify your LCP element using the PageSpeed Insights lab report or Chrome DevTools Performance tab. On most Shopify homepages, it's the hero image. Fix it by: adding fetchpriority='high' to the hero image tag, preloading the hero image in your theme's &lt;head&gt;, serving the image in WebP format at the correct display size, and removing any render-blocking scripts that delay image loading.
+
+<Callout>
+Shopify's Online Store Speed score in the admin is calculated by Google Lighthouse in a lab environment. Your Search Console Core Web Vitals score uses real-world field data from Chrome users — these can differ significantly. Both matter, but field data drives the ranking signal.
+</Callout>
+
+## Fixing INP on Shopify
+
+High INP is almost always caused by long JavaScript tasks on the main thread. Audit which scripts are contributing to long tasks using Chrome DevTools' Performance panel. The most impactful fix is often removing or deferring unused app scripts. Many Shopify apps load their JavaScript on every page even when the app functionality is only needed on specific pages — configure apps to load conditionally where possible.
+
+## Fixing CLS on Shopify
+
+Layout shifts most commonly occur when: images are loaded without predefined width and height attributes (causing the browser to reflow when the image dimensions are known), web fonts swap causing text to reflow, or dynamically injected content (banners, popups, cookie notices) pushes page content down after initial render. Add explicit width and height to all img tags and use font-display: optional or font-display: swap for web fonts.
+
+## Monitoring Core Web Vitals
+
+Monitor your CWV scores in Google Search Console's Core Web Vitals report, which segments URLs into 'Good', 'Needs Improvement', and 'Poor'. Prioritise fixing 'Poor' URLs first — these are the ones actively incurring a ranking penalty. Recheck scores 28+ days after implementing fixes, as Search Console reports on a 28-day rolling average of field data.

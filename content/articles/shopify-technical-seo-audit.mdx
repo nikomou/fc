@@ -1,0 +1,58 @@
+---
+title: "Technical SEO Audit for Shopify Stores"
+category: "Guides"
+description: "A thorough technical SEO audit is the starting point for every successful Shopify SEO project. This step-by-step guide covers everything from crawlability to Core Web Vitals."
+readTime: "11 min read"
+date: "2025-07-12"
+image: "/images/articles/pexels-3861964.webp"
+gradient: "linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%)"
+accent: "#ef436b"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+A technical SEO audit identifies issues that prevent Google from effectively crawling, indexing, and ranking your Shopify store. Unlike content SEO, technical issues are often binary — they're either causing a problem or they're not — making them some of the most actionable improvements available. This guide walks through a comprehensive technical audit framework for Shopify.
+
+## 1. Crawlability and Indexation
+
+- Verify your robots.txt is not accidentally blocking important pages or directories
+- Check your sitemap.xml is accessible and submitted to Google Search Console
+- Review the Coverage report in Search Console for any pages marked as 'Excluded', 'Error', or 'Valid with warning'
+- Use URL Inspection to verify key pages (homepage, top collections, top products) are indexed
+- Check for accidental noindex tags — sometimes added by SEO apps or theme updates
+- Verify that paginated collection pages are accessible and not incorrectly noindexed
+
+## 2. Site Speed and Core Web Vitals
+
+Core Web Vitals — Largest Contentful Paint (LCP), Interaction to Next Paint (INP), and Cumulative Layout Shift (CLS) — are Google ranking signals. Check your scores in Search Console's Core Web Vitals report and in PageSpeed Insights (pagespeed.web.dev). Shopify stores frequently fail LCP due to large hero images and INP due to heavy JavaScript from apps.
+
+### Common Speed Issues on Shopify
+
+- Too many third-party apps loading JavaScript on every page
+- Hero images not preloaded or served in WebP format
+- Render-blocking CSS from unused theme styles
+- Unoptimised fonts loading synchronously
+- No lazy loading on below-the-fold images
+
+## 3. Duplicate Content Audit
+
+Use Screaming Frog to crawl your entire store and export a list of all canonical tags. Check for: pages with missing canonicals, pages with multiple canonicals, canonical chains (A→B→C), and collection path product URLs that aren't canonicalised correctly. Also check for pages with identical or near-identical title tags and meta descriptions.
+
+## 4. Mobile Usability
+
+Google uses mobile-first indexing for all sites — your mobile experience is what Google primarily evaluates. Check the Mobile Usability report in Search Console for specific issues. Test your most important pages in Google's Mobile-Friendly Test. Common issues include: text too small, clickable elements too close together, and content wider than the viewport.
+
+## 5. Redirect Audit
+
+Export all redirect rules from Shopify (Online Store &gt; Navigation &gt; URL Redirects) and from your crawl data. Check for: redirect chains (A redirects to B redirects to C — consolidate to A→C), redirect loops (A→B→A), and any 302 temporary redirects that should be 301 permanent. Every hop in a redirect chain loses a small amount of link equity.
+
+<Callout>
+Run your technical audit with a crawler like Screaming Frog at least once per quarter. Set it to crawl at a polite rate and authenticate if your store is password-protected. Export all findings to a priority-ordered issues spreadsheet.
+</Callout>
+
+## 6. Structured Data Validation
+
+Test a sample of product pages, collection pages, and blog posts in Google's Rich Results Test. Document which schema types are present, which are valid, and which have errors or warnings. Prioritise fixing Product schema errors as these directly affect rich results eligibility in Google Shopping and standard search.
+
+## 7. Internal Link Audit
+
+Use your Screaming Frog crawl to identify: pages with no internal links (orphaned pages), pages with broken internal links pointing to 404s, and pages that are only reachable via deeply nested navigation paths. Prioritise linking to high-value pages from your homepage, navigation, and high-authority blog content.

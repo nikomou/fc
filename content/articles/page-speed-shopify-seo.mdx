@@ -1,0 +1,42 @@
+---
+title: "The Importance of Page Speed for Shopify SEO"
+category: "Tips & Tricks"
+description: "Page speed is both a ranking factor and a conversion driver. Learn how to measure, diagnose, and improve your Shopify store's speed for better SEO and sales."
+readTime: "6 min read"
+date: "2024-04-09"
+image: "/images/articles/pexels-3184360.webp"
+gradient: "linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)"
+accent: "#e0e7ff"
+author: "Sarah Patel"
+authorRole: "CRO Specialist"
+---
+Page speed affects both your Google rankings and your conversion rate. Core Web Vitals are a confirmed ranking factor, and Google's own research shows that a one-second delay in mobile page load time can reduce conversions by up to 20%. For Shopify stores, where the product page is the most critical URL in the funnel, speed is non-negotiable.
+
+## Understanding Core Web Vitals
+
+Core Web Vitals are the three speed metrics Google uses as a ranking signal: Largest Contentful Paint (LCP) measures how quickly the main content loads; Cumulative Layout Shift (CLS) measures visual stability; and Interaction to Next Paint (INP) measures responsiveness to user input. Google's 'good' thresholds are LCP under 2.5s, CLS under 0.1, and INP under 200ms. These are measured on real user data via the Chrome User Experience Report.
+
+## How to Measure Your Speed
+
+- PageSpeed Insights — shows both lab data and real-world field data per URL
+- Google Search Console &gt; Core Web Vitals — shows page groups failing thresholds at scale
+- WebPageTest — detailed waterfall analysis for diagnosing specific bottlenecks
+- Shopify's native speed score — useful for trend tracking but less detailed than the above
+
+## The Biggest Speed Culprits on Shopify
+
+The most common speed issues on Shopify stores are: uncompressed images (the single biggest factor), too many third-party apps injecting scripts, render-blocking JavaScript in the theme head, large unoptimised fonts, and excessive Liquid rendering complexity. Address these in order — images first, then scripts, then theme code.
+
+<Callout>
+Audit your app scripts with a tool like Request Map or DebugBear. Every app adds JavaScript to your storefront. Unused or rarely-used apps should be uninstalled, not just disabled — disabled apps still inject code.
+</Callout>
+
+## Image Optimisation
+
+Shopify automatically converts uploaded images to WebP and serves them via its CDN. However, you still control upload quality and dimensions. Upload images at the display size you need — uploading a 4000px image for a 600px thumbnail wastes bandwidth. Use the srcset attribute in your theme to serve appropriately sized images for each device breakpoint.
+
+### Theme Choice and Custom Code
+
+Starting with a fast, lean theme is the easiest way to ensure good Core Web Vitals. Dawn (Shopify's free theme) consistently scores in the 90s on PageSpeed Insights. If you're on a heavily customised legacy theme with years of accumulated code, a theme rebuild is often faster and cheaper than trying to optimise it incrementally.
+
+> A fast store doesn't just rank better — it converts better. Speed is the only optimisation that improves both your marketing costs and your revenue simultaneously.

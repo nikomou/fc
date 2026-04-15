@@ -1,0 +1,51 @@
+---
+title: "How We Used Shopify Flow to Save 20 Hours Per Week"
+category: "Case Studies"
+description: "A UK homewares brand was drowning in manual admin. We automated their order, inventory, and tagging workflows with Shopify Flow — here's exactly what we built."
+readTime: "5 min read"
+date: "2024-07-20"
+image: "/images/articles/pexels-1148820.webp"
+gradient: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)"
+accent: "#ede9fe"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+When a mid-sized homewares brand came to us earlier this year, their operations team was spending roughly 20 hours a week on tasks that should have been automated years ago: manually tagging high-value customers, emailing the warehouse team when stock hit reorder levels, and flagging risky orders for review. Every one of those tasks was rule-based and repetitive — a perfect candidate for Shopify Flow.
+
+## The Challenge
+
+The brand was processing around 400 orders a day across three product lines. Their team of two operations coordinators was spending mornings working through a checklist of checks that had grown organically over two years. There was no documentation — just tribal knowledge and a lot of stress around peak periods.
+
+- Manual customer tagging based on lifetime spend thresholds
+- Handwritten stock alerts emailed to the warehouse
+- Order fraud checks performed individually for orders over £150
+- Post-purchase follow-up tasks created manually in their helpdesk
+
+## Our Approach
+
+We audited every manual process the operations team performed over a two-week period. From that audit, we mapped 11 distinct workflows that could be automated entirely with Shopify Flow. We prioritised by time saved and risk reduction.
+
+### Workflow 1: Customer Loyalty Tagging
+
+We built a Flow trigger on every order completion that checked cumulative spend. Customers crossing the £250, £500, and £1,000 thresholds were automatically tagged and enrolled into the corresponding Klaviyo segment for loyalty communications.
+
+### Workflow 2: Inventory Reorder Alerts
+
+Using Flow's inventory triggers, we set variant-level reorder points. When stock dipped below threshold, a Slack message was sent directly to the buying team with the SKU, current stock level, and a link to the product in Shopify admin. No more morning email triage.
+
+### Workflow 3: High-Risk Order Holding
+
+Orders flagged as high-risk by Shopify's fraud detection were automatically tagged, payment capture was delayed, and an internal task was created in their helpdesk tool via a webhook. The team reviewed only the genuinely suspicious orders rather than screening everything manually.
+
+<Callout>
+After go-live, the operations team reclaimed 20 hours per week. That's equivalent to half a full-time role redirected to customer experience work.
+</Callout>
+
+## The Results
+
+- 20 hours per week saved across the operations team
+- Zero missed reorder alerts in the two months since launch
+- Fraud-related chargebacks reduced by 60% in the first quarter
+- Loyalty email open rates up 18% due to more accurate segmentation
+
+> We didn't realise how much time we were losing until it was given back to us. The team is calmer, and we're actually thinking strategically rather than just surviving.

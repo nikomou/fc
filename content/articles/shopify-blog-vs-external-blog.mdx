@@ -1,0 +1,43 @@
+---
+title: "Shopify Blog vs External Blog for SEO"
+category: "Tips & Tricks"
+description: "Should your Shopify store use the built-in blog or host content on an external platform? We break down the SEO implications of each approach."
+readTime: "6 min read"
+date: "2024-07-22"
+image: "/images/articles/pexels-3856027.webp"
+gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)"
+accent: "#dbeafe"
+author: "Tom Williams"
+authorRole: "SEO Manager"
+---
+One of the most common questions from Shopify merchants investing in content marketing: should the blog live on your Shopify store at yourstore.com/blogs/news, or on a separate platform like WordPress at blog.yourstore.com? The answer matters more than most people realise — it directly affects how link equity flows and how your domain authority builds.
+
+## The SEO Case for the Shopify Blog
+
+When your blog is on the same domain as your store, every link earned by your content passes authority to your entire domain — including your product and collection pages. A link from a publisher to yourstore.com/blogs/news/best-running-shoes raises the authority of yourstore.com/collections/running-shoes. With a subdomain or external blog, that link benefit stays within the subdomain and rarely flows back to the main store.
+
+## Shopify Blog Limitations
+
+- No native categories — only tags, which Shopify renders as filtered list pages
+- Limited native commenting (most merchants disable it in favour of Disqus)
+- No scheduled publishing natively without a third-party app
+- Basic editor — no native support for tables, custom HTML blocks, or content blocks
+- Internal search doesn't reliably index blog content on all themes
+
+## The Case for an External Blog
+
+WordPress, Ghost, and Webflow offer significantly richer content management, more flexible layouts, and better editorial workflows. If your content strategy is ambitious — long-form editorial, multiple authors, interactive content — these platforms are more capable. However, hosting the blog on blog.yourstore.com rather than yourstore.com/blog is an SEO compromise that many merchants regret later.
+
+<Callout>
+If you must use an external blog platform, host it on a subdirectory (/blog) via a reverse proxy rather than a subdomain (blog.). Subdirectories share domain authority; subdomains are treated as separate sites by Google.
+</Callout>
+
+## The Subdirectory Reverse Proxy Option
+
+It's technically possible to serve a WordPress or Ghost blog from yourstore.com/blog using a reverse proxy (via Cloudflare Workers, Nginx, or a service like Headless.io). This gives you the editorial features of an external CMS while keeping content on the root domain. The setup is complex but worth it for content-heavy brands at scale.
+
+### Internal Linking Is Equally Important
+
+Regardless of where your blog lives, internal linking from blog posts to relevant product and collection pages is one of the highest-ROI SEO activities available to ecommerce sites. Each article should link naturally to at least two or three related product pages using keyword-rich anchor text.
+
+> The best blog platform for SEO is the one that lives on your root domain and gets updated consistently. Platform choice is secondary to content quality and link building.

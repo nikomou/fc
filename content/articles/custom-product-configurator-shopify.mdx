@@ -1,0 +1,46 @@
+---
+title: "Custom Product Configurator Built on Shopify: A Case Study"
+category: "Case Studies"
+description: "A personalised gift company needed a live product configurator on Shopify. We built a custom React app embedded in the storefront that handles 10,000+ product permutations."
+readTime: "6 min read"
+date: "2024-09-10"
+image: "/images/articles/pexels-3184291.webp"
+gradient: "linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)"
+accent: "#6366f1"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Personalised products present a unique ecommerce challenge. The customer needs to visualise their customisation in real time before purchasing, but Shopify's native variant system isn't built for thousands of permutations of colour, text, size, and material. This personalised gift company — selling engraved homeware, custom prints, and monogrammed accessories — needed a solution that felt native and performed on mobile.
+
+## The Requirements
+
+- Live product preview updating in real time as the customer customises.
+- Text input with font selection and colour picker.
+- Up to six customisation dimensions per product (size, material, colour, text, font, backing).
+- Personalisation data stored as line item properties and passed to the production team via order export.
+- Mobile-first — 72% of their customers shop on mobile.
+- Fast enough to not impact page load scores.
+
+## The Technical Approach
+
+We built the configurator as a React app bundled as a Shopify Theme App Extension. This approach allowed us to build a rich, stateful UI without compromising the Liquid-based theme performance. The preview rendered using an HTML Canvas element — drawing the product base image, then compositing the customer's text and chosen options over it in real time.
+
+### Canvas Rendering Performance
+
+Canvas rendering needed to be fast enough to feel live — updates within 200 milliseconds of any input change. We achieved this by pre-loading all font files and base images on page load, and batching canvas redraws using requestAnimationFrame. On mobile, the configurator ran at the same speed as desktop, which was critical given the customer base.
+
+<Callout>
+Building configurators on Shopify requires creative use of Theme App Extensions and Shopify's line item properties API. It's more achievable than most merchants assume.
+</Callout>
+
+## Results
+
+- Conversion rate on configurable products improved from 1.1% to 2.8% after the configurator launch.
+- Average order value increased by £14 as customers added more personalisation options.
+- Customer service enquiries about personalisation dropped by 45%.
+- PageSpeed score maintained at 88 — the extension added only 12KB gzipped to the page.
+- Production error rate on personalised orders fell from 8% to under 1% due to structured data capture.
+
+## Production Integration
+
+The configurator data needed to reach the production team accurately and efficiently. We built a custom Shopify admin app that extracted line item properties from all personalised orders and generated a structured production sheet, including a rendered preview of each item, in PDF format. This replaced a manual process that had been taking the production team two hours each morning.

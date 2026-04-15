@@ -1,0 +1,45 @@
+---
+title: "How We Integrated SAP with Shopify Plus"
+category: "Case Studies"
+description: "A large UK retailer needed their Shopify Plus store connected to SAP for real-time stock, order sync, and financial reporting. Here's how we built it."
+readTime: "7 min read"
+date: "2024-12-23"
+image: "/images/articles/pexels-3184360.webp"
+gradient: "linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)"
+accent: "#0ea5e9"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+SAP integrations are the most technically demanding projects we undertake. When a large UK homewares retailer came to us with 40,000 SKUs, a SAP S/4HANA ERP, and a Shopify Plus store that was manually synced via weekly CSV exports, the operational pain was immense. Stock errors, overselling, and reporting delays were costing them an estimated £80,000 a year in operational waste.
+
+## The Integration Requirements
+
+- Real-time stock level sync from SAP to Shopify (target: under 5 minutes lag).
+- Bi-directional order sync — Shopify orders flowing to SAP for fulfilment, SAP fulfilment status updating Shopify.
+- Customer master data sync for B2B accounts.
+- Product data managed in SAP and pushed to Shopify — including pricing, descriptions, and images.
+- Financial reconciliation feed for the client's finance team.
+
+## Architecture Decisions
+
+We chose a middleware architecture rather than direct API-to-API integration. SAP's API layer has rate limiting considerations and complex authentication, and a direct connection creates tight coupling that makes future changes expensive. We used a managed integration platform (Celigo) as the middleware, configured with custom transformation logic for the client's specific SAP configuration.
+
+### Handling Stock in Real Time
+
+SAP stock updates trigger a webhook to our middleware, which transforms the data and calls Shopify's Inventory API. For 40,000 SKUs with multiple warehouse locations, this generates significant event volume. We batched updates intelligently — aggregating changes within a 60-second window before pushing to Shopify — achieving sub-3-minute lag in practice with 99.8% API success rate.
+
+### Order Flow
+
+Every Shopify order triggers an immediate push to SAP, where it enters the standard fulfilment workflow. SAP creates a delivery note and, on despatch, sends a fulfilment confirmation back via middleware to Shopify. Customers receive their shipping confirmation email within minutes of SAP confirming despatch — not on the following morning when a batch process previously ran.
+
+<Callout>
+Middleware architecture adds a layer but dramatically improves resilience and maintainability. A direct SAP-to-Shopify connection is rarely the right choice for complex integrations.
+</Callout>
+
+## Results
+
+- Stock accuracy improved from 78% to 99.1%.
+- Oversell incidents dropped from 120 per month to under 5.
+- Order processing time from purchase to SAP reduced from next-day to under 3 minutes.
+- Finance team saved 12 hours per week previously spent on manual reconciliation.
+- Estimated annual operational saving of £95,000.

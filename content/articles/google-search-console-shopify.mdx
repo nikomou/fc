@@ -1,0 +1,49 @@
+---
+title: "How to Set Up Google Search Console for Shopify"
+category: "Guides"
+description: "Step-by-step guide to connecting Google Search Console to your Shopify store, verifying ownership, and using data to improve your organic rankings."
+readTime: "7 min read"
+date: "2026-01-05"
+image: "/images/articles/pexels-3760067.webp"
+gradient: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)"
+accent: "#8b5cf6"
+author: "Tom Williams"
+authorRole: "SEO Manager"
+---
+Google Search Console (GSC) is the single most valuable free SEO tool available to Shopify merchants. It shows you exactly what queries are driving impressions and clicks, which pages Google has indexed, and alerts you to technical issues like crawl errors and manual actions. If you're not using it, you're flying blind.
+
+## Verifying Your Shopify Store in Search Console
+
+There are several verification methods. For Shopify, the HTML tag method is most reliable. In Search Console, create a new property for your domain, choose 'URL prefix', and select the HTML tag verification option. Copy the meta tag provided.
+
+1. In your Shopify admin, go to Online Store &gt; Themes &gt; Edit Code
+2. Open the theme.liquid file (or layout/theme.liquid in newer themes)
+3. Paste the Google verification meta tag inside the &lt;head&gt; section
+4. Save the file and click 'Verify' in Search Console
+5. Alternatively, use a Shopify SEO app that handles verification without code edits
+
+## Submitting Your Sitemap
+
+Shopify auto-generates a sitemap at yourdomain.com/sitemap.xml. This sitemap links to sub-sitemaps for products, collections, pages, and blog posts. In Search Console, navigate to Sitemaps, enter 'sitemap.xml', and click Submit. Google will begin processing your sitemap and you'll see crawl data within a few days.
+
+<Callout>
+Check the Coverage report after submitting your sitemap. Any pages marked as 'Excluded' or 'Error' need investigating — common issues include pages with noindex tags, redirect chains, and soft 404 errors.
+</Callout>
+
+## Key Reports to Monitor Weekly
+
+- Performance &gt; Search results: impressions, clicks, CTR, and average position for queries and pages
+- URL Inspection: check how Google sees any individual page — useful for debugging indexing issues
+- Coverage: identify indexed, excluded, and error pages
+- Core Web Vitals: Google's assessment of your page experience signals
+- Manual Actions: critical — check this immediately after any major site change
+
+## Using Search Console Data to Improve Rankings
+
+Filter your Performance report to show pages ranking in positions 4–20 with at least 100 impressions. These are your 'quick win' opportunities — pages that are close to page one but need a push. Improve their title tags, enrich their content, and add internal links pointing to them from related, higher-authority pages on your site.
+
+### Identifying Content Gaps
+
+The Queries tab reveals searches that trigger your site's impressions even when you don't rank well. High-impression, low-click queries where your CTR is under 2% suggest your title tag and meta description aren't compelling enough. Test improvements and track the impact over 4–6 weeks.
+
+> Search Console doesn't tell you what to create — it tells you what's already working and where the gaps are. Use it weekly, not monthly.

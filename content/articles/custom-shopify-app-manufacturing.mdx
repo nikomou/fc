@@ -1,0 +1,44 @@
+---
+title: "Custom Shopify App Built for a UK Manufacturing Business"
+category: "Case Studies"
+description: "A UK manufacturer needed to give trade customers real-time stock visibility and custom pricing. We built a bespoke Shopify app that transformed their ordering process."
+readTime: "6 min read"
+date: "2025-01-05"
+image: "/images/articles/pexels-5765873.webp"
+gradient: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)"
+accent: "#8b5cf6"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Off-the-shelf Shopify apps solve 80% of problems elegantly. The remaining 20% — especially in manufacturing and industrial supply — often require bespoke solutions. This UK manufacturer of specialist fixings and fasteners had a unique challenge: 1,200 trade customers each with negotiated pricing tiers, real-time stock levels that changed hourly, and a legacy ERP system that had been running the business for 15 years.
+
+## The Problem We Were Solving
+
+- Trade customers needed to see their individually negotiated prices, not standard RRP.
+- Stock levels in Shopify were always out of date — the ERP was the single source of truth.
+- Account managers needed to create and send custom quotes directly within the Shopify admin.
+- Customers needed the ability to order against their negotiated credit terms without paying at checkout.
+
+## The Architecture We Built
+
+We built a private Shopify app using the Shopify Admin API and App Proxy. The app had two components: a webhook-driven ERP sync running every 15 minutes to update stock levels across 8,000 SKUs, and a customer-facing pricing layer that intercepted the cart and checkout to apply account-specific pricing from the ERP's price list data.
+
+### The Quote Builder
+
+Account managers needed to generate formal PDF quotes from within the Shopify admin. We built a custom Shopify App Extension embedding a quote builder in the admin sidebar. Managers could select products, apply custom line-item pricing, set validity periods, and send the quote as a branded PDF. Customers could accept the quote and convert it to an order in one click.
+
+<Callout>
+Custom Shopify apps are a significant investment but can deliver ROI that no off-the-shelf solution ever could for businesses with genuinely unique operational requirements.
+</Callout>
+
+## Results
+
+- Order processing time reduced from 48 hours to under 4 hours.
+- Stock accuracy on the Shopify store improved from 61% to 97%.
+- Accounts receivable improved — 84% of trade orders now paid within agreed terms.
+- Account manager productivity increased: each manager now handles 40% more accounts.
+- Customer satisfaction with the ordering process scored 4.6 out of 5 in post-launch survey.
+
+## Key Technical Considerations
+
+Building a reliable ERP sync required careful attention to Shopify's API rate limits and webhook reliability. We implemented a queue-based update system with retry logic, and built an admin dashboard showing sync health status. The client's IT team can now monitor the integration independently without developer support.

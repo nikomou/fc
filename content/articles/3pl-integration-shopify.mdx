@@ -1,0 +1,54 @@
+---
+title: "3PL Integration with Shopify: What You Need to Know"
+category: "Guides"
+description: "How to successfully integrate a third-party logistics provider with Shopify. Evaluation criteria, integration methods, onboarding process, and what can go wrong."
+readTime: "8 min read"
+date: "2025-06-25"
+image: "/images/articles/pexels-3182812.webp"
+gradient: "linear-gradient(135deg, #f97316 0%, #ea580c 100%)"
+accent: "#ffedd5"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Moving from self-fulfilment to a third-party logistics provider (3PL) is a significant operational milestone for any Shopify brand. Done right, it frees your team to focus on growth. Done badly, it creates an operational nightmare that takes months to resolve. The quality of your Shopify integration is often the difference between those two outcomes.
+
+## Evaluating 3PLs for Shopify Compatibility
+
+Not all 3PLs are created equal when it comes to Shopify integration. Before signing a contract, assess:
+
+- Does the 3PL have a native Shopify app or API integration? Native integrations are lower-maintenance than custom middleware.
+- What is the real-time stock sync latency? You need inventory to update within minutes of a pick, not once a day.
+- Can the 3PL receive and process orders automatically without manual intervention?
+- Do they support Shopify's fulfilment request API for seamless order routing?
+- How do they handle returns processing and restocking into Shopify inventory?
+- What SLAs do they offer on order cut-off times and dispatch speed?
+
+## Integration Methods
+
+There are three common approaches to connecting Shopify and your 3PL:
+
+1. Native Shopify app: the 3PL has their own Shopify app that manages the connection. Easiest to set up, but you're dependent on the app quality.
+2. iPaaS middleware (Patchworks, Linnworks, Extensiv): an integration platform sits between Shopify and the 3PL, mapping data and handling order routing. More flexible and resilient.
+3. Custom API integration: built specifically for your workflow. Most expensive but offers complete control. Appropriate for high-volume, complex operations.
+
+<Callout>
+Always test your 3PL integration thoroughly in a staging environment before going live. Create test orders, process them end-to-end, simulate returns, and verify that stock levels sync correctly. Integration failures on live orders are costly and damage customer trust.
+</Callout>
+
+## The Onboarding Process
+
+A typical 3PL onboarding for a Shopify brand takes 4-8 weeks and involves:
+
+- Week 1-2: Integration setup, credentials exchange, and initial connectivity testing
+- Week 2-3: Product inbounding — sending initial stock to the 3PL and reconciling against Shopify inventory
+- Week 3-4: Shadow operations — the 3PL processes real orders but you fulfil them yourself in parallel
+- Week 4+: Go live — 3PL begins fulfilling orders exclusively. Monitor closely for the first 2-3 weeks.
+
+## Common Issues and How to Avoid Them
+
+- Inventory discrepancies at go-live: do a full stock count at the 3PL before going live, not after
+- Order routing delays: confirm order cut-off times and test that orders placed after the cut-off are held, not failed
+- Returns not restocking in Shopify: define and test your returns workflow explicitly before launch
+- SKU mapping errors: ensure every Shopify variant SKU exactly matches the 3PL's product codes
+
+> A 3PL transition is not an IT project — it's a business transformation. The brands that handle it smoothly are the ones that treat integration testing with the same rigour as a website relaunch.

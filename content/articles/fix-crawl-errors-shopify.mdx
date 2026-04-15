@@ -1,0 +1,43 @@
+---
+title: "How to Fix Crawl Errors on Your Shopify Store"
+category: "Tips & Tricks"
+description: "A practical guide to identifying and fixing the most common crawl errors on Shopify stores — including 404s, redirect chains, and blocked URLs."
+readTime: "6 min read"
+date: "2024-05-31"
+image: "/images/articles/pexels-2881229.webp"
+gradient: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)"
+accent: "#ede9fe"
+author: "Tom Williams"
+authorRole: "SEO Manager"
+---
+Crawl errors are Google's way of telling you something is broken. Left unaddressed, they waste crawl budget, dilute link equity, and create a poor user experience. Shopify stores accumulate crawl errors over time — particularly as products are discontinued, URLs change, and apps add pages that don't need indexing. Here's how to find and fix them.
+
+## Finding Crawl Errors in Google Search Console
+
+Go to Google Search Console &gt; Pages. This report shows all URLs Google has tried to crawl, segmented by status: Not Indexed, Indexed, and Error. The most actionable errors are in the 'Not Found (404)' and 'Redirect Error' categories. Export the full list and group by URL pattern — you'll often find clusters of errors from a single source (a deleted collection, an old app, a CSV import).
+
+## Fixing 404 Errors on Shopify
+
+Shopify's URL redirect tool lives in Online Store &gt; Navigation &gt; URL Redirects. For each 404 that was a real page (products, collections, blog posts), create a redirect to the most relevant equivalent page. For truly obsolete pages with no equivalent, the 404 is correct — but ensure no internal links or external backlinks point to that URL. Fix or disavow as appropriate.
+
+<Callout>
+Use the Matrixify app or Shopify's Bulk Redirect CSV import to handle large numbers of redirects. Manually adding 500 redirects through the admin UI is impractical.
+</Callout>
+
+## Redirect Chains and Loops
+
+Redirect chains occur when URL A redirects to B, which redirects to C. Each hop in the chain loses a small amount of link equity and increases page load time. Shopify's redirect system can create chains if old redirects aren't cleaned up when URLs change again. Use Screaming Frog to identify chains (any redirect with more than one hop) and update them to point directly to the final destination.
+
+## Common Shopify-Specific Crawl Issues
+
+- Duplicate content from /products/ and /collections/[handle]/products/ URLs
+- Parameterised sort and filter URLs being indexed (/?sort_by=price-ascending)
+- App-generated pages (apps often create URLs like /apps/[name]/[page]) that may not need indexing
+- Variant URLs (/products/[handle]?variant=1234567) that create near-duplicate indexed pages
+- Old Shopify default pages (e.g., /cart, /challenge) appearing in crawl reports
+
+## Blocking Unnecessary URLs
+
+Shopify's robots.txt is not fully editable on standard plans, but you can use the robots.txt.liquid file (available on all plans) to add Disallow rules. Block URL patterns that should never be crawled: sort and filter parameters, app subdirectories, and admin-adjacent paths. This keeps Googlebot focused on your valuable content rather than wasting crawl budget on noise.
+
+> Crawl errors don't fix themselves. A monthly 20-minute review of your Search Console Pages report is one of the highest-ROI SEO maintenance tasks you can do.

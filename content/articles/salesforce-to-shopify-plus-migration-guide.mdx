@@ -1,0 +1,55 @@
+---
+title: "Migrating from Salesforce Commerce Cloud to Shopify Plus"
+category: "Guides"
+description: "A detailed migration guide covering data transfer, feature mapping, and go-live strategy for brands moving from Salesforce Commerce Cloud to Shopify Plus."
+readTime: "9 min read"
+date: "2024-09-25"
+image: "/images/articles/pexels-590016.webp"
+gradient: "linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)"
+accent: "#e0f2fe"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Salesforce Commerce Cloud (SFCC) is a capable enterprise platform, but it comes with high licensing costs, long development cycles, and a reliance on specialised developers. More enterprise brands are choosing to migrate to Shopify Plus — attracted by faster iteration, a richer app ecosystem, and significantly lower total cost of ownership. The migration is substantial but very achievable with the right plan.
+
+## Why Brands Leave Salesforce Commerce Cloud
+
+- Licensing fees typically exceed £100K/year for meaningful volumes
+- Proprietary tech stack (ISML, Demandware scripts) creates developer dependency
+- Slow release cycles — even minor changes require lengthy QA
+- Integrations require certified development partners and high day rates
+- Commerce AI features are available at additional cost
+
+## Pre-Migration Audit
+
+Before any data is moved, conduct a full audit of your current SFCC setup. Catalogue the number of products, variants, customer accounts, historical orders, and active promotions. Identify all current integrations — ERP, PIM, OMS, loyalty, search — and map each to a Shopify Plus equivalent. This audit reveals scope accurately and prevents surprises mid-migration.
+
+## Data Migration
+
+SFCC exports data via its Business Manager in XML or CSV format. Shopify accepts data via its Import API or CSV templates. The mapping between SFCC's product model and Shopify's can be complex — particularly for product variations, site preferences, and customer attributes. Use a dedicated migration tool like Matrixify (Excelify) or build a custom ETL script for large catalogues.
+
+<Callout>
+Customer passwords cannot be migrated from SFCC to Shopify due to hashing differences. Plan a re-engagement email campaign prompting customers to set a new password post-launch.
+</Callout>
+
+## Feature Mapping: SFCC to Shopify Plus
+
+- SFCC Promotions Engine → Shopify Discounts + Shopify Scripts (or Checkout Extensibility)
+- Einstein AI Recommendations → Shopify Search & Discovery or third-party tools
+- Business Manager CMS → Shopify Online Store 2.0 + custom metaobjects
+- SFCC Pipelines → Shopify Flow automations
+- Multi-site management → Shopify Plus Organisation Admin + expansion stores
+
+## Theme and Frontend Development
+
+SFCC storefronts are built in ISML — a proprietary templating language. Your new Shopify theme will be built in Liquid (or Hydrogen for headless). This is a full frontend rebuild, not a conversion. Use it as an opportunity to improve performance and UX. Shopify themes regularly achieve 90+ Lighthouse scores out of the box; SFCC typically scores in the 50s–70s.
+
+## URL Structure and SEO Preservation
+
+SFCC and Shopify use different URL structures. Create a comprehensive redirect map before go-live, covering product pages, category pages, content pages, and blog posts. Missing redirects on a large catalogue can cause significant organic traffic loss — expect 10–15% temporary drops even with good redirect coverage, recovering over 8–12 weeks.
+
+## Go-Live Strategy
+
+For most SFCC-to-Shopify migrations, a big-bang cutover (planned maintenance window of 2–4 hours) is more reliable than a staged approach. Run SFCC and Shopify Plus in parallel for 2–4 weeks of final testing, freeze promotions and pricing 48 hours before cutover, then execute the DNS change. Monitor 404s, order flow, and payment success rates obsessively in the first 48 hours.
+
+> The brands that succeed in this migration treat it as a platform change, not just a tech lift — and use it as a forcing function to simplify and modernise every system it touches.

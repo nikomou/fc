@@ -1,0 +1,46 @@
+---
+title: "Mobile SEO for Shopify Stores"
+category: "Tips & Tricks"
+description: "Mobile-first indexing means your mobile experience is your SEO. Here's how to audit and optimise your Shopify store's mobile performance for better rankings."
+readTime: "6 min read"
+date: "2024-05-18"
+image: "/images/articles/pexels-3184291.webp"
+gradient: "linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)"
+accent: "#e0f2fe"
+author: "Tom Williams"
+authorRole: "SEO Manager"
+---
+Google indexes the mobile version of your site first. This has been the case since 2019, yet many Shopify stores are still optimised primarily for desktop. If your mobile experience is slow, difficult to navigate, or missing content that appears on desktop, your rankings suffer across all devices. Here's what to audit and fix.
+
+## Check Your Mobile Usability in Search Console
+
+Google Search Console's Mobile Usability report (under Experience) flags pages with specific mobile issues: text too small to read, clickable elements too close together, content wider than the screen, or use of incompatible plugins. Fix all flagged issues before addressing anything else — these are signals Google uses directly in ranking.
+
+## Core Web Vitals on Mobile
+
+Core Web Vitals thresholds are the same on mobile and desktop, but mobile typically scores lower due to device constraints and network variability. Largest Contentful Paint (LCP) should be under 2.5 seconds, Cumulative Layout Shift (CLS) under 0.1, and Interaction to Next Paint (INP) under 200ms. Run your Shopify store through PageSpeed Insights specifically on the mobile tab to see your real-world field data.
+
+<Callout>
+LCP on mobile is almost always the hero image or a banner. Convert hero images to WebP, add explicit width and height attributes to prevent CLS, and use fetchpriority='high' on the LCP element.
+</Callout>
+
+## Mobile Navigation and UX
+
+- Hamburger menus must be accessible and keyboard navigable
+- Tap targets should be at least 48×48px with adequate spacing
+- Avoid hover-dependent interactions — there is no hover on touchscreens
+- Keep the sticky header minimal — it consumes valuable screen real estate
+- Ensure filter and sort controls are usable one-handed on collection pages
+
+## Content Parity: Mobile vs Desktop
+
+Under mobile-first indexing, Google crawls your mobile content. If your mobile theme hides content (via CSS display:none or collapsed accordions that aren't accessible to crawlers), that content is not considered for ranking. Ensure all important on-page content — product descriptions, collection text, structured data — is present and crawlable on mobile.
+
+### Mobile Page Speed Quick Wins
+
+- Defer non-critical JavaScript — especially app scripts that don't affect the initial view
+- Lazy-load images below the fold
+- Remove unused CSS from your theme
+- Avoid render-blocking third-party scripts in the head
+
+> Mobile SEO isn't a subset of SEO. It is SEO. Optimise for mobile first and desktop improvement follows automatically.

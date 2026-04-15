@@ -1,0 +1,39 @@
+---
+title: "Shopify Pagination and SEO: What You Need to Know"
+category: "Tips & Tricks"
+description: "How Shopify handles pagination on collection pages, the SEO implications of paginated content, and how to configure it to avoid indexing and duplicate content issues."
+readTime: "5 min read"
+date: "2024-05-05"
+image: "/images/articles/pexels-1148820.webp"
+gradient: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
+accent: "#fef3c7"
+author: "Tom Williams"
+authorRole: "SEO Manager"
+---
+Shopify collection pages paginate when a collection exceeds the per-page product limit (typically 24 or 48 products). This creates URLs like /collections/trainers?page=2. How you handle these paginated URLs has a direct impact on crawl budget, indexing, and whether your collection pages rank as well as they should.
+
+## How Google Handles Pagination
+
+Google no longer uses rel=prev/next pagination signals — they were deprecated in 2019. Today, Google recommends that paginated content either consolidates onto a single page (using infinite scroll with proper markup), or that page 2+ are canonicalised to page 1. What you should definitely avoid is allowing page 2, 3, and 4 of a collection to be indexed independently with thin content.
+
+## Shopify's Default Pagination Behaviour
+
+By default, Shopify generates canonical tags on paginated collection pages that point each page to itself — meaning /collections/trainers?page=2 has a self-referencing canonical. This can lead to all pages being indexed. For large collections with many paginated pages, this wastes crawl budget and can dilute the authority of the canonical collection page.
+
+<Callout>
+In your collection.liquid template, ensure that page 2+ canonical tags point to the root collection URL (/collections/[handle]) rather than self-referencing. This consolidates link equity to the main page.
+</Callout>
+
+## Fixing Canonical Tags for Pagination
+
+In your theme's collection template, check the canonical tag logic. It should output the root collection URL for all paginated versions. In Liquid, this looks like: &lt;link rel='canonical' href='&#123;&#123; shop.url &#125;&#125;&#123;&#123; collection.url &#125;&#125;'&gt;. Remove any page parameter from this output to ensure all paginated versions point to the root.
+
+## Should You Use Infinite Scroll?
+
+Infinite scroll is popular for UX but requires careful implementation for SEO. Google can execute JavaScript but struggles to crawl dynamically loaded products reliably. If you use infinite scroll, implement it with pushState URL updates (so each 'page' gets a unique URL) and ensure Googlebot can discover all products via the sitemap and internal linking — not just through the paginated interface.
+
+### Practical Recommendation
+
+For most Shopify stores: use standard paginated navigation, fix canonical tags to point page 2+ to the root collection URL, and ensure your sitemap only submits the root collection URL. This keeps implementation simple while correctly signalling to Google which URL should rank.
+
+> Pagination isn't glamorous SEO work, but incorrect canonical tags on a 200-product collection can silently cost you significant ranking potential.

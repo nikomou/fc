@@ -1,0 +1,49 @@
+---
+title: "Shopify URL Structure Best Practices"
+category: "Tips & Tricks"
+description: "Shopify's default URL structure has known SEO pitfalls. Here's how to configure your URLs correctly to avoid duplicate content and maximise ranking potential."
+readTime: "6 min read"
+date: "2026-01-15"
+image: "/images/articles/pexels-3182812.webp"
+gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)"
+accent: "#10b981"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Shopify's URL structure is largely fixed by the platform — you cannot freely customise URL paths as you might in WordPress. Understanding what you can and cannot control, and how to handle the platform's inherent quirks, is essential for strong SEO performance.
+
+## Shopify's Default URL Prefixes
+
+Shopify enforces URL prefixes for each content type: /products/ for product pages, /collections/ for collection pages, /blogs/[blog-name]/ for blog posts, and /pages/ for static pages. You cannot remove these prefixes. What you can control is the handle — the slug portion of the URL — which you should optimise for your target keyword.
+
+- /products/organic-cotton-t-shirt-white — good, includes keyword
+- /products/product-123 — poor, no keyword signal
+- /collections/mens-running-shoes — good, descriptive category keyword
+- /collections/collection-1 — poor, zero SEO value
+
+## The Duplicate URL Problem in Shopify
+
+Shopify's most notorious SEO quirk is its dual URL system for products. When you add a product to a collection, Shopify creates an additional URL: /collections/[collection-name]/products/[product-handle]. This means each product can be accessed via multiple URLs — a classic duplicate content problem.
+
+<Callout>
+Shopify automatically adds canonical tags pointing to the /products/ canonical URL. However, internal links from your collection pages still point to the /collections/.../products/... path. Review your theme to ensure internal links use the canonical /products/ path where possible.
+</Callout>
+
+## URL Handle Best Practices
+
+- Keep handles concise but descriptive — 3 to 5 words is ideal
+- Include your primary keyword naturally — don't stuff multiple keywords
+- Use hyphens to separate words, never underscores or spaces
+- Avoid stop words (and, the, for, of) unless they're part of the keyword
+- Use lowercase only — Shopify handles this automatically but check imported data
+- Never change a URL without setting up a 301 redirect — Shopify's URL redirect tool makes this straightforward
+
+## Handling URL Changes and Redirects
+
+If you need to change a product handle — for example, after a rebrand or to incorporate a better keyword — always create a 301 redirect. In Shopify, navigate to Online Store &gt; Navigation &gt; URL Redirects. Shopify also auto-creates redirects when you change a handle directly in the product editor, though it's worth verifying these are in place.
+
+### Collection Page Pagination
+
+Paginated collection URLs take the form /collections/[name]?page=2. Shopify does not add rel=prev/next pagination signals (Google deprecated these in 2019). Ensure your theme does not accidentally noindex paginated pages, as these can hold valuable long-tail ranking potential, particularly for large catalogues.
+
+> A clean, keyword-rich URL is a small but meaningful signal — and once a URL gains ranking and backlinks, changing it costs you more than it saves.

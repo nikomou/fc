@@ -1,0 +1,42 @@
+---
+title: "Scaling a Print-on-Demand Business with Shopify"
+category: "Case Studies"
+description: "A print-on-demand gifts brand hit a growth ceiling with their existing setup. We restructured their Shopify store, supplier integration, and fulfilment workflow to support 5x order volume."
+readTime: "5 min read"
+date: "2024-01-20"
+image: "/images/articles/pexels-3183153.webp"
+gradient: "linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)"
+accent: "#e0f2fe"
+author: "Emma Clarke"
+authorRole: "Account Director"
+---
+A print-on-demand personalised gifts brand had grown from a side project to £35,000/month entirely organically. Their problem was scale. As order volume grew, their manual process — downloading orders, building a personalisation spreadsheet, uploading to their print supplier's portal — was consuming six hours a day. Peak period (Christmas, Valentine's Day) was near-impossible to manage. They needed infrastructure that could handle 5x their current volume.
+
+## Mapping the Workflow
+
+We spent the first two weeks mapping every step of the order fulfilment process in granular detail, including all the exceptions and edge cases: orders with multiple personalised items, orders that needed proofing before production, late personalisation changes requested by customers, and the retry process for failed prints. The map revealed 23 distinct manual steps — every one of them a candidate for automation.
+
+## The Technical Solution
+
+We built a custom order automation app using Shopify's Admin API. The app listened for new orders, extracted personalisation metafields from each line item, formatted them to the print supplier's API specification, and submitted jobs automatically. Production status updates from the supplier were written back to the Shopify order as timeline notes, giving the customer service team full visibility without leaving Shopify admin.
+
+- Automatic job submission to print supplier API on order confirmation
+- Proofing workflow: jobs flagged for review held pending staff approval
+- Customer proof approval via branded email with 1-click confirm/amend
+- Automatic tracking number import from supplier back to Shopify
+- Failed print alerts routed to a Slack channel with one-click resubmission
+
+### Store Restructure
+
+The product catalogue was also restructured. Previously, each personalisation variant was a separate product — meaning a mug available in four colours with text, image, and both options was 12 separate products. We rebuilt using Shopify's variants and metafields properly, collapsing 340 products to 48 while offering more personalisation options per product.
+
+<Callout>
+Order processing time dropped from six hours per day to under 20 minutes of oversight. The Christmas peak that had previously required temporary staff ran smoothly without additional headcount.
+</Callout>
+
+## Results
+
+- Daily order processing: 6 hours → 20 minutes
+- Successfully handled 5x order volume in the subsequent Christmas peak
+- Personalisation error rate: reduced by 94%
+- Product catalogue: 340 products → 48 (more options, less complexity)

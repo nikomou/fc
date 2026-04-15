@@ -1,0 +1,48 @@
+---
+title: "How to Fix Duplicate Content Issues on Shopify"
+category: "Tips & Tricks"
+description: "Shopify's architecture creates duplicate content problems that hurt rankings. Learn how to identify, diagnose, and fix every common duplication issue on Shopify."
+readTime: "7 min read"
+date: "2025-11-28"
+image: "/images/articles/pexels-590016.webp"
+gradient: "linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%)"
+accent: "#ef436b"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Duplicate content is one of the most common and damaging SEO issues on Shopify stores. Unlike WordPress, Shopify's platform architecture creates duplicate URLs by design — and if you're not actively managing them, Google is likely splitting your ranking signals across multiple versions of the same page.
+
+## The Main Sources of Duplicate Content on Shopify
+
+- Product pages accessible via both /products/ and /collections/[name]/products/ paths
+- Paginated collection pages (?page=2, ?page=3) treated as separate pages
+- Faceted navigation URLs created by filter parameters (?sort_by=, ?filter.p.tag=)
+- www vs non-www versions of the domain
+- HTTP vs HTTPS versions of the domain
+- Copied manufacturer product descriptions shared across multiple retailers
+
+## Canonical Tags: Shopify's Primary Defence
+
+Shopify automatically adds canonical tags to product pages. The canonical tag tells Google: 'This is the preferred version of this page.' For product pages, Shopify sets the canonical to /products/[handle], even when the page is accessed via the collection path. This is correct behaviour — verify it's working by inspecting the &lt;head&gt; of a product page accessed via a collection URL.
+
+<Callout>
+Check that your theme hasn't overridden Shopify's automatic canonical tags. Some third-party themes or apps incorrectly generate canonical tags, especially on filtered or sorted collection pages.
+</Callout>
+
+## Handling Faceted Navigation and Filter Parameters
+
+Shopify's native filtering system adds parameters like ?sort_by=price-ascending or ?filter.p.m.global.colour=Red to collection URLs. Each unique parameter combination creates a new URL. You need to ensure these filtered URLs are either canonicalised to the base collection URL or blocked from indexation.
+
+### Recommended Approach for Filter Parameters
+
+For most stores, filtered collection pages should not be indexed. Use a custom canonical tag on filtered pages pointing back to the base collection URL, or add a noindex meta tag when filter parameters are present. A developer can implement this via a conditional check in your collection.liquid template.
+
+## Fixing WWW and HTTPS Redirects
+
+Shopify automatically redirects HTTP to HTTPS. The www vs non-www preference is set in your domain settings — go to Online Store &gt; Domains and set your primary domain. Shopify then redirects all other versions to the primary. Check this is working by testing both versions in a browser.
+
+## Unique Content Across Product Variants
+
+If your store sells the same product in multiple colours or sizes, each variant URL (e.g., /products/t-shirt?variant=12345) should share the canonical pointing to the main product URL. Do not create separate product pages for variants — consolidate them using Shopify's native variant system to pool reviews, links, and ranking signals.
+
+> Every duplicate URL is a diluted URL. Consolidate your signals and Google rewards the canonical version with stronger rankings.

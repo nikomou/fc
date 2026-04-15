@@ -1,0 +1,57 @@
+---
+title: "Shopify Checkout Optimisation: A Step-by-Step Guide"
+category: "Guides"
+description: "A comprehensive guide to reducing checkout friction on Shopify and Shopify Plus — from express payments to form field reduction and checkout extensibility."
+readTime: "9 min read"
+date: "2025-11-20"
+image: "/images/articles/pexels-3183153.webp"
+gradient: "linear-gradient(135deg, #f97316 0%, #ea580c 100%)"
+accent: "#ffedd5"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Shopify's checkout is already one of the highest-converting in ecommerce — but 'good' is not the same as 'optimised'. Research shows that the average checkout completion rate across ecommerce is around 47%. The best-performing Shopify stores achieve 70-80%. Closing that gap is where significant revenue lives.
+
+## Understanding Your Checkout Funnel
+
+Before making changes, understand where customers are dropping off. In Shopify Analytics, look at the checkout funnel report: Information → Shipping → Payment → Order Confirmation. The step with the highest drop-off rate is where you should focus first.
+
+## Step 1: Express Checkout Options
+
+For returning customers — and anyone using a mobile device — accelerated checkout options eliminate almost all friction. A customer who clicks 'Pay with Shop Pay' completes their purchase in two taps. That is the gold standard to aim for.
+
+- Enable Shop Pay — it is Shopify's own accelerated checkout and has the highest conversion rates
+- Enable Apple Pay and Google Pay for mobile and Safari users
+- Enable PayPal Express for customers who prefer not to use their card directly
+- Place express checkout buttons above the standard form, not at the bottom
+- Test your express checkout buttons on real mobile devices monthly
+
+## Step 2: Address and Form Optimisation
+
+The information step is where most drop-off occurs. Every additional field you ask for is a reason to abandon. Minimise form friction aggressively.
+
+1. Remove the 'Company' field unless you genuinely need it for B2B orders
+2. Enable address autocomplete — Shopify supports Google Places API in checkout
+3. Use postcode lookup to auto-fill city and county fields
+4. Remove 'Address line 2' from above the fold — it can be a collapsible option
+5. Enable autofill support by using correct autocomplete attributes on all inputs
+
+## Step 3: Shipping Step Optimisation
+
+Unexpected shipping costs at this step are the number one cause of checkout abandonment. The solution is radical transparency earlier in the funnel — display shipping costs on product pages and in the cart so there are no surprises at checkout.
+
+<Callout>
+If you offer free shipping over a threshold, make the qualifying amount visible on product pages, in the cart, and at the top of the checkout — not just in your navigation bar. Repetition builds expectation.
+</Callout>
+
+## Step 4: Shopify Plus Checkout Extensibility
+
+Shopify Plus merchants have access to checkout extensibility — the ability to add custom components to the checkout without editing checkout.liquid directly. This opens up powerful options:
+
+- Custom trust badges and security messaging in the checkout sidebar
+- Upsell offers within the checkout (post-purchase upsells via checkout UI extensions)
+- Loyalty points balance display for logged-in members
+- Custom gift message fields and personalisation options
+- Subscription upsell options at the payment step
+
+> Every field you remove from your checkout, every step you eliminate, and every second you shave off the process directly correlates with a higher completion rate. Checkout is not where you want to be creative — it is where you want to be invisible.

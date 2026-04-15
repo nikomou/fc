@@ -1,0 +1,42 @@
+---
+title: "How to Set Up Meta Pixel with Shopify"
+category: "Guides"
+description: "A step-by-step guide to connecting Meta Pixel with your Shopify store, implementing the Conversions API, and verifying your setup for accurate campaign optimisation."
+readTime: "7 min read"
+date: "2024-03-28"
+image: "/images/articles/pexels-3856027.webp"
+gradient: "linear-gradient(135deg, #f97316 0%, #ea580c 100%)"
+accent: "#ffedd5"
+author: "Tom Williams"
+authorRole: "SEO Manager"
+---
+Meta's advertising platform is the most widely used paid channel for Shopify merchants — but its effectiveness is entirely dependent on the quality of your tracking setup. Since Apple's iOS 14 changes, browser-based pixel tracking alone misses 20–40% of conversions. A dual-signal setup combining the Meta Pixel with the Conversions API is now the standard.
+
+## Step 1: Connect via Shopify's Facebook and Instagram App
+
+The simplest way to connect Meta Pixel with Shopify is through the official Facebook and Instagram sales channel app. In your Shopify admin, go to Apps &gt; Facebook and Instagram. Connect your Facebook Business Manager, select your ad account, and link your Pixel. Shopify will automatically fire standard events — PageView, ViewContent, AddToCart, InitiateCheckout, and Purchase.
+
+## Step 2: Enable the Conversions API
+
+Once the app is connected, navigate to its settings and enable 'Conversions API'. This sends server-side events directly from Shopify's servers to Meta, bypassing browser-level tracking restrictions. Crucially, enable event deduplication — Shopify handles this automatically when you use the native integration, ensuring browser and server events are not double-counted.
+
+- Go to Facebook and Instagram app settings in Shopify admin
+- Toggle 'Share Conversions API events' to on
+- Select which events to send server-side (all by default)
+- Confirm deduplication is enabled via the eventID parameter
+
+## Step 3: Verify in Meta Events Manager
+
+In Meta Business Manager, open Events Manager and select your Pixel. Use the Test Events tool to simulate a purchase and confirm the event is received. Check that the Purchase event includes: value, currency, content_ids, and content_type. Also verify your event match quality score — a score above 7 indicates strong matching between events and Meta user profiles.
+
+<Callout>
+A low event match quality score means Meta cannot match your events to its users, which degrades campaign optimisation. Improve it by passing email address, phone number, and first/last name as hashed customer data.
+</Callout>
+
+### Aggregated Event Measurement
+
+For iOS 14+ compatibility, configure Aggregated Event Measurement in Meta's Events Manager. This requires you to verify your domain and prioritise up to eight events in order of importance. For most Shopify stores, Purchase should be Event Priority 1. Without this setup, iOS users who opt out of tracking may not be correctly attributed.
+
+## Ongoing Maintenance
+
+Check your Events Manager monthly for data quality warnings. Shopify app updates and theme changes can occasionally break event firing. Monitor your 'matched events' percentage — if it drops significantly, investigate whether the Pixel base code is still loading correctly on all pages, and whether your Conversions API integration is still authenticated.

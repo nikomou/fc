@@ -1,0 +1,60 @@
+---
+title: "Shopify Plus Checkout Extensibility: A Developer's Guide"
+category: "Guides"
+description: "A technical deep-dive into Shopify Plus Checkout Extensibility — covering extension architecture, the Branding API, and best practices for production deployments."
+readTime: "9 min read"
+date: "2025-09-06"
+image: "/images/articles/pexels-6006785.webp"
+gradient: "linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)"
+accent: "#0ea5e9"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Shopify's Checkout Extensibility platform has matured significantly since its introduction. For developers building production checkout experiences on Plus, understanding the full API surface — extension types, component library, data access patterns, and deployment architecture — is essential for building reliable, performant checkout customisations.
+
+## Extension Types Overview
+
+- Checkout UI Extensions: Custom React components injected at defined positions
+- Post-Purchase Extensions: One-click upsell and content on the order status page
+- Thank You and Order Status Extensions: Custom blocks on post-purchase pages
+- Customer Account Extensions: UI customisations in the buyer portal
+- Checkout Branding API: Visual theming of native checkout elements
+
+## Extension Architecture
+
+Checkout UI Extensions are React components that render inside an iframe sandbox within the Shopify checkout. They communicate with the checkout host via a structured API — there is no direct DOM access. Extensions use Shopify's Checkout UI component library (based on Polaris) for UI elements, ensuring visual consistency and accessibility compliance.
+
+## Data Access in Extensions
+
+Extensions have access to a rich set of checkout data through the `@shopify/ui-extensions-react/checkout` package. Available data includes cart lines and attributes, customer information, shipping details, discount applications, and metafields. Extensions can also write to cart attributes and custom fields via provided API methods.
+
+### Key Hooks Available to Extensions
+
+- useCartLines() — access all items in the cart with full product and variant data
+- useCustomer() — authenticated customer data including email and loyalty status
+- useShippingAddress() — delivery address as entered by the customer
+- useApplyCartLinesChange() — programmatically modify cart contents
+- useApplyAttributeChange() — write custom attributes to the order
+- useMetafields() — read shop and product metafield data
+
+## Extension Targets (Placement Positions)
+
+Extensions must declare a target — the position in the checkout where they render. Key targets include `purchase.checkout.block.render` (a flexible block position), `purchase.checkout.shipping-option-list.render-after` (below shipping options), and `purchase.checkout.payment-method-list.render-after` (below payment methods). Choose targets based on where your customisation logically belongs in the purchase flow.
+
+<Callout>
+Always test extensions with the Shopify Functions API simulator and across multiple device types before deploying to production. Extension rendering differences between mobile and desktop can catch teams off-guard.
+</Callout>
+
+## The Checkout Branding API
+
+The Branding API is queried and mutated via the Shopify Admin GraphQL API using the `checkoutBranding` object. Customisable properties include typography (font family, weight, size scales), colour tokens (background, foreground, accents, error states), border radii, and spacing. Changes are persisted to the checkout theme and version-controlled via the API.
+
+## Deployment and Version Management
+
+1. Develop and test locally using `shopify app dev`
+2. Deploy the extension to your Partner account with `shopify app deploy`
+3. Install the app to the merchant store and activate extensions in the Checkout editor
+4. Use the Checkout editor to position and configure extension blocks
+5. Monitor extension performance via the Shopify Partner Dashboard
+
+> The Checkout Extensibility platform rewards developers who invest time in understanding its constraints. Work with the API rather than against it, and you'll build maintainable, performant checkout experiences.

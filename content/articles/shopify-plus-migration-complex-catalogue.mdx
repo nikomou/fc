@@ -1,0 +1,45 @@
+---
+title: "Complex Catalogue Migration: 200,000 SKUs to Shopify Plus"
+category: "Case Studies"
+description: "How we migrated a 200,000 SKU product catalogue from Magento 2 to Shopify Plus without downtime, with full data integrity and a 99.6% URL redirect success rate."
+readTime: "7 min read"
+date: "2024-01-15"
+image: "/images/articles/pexels-4481259.webp"
+gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)"
+accent: "#dbeafe"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Migrating a large catalogue to Shopify Plus is one of the highest-stakes projects in ecommerce development. Get it wrong and you lose rankings, corrupt product data, or introduce checkout errors. Get it right and you unlock a platform that scales more reliably and costs significantly less to maintain than Magento.
+
+## The Brief
+
+Our client was a B2B and B2C industrial supplies retailer with 200,000 active SKUs, complex variant structures, tiered B2B pricing, and 14 years of Magento 2 history. They wanted to move to Shopify Plus to reduce their infrastructure bill and gain access to native POS, Shopify Markets, and B2B features.
+
+## Data Audit and Mapping
+
+Before writing a single migration script, we spent four weeks auditing the Magento database. This surfaced 31,000 duplicate SKUs, 8,400 products with missing images, and several thousand malformed variant records. Cleaning this data before migration was essential — migrating dirty data would have been far worse than the migration itself.
+
+## Migration Architecture
+
+- Custom Python scripts for product, variant, and metafield migration via Shopify API
+- Staged migration: categories first, then products, then customer data
+- Full redirect mapping for all 200,000 product URLs using Shopify's redirect CSV
+- B2B price lists migrated to Shopify Plus native B2B catalogues
+- Three parallel validation passes before final cutover
+
+## Zero-Downtime Cutover
+
+The cutover was executed on a Sunday at 2am. DNS was updated with a 300-second TTL. The Magento store remained on a maintenance page for two hours while final order data was synced. By 4am, the Shopify Plus store was live and fully operational. No orders were lost in transit.
+
+<Callout>
+URL redirect success rate: 99.6% of all indexed URLs were correctly redirected. Organic traffic recovered to pre-migration levels within 11 days.
+</Callout>
+
+## Post-Migration Outcomes
+
+- Infrastructure costs reduced by 68% versus Magento hosting
+- Site speed (LCP): 4.8s → 1.9s
+- Developer maintenance hours reduced by 80%
+- B2B order processing time cut from 4 minutes to 40 seconds
+- First Black Friday on Shopify Plus handled peak traffic without incident

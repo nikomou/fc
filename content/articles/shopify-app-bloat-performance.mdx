@@ -1,0 +1,48 @@
+---
+title: "Reducing Shopify App Bloat: A Performance Case Study"
+category: "Case Studies"
+description: "A beauty brand's Shopify store was loading in 6.8 seconds due to app bloat. We audited 34 installed apps, removed 18, and rebuilt key features natively — cutting load time by 60%."
+readTime: "6 min read"
+date: "2024-05-16"
+image: "/images/articles/pexels-2881229.webp"
+gradient: "linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%)"
+accent: "#e5e5e5"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+A beauty brand doing £80k/month came to us after their paid social ROAS had been declining steadily for six months. Their team assumed it was a targeting problem. It wasn't. Their Google PageSpeed score on mobile was 24. Their largest contentful paint was 7.1 seconds. Every paid click was landing on a page that 60% of users gave up on before it fully loaded.
+
+## The App Audit
+
+We began with a full audit of their Shopify admin. They had 34 apps installed, of which 11 had not been used in over six months and were still injecting JavaScript into every page load. Using Chrome DevTools and WebPageTest, we mapped every third-party script to its originating app and quantified the load contribution of each.
+
+- 34 apps installed total
+- 18 apps identified for removal or replacement
+- 11 apps were completely unused but still loading scripts
+- 7 apps had functionality that could be rebuilt natively or via a lighter alternative
+
+## What We Removed and Why
+
+The most impactful removals were a visual merchandising app (loading 240KB of JavaScript on every collection page), a popup app that hadn't been configured in over a year, and a loyalty app that had been replaced by a newer solution but never uninstalled. Together these three accounted for 1.8 seconds of blocking render time.
+
+### Native Rebuilds
+
+Where apps were providing genuine value, we looked at whether the functionality could be rebuilt in Shopify's native feature set or via a lighter implementation. Their product review display — previously handled by a 180KB app — was replaced with metafields-based reviews pulled from their existing review platform and rendered in Liquid. Load impact: near zero.
+
+### Script Loading Optimisation
+
+For the apps that remained, we audited load order and deferred non-critical scripts using async and defer attributes where the app's theme extension allowed it. Chat widgets, tracking pixels, and loyalty widgets were all moved to load after the main content was interactive.
+
+<Callout>
+After the audit and rebuild, their PageSpeed mobile score rose from 24 to 81. LCP dropped from 7.1s to 2.6s.
+</Callout>
+
+## Business Results
+
+- PageSpeed mobile score: 24 → 81
+- Largest contentful paint: 7.1s → 2.6s
+- Conversion rate improved by 22% in the following month
+- Paid social ROAS recovered to previous levels within six weeks
+- Ongoing app licence cost reduced by £340/month
+
+> We'd spent months trying to fix our ads. Turns out we just needed to fix our website.

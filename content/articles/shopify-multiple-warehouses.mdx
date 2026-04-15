@@ -1,0 +1,49 @@
+---
+title: "How to Manage Multiple Warehouses with Shopify"
+category: "Guides"
+description: "Learn how to configure multi-location inventory in Shopify, route orders to the optimal warehouse, and keep stock levels accurate across fulfilment centres."
+readTime: "7 min read"
+date: "2024-10-21"
+image: "/images/articles/pexels-3182812.webp"
+gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)"
+accent: "#d1fae5"
+author: "Alex Morgan"
+authorRole: "Head of Strategy"
+---
+As Shopify stores scale, single-warehouse operations start to create bottlenecks: slower delivery times, stock imbalances, and rising carrier costs. Shopify's multi-location inventory lets you spread stock across multiple warehouses and fulfilment centres — but the configuration needs to be done carefully to avoid overselling or routing errors.
+
+## Setting Up Locations in Shopify
+
+Each warehouse or fulfilment centre is added as a Location in Settings &gt; Locations. Shopify allows up to 1,000 locations on Plus plans. For each location, you'll manage its own inventory levels, and Shopify will use those levels to determine availability at checkout. On Plus, you can also use the Shopify Fulfillment Network or integrate a 3PL directly.
+
+## Order Routing Logic
+
+Shopify routes orders to locations based on a priority list you define. This is a manual ranking — the first location with stock gets the order. This works for simple setups but lacks the geographic intelligence needed for larger operations. For smarter routing, you'll need a third-party OMS or a Shopify Plus Flow automation that calculates proximity to the customer.
+
+<Callout>
+On Shopify Plus, you can use Flow to build conditional routing logic — for example, route orders to your northern warehouse if the customer's postcode begins with LS, HG, or YO.
+</Callout>
+
+## Inventory Syncing Across Locations
+
+- Use Shopify's inventory transfer feature to move stock between locations formally
+- Connect your ERP or WMS via the Inventory API for real-time sync
+- Set safety stock thresholds at each location to avoid overselling
+- Use inventory forecasting tools to balance stock proactively
+
+## Reporting Across Multiple Locations
+
+Shopify's inventory reports show stock by location, which is useful at a glance. For deeper analysis — turns by SKU per warehouse, fulfilment speed by location, or carrier performance — you'll need to export data or connect a BI tool. Shopify Plus merchants can access the custom reports builder, which allows location-level segmentation natively.
+
+### Common Mistakes to Avoid
+
+- Forgetting to assign new products to all relevant locations
+- Not setting a fulfilment priority order, leaving routing to default
+- Treating in-transit stock as available stock in reporting
+- Over-allocating to a single location causing the others to go to zero
+
+## When to Use a Third-Party OMS
+
+If you have four or more locations, complex B2B requirements, or need zone-skipping carrier logic, Shopify's native multi-location tools will hit their ceiling. A dedicated OMS like Brightpearl, Linnworks, or Deposco connects to Shopify via API and provides the routing intelligence, cycle counting, and carrier management that a growing operation demands.
+
+> Multi-location inventory is not a Shopify configuration task — it's a logistics strategy that happens to live inside Shopify.

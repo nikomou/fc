@@ -1,0 +1,43 @@
+---
+title: "Shopify Analytics vs Google Analytics: What to Use When"
+category: "Tips & Tricks"
+description: "Shopify Analytics and Google Analytics 4 both offer ecommerce insights, but they measure differently. Here is how to use each tool where it is strongest."
+readTime: "6 min read"
+date: "2024-05-06"
+image: "/images/articles/pexels-267389.webp"
+gradient: "linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%)"
+accent: "#e5e5e5"
+author: "Tom Williams"
+authorRole: "SEO Manager"
+---
+Most Shopify merchants have both Shopify Analytics and Google Analytics 4 connected to their store — and most of them are confused about why the numbers never match. Understanding what each platform measures, and why they differ, is essential before you make any data-driven decisions.
+
+## What Shopify Analytics Is Good At
+
+Shopify Analytics draws directly from your order data — it is the source of truth for revenue, order count, and customer information. Its customer cohort reports, product analytics, and inventory data are unmatched because they are calculated from actual transactions, not tracking events. Use Shopify Analytics for anything financial.
+
+- Revenue, orders, and average order value
+- Returning customer rate and customer lifetime value
+- Top products by revenue and units sold
+- Inventory levels and sell-through rates
+- Shopify Markets performance by region
+
+## What Google Analytics 4 Is Good At
+
+GA4 excels at understanding traffic and behaviour before a purchase is made. It shows you which channels drive visitors, how users navigate your site, where they drop off, and how different acquisition sources compare in conversion rate. Its event-based model gives far more flexibility than anything native to Shopify.
+
+## Why the Numbers Differ
+
+Shopify counts an order the moment it is placed. GA4 fires a purchase event when the confirmation page loads — but if the page fails to load, the network drops, or the user closes the tab early, the event is missed. Additionally, GA4 relies on cookies and consent, meaning users who decline tracking are invisible to it. Expect a 10–20% discrepancy as normal.
+
+<Callout>
+Always use Shopify Analytics for revenue reporting and financial decisions. Use GA4 for traffic, behaviour, and marketing attribution. Never try to reconcile the two.
+</Callout>
+
+### Attribution Differences
+
+Shopify uses last-click attribution by default. GA4 defaults to data-driven attribution (on accounts with sufficient data) or last non-direct click. This means the same order can be attributed to different channels in each platform. Set your GA4 attribution model intentionally and document it so your team is reading the same story.
+
+## Building a Combined Reporting Approach
+
+The pragmatic approach is to use Shopify as your revenue truth and GA4 as your behavioural intelligence layer. Build a simple Looker Studio dashboard that pulls from both — Shopify for actuals, GA4 for channel and behavioural breakdowns. Review both weekly, understand what each is telling you, and resist the temptation to pit them against each other.

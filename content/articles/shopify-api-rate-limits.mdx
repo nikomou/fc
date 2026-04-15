@@ -1,0 +1,47 @@
+---
+title: "Shopify Plus API Rate Limits Explained"
+category: "Tips & Tricks"
+description: "Understand Shopify's REST and GraphQL API rate limits, how they differ on Shopify Plus, and how to architect integrations that stay within the boundaries."
+readTime: "6 min read"
+date: "2024-09-12"
+image: "/images/articles/pexels-905163.webp"
+gradient: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
+accent: "#fef3c7"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Rate limits are the invisible ceiling of Shopify integrations. Build without considering them and you'll face 429 errors, missed webhook deliveries, and frustrated stakeholders. Understanding how Shopify's rate limiting actually works — and how Plus changes the picture — is essential for any developer building on the platform.
+
+## REST API Rate Limits
+
+Shopify's REST API uses a leaky bucket algorithm. Standard stores get a bucket size of 40 requests with a leak rate of 2 requests/second. Shopify Plus stores get a bucket size of 80 with a leak rate of 4 requests/second — double the standard allowance. Each API call costs one bucket unit. When the bucket fills, further requests return a 429 status until the bucket drains.
+
+## GraphQL API Rate Limits
+
+The GraphQL Admin API uses a cost-based system rather than a simple request count. Each query has a calculated cost based on the fields requested. Standard stores get 1,000 cost units/second, restoring at 50 units/second. Shopify Plus stores get 2,000 cost units/second, restoring at 100 units/second. This makes GraphQL far more efficient for bulk operations — you can fetch 250 products with their variants in a single query.
+
+<Callout>
+Always prefer GraphQL over REST for new integrations. Its cost-based model rewards efficient queries and its bulk operations API bypasses rate limits entirely for large data tasks.
+</Callout>
+
+## Bulk Operations API
+
+For large data exports or imports — product catalogues, customer records, order history — use Shopify's Bulk Operations API. Bulk queries run asynchronously and are not subject to the standard rate limits. Results are delivered as a JSONL file via a URL. This is the correct tool for any task involving more than a few hundred records.
+
+## Best Practices for Rate Limit Management
+
+- Implement exponential backoff when you receive a 429 response
+- Respect the Retry-After header Shopify returns with 429 errors
+- Batch REST requests where possible — use the /products.json?limit=250 pattern
+- Cache frequently accessed data (product counts, shop metadata) rather than re-fetching
+- Use webhooks for real-time data instead of polling the API
+
+## Monitoring API Usage
+
+Shopify returns rate limit headers with every API response: X-Shopify-Shop-Api-Call-Limit for REST (showing current/max bucket usage) and X-GraphQL-Cost-Incurred for GraphQL. Log these headers in your integration to build visibility into usage patterns before you hit the ceiling.
+
+### Private Apps vs Custom Apps
+
+Private apps and custom apps share the same rate limit bucket per store. If you have multiple integrations running against the same store — say, an ERP connector and an email platform — they compete for the same allowance. On Shopify Plus, you can request an API rate limit increase for specific integrations through your Shopify Plus account manager.
+
+> Rate limit errors aren't a sign that your integration is broken — they're a sign it wasn't architected for the platform it's running on.

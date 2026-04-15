@@ -1,0 +1,48 @@
+---
+title: "How We Achieved a 90+ PageSpeed Score on a Shopify Store"
+category: "Case Studies"
+description: "A Shopify store bloated with apps and unoptimised images was scoring 31 on PageSpeed. We rebuilt the theme and achieved a 92 score without losing any functionality."
+readTime: "6 min read"
+date: "2025-02-26"
+image: "/images/articles/pexels-3622608.webp"
+gradient: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)"
+accent: "#06b6d4"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+A PageSpeed score of 31 is not unusual for a Shopify store that's been live for a few years. Apps accumulate, images go un-optimised, and third-party scripts pile up. For this outdoor clothing brand, the slow site was costing them in both conversion rate and organic rankings — Google had started to demote them in mobile search results. The brief was clear: get above 90 without losing a single feature.
+
+## The Performance Audit
+
+We started with a full Core Web Vitals audit. The Largest Contentful Paint (LCP) was 8.2 seconds — catastrophic. The main culprits were a 3.4MB hero image, seven third-party scripts loading synchronously in the head, and a review app injecting 140KB of CSS that blocked rendering. Total page weight was 9.1MB.
+
+## What We Fixed
+
+1. Re-encoded all images to WebP format and implemented responsive image srcsets — saved 2.8MB from the hero alone.
+2. Audited all 14 installed apps and removed 6 that had no measurable revenue impact.
+3. Moved all third-party scripts to load asynchronously after the page paint.
+4. Replaced the review app with a leaner alternative with 60% less JavaScript payload.
+5. Implemented native lazy loading on all below-the-fold images.
+6. Built a custom section for the hero using Liquid to avoid the app dependency entirely.
+7. Removed 40KB of unused CSS from the base theme using PurgeCSS.
+8. Preloaded the LCP image using a resource hint in the theme head.
+
+### The App Audit
+
+Every app installed on Shopify adds JavaScript and CSS to the storefront whether it's actively used or not. We found three apps that hadn't been used in over a year but were still loading on every page. Removing unused apps is always the highest-leverage action on a performance project — and it's free.
+
+<Callout>
+Reducing page weight from 9.1MB to 2.3MB was the single biggest contributor to the performance improvement. Image optimisation alone is often worth 30–40 PageSpeed points.
+</Callout>
+
+## Results
+
+- PageSpeed mobile score improved from 31 to 92.
+- Largest Contentful Paint improved from 8.2 seconds to 1.4 seconds.
+- Total page weight reduced from 9.1MB to 2.3MB.
+- Organic search impressions increased 34% in the 60 days following the improvement.
+- Mobile conversion rate improved from 0.8% to 1.5% within 30 days.
+
+## Maintaining Performance
+
+We documented a performance budget for the client — maximum JavaScript payload, image size guidelines, and a monthly app audit process. Performance improvements decay over time unless there's a process to protect them. We set up a Lighthouse CI check on their staging environment so any new app installation that degrades performance is flagged before it goes live.

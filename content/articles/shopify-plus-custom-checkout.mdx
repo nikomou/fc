@@ -1,0 +1,58 @@
+---
+title: "Custom Checkout with Shopify Plus Extensibility"
+category: "Guides"
+description: "Build a branded, high-converting checkout experience using Shopify Plus Checkout Extensibility — without touching legacy checkout.liquid code."
+readTime: "9 min read"
+date: "2025-12-05"
+image: "/images/articles/pexels-3861964.webp"
+gradient: "linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
+accent: "#ef436b"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+The checkout is the most commercially critical page on any ecommerce store. For Shopify Plus merchants, Checkout Extensibility replaces the old checkout.liquid file with a modern, upgrade-safe system for adding custom UI, logic, and data to the checkout flow. If you're still relying on a heavily modified checkout.liquid, migration is now a priority.
+
+## What Is Checkout Extensibility?
+
+Checkout Extensibility is a collection of APIs and components that allow developers to add custom blocks, fields, and functionality to the Shopify checkout without modifying core platform code. It includes Checkout UI Extensions, Post-Purchase Extensions, and the Checkout Branding API — all available exclusively to Plus merchants.
+
+## Checkout UI Extensions
+
+Extensions let you inject custom React components into defined positions within the checkout. These positions include before and after the order summary, between address fields, and within the payment section. Common use cases include loyalty points displays, gift message fields, upsell banners, custom delivery date pickers, and trust badge components.
+
+### Common Extension Use Cases
+
+- Display loyalty points balance and projected points earned from the current order
+- Gift wrapping option with custom message field
+- Order insurance upsell (e.g., Route, Corso)
+- Custom delivery date or time slot selector
+- Branded trust badges and security messaging
+- Charity donation option at checkout
+- Subscription upsell for one-time purchasers
+
+## The Checkout Branding API
+
+The Branding API gives Plus merchants granular control over the visual appearance of the checkout — fonts, colours, button styles, border radii, and background customisations — through a structured API rather than CSS overrides. Changes made via the Branding API are upgrade-safe and respected across all future Shopify checkout updates.
+
+## Post-Purchase Extensions
+
+The post-purchase page — displayed immediately after the order confirmation — is prime real estate for upsells. Post-Purchase Extensions allow you to offer a one-click upsell at this stage, adding a product to an existing order without requiring the customer to re-enter payment details. Well-configured post-purchase upsells consistently generate 5–15% incremental revenue.
+
+<Callout>
+Checkout Extensibility is upgrade-safe by design. Unlike checkout.liquid modifications, extensions will not break when Shopify releases platform updates.
+</Callout>
+
+## Migrating from checkout.liquid
+
+Shopify has deprecated checkout.liquid for new Plus accounts, and existing customisations will need to be migrated. Begin with a full audit of your current checkout.liquid modifications — categorise each change as branding (use the Branding API), functional (build an Extension), or logic-based (consider Shopify Functions). Most customisations have a direct Extensibility equivalent.
+
+## Development Approach
+
+1. Set up a development store and install the Shopify CLI
+2. Create an extension using the Checkout UI Extension template
+3. Use React and Shopify's Checkout UI component library
+4. Test thoroughly across mobile and desktop at each checkout step
+5. Deploy via the Shopify Partner Dashboard or CLI
+6. Monitor conversion rate before and after deployment
+
+> Checkout Extensibility is the right architecture for the future. Merchants who migrate early gain a more stable, performant, and customisable checkout with far less maintenance burden.

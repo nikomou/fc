@@ -3,8 +3,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Clock, Calendar } from "lucide-react";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import { Section } from "@/components/ui/Section";
-import { blogPosts, getBlogPost, getLatestPosts, formatDate, ContentBlock } from "@/lib/blog";
+import {
+  blogPosts,
+  getBlogPost,
+  getBlogPostContent,
+  getLatestPosts,
+  formatDate,
+} from "@/lib/blog";
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -21,7 +28,9 @@ export async function generateMetadata({
   return {
     title: `${post.title} | Flex Commerce`,
     description: post.description,
-    alternates: { canonical: `https://flexcommerce.co.uk/articles/${post.slug}` },
+    alternates: {
+      canonical: `https://flexcommerce.co.uk/articles/${post.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.description,
@@ -39,91 +48,88 @@ export async function generateMetadata({
   };
 }
 
-function renderBlock(block: ContentBlock, i: number) {
-  switch (block.type) {
-    case "h2":
-      return (
-        <h2 key={i} className="text-2xl font-bold text-[#1a1a1a] mt-10 mb-4">
-          {block.text}
-        </h2>
-      );
-    case "h3":
-      return (
-        <h3 key={i} className="text-xl font-semibold text-[#1a1a1a] mt-8 mb-3">
-          {block.text}
-        </h3>
-      );
-    case "p":
-      return (
-        <p key={i} className="text-gray-700 leading-relaxed mb-5">
-          {block.text}
-        </p>
-      );
-    case "ul":
-      return (
-        <ul key={i} className="mb-5 space-y-2">
-          {block.items.map((item, j) => (
-            <li key={j} className="flex gap-3 text-gray-700 leading-relaxed">
-              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ef436b] flex-shrink-0" />
-              {item}
-            </li>
-          ))}
-        </ul>
-      );
-    case "ol":
-      return (
-        <ol key={i} className="mb-5 space-y-2 counter-reset-[step]">
-          {block.items.map((item, j) => (
-            <li key={j} className="flex gap-3 text-gray-700 leading-relaxed">
-              <span className="mt-0.5 w-6 h-6 rounded-full bg-[#1a1a1a] text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
-                {j + 1}
-              </span>
-              {item}
-            </li>
-          ))}
-        </ol>
-      );
-    case "quote":
-      return (
-        <blockquote
-          key={i}
-          className="my-8 pl-6 border-l-4 border-[#ef436b] italic text-gray-600 text-lg leading-relaxed"
-        >
-          &ldquo;{block.text}&rdquo;
-        </blockquote>
-      );
-    case "callout":
-      return (
-        <div
-          key={i}
-          className="my-8 p-5 rounded-xl bg-[#fff5f7] border border-[#fce7ef] text-gray-700 leading-relaxed"
-        >
-          <span className="font-semibold text-[#ef436b] block mb-1 text-sm uppercase tracking-wide">
-            Key insight
-          </span>
-          {block.text}
-        </div>
-      );
-    case "image":
-      return (
-        <figure key={i} className="my-8">
-          <div className="relative w-full rounded-xl overflow-hidden border border-gray-100 shadow-sm" style={{ aspectRatio: "16/9" }}>
-            <Image src={block.src} alt={block.alt} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 720px" />
-          </div>
-          {block.caption && (
-            <figcaption className="mt-2 text-center text-sm text-gray-400">{block.caption}</figcaption>
-          )}
-        </figure>
-      );
-    default:
-      return null;
-  }
+function Callout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="my-8 p-5 rounded-xl bg-[#fff5f7] border border-[#fce7ef] text-gray-700 leading-relaxed">
+      <span className="font-semibold text-[#ef436b] block mb-1 text-sm uppercase tracking-wide">
+        Key insight
+      </span>
+      {children}
+    </div>
+  );
 }
 
+function ArticleImage({
+  src,
+  alt,
+  caption,
+}: {
+  src: string;
+  alt: string;
+  caption?: string;
+}) {
+  return (
+    <figure className="my-8">
+      <div
+        className="relative w-full rounded-xl overflow-hidden border border-gray-100 shadow-sm"
+        style={{ aspectRatio: "16/9" }}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-cover object-top"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+      {caption && (
+        <figcaption className="mt-2 text-center text-sm text-gray-400">
+          {caption}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
+const mdxComponents = {
+  Callout,
+  ArticleImage,
+  h2: ({ children }: { children: React.ReactNode }) => (
+    <h2 className="text-2xl font-bold text-[#1a1a1a] mt-10 mb-4">
+      {children}
+    </h2>
+  ),
+  h3: ({ children }: { children: React.ReactNode }) => (
+    <h3 className="text-xl font-semibold text-[#1a1a1a] mt-8 mb-3">
+      {children}
+    </h3>
+  ),
+  p: ({ children }: { children: React.ReactNode }) => (
+    <p className="text-gray-700 leading-relaxed mb-5">{children}</p>
+  ),
+  ul: ({ children }: { children: React.ReactNode }) => (
+    <ul className="mb-5 space-y-2">{children}</ul>
+  ),
+  ol: ({ children }: { children: React.ReactNode }) => (
+    <ol className="mb-5 space-y-2">{children}</ol>
+  ),
+  li: ({ children }: { children: React.ReactNode }) => (
+    <li className="flex gap-3 text-gray-700 leading-relaxed">
+      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ef436b] flex-shrink-0" />
+      <span>{children}</span>
+    </li>
+  ),
+  blockquote: ({ children }: { children: React.ReactNode }) => (
+    <blockquote className="my-8 pl-6 border-l-4 border-[#ef436b] italic text-gray-600 text-lg leading-relaxed">
+      {children}
+    </blockquote>
+  ),
+};
+
 const categoryColors: Record<string, { bg: string; text: string }> = {
-  Guides:           { bg: "#fef3c7", text: "#92400e" },
-  "Tips & Tricks":  { bg: "#d1fae5", text: "#065f46" },
-  "Case Studies":   { bg: "#ede9fe", text: "#5b21b6" },
+  Guides: { bg: "#fef3c7", text: "#92400e" },
+  "Tips & Tricks": { bg: "#d1fae5", text: "#065f46" },
+  "Case Studies": { bg: "#ede9fe", text: "#5b21b6" },
 };
 
 export default async function ArticlePostPage({
@@ -135,7 +141,12 @@ export default async function ArticlePostPage({
   const post = getBlogPost(slug);
   if (!post) notFound();
 
-  const related = getLatestPosts(4).filter((p) => p.slug !== post.slug).slice(0, 3);
+  const content = getBlogPostContent(slug);
+  if (!content) notFound();
+
+  const related = getLatestPosts(4)
+    .filter((p) => p.slug !== post.slug)
+    .slice(0, 3);
   const c = categoryColors[post.category] ?? { bg: "#f1f5f9", text: "#1e293b" };
 
   const jsonLd = {
@@ -180,7 +191,10 @@ export default async function ArticlePostPage({
           sizes="100vw"
           priority
         />
-        <div className="absolute inset-0 opacity-60" style={{ background: post.gradient }} />
+        <div
+          className="absolute inset-0 opacity-60"
+          style={{ background: post.gradient }}
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
         <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 w-full">
           <Link
@@ -224,14 +238,12 @@ export default async function ArticlePostPage({
       {/* Article */}
       <Section>
         <div className="max-w-3xl mx-auto">
-          {/* Intro description */}
           <p className="text-xl text-gray-600 leading-relaxed mb-8 pb-8 border-b border-gray-100">
             {post.description}
           </p>
 
-          {/* Content */}
           <div className="prose-custom">
-            {post.content.map((block, i) => renderBlock(block, i))}
+            <MDXRemote source={content} components={mdxComponents} />
           </div>
 
           {/* Author footer */}
@@ -241,7 +253,9 @@ export default async function ArticlePostPage({
             </div>
             <div>
               <p className="font-semibold text-[#1a1a1a]">{post.author}</p>
-              <p className="text-gray-500 text-sm">{post.authorRole}, Flex Commerce</p>
+              <p className="text-gray-500 text-sm">
+                {post.authorRole}, Flex Commerce
+              </p>
             </div>
           </div>
         </div>
@@ -251,7 +265,9 @@ export default async function ArticlePostPage({
       {related.length > 0 && (
         <Section background="alt">
           <div className="flex items-end justify-between mb-8">
-            <h2 className="text-2xl font-bold text-[#1a1a1a]">More Articles</h2>
+            <h2 className="text-2xl font-bold text-[#1a1a1a]">
+              More Articles
+            </h2>
             <Link
               href="/articles"
               className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-[#1a1a1a] transition-colors"
@@ -262,7 +278,10 @@ export default async function ArticlePostPage({
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {related.map((rp) => {
-              const rc = categoryColors[rp.category] ?? { bg: "#f1f5f9", text: "#1e293b" };
+              const rc = categoryColors[rp.category] ?? {
+                bg: "#f1f5f9",
+                text: "#1e293b",
+              };
               return (
                 <Link
                   key={rp.slug}
@@ -277,7 +296,10 @@ export default async function ArticlePostPage({
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 400px"
                   />
-                  <div className="absolute inset-0 opacity-55" style={{ background: rp.gradient }} />
+                  <div
+                    className="absolute inset-0 opacity-55"
+                    style={{ background: rp.gradient }}
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                   <div className="relative p-5">
                     <span

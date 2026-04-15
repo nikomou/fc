@@ -1,0 +1,56 @@
+---
+title: "Optimising Your Shopify Store for Speed"
+category: "Tips & Tricks"
+description: "Practical tips to improve your Shopify store's loading time and Core Web Vitals scores — and why page speed directly impacts your conversion rate and SEO rankings."
+readTime: "7 min read"
+date: "2026-02-14"
+image: "/images/blog/shopify-speed-optimisation-guide.jpg"
+gradient: "linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
+accent: "#ffd6de"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Every 100ms improvement in page load time can increase conversions by up to 1%. For a store turning over £1M a year, that's an extra £10k — and that's before you factor in the SEO uplift from better Core Web Vitals scores. Speed is not a nice-to-have. It's a revenue lever.
+
+## Understanding Core Web Vitals
+
+Google's Core Web Vitals are three metrics that measure the real-world user experience of your store. They directly influence your search rankings — a slow store will rank lower than a fast competitor, all else being equal.
+
+- LCP (Largest Contentful Paint): How quickly your main content loads. Aim for under 2.5 seconds.
+- FID / INP (Interaction to Next Paint): How quickly your page responds to interaction. Aim for under 200ms.
+- CLS (Cumulative Layout Shift): How stable your layout is as it loads. Aim for a score under 0.1.
+
+## The Biggest Culprits on Shopify Stores
+
+In our experience auditing hundreds of Shopify stores, the same issues come up repeatedly. Here's what to fix first:
+
+1. Too many apps — every app adds JavaScript to your storefront. Audit your app list ruthlessly.
+2. Unoptimised images — use WebP format, compress to under 100KB for product images, and always set explicit width/height attributes.
+3. Render-blocking JavaScript — third-party scripts (chat widgets, review apps, tracking pixels) that load synchronously in the &lt;head&gt;.
+4. Large, unoptimised theme files — bloated CSS and JavaScript from themes that weren't built for performance.
+5. No lazy loading — images below the fold loading on page open instead of when needed.
+
+<Callout>
+Every Shopify app you install adds between 10-80KB of JavaScript to your storefront. A store with 30+ apps is carrying significant performance debt — often without realising it.
+</Callout>
+
+## Quick Wins You Can Do Today
+
+- Compress and convert all product images to WebP using Shopify's built-in image transformation API
+- Add loading="lazy" to all images that aren't above the fold
+- Remove unused apps from your Shopify admin (even deactivated apps leave code behind until removed)
+- Move non-critical scripts to load in the footer rather than the &lt;head&gt;
+- Enable Shopify's built-in image CDN for global delivery
+- Reduce the number of font variants you load (stick to 2 weights per typeface)
+
+## Advanced Optimisations
+
+Once you've tackled the quick wins, these deeper changes will push your scores into the green:
+
+- Replace heavy app functionality with lightweight native Shopify features where possible
+- Implement section-level CSS loading so styles only load when the section is on the page
+- Use Shopify's web pixel API instead of script tags for third-party tracking
+- Implement critical CSS inlining for above-the-fold styles
+- Audit and consolidate your third-party tag manager setup
+
+> We consistently see stores achieve 20-40 point improvements in their Google PageSpeed scores within two weeks of a focused performance audit. The ROI is almost always immediate.

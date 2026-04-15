@@ -1,0 +1,44 @@
+---
+title: "Email Deliverability for Shopify: Keeping Emails Out of Spam"
+category: "Tips & Tricks"
+description: "A practical guide to email deliverability for Shopify brands — covering DNS authentication, list hygiene, sending practices, and what to do if you land in spam."
+readTime: "6 min read"
+date: "2024-10-27"
+image: "/images/articles/pexels-1779487.webp"
+gradient: "linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)"
+accent: "#e0e7ff"
+author: "Tom Williams"
+authorRole: "SEO Manager"
+---
+Email deliverability is the invisible force behind email revenue. A brand with a 40% open rate on a 50,000-subscriber list is leaving a significant amount on the table if 20% of those emails never reach the inbox. Deliverability problems compound over time — and are significantly easier to prevent than to fix after the damage is done.
+
+## The Three Pillars of Deliverability
+
+Deliverability rests on three foundations: authentication (proving you are who you say you are), reputation (your sending history and engagement rates), and content (what is in the emails you send). Problems in any one area can land you in spam; problems across all three can result in domain-level blocking.
+
+## DNS Authentication Setup
+
+- SPF record — lists servers authorised to send email from your domain
+- DKIM record — cryptographic signature proving email has not been tampered with
+- DMARC record — policy for how receiving servers should handle authentication failures
+- Custom sending domain in Klaviyo — do not send from klaviyo.com subdomains
+
+## List Hygiene
+
+Sending to disengaged subscribers damages your sender reputation. Build a suppression segment in Klaviyo for contacts who have not opened in 180 days — send them a single win-back email, then suppress them if they do not re-engage. A smaller, engaged list consistently outperforms a large, unengaged one on every metric that matters.
+
+<Callout>
+Google and Yahoo's 2024 sender requirements mandate a DMARC policy, spam rate below 0.3%, and easy one-click unsubscribe for bulk senders. These are now requirements, not recommendations.
+</Callout>
+
+## Sending Practices That Protect Reputation
+
+- Warm up new sending domains gradually — start with 500 sends/day and double weekly
+- Segment campaigns to your most engaged contacts first
+- Send at consistent times — erratic volume spikes trigger spam filters
+- Monitor spam complaint rates in Google Postmaster Tools
+- Never purchase email lists — it will destroy a healthy domain quickly
+
+## Diagnosing a Deliverability Problem
+
+If open rates drop suddenly, check Google Postmaster Tools and Microsoft SNDS for domain reputation flags. Run your sending IP through MXToolbox to check for blacklist entries. If you are listed, identify the cause (usually a spam complaint spike or sending to bounced addresses), remediate it, and then request delisting. Most blacklist operators delist within 24–48 hours once the underlying issue is resolved.

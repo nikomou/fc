@@ -1,0 +1,39 @@
+---
+title: "Multilingual SEO with Shopify Markets"
+category: "Guides"
+description: "Shopify Markets enables you to sell internationally, but multilingual SEO requires careful configuration. This guide covers hreflang, translated content, and avoiding duplicate content across locales."
+readTime: "8 min read"
+date: "2025-06-05"
+image: "/images/articles/pexels-3182812.webp"
+gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)"
+accent: "#0ea5e9"
+author: "Emma Clarke"
+authorRole: "Account Director"
+---
+Shopify Markets is Shopify's native internationalisation solution, enabling a single store to serve customers in multiple countries with localised pricing, languages, and domains. For SEO, multilingual storefronts introduce complex challenges: serving the right language version to the right audience, signalling language targeting to Google via hreflang, and avoiding duplicate content between language versions.
+
+## URL Structure for International Shopify Stores
+
+Shopify Markets supports three URL structures for international versions: subfolders (/fr/), subdomains (fr.yourstore.com), and separate top-level domains (yourstore.fr). For SEO, country-code top-level domains (ccTLDs) send the strongest geo-targeting signal but require the most maintenance. Subfolders on a single domain are the most SEO-efficient approach for most growing stores, as all link equity consolidates on one domain.
+
+## Implementing Hreflang Tags
+
+Hreflang tags tell Google which language and regional version of a page to serve to users in specific locales. They must be implemented on every page variant and each must reference all other variants including an x-default fallback. Shopify Markets handles hreflang generation automatically when properly configured — verify the implementation using a crawler or the hreflang checker in Ahrefs.
+
+<Callout>
+Hreflang errors are common and consequential. A missing hreflang tag, incorrect locale code, or non-reciprocal annotation can cause Google to serve the wrong language version to users — or to ignore your hreflang implementation entirely.
+</Callout>
+
+## Translated Content: Quality vs Machine Translation
+
+Shopify Markets integrates with translation apps like Weglot, Langify, and Translate & Adapt. Machine translation is a starting point, not a finish line. Google can identify low-quality machine-translated content and treats it as thin content. For your highest-revenue markets, invest in human translation or at minimum thorough human editing of machine-translated output — especially for product descriptions, collection descriptions, and blog content.
+
+## Canonical Tags in Multilingual Shopify
+
+Each language version should have a canonical tag pointing to itself (self-canonical), not to the default language version. This is the correct approach when content is genuinely localised and linguistically distinct. If pages are not translated and are substantively identical in content (just different prices or currencies), consider whether they should be indexed at all.
+
+## International Keyword Research
+
+Do not simply translate your English keywords into target languages. Different markets use different search terminology, have different dominant search engines (Yandex in Russia, Baidu in China), and have different competitive landscapes. Conduct native-language keyword research using a local instance of Ahrefs or by working with a native-speaking SEO consultant in each target market.
+
+> International SEO done well can multiply your organic traffic. Done poorly, it creates a technical debt that undermines your entire domain's performance.

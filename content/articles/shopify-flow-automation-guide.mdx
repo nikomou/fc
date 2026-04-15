@@ -1,0 +1,54 @@
+---
+title: "Getting Started with Shopify Flow"
+category: "Guides"
+description: "Learn how to automate your Shopify Plus store with Flow workflows. From fraud prevention to loyalty tagging, discover what's possible without writing a single line of code."
+readTime: "8 min read"
+date: "2026-01-15"
+image: "/images/blog/shopify-flow-automation-guide.jpg"
+gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)"
+accent: "#d1fae5"
+author: "Alex Morgan"
+authorRole: "Head of Strategy"
+---
+Shopify Flow is one of the most underused features of Shopify Plus — and one of the most powerful. It's a no-code automation builder that lets you create conditional workflows triggered by events in your store. If you're not using it, you're leaving efficiency (and money) on the table.
+
+## What Can Shopify Flow Do?
+
+Flow works on a simple trigger → condition → action model. Something happens in your store (the trigger), Flow checks if certain conditions are met, then takes an action. The possibilities are vast:
+
+- Automatically tag customers based on purchase history, total spend, or product categories bought
+- Hold high-risk orders for manual review before fulfilment
+- Send internal Slack notifications for VIP orders or low stock alerts
+- Auto-apply loyalty discounts when a customer reaches a spend threshold
+- Automatically hide out-of-stock products from collections
+- Create to-do tasks for your team when a B2B order comes in
+
+## Your First Flow: VIP Customer Tagging
+
+Let's build something immediately useful. This flow will automatically tag any customer as 'VIP' the moment their total spend exceeds £500.
+
+1. Open Flow from your Shopify Plus admin and click 'Create workflow'
+2. Set the trigger to 'Order created'
+3. Add a condition: Customer total spent &gt; 500 (in your store currency)
+4. Set the action to 'Add customer tag' with the value 'VIP'
+5. Activate the workflow — it runs automatically from this point forward
+
+<Callout>
+Once customers are tagged as VIP, you can use that tag to power Klaviyo segments, Shopify discount codes, and priority support routing — all without any developer involvement.
+</Callout>
+
+## Fraud Prevention Workflow
+
+One of the most valuable use cases for Shopify Flow is automated fraud prevention. Rather than reviewing every high-risk order manually (or worse, missing them), Flow can hold them automatically.
+
+- Trigger: Order created
+- Condition: Shopify fraud risk level = HIGH
+- Action 1: Cancel fulfilment and hold order
+- Action 2: Add internal note 'Flagged for fraud review'
+- Action 3: Send Slack notification to your operations team
+
+## Connecting Flow with Other Apps
+
+Flow integrates natively with many Shopify Plus ecosystem apps including Klaviyo, Gorgias, Yotpo, and Loyalty Lion. This means your automations can span your entire tech stack — a customer hitting a spend threshold can simultaneously get a VIP tag, be added to a Klaviyo VIP segment, and have their Gorgias ticket priority upgraded.
+
+> The brands that get the most from Shopify Plus aren't necessarily the ones with the biggest budgets — they're the ones that have invested time in understanding what Flow can do for their operations.

@@ -1,0 +1,55 @@
+---
+title: "Building a Headless Shopify Store: Is It Right for You?"
+category: "Guides"
+description: "Headless Shopify decouples your frontend from the platform's backend. Understand the real benefits, drawbacks, and who should actually consider it."
+readTime: "10 min read"
+date: "2025-11-22"
+image: "/images/articles/pexels-3184360.webp"
+gradient: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
+accent: "#f59e0b"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Headless commerce has been one of the most discussed — and most misunderstood — topics in ecommerce technology over the past few years. The core concept is straightforward: decouple the frontend presentation layer from the Shopify backend, communicating via APIs. The commercial reality is more nuanced, and headless is not the right choice for every merchant.
+
+## How Headless Shopify Works
+
+In a headless architecture, your storefront is built with a JavaScript framework — typically Next.js, Nuxt, or Remix — that fetches product, collection, and cart data from Shopify's Storefront API. Shopify handles all commerce logic: inventory, orders, payments, and fulfilment. The custom frontend handles rendering, routing, and user experience.
+
+## The Genuine Benefits of Headless
+
+- Complete design freedom unconstrained by Liquid theme architecture
+- Superior page speed performance with static generation and edge delivery
+- Ability to integrate multiple data sources (PIM, CMS, ERP) in a single frontend
+- Omnichannel experiences: the same frontend can power web, app, kiosk, and more
+- Advanced personalisation using server-side rendering with real-time data
+
+## The Real Costs and Trade-offs
+
+Headless is significantly more expensive to build and maintain. You lose access to Shopify's native theme editor, meaning non-technical team members cannot make content changes without developer involvement. Every app you install needs to be evaluated for Storefront API compatibility — many apps rely on Liquid injection and simply won't work headless.
+
+### Hidden Costs of Going Headless
+
+- Custom CMS integration (Contentful, Sanity, Prismic) adds licensing and development cost
+- Ongoing frontend infrastructure hosting (Vercel, Netlify, Cloudflare Pages)
+- Developer dependency for all content and layout changes
+- App compatibility limitations requiring custom integrations
+- Longer time-to-market for initial build
+
+## When Headless Makes Sense
+
+Headless is a strong choice when you have complex content requirements (e.g., a brand with a rich editorial presence alongside commerce), need to serve the same data across multiple channels simultaneously, or have performance requirements that cannot be met within the constraints of the standard Shopify theme architecture.
+
+## When to Stay on the Standard Stack
+
+The majority of Shopify Plus merchants achieve excellent results — including sub-second load times — with a well-optimised standard theme. Shopify's Online Store 2.0, Dawn architecture, and the Storefront Renderer are genuinely fast. If your primary driver for considering headless is page speed, begin with a thorough theme performance audit before committing to a full re-platform.
+
+<Callout>
+Shopify's Hydrogen framework (built on Remix) is the recommended approach for headless Shopify development, offering first-party support and pre-built commerce components.
+</Callout>
+
+## The Hybrid Middle Ground
+
+Many brands find success with a hybrid approach: a highly optimised standard Shopify theme for most pages, with custom-built landing pages or editorial content sections hosted externally and integrated via the Storefront API. This captures most of the benefit of headless without the full operational overhead.
+
+> Headless is the right answer for a specific set of problems. Start by being very clear on what problem you're actually trying to solve before deciding on the architecture.

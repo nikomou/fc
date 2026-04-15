@@ -1,0 +1,47 @@
+---
+title: "How to Set Up Ecommerce Conversion Tracking Correctly"
+category: "Guides"
+description: "Incorrect conversion tracking corrupts every marketing decision you make. This step-by-step guide covers setting up accurate ecommerce conversion tracking across GA4, Meta, and Google Ads."
+readTime: "8 min read"
+date: "2024-04-23"
+image: "/images/articles/pexels-6214381.webp"
+gradient: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)"
+accent: "#cffafe"
+author: "Tom Williams"
+authorRole: "SEO Manager"
+---
+Broken or incomplete conversion tracking is one of the most expensive mistakes an ecommerce business can make. If your data is wrong, every optimisation decision — your bids, your budgets, your creative choices — is built on sand. Getting this right at the start saves enormous amounts of wasted ad spend.
+
+## Step 1: GA4 Enhanced Ecommerce
+
+Start with Google Analytics 4. Use Google Tag Manager to implement the GA4 ecommerce data layer on your Shopify store. The key events to fire are: view_item, add_to_cart, begin_checkout, add_payment_info, and purchase. The purchase event must include transaction_id, value, currency, and an items array with product details.
+
+### Preventing Duplicate Purchase Events
+
+Duplicate purchase events are the single most common tracking error. They occur when the thank-you page is refreshed, when tracking fires from multiple tags, or when a GTM trigger fires on both page load and history change. Deduplicate using the order ID: check whether this transaction_id has already been sent before firing the event.
+
+## Step 2: Meta Pixel and Conversions API
+
+The Meta Pixel alone is no longer sufficient. iOS 14+ changes mean browser-based tracking misses a significant proportion of conversions. Implement the Conversions API (CAPI) alongside the Pixel — Shopify's native Meta integration supports server-side events directly in the admin. This dual-signal approach recovers lost events and improves optimisation.
+
+- Enable the Meta Pixel via Shopify's Facebook and Instagram app
+- Turn on server-side API events in the app settings
+- Set event deduplication using the eventID parameter
+- Verify using the Meta Events Manager test events tool
+- Check that Purchase events include value and currency
+
+## Step 3: Google Ads Conversion Tracking
+
+Import your GA4 purchase event into Google Ads as a conversion action rather than implementing a separate Google Ads tag. This gives you one source of truth and removes the duplication risk of two tags firing on the same event. Go to Tools &gt; Measurement &gt; Conversions &gt; Import &gt; Google Analytics 4.
+
+<Callout>
+Never mark multiple conversion actions as 'Primary' in Google Ads for the same user journey. Doing so inflates reported conversions and misleads your automated bidding strategies.
+</Callout>
+
+## Auditing Your Tracking Setup
+
+Run a full audit every quarter. Place a test order and check that it appears in GA4 real-time events, Meta Events Manager, and Google Ads conversion testing — with correct revenue values. Use Tag Assistant for GTM audits. Check for duplicate events by filtering your GA4 transaction report for order IDs that appear more than once.
+
+## Consent Mode and Privacy
+
+UK GDPR requires explicit consent before firing analytics and advertising tags. Implement Google Consent Mode v2 via GTM to enable modelled conversions for users who decline cookies. Without Consent Mode, Google's bidding algorithms lose signal quality and your campaigns underperform. This is now a hard requirement for Google Ads campaigns in the UK and EU.

@@ -1,0 +1,55 @@
+---
+title: "Shopify Schema Markup: A Complete Guide"
+category: "Guides"
+description: "Schema markup can unlock rich results in Google for your Shopify store. This guide covers product, review, FAQ, and breadcrumb schema with Shopify-specific implementation tips."
+readTime: "10 min read"
+date: "2025-12-20"
+image: "/images/articles/pexels-267389.webp"
+gradient: "linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)"
+accent: "#0ea5e9"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Schema markup — structured data in JSON-LD format — helps Google understand your content and can unlock rich results in search: star ratings, price ranges, availability, FAQs, and breadcrumbs displayed directly in SERPs. For Shopify stores, implementing schema correctly is one of the highest-ROI technical SEO tasks available.
+
+## What Schema Types Matter Most for Shopify?
+
+- Product schema: price, availability, SKU, brand, images — essential for product pages
+- AggregateRating schema: displays star ratings in search results — requires review data
+- BreadcrumbList schema: shows your site hierarchy in search snippets
+- FAQPage schema: expands FAQ content directly in Google results, increasing click-through
+- Organization schema: establishes brand identity, logo, social profiles — goes in your site header
+- LocalBusiness schema: essential if you have physical locations
+
+## Does Shopify Include Schema by Default?
+
+Most Shopify themes include basic Product schema in their product page templates. However, 'basic' is often insufficient — many themes use outdated Schema.org properties, miss required fields like 'offers', or fail to include review data even when your store has reviews. Always validate your existing schema before assuming it's correct.
+
+<Callout>
+Use Google's Rich Results Test (search.google.com/test/rich-results) to check any Shopify page for valid structured data. It shows you exactly what Google sees and flags errors and warnings.
+</Callout>
+
+## Implementing Product Schema in Shopify
+
+The most reliable approach is to add a JSON-LD script block to your product.liquid template (or product-template.liquid in older themes). Use Liquid variables to dynamically populate price, availability, SKU, and image data from each product's metadata.
+
+### Required Product Schema Fields
+
+- @type: Product
+- name: product title
+- image: array of product image URLs
+- description: product description text
+- offers: nested Offer type with price, priceCurrency, availability, and url
+- brand: nested Brand type with name
+
+## Adding Review Schema
+
+If you use Shopify's native reviews, Okendo, Judge.me, or Yotpo, check whether your review app automatically adds AggregateRating schema. Most premium review apps do. If not, you'll need to pass review data into your JSON-LD manually — Shopify's Metafields API can surface review counts and average ratings to your Liquid templates.
+
+## FAQPage Schema for Shopify
+
+Add FAQ schema to product pages, collection pages, and blog posts where you include a FAQ section. Each FAQ block should use the FAQPage type with Question and acceptedAnswer sub-types. This schema type frequently wins rich result expansions in Google, dramatically increasing the visual footprint of your search result.
+
+## Validating and Monitoring Schema
+
+After implementation, validate using the Rich Results Test and Schema.org Validator. In Google Search Console, the 'Enhancements' section shows your schema performance — how many pages have valid schema and whether any rich results are being served. Monitor this monthly and fix errors promptly as Google's schema requirements evolve.

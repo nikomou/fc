@@ -1,0 +1,46 @@
+---
+title: "How We Preserved 100% of Rankings in a WooCommerce to Shopify Migration"
+category: "Case Studies"
+description: "Migrating from WooCommerce to Shopify carries significant SEO risk. We moved a garden supplies retailer's 8,000-page site to Shopify with zero ranking loss and zero traffic drop."
+readTime: "6 min read"
+date: "2025-09-18"
+image: "/images/articles/pexels-3861964.webp"
+gradient: "linear-gradient(135deg, #f97316 0%, #ea580c 100%)"
+accent: "#ffedd5"
+author: "Tom Williams"
+authorRole: "SEO Manager"
+---
+Platform migrations are one of the highest-risk SEO events a website can undergo. URL structure changes, missing redirects, and incorrect canonical configurations have wiped out years of ranking progress for brands who got the process wrong. A garden supplies retailer with 8,000 indexed pages and 45,000 monthly organic sessions came to us needing to move from a slow, unmaintainable WooCommerce installation to Shopify — without losing any of the search visibility they'd built over seven years.
+
+## The Pre-Migration Audit
+
+We spent three weeks in audit before a single line of the new site was written. Every indexed URL was mapped, every backlink destination recorded, every structured data implementation documented. The audit produced a 1,400-row spreadsheet that would govern the migration.
+
+- 8,034 URLs crawled and categorised (product, collection, blog, other)
+- Top 500 pages ranked by organic traffic — these were prioritised in the redirect map
+- 1,847 external backlinks pointing to specific URLs — all mapped for preservation
+- All existing structured data documented for recreation in Shopify
+- All internal link patterns documented to preserve anchor text and structure
+
+## URL Strategy
+
+Shopify's URL structure differs from WooCommerce by default: products live at /products/slug, collections at /collections/slug. WooCommerce sites typically have products at /product/slug and categories at /product-category/slug. Every URL needed a redirect, and those redirects needed to be permanent (301) and implemented server-side, not via JavaScript.
+
+### Bulk Redirects
+
+We used Shopify's bulk redirect import tool to implement 7,800+ URL redirects on launch day. A pre-launch validation script checked every redirect against the expected destination before go-live. The script flagged 43 errors — all resolved before the migration completed.
+
+### Crawl Monitoring
+
+Immediately after launch, we ran hourly Screaming Frog crawls for 72 hours, monitoring for 404 errors, redirect chains, and canonicalisation issues. We set up Google Search Console change of address notification and submitted the new sitemap. The GSC crawl budget shifted to the new URL structure within four days.
+
+<Callout>
+Zero ranking loss measured at 30 days post-migration. Organic traffic in the first full month on Shopify was 3% higher than the equivalent month the previous year.
+</Callout>
+
+## Results
+
+- Ranking loss at 30 days: zero pages dropped from first page
+- Organic traffic: +3% vs same period prior year
+- Redirect implementation: 7,834 redirects with 100% coverage
+- GSC coverage errors: resolved within 72 hours of launch

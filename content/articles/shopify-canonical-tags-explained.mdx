@@ -1,0 +1,41 @@
+---
+title: "Shopify Canonical Tags Explained"
+category: "Tips & Tricks"
+description: "Canonical tags tell Google which version of a page is the 'original'. This guide explains how Shopify implements them, where they go wrong, and how to fix issues."
+readTime: "6 min read"
+date: "2025-09-01"
+image: "/images/articles/pexels-574071.webp"
+gradient: "linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)"
+accent: "#0ea5e9"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+A canonical tag (rel=canonical) is an HTML element that tells search engines which URL is the 'master' or preferred version of a page when multiple URLs contain the same or very similar content. On Shopify, canonical tags are critical because the platform's architecture naturally generates duplicate URLs.
+
+## How Shopify Implements Canonical Tags
+
+Shopify automatically outputs a canonical link tag in the &lt;head&gt; of every page. For product pages, the canonical always points to the /products/[handle] URL, regardless of which URL was used to access the page. This means even if a visitor (or Googlebot) accesses a product via /collections/[name]/products/[handle], the canonical signals that the /products/ URL is preferred.
+
+## When Shopify's Automatic Canonicals Break
+
+- Third-party SEO apps that override canonical tags incorrectly
+- Theme customisations that add a second canonical tag — two canonicals confuses Google
+- Apps that create custom URL structures (e.g., landing page builders) without updating canonical logic
+- Markets or multi-currency apps that create hreflang but forget to set canonicals for the primary locale
+- Incorrectly set canonical on paginated collection pages pointing to page 2 rather than the base URL
+
+<Callout>
+Use Google's URL Inspection tool in Search Console to check exactly what canonical Google has selected for any given page. If the 'Google-selected canonical' differs from your 'user-declared canonical', investigate why.
+</Callout>
+
+## Self-Referential Canonicals
+
+It's best practice for every page to include a self-referential canonical — a canonical tag pointing to the page's own URL. This prevents Google from selecting an unintended canonical if your page is linked from an unusual URL path. Shopify does this by default for all standard page types.
+
+## Canonical vs 301 Redirect
+
+Canonical tags and 301 redirects serve different purposes. A 301 redirect sends both users and search engines from one URL to another permanently. A canonical tag signals preference to search engines only — users can still access both URLs. For pages you genuinely want to consolidate and never serve from the old URL, use a 301 redirect. For Shopify's collection-path product URLs, the canonical tag approach is appropriate since both URLs serve real user needs.
+
+## Checking Your Canonical Implementation
+
+Audit your canonical tags systematically using a crawler like Screaming Frog. Export all canonicals and check for: pages with missing canonical tags, pages with multiple canonical tags, canonical tags pointing to non-existent URLs, and canonicals pointing to pages that themselves have a different canonical (a canonical chain).

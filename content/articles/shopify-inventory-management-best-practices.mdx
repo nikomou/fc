@@ -1,0 +1,57 @@
+---
+title: "Shopify Inventory Management Best Practices"
+category: "Guides"
+description: "How to manage inventory effectively in your Shopify store. Forecasting, reorder points, multi-location inventory, and the apps that help growing brands avoid stockouts."
+readTime: "9 min read"
+date: "2025-07-20"
+image: "/images/articles/pexels-1148820.webp"
+gradient: "linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%)"
+accent: "#e5e5e5"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Inventory management is one of the areas where ecommerce brands lose the most money — either through stockouts that cost revenue and damage customer trust, or through overstocking that ties up working capital and leads to clearance pricing. Getting it right requires the right systems, the right data, and the right processes.
+
+## Shopify's Native Inventory Features
+
+Shopify's built-in inventory management handles the essentials: tracking stock levels, setting inventory locations, managing transfers between locations, and generating inventory reports. For brands with straightforward inventory needs (single location, limited SKU count), Shopify's native tools are often sufficient.
+
+- Inventory tracking per variant, per location
+- Low stock notifications via Shopify Flow (Shopify Plus)
+- Inventory history and adjustment logs
+- ABC analysis via Shopify analytics (Products report sorted by units sold)
+- Purchase order management (basic) within the Shopify admin
+
+## When to Invest in a Dedicated IMS
+
+Shopify's native inventory tools have clear limitations. You need a dedicated Inventory Management System (IMS) when:
+
+- You sell across multiple channels (Shopify, Amazon, wholesale) and need centralised stock control
+- You have 500+ SKUs and need automated reorder point management
+- You manufacture or assemble products and need bill-of-materials functionality
+- You use multiple 3PL warehouses and need location-based fulfilment routing
+- Your existing stock reconciliation process takes more than 2-3 hours per week
+
+<Callout>
+Popular Shopify-compatible IMS platforms include Linnworks, Brightpearl, Cin7, and Katana (for manufacturers). Each integrates bidirectionally with Shopify to sync stock levels in real time.
+</Callout>
+
+## Demand Forecasting Fundamentals
+
+Accurate demand forecasting prevents both stockouts and overstock. At minimum, your forecasting process should account for:
+
+1. Historical sales velocity by SKU (same period last year, adjusted for growth rate)
+2. Seasonality factors — identify which months consistently over/underperform your average
+3. Planned marketing activity — campaigns, sales events, and influencer activity all spike demand
+4. Supplier lead times — build safety stock based on your supplier's reliability, not just their stated lead time
+5. BFCM and seasonal event uplift — these require separate forecast models
+
+## Setting Reorder Points
+
+Your reorder point (ROP) is the stock level that triggers a new purchase order. Formula: ROP = (Average daily sales × Supplier lead time in days) + Safety stock. Safety stock = (Maximum daily sales − Average daily sales) × Maximum lead time. Review and update your ROPs quarterly as sales velocity and lead times change.
+
+## Multi-Location Inventory
+
+Shopify supports up to 1,000 inventory locations (Shopify Plus). For brands using multiple fulfilment locations, configure Shopify's inventory routing to prioritise fulfilment from the location closest to the customer. This reduces shipping costs and delivery times — and with rising carrier rates, the operational saving is meaningful.
+
+> Every stockout is a double loss: you lose the immediate sale and you risk losing the customer permanently if they have a better experience with a competitor. Invest in your inventory management systems before the pain becomes revenue-critical.

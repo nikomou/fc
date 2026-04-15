@@ -1,0 +1,44 @@
+---
+title: "Shopify Image SEO: Alt Tags, File Names and More"
+category: "Tips & Tricks"
+description: "Images are often the most neglected SEO element on Shopify stores. This guide covers alt tags, file names, compression, and how to get your images into Google Images."
+readTime: "6 min read"
+date: "2025-09-25"
+image: "/images/articles/pexels-3051793.webp"
+gradient: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)"
+accent: "#8b5cf6"
+author: "Sarah Patel"
+authorRole: "CRO Specialist"
+---
+Images are often the single largest contributor to page weight on Shopify stores, and simultaneously the most neglected source of SEO signal. Properly optimised images improve your Core Web Vitals scores, rank in Google Images (a meaningful traffic source for visual products), and provide additional keyword context to your pages.
+
+## Alt Tags: The Basics
+
+Alt text (alternative text) serves two purposes: accessibility — screen readers use it to describe images to visually impaired users — and SEO — it tells Google what an image depicts. Every image on your Shopify store that conveys information should have a descriptive, accurate alt tag. Decorative images (spacers, background textures) can use an empty alt attribute.
+
+- Good alt text: 'Blue leather Oxford shoes for men, UK size 9'
+- Poor alt text: 'image1.jpg' or 'product photo'
+- Keyword stuffed (avoid): 'shoes leather shoes buy shoes UK leather Oxford shoes'
+- Decorative image: alt='' (empty, not missing)
+
+## File Names Matter
+
+Google reads image file names as a relevance signal. Before uploading to Shopify, rename your files descriptively using hyphens to separate words. 'blue-leather-oxford-shoes-mens.jpg' tells Google far more than 'IMG_4521.jpg'. Shopify preserves your original file names in the media URL, so this is worth doing systematically for all product images.
+
+## Image Compression and Format
+
+Shopify automatically serves images in WebP format to browsers that support it — a significant compression improvement over JPEG. However, you still need to upload appropriately sized source images. Don't upload 4000px images for a 600px thumbnail slot — the original file size affects upload time and Shopify's CDN processing.
+
+<Callout>
+Use Shopify's built-in image compression or a tool like Squoosh before uploading. Aim for product images under 200KB at 1200px wide. Hero images should be under 400KB.
+</Callout>
+
+## Lazy Loading
+
+Lazy loading defers the loading of off-screen images until the user scrolls near them. Modern Shopify themes implement lazy loading by default. If your theme doesn't, add loading='lazy' to img tags that appear below the fold. This improves your Largest Contentful Paint (LCP) and Total Blocking Time scores.
+
+## Image Sitemaps for Google Images
+
+Shopify's auto-generated sitemap includes product images in the image sitemap extension. This helps Google discover and index your product images for Google Images search. Verify your images are being crawled and indexed via Google Search Console's 'Search type: Image' filter in the Performance report.
+
+> For visual product categories — fashion, home decor, jewellery — Google Images can drive 15–25% of organic traffic. It's a channel most merchants completely ignore.

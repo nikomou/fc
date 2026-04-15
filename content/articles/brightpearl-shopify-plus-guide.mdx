@@ -1,0 +1,44 @@
+---
+title: "How to Use Brightpearl with Shopify Plus"
+category: "Guides"
+description: "A complete guide to integrating Brightpearl with Shopify Plus — covering order management, inventory sync, accounting automation, and when Brightpearl is the right choice."
+readTime: "7 min read"
+date: "2024-12-18"
+image: "/images/articles/pexels-1148820.webp"
+gradient: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)"
+accent: "#cffafe"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Brightpearl is a retail operations platform that sits behind Shopify Plus, handling the operational complexity that Shopify itself does not cover: multi-channel order management, warehouse operations, demand forecasting, and accounting automation. For brands operating across multiple channels with significant order volume, the combination of Shopify Plus and Brightpearl is a powerful operational stack.
+
+## What Brightpearl Does That Shopify Cannot
+
+- Multi-channel order management (Shopify, Amazon, eBay, B2B in one view)
+- Advanced warehouse management with pick, pack, and despatch workflows
+- Demand forecasting based on sales velocity and seasonality
+- Native accounting with automated reconciliation
+- Real-time margin reporting at order level
+
+## Integration Architecture
+
+Brightpearl connects to Shopify Plus via their native app, available in the Shopify App Store. The integration syncs orders bidirectionally — orders placed on Shopify flow into Brightpearl for fulfilment processing, and tracking information is pushed back to Shopify to trigger customer notifications. Inventory levels sync in real time, preventing oversells across channels.
+
+## Setting Up the Integration
+
+Installation is straightforward, but configuration requires careful mapping: product IDs must match across both platforms, location mapping must be correct, and order routing rules need to reflect your actual fulfilment workflow. Budget two to four weeks for a thorough implementation — rushing leads to duplicate orders and inventory discrepancies that are painful to unwind.
+
+<Callout>
+Run parallel operations for two weeks post-integration — let both systems process orders simultaneously and compare outputs before cutting over fully.
+</Callout>
+
+## When Brightpearl Makes Sense
+
+Brightpearl is not right for every brand. It is best suited to operations processing 500+ orders per week across multiple channels, managing inventory across multiple locations, and requiring tight accounting automation. Below that volume, Shopify's native admin plus a solid spreadsheet process often serves better — and costs significantly less.
+
+## Common Implementation Mistakes
+
+- Mismatched SKU formats between Shopify and Brightpearl
+- Not configuring currency rounding rules before multi-currency launch
+- Insufficient staff training before go-live
+- Failing to test returns workflows — the most complex integration scenario

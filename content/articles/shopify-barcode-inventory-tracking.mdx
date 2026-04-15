@@ -1,0 +1,43 @@
+---
+title: "Shopify Barcode Scanning and Inventory Tracking"
+category: "Tips & Tricks"
+description: "How to use barcode scanning with Shopify for faster stock counts, accurate receiving, and streamlined POS checkout — including hardware and app recommendations."
+readTime: "5 min read"
+date: "2024-09-05"
+image: "/images/articles/pexels-1181406.webp"
+gradient: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)"
+accent: "#cffafe"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Manual inventory management at scale is a reliable source of errors. Miskeyed SKUs, miscounted stock, and delayed receiving all compound into inaccurate inventory levels — which lead to oversells, lost sales, and customer complaints. Integrating barcode scanning into your Shopify operation replaces manual data entry with a scan, reducing errors to near zero.
+
+## Barcodes in Shopify
+
+Shopify stores a barcode field (EAN, UPC, or custom) on each product variant. Once populated, this barcode drives your POS checkout, inventory counts, and receiving workflows. If your products do not have manufacturer barcodes, you can generate and print custom barcodes directly from Shopify Admin under Products &gt; Print labels.
+
+## Hardware Options
+
+- Shopify's own barcode scanner — wired USB, integrates natively with Shopify POS
+- Socket Mobile S700 — Bluetooth scanner, pairs with iPad for mobile stocktaking
+- Zebra DS2208 — high-durability option for warehouse environments
+- Honeywell Voyager — reliable entry-level choice for retail counter use
+
+## Stock Takes with Stocky
+
+Shopify's free Stocky app (available for Shopify POS Pro subscribers) enables barcode-driven stock counts. Staff scan each item; Stocky compares the scanned count against Shopify's recorded inventory and surfaces discrepancies. Running quarterly full counts and monthly cycle counts for fast-moving SKUs is standard practice for brands with 500+ products.
+
+<Callout>
+Brands using barcode-driven stock counts report inventory accuracy rates above 98% — versus 91% for manual count processes.
+</Callout>
+
+## Receiving Purchase Orders
+
+When stock arrives from a supplier, scanning items against a Shopify purchase order (created in Stocky or a connected WMS) ensures only the correct items and quantities are received into your inventory. Discrepancies — short-shipped items, incorrect products — are flagged immediately rather than discovered weeks later during a stock count.
+
+## Advanced: WMS Integration
+
+- For warehouses processing 100+ orders per day, a dedicated WMS adds barcode-driven pick, pack, and despatch workflows
+- Mintsoft, Peoplevox, and Linnworks all integrate with Shopify via API
+- RF scanning devices replace paper pick lists with scan-to-confirm workflows
+- Putaway scanning ensures new stock is located correctly in your warehouse from day one

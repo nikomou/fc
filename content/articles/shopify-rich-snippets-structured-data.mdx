@@ -1,0 +1,43 @@
+---
+title: "Rich Snippets and Structured Data for Shopify"
+category: "Guides"
+description: "Rich snippets make your Shopify results stand out in Google with star ratings, prices, and FAQs. This guide covers implementation, eligibility, and how to monitor performance."
+readTime: "8 min read"
+date: "2025-07-01"
+image: "/images/articles/pexels-3760072.webp"
+gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)"
+accent: "#10b981"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Rich snippets are enhanced search results that display additional information — star ratings, prices, availability, FAQs, or breadcrumbs — directly in Google's search results. They don't directly guarantee higher rankings, but they significantly increase click-through rates by making your result more visually prominent and informative than standard blue link results.
+
+## Which Rich Results Can Shopify Stores Earn?
+
+- Product rich results: price, availability, rating, and review count alongside your listing
+- FAQ rich results: expandable questions and answers from FAQPage schema
+- Breadcrumb rich results: your site hierarchy displayed under the page title
+- Sitelinks: additional links to key sections of your site for branded searches
+- Review snippets: star ratings from Product or LocalBusiness schema
+
+## Product Rich Results: The Most Valuable for Ecommerce
+
+Product rich results display your price, stock status, and review rating directly in the search result. Google requires valid Product schema with Offer and AggregateRating properties. Your price must be accurate and kept up to date — Google crawls your pages regularly and will demote or remove your rich result if the schema price doesn't match your actual page price.
+
+<Callout>
+Google's product rich results are distinct from Google Shopping (which is paid/Merchant Center). You can have rich results in organic search independently of any Shopping campaigns.
+</Callout>
+
+## FAQ Rich Results
+
+FAQPage schema on your product pages can generate expanded FAQ results in Google — a significantly larger SERP footprint. Each FAQ entry should address a genuine question a customer would have about the product or category. FAQs like 'What sizes are available?', 'How long does delivery take?', and 'What is your returns policy?' are both genuinely useful and keyword-rich.
+
+## Implementing JSON-LD in Shopify Themes
+
+The cleanest implementation method is to add a &lt;script type='application/ld+json'&gt; block to your Liquid templates using theme.liquid for site-wide schemas (Organisation, WebSite) and product.liquid / collection.liquid for page-specific schemas. Liquid variables pull dynamic data — product title, price, availability, description — into the static JSON-LD structure.
+
+## Testing and Monitoring Rich Results
+
+After implementing structured data, test every schema type using the Rich Results Test. In Search Console, the 'Enhancements' section shows product, FAQ, and other schema performance over time. When Google identifies schema errors — such as a missing required property — it removes your rich result eligibility. Check this section monthly and address any new errors promptly.
+
+> Rich results don't guarantee page one — but they dramatically increase CTR for pages that are already there. They're the difference between a result that gets passed over and one that gets clicked.

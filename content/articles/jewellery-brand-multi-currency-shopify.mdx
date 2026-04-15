@@ -1,0 +1,42 @@
+---
+title: "How We Built a Multi-Currency Store for a Jewellery Brand"
+category: "Case Studies"
+description: "A UK jewellery brand was losing international sales due to GBP-only pricing. Our multi-currency Shopify build improved international conversion by 44% within 90 days."
+readTime: "5 min read"
+date: "2024-11-27"
+image: "/images/articles/pexels-3051793.webp"
+gradient: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
+accent: "#f59e0b"
+author: "Sarah Patel"
+authorRole: "CRO Specialist"
+---
+Over 35% of this jewellery brand's website traffic came from outside the UK, predominantly the US, EU, and Australia. Yet international conversion was just 0.3% against a UK rate of 1.9%. Exit surveys pointed to a clear reason: customers didn't want to buy in GBP and deal with unknown conversion charges on their card statement. The fix was obvious — the implementation required care.
+
+## The Currency Strategy
+
+We enabled Shopify Payments' multi-currency feature and configured it to auto-detect the customer's location and display prices in their local currency. For the US, EU, and Australia — the three highest-traffic international markets — we set fixed prices rather than relying on automatic FX conversion. This gave the brand control over price points and avoided awkward prices like $47.83 showing in place of a clean $48.
+
+## Implementation Details
+
+- Configured Shopify Markets for UK, US, EU (EUR), and Australia.
+- Set fixed manual prices for USD, EUR, and AUD for all 380 products.
+- Built a custom currency selector in the header with flag icons and currency codes.
+- Configured checkout to settle in the customer's local currency where supported.
+- Added localised trust signals — US customers see '🇺🇸 Free returns for US orders'.
+- Configured geo-redirect to auto-switch market on first visit.
+
+### The Jewellery-Specific Challenges
+
+Jewellery pricing often carries psychological price points — a ring priced at £295 in the UK should be $375 in the US, not a calculated $378.43. We worked through every product in the catalogue to set pricing that maintained brand positioning in each market while remaining commercially sound against the FX rate. This took a full week of careful work but had a significant impact on perceived value.
+
+<Callout>
+Psychological pricing matters in jewellery. A customer considering a $375 ring is in a different headspace to one staring at $378.43 — even if the difference is trivial.
+</Callout>
+
+## Results After 90 Days
+
+- International conversion rate improved from 0.3% to 0.43% — a 44% uplift.
+- US revenue grew 210% in the first quarter post-launch.
+- EU revenue grew from negligible to £18,000 per month.
+- Cart abandonment on international sessions reduced by 27%.
+- Overall revenue grew 34% despite no increase in advertising spend.

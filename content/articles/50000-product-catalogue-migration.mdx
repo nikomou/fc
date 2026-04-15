@@ -1,0 +1,50 @@
+---
+title: "Migrating a 50,000 Product Catalogue to Shopify Plus"
+category: "Case Studies"
+description: "A large UK distributor needed to move 50,000 SKUs to Shopify Plus without disruption. We delivered a clean migration in six weeks with zero data loss."
+readTime: "7 min read"
+date: "2025-05-28"
+image: "/images/articles/pexels-1181467.webp"
+gradient: "linear-gradient(135deg, #ef436b 0%, #c0392b 100%)"
+accent: "#ef436b"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Most Shopify migrations involve a few thousand products, a handful of collections, and a modest customer database. This one was different. A UK-based industrial distributor operating on a legacy WooCommerce instance came to us with 50,000 active SKUs, complex product variants, and a catalogue that had grown organically over a decade with inconsistent data quality. The brief was simple: get it all onto Shopify Plus, cleanly and quickly.
+
+## Auditing the Existing Data
+
+Before writing a single line of migration code, we spent two weeks auditing the WooCommerce database. What we found was a mess of duplicated SKUs, orphaned images, inconsistent category structures, and product attributes using six different naming conventions for the same field. We documented every anomaly before building our data transformation pipeline.
+
+## Our Migration Approach
+
+1. Data cleanse: deduplicated 4,200 SKUs, standardised attribute names, and removed 800 discontinued products.
+2. Taxonomy rebuild: redesigned the collection and tag structure to work with Shopify's filtering system.
+3. Image audit: re-compressed and renamed 180,000 product images to match SKUs.
+4. Transformation scripts: wrote Python ETL scripts to convert WooCommerce export formats to Shopify's import schema.
+5. Staged import: ran the full import in batches of 5,000 across 10 days on a staging environment.
+6. Redirect mapping: generated 50,000+ URL redirects to preserve search rankings.
+
+## Technical Constraints
+
+Shopify Plus has a hard limit of 100 variants per product. Approximately 600 of the client's products exceeded this threshold. For these, we created a custom product-linking metafield system that visually grouped related products in the storefront while keeping each Shopify product object within platform limits.
+
+<Callout>
+Shopify's 100-variant limit catches many large catalogues off guard. Planning your taxonomy before you migrate saves weeks of rework.
+</Callout>
+
+## The Go-Live
+
+We ran a parallel operation for 72 hours before cutover, syncing any new orders and product updates from the old WooCommerce store into the Shopify environment. This gave the client confidence that no data would be lost during the transition window. We cut over at midnight on a Friday with zero downtime.
+
+## Results
+
+- Full 50,000 SKU catalogue live on Shopify Plus within six weeks.
+- Zero customer-facing downtime during cutover.
+- Organic search rankings maintained — no significant traffic drop in the 60 days following migration.
+- Site speed improved from 4.1 seconds to 2.2 seconds average load time.
+- Internal search conversion improved by 28% thanks to the rebuilt taxonomy and filtering.
+
+### Lessons From This Project
+
+Large catalogue migrations are won or lost in the planning phase. The actual import is the easy part; it's the data quality work that determines whether the resulting store is maintainable and performant. We now recommend a two-week data audit as a standalone project before any migration engagement of this scale.

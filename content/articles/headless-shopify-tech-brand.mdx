@@ -1,0 +1,48 @@
+---
+title: "Building a Headless Shopify Store for a Tech Brand"
+category: "Case Studies"
+description: "A B2C tech accessories brand needed content flexibility and sub-second load times their standard Shopify theme couldn't deliver. We built a headless Shopify store on Next.js."
+readTime: "7 min read"
+date: "2024-02-02"
+image: "/images/articles/pexels-6006785.webp"
+gradient: "linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%)"
+accent: "#e5e5e5"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+A tech accessories brand selling premium cable management and desk organisation products had a content problem as much as a commerce problem. Their product pages needed rich interactive comparison tables, 3D product configurators, and editorial-quality landing pages — none of which could be delivered within the constraints of a standard Shopify theme. The solution was to decouple the front-end entirely and use Shopify purely as a commerce engine.
+
+## Why Headless?
+
+Headless commerce is not the right solution for most Shopify merchants. The additional complexity, cost, and build time is only justified when specific content or performance requirements genuinely cannot be met by standard Shopify. For this client, the requirements were clear:
+
+- Sub-1-second page load times for all product and category pages
+- Interactive product configurator with real-time price updates
+- Full editorial control over landing page layout without developer involvement
+- Custom checkout extensions beyond what Checkout Extensibility allows
+
+## The Architecture
+
+We built the front-end on Next.js 14, using the App Router and React Server Components for maximum performance. Shopify's Storefront API (GraphQL) handled all commerce data: products, collections, cart, and checkout. Content (editorial pages, landing pages, blog) was managed in Sanity CMS, chosen for its flexible content modelling and excellent developer experience.
+
+### Cart and Checkout
+
+The cart was built as a client-side component using Shopify's Cart API, with optimistic UI updates for a snappy feel. For checkout, we used Shopify's hosted checkout rather than building a custom implementation — maintaining PCI compliance and reducing build scope significantly. The brand's custom checkout UI extensions handled the branding and trust element requirements.
+
+### The Product Configurator
+
+The interactive cable management configurator allowed customers to build their ideal desk setup by selecting desk size, cable volume, and aesthetic preference. The configurator updated a product bundle in real time, with 3D preview thumbnails generated from a set of pre-rendered asset combinations. Building this in a standard Shopify theme would have been architecturally impossible.
+
+<Callout>
+The headless store achieved a PageSpeed score of 97 on mobile. Product pages load in under 800ms on a standard 4G connection.
+</Callout>
+
+## Performance and Business Results
+
+- PageSpeed mobile: 97
+- LCP: under 800ms on 4G
+- Conversion rate: 3.8% (up from 2.1% on previous standard theme)
+- Configurator used by 44% of product page visitors
+- Bundle AOV £94 vs single-product AOV of £38
+
+> The configurator changed how people shop with us. Instead of buying one product, they're building their desk setup in one session.

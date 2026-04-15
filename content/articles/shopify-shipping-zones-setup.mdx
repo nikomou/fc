@@ -1,0 +1,50 @@
+---
+title: "How to Set Up Shopify Shipping Zones Correctly"
+category: "Guides"
+description: "A clear guide to configuring Shopify shipping zones, rates, and carrier integrations. Avoid common setup mistakes and ensure customers see accurate shipping costs at checkout."
+readTime: "7 min read"
+date: "2025-07-08"
+image: "/images/articles/pexels-3861964.webp"
+gradient: "linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)"
+accent: "#e0f2fe"
+author: "Alex Morgan"
+authorRole: "Head of Strategy"
+---
+Incorrect or confusing shipping rates at checkout are one of the leading causes of cart abandonment. Getting your Shopify shipping zones set up correctly — so customers always see accurate, fair rates — is not just a technical task, it's a conversion optimisation priority.
+
+## How Shopify Shipping Zones Work
+
+Shipping zones in Shopify group countries and regions together for the purpose of applying shipping rates. Each shipping profile can have multiple zones, and each zone can have multiple rate rules. The logic is: when a customer's delivery address falls within a zone, Shopify applies the rates configured for that zone.
+
+## Setting Up Your Shipping Zones
+
+1. Go to Settings → Shipping and delivery in your Shopify admin
+2. Under 'Shipping', click 'Manage' on your General shipping profile
+3. Add a zone for each major delivery region (e.g., UK Mainland, Scottish Highlands, Northern Ireland, Europe, Rest of World)
+4. Add appropriate countries to each zone
+5. For each zone, add the shipping rates you want customers to see
+6. If using carrier-calculated rates, ensure your store address and product weights are accurate
+
+<Callout>
+Always create separate shipping profiles for products with unusual shipping requirements — oversized items, hazardous goods, or items that require specialist carriers. This prevents standard shipping rates being applied incorrectly to specialist items.
+</Callout>
+
+## Rate Types: Price-Based vs Weight-Based vs Carrier-Calculated
+
+- Price-based rates: free shipping over £X, flat rate up to £Y. Simple and transparent — customers know what to expect.
+- Weight-based rates: rates change based on total order weight. Requires accurate product weights in Shopify.
+- Carrier-calculated rates: live rates from Royal Mail, DPD, UPS, etc. Most accurate but adds checkout complexity. Requires Shopify's Carrier Service API (available on all plans).
+
+## Common Mistakes to Avoid
+
+- Leaving countries unzoned — if a customer's country isn't in any zone, they won't be able to check out at all
+- Mixing rest-of-world rates incorrectly — create an explicit 'Rest of World' zone rather than relying on unconfigured behaviour
+- Not accounting for Northern Ireland in Brexit shipping configurations — NI often needs its own zone for VAT and customs purposes
+- Forgetting to update rates after carrier price increases — review your shipping rates whenever your carriers update their tariffs
+- Setting free shipping thresholds too low — this erodes margins. Analyse your AOV before setting the threshold.
+
+## Free Shipping Strategy
+
+Free shipping is the single most effective conversion tool at checkout — but it has a real cost. The optimal free shipping threshold is typically 20-30% above your current AOV. This means most orders don't qualify automatically, incentivising customers to add to cart to unlock the threshold. Display the free shipping progress bar prominently in the cart.
+
+> Unexpected shipping costs at checkout are the number-one reason customers abandon their basket. Transparent, fair shipping rates aren't just good logistics — they're good for conversion.

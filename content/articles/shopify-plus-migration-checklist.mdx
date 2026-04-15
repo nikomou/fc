@@ -1,0 +1,67 @@
+---
+title: "The Ultimate Shopify Plus Migration Checklist"
+category: "Guides"
+description: "Everything you need to know before, during, and after migrating your ecommerce store to Shopify Plus. A step-by-step walkthrough of the full process."
+readTime: "10 min read"
+date: "2026-02-28"
+image: "/images/blog/shopify-plus-migration-checklist.jpg"
+gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)"
+accent: "#ef436b"
+author: "Alex Morgan"
+authorRole: "Head of Strategy"
+---
+Migrating to Shopify Plus is one of the most impactful decisions a scaling ecommerce brand can make. But without proper planning, it can also be one of the most stressful. This checklist covers everything your team needs to handle before, during, and after your migration — so nothing falls through the cracks.
+
+## Before You Migrate
+
+Preparation is the difference between a smooth go-live and a chaotic one. Invest time here and the rest will follow.
+
+- Audit your current platform: catalogue all products, collections, customer data, and order history
+- Document every third-party integration and app you currently use
+- Map your existing URL structure — you'll need 301 redirects for every page
+- Export product data in CSV format and clean it before import
+- Review your theme and identify which features need to be rebuilt in Liquid
+- Set your go-live date and work backwards to create a realistic project timeline
+
+## Choosing the Right Shopify Plus Plan
+
+Shopify Plus starts at $2,300/month on the revenue-share model (0.25% of monthly revenue over $800k, capped at $40k/month). For most brands, this is dramatically cheaper than enterprise platforms like Salesforce Commerce Cloud or Magento Enterprise.
+
+<Callout>
+Shopify Plus includes up to 9 expansion stores, unlimited staff accounts, Shopify Flow, Launchpad, and direct access to the checkout.liquid file — features you simply can't get on standard Shopify.
+</Callout>
+
+## Data Migration
+
+This is where most migrations go wrong. Data quality matters enormously — bad product data on your new platform will haunt you for months.
+
+1. Export products, collections, customers, and orders from your existing platform
+2. Clean and normalise your data (consistent formatting, remove duplicates, fix broken metafields)
+3. Use Matrixify (formerly Excelify) or a custom import script for bulk data transfer
+4. Test your import in a development store first — always
+5. Verify product counts, variant counts, and image integrity after import
+6. Import historical orders for reporting continuity (even if they won't be fulfillable)
+
+## SEO & Redirects
+
+Losing your SEO rankings during a migration is a common fear — and a real risk if you skip this step. Every URL that changes needs a 301 redirect to its new destination.
+
+- Crawl your existing site with Screaming Frog to capture every indexed URL
+- Create a redirect mapping spreadsheet (old URL → new URL)
+- Upload redirects in bulk via Shopify's URL redirects CSV tool
+- Carry over all meta titles, meta descriptions, and alt text
+- Submit your new sitemap to Google Search Console immediately after launch
+- Monitor rankings weekly for the first 3 months post-migration
+
+## Post-Launch Checklist
+
+Your work isn't done at go-live. The first two weeks after launch are critical for catching issues before they impact revenue.
+
+- Place test orders across every payment method you support
+- Verify all automated email flows (order confirmation, shipping, abandoned cart) are firing correctly
+- Check that all analytics tracking (GA4, Meta Pixel, TikTok Pixel) is active and accurate
+- Review your Core Web Vitals scores in PageSpeed Insights
+- Monitor your error logs in Shopify admin for any 404s or checkout issues
+- Confirm all third-party integrations (ERP, 3PL, CRM) are syncing correctly
+
+> A successful migration isn't measured at go-live — it's measured 90 days later when your traffic, conversion rate, and revenue are all trending in the right direction.

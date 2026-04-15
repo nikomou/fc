@@ -1,0 +1,51 @@
+---
+title: "Shopify Hydrogen: A Practical Guide for Developers"
+category: "Guides"
+description: "A practical introduction to Shopify Hydrogen — the React-based headless framework — covering routing, data fetching, caching, and when to choose it over Liquid."
+readTime: "9 min read"
+date: "2024-08-04"
+image: "/images/articles/pexels-4481259.webp"
+gradient: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)"
+accent: "#cffafe"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Shopify Hydrogen is Shopify's official React-based framework for building headless storefronts. Built on Remix, it provides a structured way to fetch data from the Storefront API, handle routing, manage caching, and deploy to Shopify's edge network (Oxygen). It's the right tool for some projects — and the wrong tool for many others. Here's an honest assessment.
+
+## What Is Hydrogen, Exactly?
+
+Hydrogen is a Remix application with Shopify-specific primitives layered on top. It includes built-in hooks for cart management, product queries, and customer accounts. It's deployed to Oxygen — Shopify's edge hosting platform — which gives you global CDN performance without managing infrastructure. The Storefront API is the data layer; Hydrogen is the presentation layer.
+
+## When to Choose Hydrogen
+
+- You need a completely custom UI that Liquid themes can't achieve
+- You're building for a team of React developers who don't know Liquid
+- You need fine-grained control over caching and rendering strategy per route
+- You're integrating deeply with a headless CMS and need component-level content control
+- Performance at scale is a primary concern and you need edge rendering
+
+## When to Stick with Liquid
+
+For most Shopify merchants — including many large ones — a well-built Liquid theme on Online Store 2.0 outperforms the complexity of going headless. Liquid themes integrate natively with Shopify's checkout, Shop Pay, Markets, and the app ecosystem. Hydrogen requires custom work for features that come for free with Liquid. If your requirements can be met by a Liquid theme, use one.
+
+## Core Concepts in Hydrogen
+
+Hydrogen uses Remix's loader/action pattern for data fetching. Each route has a loader function that runs server-side, fetches data from the Storefront API via GraphQL, and returns it to the component. This means zero client-side data fetching by default — everything is server-rendered or edge-rendered. Components like ProductImage, Money, and CartForm are provided as primitives to speed up development.
+
+<Callout>
+Hydrogen ships with a default caching strategy per resource type — products, collections, and pages have sensible defaults. Override them using the CacheCustom API when you need tighter or looser TTLs.
+</Callout>
+
+## Cart and Customer Accounts
+
+Cart state in Hydrogen is managed via the CartForm component and a server-side cart handler. The new Customer Account API (in Hydrogen v2) provides a full authentication flow without redirecting to Shopify's hosted accounts page — giving you complete control over the login and account experience.
+
+## Deploying to Oxygen
+
+Oxygen is Shopify's edge hosting platform, included with Shopify Plus. Deploying to Oxygen via the Shopify CLI takes under a minute. You get preview URLs for every deployment, custom domain support, and environment variables managed in the Shopify admin. Alternatively, you can deploy Hydrogen to any platform that supports Node.js or Workers — Vercel, Cloudflare Workers, and Netlify all work.
+
+### The Learning Curve
+
+Hydrogen requires solid knowledge of React, GraphQL, and ideally Remix. The Storefront API's GraphQL schema is well-documented but large. Budget at least two weeks for a developer new to Hydrogen before they're productive. The DX has improved dramatically in Hydrogen v2 — the scaffolding, error messages, and CLI tooling are genuinely good.
+
+> Hydrogen is excellent at what it does. The question is whether what it does is what your project actually needs.

@@ -1,0 +1,47 @@
+---
+title: "Shopify Scripts vs Checkout Extensibility: What to Use"
+category: "Tips & Tricks"
+description: "Compare Shopify Scripts and the new Checkout Extensibility framework — understand when to use each, their limitations, and the migration timeline for Plus merchants."
+readTime: "7 min read"
+date: "2024-08-30"
+image: "/images/articles/pexels-267389.webp"
+gradient: "linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%)"
+accent: "#e5e7eb"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Shopify Scripts have been a cornerstone of Shopify Plus for years — enabling custom discounting logic, line item manipulation, and shipping customisations at checkout. But Shopify is deprecating Scripts in favour of Checkout Extensibility, a new framework built on Functions and UI Extensions. Understanding the difference matters if you're planning any checkout work.
+
+## What Are Shopify Scripts?
+
+Shopify Scripts are Ruby scripts that run server-side on Shopify's infrastructure to modify the checkout experience. They're available exclusively on Shopify Plus and allow merchants to create custom discount logic (beyond the native discount engine), reorder line items, and customise shipping rates. Scripts are edited in the Script Editor app and run every time the cart is updated.
+
+## What Is Checkout Extensibility?
+
+Checkout Extensibility is Shopify's modern replacement — a combination of Shopify Functions (backend logic compiled to WebAssembly) and Checkout UI Extensions (frontend components built with React). Together they allow the same customisations as Scripts, plus new capabilities: custom checkout fields, post-purchase upsells, thank-you page customisation, and deeply personalised checkout UI without touching Liquid.
+
+## Key Differences
+
+- Scripts: Ruby, server-side, limited to Plus — Functions: Any language compiling to Wasm, available on all plans for some types
+- Scripts are edited in a browser IDE — Functions are deployed via the Shopify CLI
+- Checkout UI Extensions are version-controlled and upgrade-safe — Script customisations break when Shopify updates the checkout
+- Checkout Extensibility supports Shop Pay and the accelerated checkouts — Scripts do not
+- Functions have tighter execution time limits (5ms for discount functions) but are more stable
+
+<Callout>
+Shopify Scripts will be deprecated for checkout.liquid in August 2024. All Shopify Plus merchants using customised checkout.liquid must migrate to Checkout Extensibility by that date.
+</Callout>
+
+## What to Migrate First
+
+Prioritise migrating any Scripts that modify discounts or line items — these have a direct revenue impact. Shopify's Discount Functions API now supports volume discounts, bundle discounts, and complex conditional logic. Most common Scripts patterns have a direct Functions equivalent. Shipping customisation Scripts migrate to Shopify's Delivery Customization Function.
+
+### What Still Requires Scripts (For Now)
+
+Some very complex Scripts with multi-condition logic that depends on real-time external data may not yet have a clean Functions equivalent. In these cases, document the logic carefully and plan to refactor during migration rather than attempting a direct port.
+
+## Getting Started with Checkout Extensibility
+
+Install the Shopify CLI, authenticate with your partner account, and run 'shopify app generate extension' to scaffold a new Function or UI Extension. Shopify's developer documentation is excellent. Budget 2–5 days of development time per Script being migrated, depending on complexity.
+
+> Checkout Extensibility isn't just a migration — it's an upgrade. The new framework is more capable, more stable, and built for how Shopify will evolve.

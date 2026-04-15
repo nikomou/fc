@@ -1,0 +1,49 @@
+---
+title: "From 32 to 91: Our Shopify Speed Audit in Numbers"
+category: "Case Studies"
+description: "A pet food brand had a PageSpeed score of 32 and a bounce rate of 73%. Our speed audit and rebuild brought the score to 91, cut bounce rate by half, and boosted revenue by 19%."
+readTime: "5 min read"
+date: "2025-07-24"
+image: "/images/articles/pexels-669615.webp"
+gradient: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)"
+accent: "#ede9fe"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+A premium pet food brand with strong organic rankings and loyal customers had a site performance problem they'd been ignoring for two years. Their PageSpeed score was 32 on mobile. Their bounce rate was 73%. When we told the founder that roughly 7 in 10 visitors were leaving before the page finished loading, the reaction was disbelief followed by urgency. The speed audit became our highest-priority engagement.
+
+## The Audit Process
+
+We ran a full performance audit across all key page types: homepage, collection, product, cart, and blog. Each page was profiled using Lighthouse CLI, WebPageTest, and Chrome DevTools Performance tab. Every blocking resource was identified, its originating app or theme element noted, and its load contribution quantified.
+
+## What We Found
+
+- Homepage: 14 render-blocking scripts, 8 from unused apps
+- Product pages: hero image 1.4MB uncompressed JPEG
+- Theme: loading a 240KB custom font file not used in any visible text
+- Subscription app injecting 180KB of JavaScript on every page
+- Chat widget loading synchronously, blocking all rendering below it
+
+## The Remediation
+
+We worked through the issues in order of impact. App removal came first: 9 unused apps were uninstalled, eliminating 6 of the 14 render-blocking scripts immediately. Image optimisation followed: all product and collection images were reprocessed to WebP format at appropriate quality settings, reducing average image size from 980KB to 87KB.
+
+### Theme Optimisation
+
+The custom font file was replaced with a system font stack that matched the brand's aesthetic without any network request. The chat widget was moved to load after the interactive state, eliminating its render-blocking impact entirely. CSS was audited and 34KB of unused rules were removed.
+
+### Subscription App
+
+The subscription app JavaScript was conditionally loaded — only on product pages where subscription options were presented, rather than site-wide. This saved 180KB on every non-product page, including the high-traffic collection pages.
+
+<Callout>
+Final PageSpeed score: 91 on mobile (up from 32). LCP reduced from 8.2s to 1.9s. These numbers directly translated into business results.
+</Callout>
+
+## Business Impact
+
+- PageSpeed mobile: 32 → 91
+- LCP: 8.2s → 1.9s
+- Bounce rate: 73% → 38%
+- Revenue up 19% in the month following remediation
+- Paid social ROAS improved by 27% from better landing page experience

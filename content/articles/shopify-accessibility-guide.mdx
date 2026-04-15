@@ -1,0 +1,48 @@
+---
+title: "Accessibility in Shopify: Building for Everyone"
+category: "Guides"
+description: "A practical guide to making your Shopify store accessible to all users, covering WCAG standards, common pitfalls, and dev fixes that improve UX for everyone."
+readTime: "7 min read"
+date: "2024-08-23"
+image: "/images/articles/pexels-3760067.webp"
+gradient: "linear-gradient(135deg, #f97316 0%, #ea580c 100%)"
+accent: "#ffedd5"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Accessibility is not a nice-to-have — it is a legal requirement under the Equality Act 2010 and a commercial opportunity. Around one in five people in the UK live with a disability, and inaccessible stores silently exclude a significant portion of potential customers every single day.
+
+## What WCAG 2.1 AA Actually Means for Shopify
+
+The Web Content Accessibility Guidelines set the benchmark. Level AA is the standard most organisations aim for, covering four core principles: perceivable, operable, understandable, and robust. For a Shopify store, this translates into practical decisions about colour contrast, keyboard navigation, form labels, and image descriptions.
+
+## The Most Common Accessibility Failures on Shopify Stores
+
+- Insufficient colour contrast between text and background (minimum ratio 4.5:1 for body text)
+- Images without meaningful alt text — or worse, alt text stuffed with keywords
+- Form fields without visible, associated labels
+- Modals and drawers that trap keyboard focus or lack a close button accessible via keyboard
+- Auto-playing videos and carousels with no pause control
+- Buy buttons that say only 'Add' with no product context for screen readers
+
+## Quick Wins You Can Ship Today
+
+Start with a free audit using the axe DevTools browser extension — it catches around 57% of accessibility issues automatically. Then work through the most impactful fixes: add skip-to-content links, ensure all interactive elements are reachable via the Tab key, and audit your colour palette against contrast requirements.
+
+<Callout>
+Shopify's Dawn theme is built with accessibility in mind, but any customisations you make can introduce new barriers. Always test after theme edits.
+</Callout>
+
+## Accessible Product Pages
+
+Product pages carry the heaviest accessibility burden. Variant selectors must be navigable by keyboard. Size or colour options should not rely on colour alone to convey meaning. Add descriptive ARIA labels to icon-only buttons, and ensure error messages on the add-to-cart form are announced by screen readers via aria-live regions.
+
+### Writing Good Alt Text for Product Images
+
+Alt text should describe what a screen reader user needs to know to make a purchase decision. For a navy wool coat: 'Navy double-breasted wool overcoat with gold buttons, shown on a size 12 model' is useful. 'Product image' is not. Decorative images — like background textures — should have empty alt attributes so screen readers skip them.
+
+> Building accessibly from the start is far cheaper than retrofitting compliance after launch. Treat it as a quality standard, not a separate project.
+
+## Testing With Real Users
+
+Automated tools catch roughly half of accessibility issues. The rest require manual testing with keyboard-only navigation and, ideally, with a screen reader such as VoiceOver (macOS/iOS) or NVDA (Windows). Recruiting disabled users for usability testing will surface barriers no automated tool will find.

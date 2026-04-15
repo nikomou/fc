@@ -1,0 +1,45 @@
+---
+title: "Shopify Multi-Location Inventory Management"
+category: "Guides"
+description: "A complete guide to managing inventory across multiple locations in Shopify — from warehouse to retail floor — including routing rules and reporting best practices."
+readTime: "7 min read"
+date: "2025-03-06"
+image: "/images/articles/pexels-3856027.webp"
+gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)"
+accent: "#d1fae5"
+author: "Jamie Chen"
+authorRole: "Lead Developer"
+---
+Shopify's multi-location inventory system allows brands to track stock across warehouses, retail locations, and third-party fulfilment partners from a single admin. For growing brands operating across multiple fulfilment nodes, getting this right is critical to avoiding oversells, reducing shipping costs, and delivering accurate stock information to customers.
+
+## How Shopify Multi-Location Inventory Works
+
+Each Shopify location holds its own inventory quantities per variant. When an order is placed, Shopify can be configured to fulfil from a specific location or to allow merchants to choose. Shopify Plus merchants can use fulfilment priority rules to automate which location fulfils each order based on proximity, stock level, or custom logic.
+
+## Setting Up Locations
+
+- Navigate to Settings &gt; Locations in Shopify Admin
+- Add each warehouse, retail unit, and 3PL as a separate location
+- Enable 'fulfil online orders from this location' only for applicable nodes
+- Assign inventory quantities per SKU per location after setup
+
+## Fulfilment Priority Rules
+
+Shopify Plus allows you to set a priority order for fulfilment locations. Orders will attempt to fulfil from location one first; if stock is unavailable, they cascade to location two, and so on. For most brands, this should be ordered by your primary warehouse first, then retail locations, then overflow 3PL. Review the priority list whenever you open a new location.
+
+### Split Fulfilment Considerations
+
+When an order contains items stocked at different locations, Shopify can split the fulfilment into multiple shipments. Be aware of the customer experience implications — receiving two parcels for one order increases support queries. Many brands set a threshold: only split if the items cannot be consolidated within 48 hours.
+
+<Callout>
+Shopify's inventory API allows real-time sync with WMS platforms like Brightpearl, Linnworks, and ShipBob — essential for high-volume operations.
+</Callout>
+
+## Reporting and Stock Visibility
+
+Shopify's built-in inventory reports show stock levels by location, sell-through rate, and days of stock remaining. For more advanced reporting — particularly across multiple locations — consider supplementing with a tool like Glew or Brightpearl Analytics. The key metrics to track are: stock cover by location, transfer frequency, and fulfilment accuracy rate.
+
+- Run a weekly stock movement report across all locations
+- Set low stock alerts per location, not just globally
+- Review inter-location transfer costs monthly
+- Audit fulfilment location accuracy quarterly

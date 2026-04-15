@@ -1,0 +1,49 @@
+---
+title: "Setting Up GA4 for Shopify: A Complete Guide"
+category: "Guides"
+description: "A step-by-step guide to connecting GA4 to your Shopify store correctly, including ecommerce tracking, conversion events, and common setup mistakes."
+readTime: "10 min read"
+date: "2025-05-10"
+image: "/images/articles/pexels-3861964.webp"
+gradient: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
+accent: "#fff8e1"
+author: "Tom Williams"
+authorRole: "SEO Manager"
+---
+GA4 is now the only version of Google Analytics. If you're still running Universal Analytics on your Shopify store or relying on Shopify's built-in Google channel integration alone, you're missing significant data. This guide covers a complete, reliable GA4 setup for Shopify merchants.
+
+## Step One: Create Your GA4 Property
+
+Create a new GA4 property in Google Analytics (analytics.google.com), selecting 'Web' as the platform. Enable enhanced measurement — this automatically tracks page views, scrolls, outbound clicks, and form interactions. Note your Measurement ID (G-XXXXXXXXXX) for the next step.
+
+## Step Two: Install via Google & YouTube Channel
+
+Shopify's Google & YouTube sales channel provides the most straightforward GA4 installation, using the Shopify Customer Privacy API for consent compliance. Connect your GA4 property through the channel settings. This method handles basic pageview tracking and the Shopify checkout events automatically.
+
+## Step Three: Ecommerce Tracking
+
+For full ecommerce event tracking (view_item, add_to_cart, begin_checkout, purchase with revenue data), the native Shopify integration is often insufficient. Use Google Tag Manager with a custom Shopify data layer for reliable event tracking. The Elevar app offers a managed solution if you'd rather not build this manually.
+
+- Verify purchase events are firing in GA4 DebugView
+- Check that transaction revenue matches Shopify order values
+- Confirm that item-level data (product name, SKU, price) is passing correctly
+- Test across your checkout flow including accelerated checkouts (Shop Pay, Apple Pay)
+
+## Step Four: Configure Conversions
+
+Mark 'purchase' as a conversion event in GA4. Also consider marking 'begin_checkout', 'add_to_cart', and newsletter sign-up events as conversions — they help you understand funnel performance, not just final transactions. Set up a conversion funnel exploration in GA4 to visualise your checkout drop-off rates.
+
+<Callout>
+GA4 data is not retroactive. Set it up correctly today — even if you don't need the data immediately. Twelve months from now, you'll be glad you did.
+</Callout>
+
+## Step Five: Link to Google Ads and Search Console
+
+Link your GA4 property to Google Ads for conversion import and audience sharing. Link to Google Search Console for organic search performance data within GA4. Both integrations are configured in GA4 Admin &gt; Property Settings &gt; Product Links.
+
+### Common Setup Mistakes
+
+- Double-counting purchases by having both native integration and GTM firing
+- Tracking Shopify admin sessions (exclude your IP address in GA4 data filters)
+- Missing thank-you page events due to Shopify's checkout domain
+- Not enabling consent mode, causing data gaps for cookieless visitors
